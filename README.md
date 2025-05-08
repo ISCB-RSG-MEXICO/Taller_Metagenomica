@@ -48,6 +48,8 @@ Este taller está diseñado para impartirse durante dos días completos.
 ### Patrocinadores
 
 * **International Society for Computational Biology (ISCB Student Council)**
+* Red Mexicana de Bioinformática
+* Nodo Nacional de Bioinformática
 
 ---
 
