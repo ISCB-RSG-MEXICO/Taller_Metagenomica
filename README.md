@@ -42,13 +42,6 @@ Este taller utiliza el enfoque de **Data Carpentry** para enseñar:
 
 Este taller está diseñado para impartirse durante dos días completos.
 
----
-
-### Contenido 📌
-
-* **Página web:** [Workshop Bash 2024](https://iscb-rsg-mexico.github.io/2024-12-10-Workshop-Bash/)
-* **Material:** [Workshop Bash 2024 Material](https://iscb-rsg-mexico.github.io/Workshop_Bash2024/)
-* **Lección de SWC:** [Shell Novice ES](https://swcarpentry.github.io/shell-novice-es/)
 
 ---
 
