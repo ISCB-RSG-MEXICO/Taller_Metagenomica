@@ -1,5 +1,9 @@
-# Template para Workshop de RSG-Mexico
+# Taller de Metagenómica: Análisis de comunidades microbianas
 
-Creadora: Evelia Coss, posdoctoral de la Dra. Alejandra Medina, LIIGH-UNAM
+Lugar
 
 Fecha: 27 de marzo, 2025
+
+Instructores
+
+Ayudantes
