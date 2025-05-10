@@ -4,19 +4,35 @@ project:
 
 book:
   title: "Workshop"
-  author: "Dra. Evelia Coss"
-  date: "27/03/2025"
+  author: "Aaron E. Jaime y Yahir Cabrera"
+  date: "05/22/2025"
   page-navigation: true
   chapters:
     - index.qmd
-    - Cap1.qmd
-    - intro.qmd
-    - Cap2.qmd
-    - Cap3.qmd
-    - Cap4.qmd
-    - Cap5.qmd
+  - part: "**Sección 1** - Organización de proyectos metagenómicos"
+    - Leccion1-1_Orden_de_datos.qmd
+    - Leccion1-2_Planificacion_de_proyectos.qmd
+    - Leccion1-3_Datos_de_NCBI.qmd
+  - part: "**Sección 2** - Introducción a línea de comandos"
+    - Leccion2-1_Introduccion_navigation_Shell.qmd
+    - Leccion2-2_Operaciones_y_exploracion_de_fastq.qmd
+    - Leccion2-3_Redireccion.qmd
+    - Leccion2-4_Bucles_scripts_descarga.qmd
+    - Leccion2-5_Organizacion_proyecto.qmd
+  - part: "**Sección 3** - Primeros pasos con R Studio"  
+    - Leccion3-1_IntroduccionShell.qmd
+    - Leccion3-2_Navegacion-operacion.qmd
+    - Leccion3-3_
+    - Leccion3-4_Bucles.qmd
+    - Leccion3-5_
+  - part: "**Sección 4** - Procesamiento y visualización de datos metagenómicos"
+    - Leccion4-1_IntroduccionShell.qmd
+    - Leccion4-2_Navegacion-operacion.qmd
+    - Leccion4-3_
+    - Leccion4-4_
+    - Leccion4-5_
   # Information
-  repo-url: https://github.com/ISCB-RSG-MEXICO/Workshop_template # link de Github
+  repo-url: https://iscb-rsg-mexico.github.io/Taller_Metagenomica/ # link de Github
   sharing: [twitter, facebook, linkedin]
   favicon: "rsgMexico.jpeg" # icono de la pagina en pestana
 

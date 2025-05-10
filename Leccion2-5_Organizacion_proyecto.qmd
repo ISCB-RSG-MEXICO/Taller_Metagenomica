@@ -1,0 +1,19 @@
+# Organización de proyectos
+
+Key steps
+
+Ejercicio 1: Making and organized file system (equipos de 5 x 5 minutos): Mensaje con pista: busqueda en el manual.
+
+Documenta tu actividad en el proyecto
+
+history
+
+Ejercicio 2: Crea un registro de los comandos que has utilizado el día de hoy.
+
+## Referencias
+
+-   Haydee tutorial: [Temas Selectos de Análisis Numérico y Computación Científica: Computo científico para el análisis de datos](https://haydeeperuyero.github.io/Computo_Cientifico/)
+-   Alejandra Medina tutorial: [Control de versiones con GitHub y RStudio](https://comunidadbioinfo.github.io/cdsb2023/control-de-versiones-con-github-y-rstudio.html)
+-   Wilson, et al. 2014. [Best Practices for Scientific Computing](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745). PLOS Biology
+-   Evelia Coss - tutorial [Buenas practicas en R](https://github.com/EveliaCoss/Buenaspracticas_R_Mayo2024)
+-   Evelia Coss - [Make your CV tutorial](https://github.com/EveliaCoss/Make_yourCV)

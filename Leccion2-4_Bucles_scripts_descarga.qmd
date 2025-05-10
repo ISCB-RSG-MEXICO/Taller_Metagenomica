@@ -1,0 +1,48 @@
+# Bucles
+
+Introduccion a Bucles
+
+```         
+$ for filename in *.fastq 
+> do 
+> head -n 2 ${filename} 
+>> seq_info.txt 
+> done 
+```
+
+```         
+$ for filename in *.fastq ; do ; head -n 2 ${filename} >> seq_info.txt > done 
+```
+
+# **NANO and VIM for writting loops**
+
+Introducción a Nano e introducción a VIM (meme fighting).
+
+Instrucciones básicas para ambos. copiar las de nano e incluir las vim.
+
+Ejercicio 1 editar con nano y editar con vim. (10 minutos) equipos de 5
+
+# Writing loops
+
+```         
+grep -B1 -A2 NNNNNNNNNN *.fastq > scripted_bad_reads.txt
+```
+
+permisos chmod que significan
+
+correr script.
+
+Editar script con echo "El análisis ha terminado!". Guardar y correr de nuevo el script.
+
+wget y curl
+
+Descarga a local desde R studio y y subida a R studio desde local. **Figura.**
+
+Descarga o subida por scp. figura.
+
+EJERCICIO3: QUIZZ en etherpad.
+
+## Referencias
+
+-   Haydee tutorial: [Temas Selectos de Análisis Numérico y Computación Científica: Computo científico para el análisis de datos](https://haydeeperuyero.github.io/Computo_Cientifico/)
+-   Alejandra Medina tutorial: [Control de versiones con GitHub y RStudio](https://comunidadbioinfo.github.io/cdsb2023/control-de-versiones-con-github-y-rstudio.html)

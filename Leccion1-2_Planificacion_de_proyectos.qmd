@@ -1,0 +1,11 @@
+# Organización de proyectos metagenómicos 
+
+## Importancia del orden en experimentos
+
+La base de cualquier proyecto de investigación es el correcto orden de los datos. No solamente facilita el análisis sino que además permite compartir y colaborar con otros grupos. Documentar un proyecto que implica secuenciación de datos incluye varios componentes. **Algunos de ellos incluyen la metadata de las condiciones del experimento, mediciones con los parámetros experimentales, preparación de secuenciación, información de las muestras, las propias secuencias y los archivos y flujos de cualquier análisis bioinformático.** La organización de tus datos experimentales te prepara para ejecutar proyectos bioinformáticos de manera efectiva.
+
+Este taller utiliza datos de un ensayo medio ambiental: [**Genomic adaptations in information processing underpins trophic strategy in a whole-ecosystem nutrient enrichment experiment**](Okie, J. G., Poret-Peterson, A. T., Lee, Z. M., Richter, A., Alcaraz, L. D., Eguiarte, L. E., ... & Elser, J. J. (2020). Genomic adaptations in information processing underpin trophic strategy in a whole-ecosystem nutrient enrichment experiment. Elife, 9, e49816.) de Jordan G. Okie y colaboradores. En este trabajo los autores comparan las diferencias entre las comunidades microbianas en sus medios naturales, oligotróficos y deficientes de fósforo, una poza de Cuatro Ciénegas y la misma comunidad microbiana bajo tratamiento de fertilización.
+
+## Referencias
+
+No olvides las referencias

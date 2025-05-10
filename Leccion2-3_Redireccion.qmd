@@ -1,0 +1,23 @@
+# Conectar a GitHub con SSH
+
+buscando en archivos (uso de less y grep).
+
+Abreviaciones de los nucleótidos y N.
+
+```         
+cd ~/dc_workshop/data/untrimmed_fastq
+```
+
+Determinación de la calidad. Con grep? NNNNNNNNNNNN en JC1A_R2.fastq
+
+flags del -B1 y -A2
+
+Copiar ejercicio 1: Using grep (10 minutos) en
+
+Redirección de datos con "\>" bad_reads.txt
+
+wc bad_reads.txt
+
+Ejercicio 2: uso de wc
+
+Combinacion de grep -b1 -a2 flags, redireccion

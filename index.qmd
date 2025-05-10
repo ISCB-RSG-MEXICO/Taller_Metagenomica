@@ -7,27 +7,20 @@
 -   ::: {.panel-tabset group="globalInfo"}
     ### Sobre el curso 📌
 
-    Fuente del curso
+    El contenido de este curso se realizó en base al material realizado por The Carpentries-lab.
 
-    -   **Fechas:** Dias de la semana/ dias del mes
+    -   **Fechas:** 22 y 23 de Mayo del 2025
 
-    -   **Duración del curso:** X horas
+    -   **Duración del curso:** 12 horas
 
-    #### **Instructores:**
+    -   **Horario:** 9 am a 4 pm
 
-    -   **Evelia Lorena Coss-Navarrete** - PostDoc, LIIGH-UNAM. [Pagina web](https://eveliacoss.github.io/)
-    -   **Aaron Espinosa Jaime -** Estudiante de maestria, Cinvestav-LANGEBIO.
-    -   **Andrés Arredondo** - Ciencias Agrogenómicas, CCM-UNAM.
+    #### **Instructores:** 
+
+    -   **Aaron Espinosa Jaime -** UGA, Cinvestav Irapuato.
+    -   **José Yahir Cabrera González** - Instituto de Biociencias, UNACH Tapachula.
 
     Ayudantes:
-
-    -   **Daniel Chávez** - Profesor invitado, UAGro.
-
-    -   **Camilo Pérez** - Estudiante de doctorado, Cinvestav-LANGEBIO.
-
-    -   **Abel Lovaco Flores -** Estudiante de maestria, Cinvestav-Irapuato.
-
-    -   **Israel Aguilar** - Posdoc, Tec de Monterrey.
 
     -   **Mariana Devon -** Estudiante de maestría, UAM.
 
@@ -35,31 +28,29 @@
 
     #### **Resumen:**
 
-    Para que es el curso, que se va abordar y que se espera que aprendan. Ejemplo:
-
-    Este tutorial te enseñará los conceptos fundamentales en el empleo y manejo de Bash Shell, incluyendo **la creación de scripts de Bash, generación de programas con funcionalidades sencillas aplicables a bioinformática y a programación en general.**
+    Este taller tiene como objetivo principal **abordar los conceptos básicos, habilidades y herramientas para trabajar con datos metagenómicos.** Este taller comprende varias lecciones que incluyen desde la **organización y buenas prácticas, introducción a la línea de comandos y su aplicación para análisis de calidad y por último el uso de R studio para comparar diversidad entre las muestras de estudio.**
 
     #### **Objetivos:**
 
-    En esta guía rápida aprenderás a:**Daniel Chávez** - Profesor invitado, UAGro.
+    En este taller aprenderás a:
 
-    -   **Camilo Pérez** - Estudiante de doctorado, Cinvestav-LANGEBIO.
+    -   Organizar y colectar metadatos para tu proyecto metagenómico.
 
-    -   **Abel Lovaco Flores -** Estudiante de maestria, Cinvestav-Irapuato.
+    -   Acceder a bases de datos públicos.
 
-    -   **Israel Aguilar** - Posdoc, Tec de Monterrey.
+    -   Trabajar y vincularte a servidores remotos.
 
-    -   **Mariana Devon -** Estudiante de maestría, UAM.
+    -   Navegar en el contenido de tus carpetas desde la terminal de Shell.
 
-    -   **Andrés Arredondo** - Ciencias Agrogenómicas, CCM-UNAM.Crear y gestionar un repositorio.
+    -   Modificar, crear y mover archivos desde la terminal.
 
-    -   Iniciar y administrar una nueva rama.
+    -   Utilizar y familiarizarte con la interfaz de R studio.
 
-    -   Realizar cambios en un archivo y enviarlos a GitHub como confirmación.
+    -   Descargar y emplear librerías de R.
 
-    -   Crear tu página de inicio en Github.
+    -   Analizar datos metagenómicos crudos.
 
-    -   Crear tu página web.
+    -   Interpretar tus resultados.
 
     ## Citar y reutilizar el material del curso
 
@@ -67,37 +58,37 @@
 
     ### Requisitos previos
 
-    -   Debes tener una **cuenta de usuario de GitHub**. Para más información, consulta "[Creación de una cuenta en GitHub](https://docs.github.com/es/get-started/start-your-journey/creating-an-account-on-github)".
+    -   Debes contar con una computadora o laptop con acceso a internet. No se recomienda el uso de tablets para este taller.
 
-    -   No necesitas saber cómo codificar, utilizar la línea de comandos o instalar Git (el software de control de versiones en el que está compilado GitHub).
+    -   No es necesario que sepas utilizar la terminal o R studio. Sin embargo, es necesario que tengas los conocimientos básicos de microbiología y conceptos de biología.
 
-    -   Contar con una terminal con Git, en Windows puedes usar [Git Bash.](https://miguel-mx.github.io/2024-01-24-ccm-unam-swc/)
+    -   No es necesario descargar R studio y/o emuladores de terminal de Unix para este taller.
 
     ### Agenda 📆 {#agenda}
 
-    +----------------------------------------------------+-------------+
-    | Tema                                               | Tiempo      |
-    +====================================================+:===========:+
-    | 🔷 **Sección** **1 - (11:30 - 13:30 h) (7 marzo)** |             |
-    +----------------------------------------------------+-------------+
-    | -   Creación de una cuenta en GitHub               | 5 min       |
-    +----------------------------------------------------+-------------+
-    | -   Introducción a Git / GitHub                    | 15 min      |
-    +----------------------------------------------------+-------------+
-    | -   **Actividad 1**: Sincronización y llaves       | 15 min      |
-    +----------------------------------------------------+-------------+
-    | ☕ *Coffee break (10 min) - (12:00-12:10) ☕*      | 10 min      |
-    +----------------------------------------------------+-------------+
-    | 🔷  **Sección** **2 - (12:10-13:00 h)**            |             |
-    +----------------------------------------------------+-------------+
-    | -   Comandos usados en Github y RStudio            | 25 min      |
-    +----------------------------------------------------+-------------+
-    | -   **Actividad 2:** Pagina de inicio en GitHub    | 15 min      |
-    +----------------------------------------------------+-------------+
-    | 🔷  **Sección 3 - (11:30 - 13:30 h) (14 marzo)**   |             |
-    +----------------------------------------------------+-------------+
-    | -   Buenas practicas en R                          | 30 min      |
-    +----------------------------------------------------+-------------+
-    | -   **Actividad 3:** Pagina web en GitHub          | 1:30 min    |
-    +----------------------------------------------------+-------------+
+    +----------------------------------------------------+--------------+
+    | Tema                                               | Tiempo       |
+    +====================================================+:============:+
+    | 🔷 **Sección** **1 - (11:30 - 13:30 h) (7 marzo)** |              |
+    +----------------------------------------------------+--------------+
+    | -   Creación de una cuenta en GitHub               | 5 min        |
+    +----------------------------------------------------+--------------+
+    | -   Introducción a Git / GitHub                    | 15 min       |
+    +----------------------------------------------------+--------------+
+    | -   **Actividad 1**: Sincronización y llaves       | 15 min       |
+    +----------------------------------------------------+--------------+
+    | ☕ *Coffee break (10 min) - (12:00-12:10) ☕*      | 10 min       |
+    +----------------------------------------------------+--------------+
+    | 🔷  **Sección** **2 - (12:10-13:00 h)**            |              |
+    +----------------------------------------------------+--------------+
+    | -   Comandos usados en Github y RStudio            | 25 min       |
+    +----------------------------------------------------+--------------+
+    | -   **Actividad 2:** Pagina de inicio en GitHub    | 15 min       |
+    +----------------------------------------------------+--------------+
+    | 🔷  **Sección 3 - (11:30 - 13:30 h) (14 marzo)**   |              |
+    +----------------------------------------------------+--------------+
+    | -   Buenas practicas en R                          | 30 min       |
+    +----------------------------------------------------+--------------+
+    | -   **Actividad 3:** Pagina web en GitHub          | 1:30 min     |
+    +----------------------------------------------------+--------------+
     :::
