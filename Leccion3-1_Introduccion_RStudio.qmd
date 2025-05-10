@@ -1,0 +1,36 @@
+# Introducción a R
+
+**R** se utiliza para nombrar un lenguaje de programación y el software que lee e interpreta las instrucciones escritas en el script. Se especializa en el análisis estadístico y la generación de gráficos.
+
+Algunas de las ventajas de trabajar con R son:
+
+-   El código R es reproducible
+-   R produce gráficos de alta calidad
+-   R tiene una gran comunidad
+-   R es interdisciplinario
+-   R trabaja con datos de todos los colores y tamaños.
+-   ¡R es gratis!
+
+Por su parte, **RStudio** es el programa (en forma de interfaz gráfica) más popular para la escritura de scripts que además nos permite navegar por los archivos, inspeccionar variables y visualizar nuestros gráficos.
+
+# **Insertar figura de RStudio:** 
+
+Explicar cada una de las secciones.
+
+## **Revisión de la configuración**
+
+Al igual que en la Shell o línea de comandos, es recomendable mantener los datos relacionados en una sola carpeta. En RStudio, a esta carpeta se le llama **directorio de trabajo** y es donde se guardarán y buscarán los archivos. Cuando se necesite comprobar la ubicación del actual directorio de trabajo, se utiliza `getwd()`*.*
+
+Si tu directorio de trabajo actual no es el esperado, puedes cambiarlo haciendo clic en el icono del engranaje azul en la opción *Establecer como directorio de trabajo/Set as a working directory.*
+
+## Código en R
+
+En la consola se pueden escribir y ejecutar comandos de manera inmediata. Aquí se mostrarán los resultados de la ejecución de esos comandos (como en Shell). Puedes escribir instrucciones cuando veas signo "`>`" en la consola y pulsar "`Enter`" para ejecutar, sin embargo estas órdenes se olvidarán al cerrar la sesión. Aquí entra en juego la **reproducibilidad**.
+
+Por ello es conveniente escribir los comandos que queremos guardar en nuestro editor de scripts y guardarlo periódicamente. Podemos ejecutar nuestras líneas de código en el script con el atajo `Ctrl` + `Enter` (`Cmd` + `Return`). De esta manera el comando de la línea actual será seleccionado y se enviará por la consola para su ejecución.
+
+El tiempo puede ser enemigo o aliado de la memoria. Por ello es importante asegurarnos de recordar por qué escribimos qué comandos en nuestros scripts. Se pueden dejar comentarios (líneas de texto no ejecutables) comenzando una línea con `#`.
+
+## Referencias
+
+No olvides las referencias

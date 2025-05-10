@@ -1,0 +1,94 @@
+# Creando gráficos con ggplot2
+
+## Librerías de R
+
+Hasta ahora hemos usado las funciones básicas incluidas en el lenguaje R. Sin embargo, R puede usar grupos de funciones para diversos propósitos. Estos se llaman paquetes o librerías. Una librería es una familia de unidades de código con funciones, clases y variables específicas que juntas implementan una serie de tareas relacionadas.
+
+Instalar una librería es como comprar un nuevo equipo de laboratorio. Cargar un paquete es como sacar ese equipo de su caja y colocarlo en el espacio de trabajo. Los paquetes proporcionan funcionalidad adicional al código base de R, similar a como el nuevo equipo de laboratorio agrega funcionalidad a un espacio de laboratorio.
+
+R tiene su propio sisteme de gráficos básico pero usaremos una librería que nos ayudará a crear figuras más artísticas: ggplot2.
+
+Instalamos la librería
+
+``` r
+install.packages("ggplot2")
+```
+
+Ahora que está instalada, debemos cargarla. Siempre se recomienda cargar todas las bibliotecas que se usarán en un script al inicio de la sesión.
+
+``` r
+library(ggplot2)
+```
+
+## Visualización con ggplot2
+
+ggplot2 se creó con la idea de que cualquier gráfico puede expresarse con tres componentes:
+
+-   Conjunto de datos
+-   Coordenadas
+-   Conjunto de **geoms** (aka la representación visual de los datos)
+
+Estas **geoms** pueden considerarse capas superpuestas, por lo que es necesario tener especial cuidado al mostrar capas de información útiles que transmitan un mensaje.
+
+INSERTAR <https://r.qcbs.ca/workshop03/book-en/images/gglayers.png>
+
+``` r
+musician
+```
+
+Intentaremos crear una figura sólo con los datos y coordenadas de los componentes.
+
+``` r
+ggplot(data= musician,
+       mapping = aes(x = people, y = pieces))
+```
+
+INSERTAR FIGURA 1.
+
+Describiendo el código anterior. Primero llamamos a la función ggplot. Esto le dirá a R que queremos crear una gráfica y los parámetros indicados dentro de esta función se aplicarán a todas las capas del gráfico. Dimos dos argumentos al código:
+
+1.  Los datos que queremos mostrar en nuestra figura, es decir data=musician
+
+2.  La forma de mostrarlos en el gráfico, es decir, *mapping = aes(x=people, y=pieces)*, que le indicará a ggplot cómo se mapearán las variables en el gráfico.
+
+En este caso **x** es el nombre de los grupos, mientras que **y** es el número de piezas que cada uno de ellos compuso. Con esto hemos hecho la base de nuestro gráfico, pero no podemos ver los datos porque no hemos elegido una forma gráfica de representarlos (**geoms**).
+
+``` r
+ggplot(data= musician,
+        mapping = aes(x = people, y = pieces))+
+  geom_col()
+```
+
+INSERTAR FIGURA
+
+Algunos elementos del gráfico pueden ser informativos o meramente decorativos. si queremos que sean informativos deben estar dentro de la aes() e indicar qué información mostrarán. si queremos que sean decorativos, deben estar fuera de aes(). Veamos como funciona.
+
+``` r
+ggplot(data= musician,
+       mapping = aes(x = people, y = pieces))+
+  geom_col(color = "blue")
+```
+
+INSERTAR FIGURA
+
+``` r
+ggplot(data= musician,
+       mapping = aes(x = people, y = pieces))+
+  geom_col(aes(color= likes))
+```
+
+INSERTAR FIGURA
+
+### Pidiendo ayuda
+
+Si alguna vez tienes problemas para correr alguna función, puedes usar el signo `?` para conseguir más información desde la interfaz de RStudio. Por ejemplo `??barplot` abrirá la ventana de ayuda en el panel derecho inferior.
+
+## El cielo es el límite
+
+Existen muchas otras geoms por explorar. Claro que necesitamos un data frame mucho más complejo para poder hacer figuras más complejas. También depende cómo quieres mostrar tus datos o qué quieres mostrar.
+
+### Referencias
+
+INSERTAR REFERENCIAS
+
+[**Reproducibilidad genómica en R**](https://swcarpentry.github.io/r-novice-gapminder/)
