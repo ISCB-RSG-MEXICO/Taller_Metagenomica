@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>9&nbsp; Introducción a R – Workshop</title>
+<title>10&nbsp; Estructuras de datos en R – Workshop</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./2Tiposdedatos.html" rel="next">
-<link href="./5Organizacionproyecto.html" rel="prev">
+<link href="./11Graficandoconggplot.html" rel="next">
+<link href="./9IntroduccionRStudio.html" rel="prev">
 <link href="./rsgMexico.jpeg" rel="icon" type="image/jpeg">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -84,7 +118,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1IntroduccionRStudio.html"><strong>Sección 3</strong> - Primeros pasos con R Studio</a></li><li class="breadcrumb-item"><a href="./1IntroduccionRStudio.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introducción a R</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./9IntroduccionRStudio.html"><strong>Sección 3</strong> - Primeros pasos con R Studio</a></li><li class="breadcrumb-item"><a href="./10Tiposdedatos.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Estructuras de datos en R</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -182,31 +216,31 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./1IntroduccionnavigationShell.html" class="sidebar-item-text sidebar-link">
+  <a href="./4IntroduccionnavigationShell.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introducción a Shell</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2Operacionesyexploraciondefastq.html" class="sidebar-item-text sidebar-link">
+  <a href="./5Operacionesyexploraciondefastq.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Operaciones en archivos y carpetas</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./3Redireccion.html" class="sidebar-item-text sidebar-link">
+  <a href="./6Redireccion.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Conectar a GitHub con SSH</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./4Buclesscriptsdescarga.html" class="sidebar-item-text sidebar-link">
+  <a href="./7Buclesscriptsdescarga.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bucles</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./5Organizacionproyecto.html" class="sidebar-item-text sidebar-link">
+  <a href="./8Organizacionproyecto.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Organización de proyectos</span></span></a>
   </div>
 </li>
@@ -223,19 +257,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./1IntroduccionRStudio.html" class="sidebar-item-text sidebar-link active">
+  <a href="./9IntroduccionRStudio.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introducción a R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2Tiposdedatos.html" class="sidebar-item-text sidebar-link">
+  <a href="./10Tiposdedatos.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Estructuras de datos en R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./3Graficandoconggplot.html" class="sidebar-item-text sidebar-link">
+  <a href="./11Graficandoconggplot.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Creando gráficos con ggplot2</span></span></a>
   </div>
 </li>
@@ -252,13 +286,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./1Iniciandomiproyectometagenomico.html" class="sidebar-item-text sidebar-link">
+  <a href="./12Iniciandomiproyectometagenomico.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Procesamiento y visualización de datos</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2Controldecalidad.html" class="sidebar-item-text sidebar-link">
+  <a href="./13Controldecalidad.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
   </div>
 </li>
@@ -274,21 +308,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#insertar-figura-de-rstudio" id="toc-insertar-figura-de-rstudio" class="nav-link active" data-scroll-target="#insertar-figura-de-rstudio"><span class="header-section-number">10</span> <strong>Insertar figura de RStudio:</strong></a>
-  <ul>
-  <li><a href="#revisión-de-la-configuración" id="toc-revisión-de-la-configuración" class="nav-link" data-scroll-target="#revisión-de-la-configuración"><span class="header-section-number">10.1</span> <strong>Revisión de la configuración</strong></a></li>
-  <li><a href="#código-en-r" id="toc-código-en-r" class="nav-link" data-scroll-target="#código-en-r"><span class="header-section-number">10.2</span> Código en R</a></li>
-  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">10.3</span> Referencias</a></li>
-  </ul></li>
+  <li><a href="#manipulación-de-data-frames" id="toc-manipulación-de-data-frames" class="nav-link active" data-scroll-target="#manipulación-de-data-frames"><span class="header-section-number">11</span> Manipulación de data frames</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1IntroduccionRStudio.html"><strong>Sección 3</strong> - Primeros pasos con R Studio</a></li><li class="breadcrumb-item"><a href="./1IntroduccionRStudio.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introducción a R</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./9IntroduccionRStudio.html"><strong>Sección 3</strong> - Primeros pasos con R Studio</a></li><li class="breadcrumb-item"><a href="./10Tiposdedatos.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Estructuras de datos en R</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introducción a R</span></h1>
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Estructuras de datos en R</span></h1>
 </div>
 
 
@@ -305,37 +334,53 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>R</strong> se utiliza para nombrar un lenguaje de programación y el software que lee e interpreta las instrucciones escritas en el script. Se especializa en el análisis estadístico y la generación de gráficos.</p>
-<p>Algunas de las ventajas de trabajar con R son:</p>
+<p>No importa cuán complejo sea nuestro análisis, todos los datos en R pertenecerán a alguno de los siguientes tipos:</p>
 <ul>
-<li>El código R es reproducible</li>
-<li>R produce gráficos de alta calidad</li>
-<li>R tiene una gran comunidad</li>
-<li>R es interdisciplinario</li>
-<li>R trabaja con datos de todos los colores y tamaños.</li>
-<li>¡R es gratis!</li>
+<li>doble</li>
+<li>entero</li>
+<li>complejo</li>
+<li>lógico</li>
+<li>caracter</li>
 </ul>
-<p>Por su parte, <strong>RStudio</strong> es el programa (en forma de interfaz gráfica) más popular para la escritura de scripts que además nos permite navegar por los archivos, inspeccionar variables y visualizar nuestros gráficos.</p>
-<section id="insertar-figura-de-rstudio" class="level1" data-number="10">
-<h1 data-number="10"><span class="header-section-number">10</span> <strong>Insertar figura de RStudio:</strong></h1>
-<p>Explicar cada una de las secciones.</p>
-<section id="revisión-de-la-configuración" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="revisión-de-la-configuración"><span class="header-section-number">10.1</span> <strong>Revisión de la configuración</strong></h2>
-<p>Al igual que en la Shell o línea de comandos, es recomendable mantener los datos relacionados en una sola carpeta. En RStudio, a esta carpeta se le llama <strong>directorio de trabajo</strong> y es donde se guardarán y buscarán los archivos. Cuando se necesite comprobar la ubicación del actual directorio de trabajo, se utiliza <code>getwd()</code><em>.</em></p>
-<p>Si tu directorio de trabajo actual no es el esperado, puedes cambiarlo haciendo clic en el icono del engranaje azul en la opción <em>Establecer como directorio de trabajo/Set as a working directory.</em></p>
-</section>
-<section id="código-en-r" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="código-en-r"><span class="header-section-number">10.2</span> Código en R</h2>
-<p>En la consola se pueden escribir y ejecutar comandos de manera inmediata. Aquí se mostrarán los resultados de la ejecución de esos comandos (como en Shell). Puedes escribir instrucciones cuando veas signo “<code>&gt;</code>” en la consola y pulsar “<code>Enter</code>” para ejecutar, sin embargo estas órdenes se olvidarán al cerrar la sesión. Aquí entra en juego la <strong>reproducibilidad</strong>.</p>
-<p>Por ello es conveniente escribir los comandos que queremos guardar en nuestro editor de scripts y guardarlo periódicamente. Podemos ejecutar nuestras líneas de código en el script con el atajo <code>Ctrl</code> + <code>Enter</code> (<code>Cmd</code> + <code>Return</code>). De esta manera el comando de la línea actual será seleccionado y se enviará por la consola para su ejecución.</p>
-<p>El tiempo puede ser enemigo o aliado de la memoria. Por ello es importante asegurarnos de recordar por qué escribimos qué comandos en nuestros scripts. Se pueden dejar comentarios (líneas de texto no ejecutables) comenzando una línea con <code>#</code>.</p>
-</section>
-<section id="referencias" class="level2" data-number="10.3">
-<h2 data-number="10.3" class="anchored" data-anchor-id="referencias"><span class="header-section-number">10.3</span> Referencias</h2>
-<p>No olvides las referencias</p>
+<p>Este concepto nos ayudará a aprender una de las herramientas más poderosas de R; la manipulación de diversos tipos de datos en conjunto en lo que se denomina un <strong>data-frame.</strong></p>
+<p>Además de los tipos de datos, existen diferentes maneras de organizar los datos en R, denominadas estructuras de datos. La estructura de datos más simple es un vector, una secuencia de datos del mismo tipo. Un vector se puede crear con la función <code>c()</code> .</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>char_vector<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"a"</span>,<span class="st">"b"</span>,<span class="st">"c"</span>,<span class="st">"c"</span>,<span class="st">"d"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(char_vector)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>“character”</p>
+<p>Una estructura de datos más compleja es el factor, que contiene nombres de las categorías (llamados niveles) y una secuencia de ocurrencias de dichas categorías.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>char_factor<span class="ot">&lt;-</span><span class="fu">as.factor</span>(char_vector)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>char_factor</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>levels: a b c</p>
+<p>Ejercicio en etherpad:</p>
+<p>¿Qué tipo de datos están presentes en cada uno de los siguientes vectores?</p>
+<p><code>vec1&lt;-c("34","127", "26-7i")</code></p>
+<p><code>vec2&lt;-c(4L,12L,152L)</code></p>
+<p><code>vec3&lt;-c(34,147,26+7i)</code></p>
+<p>Nota: Si usamos “” para definir un objeto, R lo leerá como un caracter, independientemente de que estemos escribiendo números. La mayúscula después de un número indica que R lo guardará como entero.</p>
+<section id="manipulación-de-data-frames" class="level1" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> Manipulación de data frames</h1>
+<p>Los data frames son estructuras de datos potentes en R. Podemos comenzar a crear un conjunto de datos simulado:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>musician <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">people =</span> <span class="fu">c</span>(<span class="st">"Medtner"</span>, <span class="st">"Radwimps"</span>, <span class="st">"Shakira"</span>),</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                         <span class="at">pieces =</span> <span class="fu">c</span>(<span class="dv">722</span>,<span class="dv">187</span>,<span class="dv">68</span>),</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                         <span class="at">likes =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>))</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> musician</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>El contenido de nuestro nuevo objeto:</p>
+<pre><code>     people pieces likes 
+   1  Medtner    722     0 
+   2 Radwimps    187     1 
+   3  Shakira     68     1</code></pre>
+<p>Para comprobar que nuestro objeto es un data frame podemos usar <code>class()</code>.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(musician)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>"data.frame"</code></pre>
+<p>Un dataframe es una colección de vectores (una lista), cuyos componentes deben ser del mismo tipo de datos dentro de cada vector.</p>
+<p>INSERTAR FIGURA3. estructura de marco de datos creado.</p>
+<p>Podemos explorar nuestro objeto extrayendo columnas con el operador <code>$</code>.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>musician<span class="sc">$</span>people</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Podemos también extraer información de un lugar específico en nuestros datos utilizando la nomenclatura de matriz <code>[-,-]</code> donde el primer número dentro de los corchetes especifica el número de fila y el segundo el número de columna:</p>
+<p>INSERTAR FIGURA 4.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>musician[<span class="dv">3</span>,<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -902,13 +947,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./5Organizacionproyecto.html" class="pagination-link" aria-label="Organización de proyectos">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Organización de proyectos</span></span>
+      <a href="./9IntroduccionRStudio.html" class="pagination-link" aria-label="Introducción a R">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introducción a R</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./2Tiposdedatos.html" class="pagination-link" aria-label="Estructuras de datos en R">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Estructuras de datos en R</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./11Graficandoconggplot.html" class="pagination-link" aria-label="Creando gráficos con ggplot2">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Creando gráficos con ggplot2</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -1,11 +1,85 @@
-# Organización de proyectos metagenómicos 
+# Planificación de proyectos
 
-## Importancia del orden en experimentos
+## **Grandes conjuntos de datos**
 
-La base de cualquier proyecto de investigación es el correcto orden de los datos. No solamente facilita el análisis sino que además permite compartir y colaborar con otros grupos. Documentar un proyecto que implica secuenciación de datos incluye varios componentes. **Algunos de ellos incluyen la metadata de las condiciones del experimento, mediciones con los parámetros experimentales, preparación de secuenciación, información de las muestras, las propias secuencias y los archivos y flujos de cualquier análisis bioinformático.** La organización de tus datos experimentales te prepara para ejecutar proyectos bioinformáticos de manera efectiva.
+En el aspecto más importante, los métodos y enfoques que necesitamos en bioinformática son los mismos que necesitamos en el laboratorio o en el campo: *planificar, documentar y organizar* son la clave para una ciencia reproducible y de calidad.
 
-Este taller utiliza datos de un ensayo medio ambiental: [**Genomic adaptations in information processing underpins trophic strategy in a whole-ecosystem nutrient enrichment experiment**](Okie, J. G., Poret-Peterson, A. T., Lee, Z. M., Richter, A., Alcaraz, L. D., Eguiarte, L. E., ... & Elser, J. J. (2020). Genomic adaptations in information processing underpin trophic strategy in a whole-ecosystem nutrient enrichment experiment. Elife, 9, e49816.) de Jordan G. Okie y colaboradores. En este trabajo los autores comparan las diferencias entre las comunidades microbianas en sus medios naturales, oligotróficos y deficientes de fósforo, una poza de Cuatro Ciénegas y la misma comunidad microbiana bajo tratamiento de fertilización.
+## **Envío de muestras a la instalación**
+
+El primer paso para enviar su muestra a secuenciación será completar un formulario que documente los metadatos del centro. Consulte el siguiente ejemplo de hoja de cálculo de envío.
+
+[Hoja de envío de muestra](https://carpentries-lab.github.io/metagenomics-organization/files/sample_submission.txt)
+
+Descargue el archivo haciendo clic derecho (PC) o manteniendo presionada la tecla Comando (Mac). Este archivo es un archivo de texto delimitado por tabulaciones. Intente abrirlo con Excel u otro programa de hojas de cálculo.
+
+## **Ejercicio 1: Identificación de errores**
+
+1.  ¿Qué errores puedes detectar en los datos? ¿Errores tipográficos, datos faltantes, inconsistencias?
+
+2.  ¿Qué mejoras se podrían hacer en la elección de nombres?
+
+3.  ¿Qué errores en la hoja de cálculo serían difíciles de detectar? ¿Hay alguna forma de comprobarlo?
+
+> ## **Solución**
+>
+> Errores:
+>
+> -   Orden secuencial de cambios de posición del pozo
+> -   El formato de client_sample_id cambia y no puede tener espacios, barras ni caracteres ASCII no estándar.
+> -   La capitalización de los cambios en la columna replicada
+> -   Los encabezados de las columnas de volumen y concentración tienen caracteres inusuales (no permitidos)
+> -   Cambios en la precisión decimal del volumen, la concentración y la columna RIN
+> -   Los formatos prep_date y ship_date son diferentes, y prep_date tiene múltiples formatos
+> -   ¿Hay otros que no están mencionados?
+>
+> Mejoras en la nomenclatura
+>
+> -   Acorte los nombres de client_sample_id y quizás simplemente llámelos “nombres”
+>     -   Por ejemplo: "wt" significa "wild-type". Además, todos son de "1 hora", por lo que esa información es superflua.
+> -   Es posible que prep_date y ship_date no sean necesarios
+> -   Utilice “microlitros” para “Volumen (µL)”, etc.
+>
+> Errores difíciles de detectar:
+>
+> -   No hay espacio entre “wild” y “type”, números de código de barras repetidos, datos faltantes, nombres duplicados
+> -   Encuentra ordenando o contando
+
+## **Recuperación de datos de secuenciación de muestras de la instalación**
+
+Cuando reciba los datos del centro de secuenciación, recibirá documentación (metadatos), así como los archivos de secuencia. Descargue y examine el siguiente archivo de ejemplo (disponible aquí como archivo de texto y archivo de Excel):
+
+-   [Resultados de la secuenciación - texto](https://carpentries-lab.github.io/metagenomics-organization/files/sequencing_results_metadata.txt)
+
+-   [Resultados de secuenciación - Excel](https://carpentries-lab.github.io/metagenomics-organization/files/sequencing_results_metadata.xls)
+
+> ## **Ejercicio 2: Exploración de metadatos de secuenciación**
+>
+> 1.  ¿Cómo se organizan estas muestras?
+>
+> 2.  Si quisiera relacionar los nombres de los archivos con los nombres de muestra enviados anteriormente (por ejemplo, tipo salvaje), ¿podría hacerlo?
+>
+> 3.  ¿Qué significan las extensiones \_R1/\_R2 en los nombres de archivos?
+>
+> 4.  ¿Qué indica la extensión '.gz' en los nombres de archivos?
+>
+> 5.  ¿Cuál es el tamaño total del archivo? ¿Qué desafíos podrían existir a la hora de descargar y compartir estos datos?
+>
+> > ## **Solución**
+> >
+> > 1.  Las muestras están organizadas por sample_id
+> > 2.  Para relacionar nombres de archivos, utilice sample_id y haga una BUSCARV en la hoja de envío
+> > 3.  Las extensiones \_R1/\_R2 significan “Lectura 1” y “Lectura 2” de cada muestra
+> > 4.  La extensión '.gz' significa que es un formato comprimido tipo “gzip” para ahorrar espacio en disco.
+> > 5.  El tamaño de todos los archivos combinados es de 1113,60 GB (¡más de un terabyte!). Para transferir archivos de este tamaño, debe validar el tamaño del archivo después de la transferencia. Es posible realizar comprobaciones de integridad absoluta de los archivos después de las transferencias y utilizar métodos para acelerar las transferencias, pero esto queda fuera del alcance de esta lección.
+
+### **Pautas para el almacenamiento de datos**
+
+-   Guarde los datos en un lugar accesible para usted y los demás miembros de su laboratorio. Como mínimo, usted y el responsable del laboratorio deberían tener acceso.
+
+-   Almacene los datos en un lugar con copias de seguridad redundantes. Deben estar respaldados en dos ubicaciones en diferentes áreas físicas.
+
+-   Deje los datos sin procesar. Trabajará con estos datos, pero no desea modificar esta copia almacenada de los datos originales. Si modifica los datos, nunca podrá acceder a esos archivos originales. Explicaremos cómo evitar modificar archivos accidentalmente en una lección posterior de este taller [(consulte Permisos de archivos)](https://carpentries-incubator.github.io/shell-metagenomics/02-the-filesystem/index.html) .
 
 ## Referencias
 
-No olvides las referencias
+L. Welch, F. Lewitter, R. Schwartz, C. Brooksbank, P. Radivojac, B. Gaeta y M. Schneider, ' [Directrices curriculares de bioinformática: hacia una definición de competencias básicas](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3945096/) ', PLoS Comput Biol, vol. 10, no. 3, p. e1003496, 2014.

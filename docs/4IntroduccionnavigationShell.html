@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Operaciones en archivos y carpetas – Workshop</title>
+<title>4&nbsp; Introducción a Shell – Workshop</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./3Redireccion.html" rel="next">
-<link href="./1IntroduccionnavigationShell.html" rel="prev">
+<link href="./5Operacionesyexploraciondefastq.html" rel="next">
+<link href="./3DatosdeNCBI.html" rel="prev">
 <link href="./rsgMexico.jpeg" rel="icon" type="image/jpeg">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -84,7 +118,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1IntroduccionnavigationShell.html"><strong>Sección 2</strong> - Introducción a línea de comandos</a></li><li class="breadcrumb-item"><a href="./2Operacionesyexploraciondefastq.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Operaciones en archivos y carpetas</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./4IntroduccionnavigationShell.html"><strong>Sección 2</strong> - Introducción a línea de comandos</a></li><li class="breadcrumb-item"><a href="./4IntroduccionnavigationShell.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introducción a Shell</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -182,31 +216,31 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./1IntroduccionnavigationShell.html" class="sidebar-item-text sidebar-link">
+  <a href="./4IntroduccionnavigationShell.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introducción a Shell</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2Operacionesyexploraciondefastq.html" class="sidebar-item-text sidebar-link active">
+  <a href="./5Operacionesyexploraciondefastq.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Operaciones en archivos y carpetas</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./3Redireccion.html" class="sidebar-item-text sidebar-link">
+  <a href="./6Redireccion.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Conectar a GitHub con SSH</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./4Buclesscriptsdescarga.html" class="sidebar-item-text sidebar-link">
+  <a href="./7Buclesscriptsdescarga.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bucles</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./5Organizacionproyecto.html" class="sidebar-item-text sidebar-link">
+  <a href="./8Organizacionproyecto.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Organización de proyectos</span></span></a>
   </div>
 </li>
@@ -223,19 +257,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./1IntroduccionRStudio.html" class="sidebar-item-text sidebar-link">
+  <a href="./9IntroduccionRStudio.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introducción a R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2Tiposdedatos.html" class="sidebar-item-text sidebar-link">
+  <a href="./10Tiposdedatos.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Estructuras de datos en R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./3Graficandoconggplot.html" class="sidebar-item-text sidebar-link">
+  <a href="./11Graficandoconggplot.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Creando gráficos con ggplot2</span></span></a>
   </div>
 </li>
@@ -252,13 +286,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./1Iniciandomiproyectometagenomico.html" class="sidebar-item-text sidebar-link">
+  <a href="./12Iniciandomiproyectometagenomico.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Procesamiento y visualización de datos</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2Controldecalidad.html" class="sidebar-item-text sidebar-link">
+  <a href="./13Controldecalidad.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
   </div>
 </li>
@@ -269,15 +303,22 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#preparación-del-directorio-de-trabajo" id="toc-preparación-del-directorio-de-trabajo" class="nav-link active" data-scroll-target="#preparación-del-directorio-de-trabajo"><span class="header-section-number">4.1</span> Preparación del directorio de trabajo</a></li>
+  <li><a href="#comandos-básicos" id="toc-comandos-básicos" class="nav-link" data-scroll-target="#comandos-básicos"><span class="header-section-number">4.2</span> <strong>Comandos básicos</strong></a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1IntroduccionnavigationShell.html"><strong>Sección 2</strong> - Introducción a línea de comandos</a></li><li class="breadcrumb-item"><a href="./2Operacionesyexploraciondefastq.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Operaciones en archivos y carpetas</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./4IntroduccionnavigationShell.html"><strong>Sección 2</strong> - Introducción a línea de comandos</a></li><li class="breadcrumb-item"><a href="./4IntroduccionnavigationShell.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introducción a Shell</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Operaciones en archivos y carpetas</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introducción a Shell</span></h1>
 </div>
 
 
@@ -294,22 +335,103 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>Iremos haciendo las operaciones en los archivos fastq</strong></p>
-<p>uso de wildcards en combinación con comandos básicos.</p>
-<p>ejemplo:</p>
-<pre><code>cd ~/dc_workshop/data/untrimmed_fastq</code></pre>
-<pre><code> $ ls *.fastq</code></pre>
-<p>out JC1A_R1.fastq JP4D_R1.fastq</p>
-<p>Otros shortcuts como crtl + D, history o clear (ctrl + L)</p>
-<p>En history !260 para repetir la línea 260 (Para comandos muy elaborados, tener un ejemplo antes de ver este short cut)</p>
-<p>lectura de archivos cat, less (funciones de las teclas espacio, b, g, G y q), manual, checar sus diferencias.</p>
-<p>HEAD vs TAIL. (comienza uso de las flags, por ejemplo -n 10 que lee 10 líneas en el archivo)</p>
-<p>Detalles del formato FASTQ</p>
-<p>copiar archivos, crear directorios, mover y renombrar archivos. Enfasis en tener cuidado con sobreescribir archivos.</p>
-<p>BORRAR</p>
-<p>Copiar ejercicio 1, Make backup folder with write-protected permissions</p>
+<p>Un Shell es un programa de computador que presenta una interfaz en línea de comando que permite ejecutar funciones en el computador utilizando comandos especiales en vez de tener un control a través de una interfaz gráfica que combina el uso de un ratón o <em>mouse</em> y un teclado de computador.</p>
+<p>INSERTAR FOTO</p>
+<p>COMENZAR CON CONEXIÓN AL SERVIDOR (10 minutos)</p>
+<p>Path relativo y absoluto</p>
+<p>Algunos comandos cd, mkdir, pwd</p>
+<p>ejercicio (5 minutos) en equipos de encontrar el archivo.txt y poner el path absoluto de la ubicación del archivo.</p>
+<p>Repaso de comandos</p>
+<section id="preparación-del-directorio-de-trabajo" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="preparación-del-directorio-de-trabajo"><span class="header-section-number">4.1</span> Preparación del directorio de trabajo</h2>
+<ul>
+<li><p>Ruta / Camino absoluto</p>
+<div class="sourceCode" id="cb1" data-code-copy="true" data-eval="false"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /home/usuario/data/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Ruta / Camino relativo</p>
+<div class="sourceCode" id="cb2" data-code-copy="true" data-eval="false"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ../ <span class="co"># Ir a la carpeta anterior</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section>
+<section id="comandos-básicos" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="comandos-básicos"><span class="header-section-number">4.2</span> <strong>Comandos básicos</strong></h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 43%">
+<col style="width: 31%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Comandos</th>
+<th>Información</th>
+<th>Argumentos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>ssh</code></td>
+<td>Conexión a servidores</td>
+<td>ssh usuario@servidor.mx</td>
+</tr>
+<tr class="even">
+<td><code>ls</code></td>
+<td>Observar el contenido de los archivos en una carpeta</td>
+<td>ls directorio/</td>
+</tr>
+<tr class="odd">
+<td><code>cd</code></td>
+<td>Moverse de directorios</td>
+<td>cd /home/usuario/data/</td>
+</tr>
+<tr class="even">
+<td><code>mkdir</code></td>
+<td>Crear un nuevo directorio</td>
+<td>mkdir data</td>
+</tr>
+<tr class="odd">
+<td><code>rmdir</code></td>
+<td>Eliminar el directorio</td>
+<td>rmkdir -rf data</td>
+</tr>
+<tr class="even">
+<td><code>nano</code>/<code>vim</code></td>
+<td>Editores de texto plano</td>
+<td>nano Archivo.txt / vim Archivo.txt</td>
+</tr>
+<tr class="odd">
+<td><code>cp</code></td>
+<td>Copiar archivos</td>
+<td>cp Archivo1.txt /home/usuario/data/</td>
+</tr>
+<tr class="even">
+<td><code>mv</code></td>
+<td>Mover un archivo o carpeta</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>echo</code></td>
+<td>Para llamar y/o declarar variables</td>
+<td>echo “Hello world”</td>
+</tr>
+<tr class="even">
+<td><code>chmod</code></td>
+<td>Cambiar permisos del usuario</td>
+<td>chmod 777 data/</td>
+</tr>
+<tr class="odd">
+<td><code>rsync</code></td>
+<td>Descargar o subir archivos</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>scp</code></td>
+<td>Descargar o subir archivos</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -875,13 +997,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./1IntroduccionnavigationShell.html" class="pagination-link" aria-label="Introducción a Shell">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introducción a Shell</span></span>
+      <a href="./3DatosdeNCBI.html" class="pagination-link" aria-label="Operaciones en archivos y carpetas">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Operaciones en archivos y carpetas</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./3Redireccion.html" class="pagination-link" aria-label="Conectar a GitHub con SSH">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Conectar a GitHub con SSH</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./5Operacionesyexploraciondefastq.html" class="pagination-link" aria-label="Operaciones en archivos y carpetas">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Operaciones en archivos y carpetas</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

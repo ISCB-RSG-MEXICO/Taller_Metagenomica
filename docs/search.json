@@ -65,8 +65,8 @@
     ]
   },
   {
-    "objectID": "1IntroduccionnavigationShell.html",
-    "href": "1IntroduccionnavigationShell.html",
+    "objectID": "4IntroduccionnavigationShell.html",
+    "href": "4IntroduccionnavigationShell.html",
     "title": "4  Introducción a Shell",
     "section": "",
     "text": "4.1 Preparación del directorio de trabajo\nUn Shell es un programa de computador que presenta una interfaz en línea de comando que permite ejecutar funciones en el computador utilizando comandos especiales en vez de tener un control a través de una interfaz gráfica que combina el uso de un ratón o mouse y un teclado de computador.\nINSERTAR FOTO\nCOMENZAR CON CONEXIÓN AL SERVIDOR (10 minutos)\nPath relativo y absoluto\nAlgunos comandos cd, mkdir, pwd\nejercicio (5 minutos) en equipos de encontrar el archivo.txt y poner el path absoluto de la ubicación del archivo.\nRepaso de comandos",
@@ -76,8 +76,8 @@
     ]
   },
   {
-    "objectID": "1IntroduccionnavigationShell.html#preparación-del-directorio-de-trabajo",
-    "href": "1IntroduccionnavigationShell.html#preparación-del-directorio-de-trabajo",
+    "objectID": "4IntroduccionnavigationShell.html#preparación-del-directorio-de-trabajo",
+    "href": "4IntroduccionnavigationShell.html#preparación-del-directorio-de-trabajo",
     "title": "4  Introducción a Shell",
     "section": "",
     "text": "Ruta / Camino absoluto\ncd /home/usuario/data/\nRuta / Camino relativo\ncd ../ # Ir a la carpeta anterior",
@@ -87,8 +87,8 @@
     ]
   },
   {
-    "objectID": "1IntroduccionnavigationShell.html#comandos-básicos",
-    "href": "1IntroduccionnavigationShell.html#comandos-básicos",
+    "objectID": "4IntroduccionnavigationShell.html#comandos-básicos",
+    "href": "4IntroduccionnavigationShell.html#comandos-básicos",
     "title": "4  Introducción a Shell",
     "section": "4.2 Comandos básicos",
     "text": "4.2 Comandos básicos\n\n\n\n\n\n\n\n\nComandos\nInformación\nArgumentos\n\n\n\n\nssh\nConexión a servidores\nssh usuario@servidor.mx\n\n\nls\nObservar el contenido de los archivos en una carpeta\nls directorio/\n\n\ncd\nMoverse de directorios\ncd /home/usuario/data/\n\n\nmkdir\nCrear un nuevo directorio\nmkdir data\n\n\nrmdir\nEliminar el directorio\nrmkdir -rf data\n\n\nnano/vim\nEditores de texto plano\nnano Archivo.txt / vim Archivo.txt\n\n\ncp\nCopiar archivos\ncp Archivo1.txt /home/usuario/data/\n\n\nmv\nMover un archivo o carpeta\n\n\n\necho\nPara llamar y/o declarar variables\necho “Hello world”\n\n\nchmod\nCambiar permisos del usuario\nchmod 777 data/\n\n\nrsync\nDescargar o subir archivos\n\n\n\nscp\nDescargar o subir archivos",
@@ -98,8 +98,8 @@
     ]
   },
   {
-    "objectID": "2Operacionesyexploraciondefastq.html",
-    "href": "2Operacionesyexploraciondefastq.html",
+    "objectID": "5Operacionesyexploraciondefastq.html",
+    "href": "5Operacionesyexploraciondefastq.html",
     "title": "5  Operaciones en archivos y carpetas",
     "section": "",
     "text": "Iremos haciendo las operaciones en los archivos fastq\nuso de wildcards en combinación con comandos básicos.\nejemplo:\ncd ~/dc_workshop/data/untrimmed_fastq\n $ ls *.fastq\nout JC1A_R1.fastq JP4D_R1.fastq\nOtros shortcuts como crtl + D, history o clear (ctrl + L)\nEn history !260 para repetir la línea 260 (Para comandos muy elaborados, tener un ejemplo antes de ver este short cut)\nlectura de archivos cat, less (funciones de las teclas espacio, b, g, G y q), manual, checar sus diferencias.\nHEAD vs TAIL. (comienza uso de las flags, por ejemplo -n 10 que lee 10 líneas en el archivo)\nDetalles del formato FASTQ\ncopiar archivos, crear directorios, mover y renombrar archivos. Enfasis en tener cuidado con sobreescribir archivos.\nBORRAR\nCopiar ejercicio 1, Make backup folder with write-protected permissions",
@@ -109,8 +109,8 @@
     ]
   },
   {
-    "objectID": "3Redireccion.html",
-    "href": "3Redireccion.html",
+    "objectID": "6Redireccion.html",
+    "href": "6Redireccion.html",
     "title": "6  Conectar a GitHub con SSH",
     "section": "",
     "text": "buscando en archivos (uso de less y grep).\nAbreviaciones de los nucleótidos y N.\ncd ~/dc_workshop/data/untrimmed_fastq\nDeterminación de la calidad. Con grep? NNNNNNNNNNNN en JC1A_R2.fastq\nflags del -B1 y -A2\nCopiar ejercicio 1: Using grep (10 minutos) en\nRedirección de datos con “&gt;” bad_reads.txt\nwc bad_reads.txt\nEjercicio 2: uso de wc\nCombinacion de grep -b1 -a2 flags, redireccion",
@@ -120,8 +120,8 @@
     ]
   },
   {
-    "objectID": "4Buclesscriptsdescarga.html",
-    "href": "4Buclesscriptsdescarga.html",
+    "objectID": "7Buclesscriptsdescarga.html",
+    "href": "7Buclesscriptsdescarga.html",
     "title": "7  Bucles",
     "section": "",
     "text": "8 NANO and VIM for writting loops\nIntroduccion a Bucles\nIntroducción a Nano e introducción a VIM (meme fighting).\nInstrucciones básicas para ambos. copiar las de nano e incluir las vim.\nEjercicio 1 editar con nano y editar con vim. (10 minutos) equipos de 5",
@@ -131,8 +131,8 @@
     ]
   },
   {
-    "objectID": "4Buclesscriptsdescarga.html#referencias",
-    "href": "4Buclesscriptsdescarga.html#referencias",
+    "objectID": "7Buclesscriptsdescarga.html#referencias",
+    "href": "7Buclesscriptsdescarga.html#referencias",
     "title": "7  Bucles",
     "section": "9.1 Referencias",
     "text": "9.1 Referencias\n\nHaydee tutorial: Temas Selectos de Análisis Numérico y Computación Científica: Computo científico para el análisis de datos\nAlejandra Medina tutorial: Control de versiones con GitHub y RStudio",
@@ -142,8 +142,8 @@
     ]
   },
   {
-    "objectID": "5Organizacionproyecto.html",
-    "href": "5Organizacionproyecto.html",
+    "objectID": "8Organizacionproyecto.html",
+    "href": "8Organizacionproyecto.html",
     "title": "8  Organización de proyectos",
     "section": "",
     "text": "8.1 Referencias\nKey steps\nEjercicio 1: Making and organized file system (equipos de 5 x 5 minutos): Mensaje con pista: busqueda en el manual.\nDocumenta tu actividad en el proyecto\nhistory\nEjercicio 2: Crea un registro de los comandos que has utilizado el día de hoy.",
@@ -153,8 +153,8 @@
     ]
   },
   {
-    "objectID": "5Organizacionproyecto.html#referencias",
-    "href": "5Organizacionproyecto.html#referencias",
+    "objectID": "8Organizacionproyecto.html#referencias",
+    "href": "8Organizacionproyecto.html#referencias",
     "title": "8  Organización de proyectos",
     "section": "",
     "text": "Haydee tutorial: Temas Selectos de Análisis Numérico y Computación Científica: Computo científico para el análisis de datos\nAlejandra Medina tutorial: Control de versiones con GitHub y RStudio\nWilson, et al. 2014. Best Practices for Scientific Computing. PLOS Biology\nEvelia Coss - tutorial Buenas practicas en R\nEvelia Coss - Make your CV tutorial",
@@ -164,8 +164,8 @@
     ]
   },
   {
-    "objectID": "1IntroduccionRStudio.html",
-    "href": "1IntroduccionRStudio.html",
+    "objectID": "9IntroduccionRStudio.html",
+    "href": "9IntroduccionRStudio.html",
     "title": "9  Introducción a R",
     "section": "",
     "text": "10 Insertar figura de RStudio:\nR se utiliza para nombrar un lenguaje de programación y el software que lee e interpreta las instrucciones escritas en el script. Se especializa en el análisis estadístico y la generación de gráficos.\nAlgunas de las ventajas de trabajar con R son:\nPor su parte, RStudio es el programa (en forma de interfaz gráfica) más popular para la escritura de scripts que además nos permite navegar por los archivos, inspeccionar variables y visualizar nuestros gráficos.\nExplicar cada una de las secciones.",
@@ -175,8 +175,8 @@
     ]
   },
   {
-    "objectID": "1IntroduccionRStudio.html#revisión-de-la-configuración",
-    "href": "1IntroduccionRStudio.html#revisión-de-la-configuración",
+    "objectID": "9IntroduccionRStudio.html#revisión-de-la-configuración",
+    "href": "9IntroduccionRStudio.html#revisión-de-la-configuración",
     "title": "9  Introducción a R",
     "section": "10.1 Revisión de la configuración",
     "text": "10.1 Revisión de la configuración\nAl igual que en la Shell o línea de comandos, es recomendable mantener los datos relacionados en una sola carpeta. En RStudio, a esta carpeta se le llama directorio de trabajo y es donde se guardarán y buscarán los archivos. Cuando se necesite comprobar la ubicación del actual directorio de trabajo, se utiliza getwd().\nSi tu directorio de trabajo actual no es el esperado, puedes cambiarlo haciendo clic en el icono del engranaje azul en la opción Establecer como directorio de trabajo/Set as a working directory.",
@@ -186,8 +186,8 @@
     ]
   },
   {
-    "objectID": "1IntroduccionRStudio.html#código-en-r",
-    "href": "1IntroduccionRStudio.html#código-en-r",
+    "objectID": "9IntroduccionRStudio.html#código-en-r",
+    "href": "9IntroduccionRStudio.html#código-en-r",
     "title": "9  Introducción a R",
     "section": "10.2 Código en R",
     "text": "10.2 Código en R\nEn la consola se pueden escribir y ejecutar comandos de manera inmediata. Aquí se mostrarán los resultados de la ejecución de esos comandos (como en Shell). Puedes escribir instrucciones cuando veas signo “&gt;” en la consola y pulsar “Enter” para ejecutar, sin embargo estas órdenes se olvidarán al cerrar la sesión. Aquí entra en juego la reproducibilidad.\nPor ello es conveniente escribir los comandos que queremos guardar en nuestro editor de scripts y guardarlo periódicamente. Podemos ejecutar nuestras líneas de código en el script con el atajo Ctrl + Enter (Cmd + Return). De esta manera el comando de la línea actual será seleccionado y se enviará por la consola para su ejecución.\nEl tiempo puede ser enemigo o aliado de la memoria. Por ello es importante asegurarnos de recordar por qué escribimos qué comandos en nuestros scripts. Se pueden dejar comentarios (líneas de texto no ejecutables) comenzando una línea con #.",
@@ -197,8 +197,8 @@
     ]
   },
   {
-    "objectID": "1IntroduccionRStudio.html#referencias",
-    "href": "1IntroduccionRStudio.html#referencias",
+    "objectID": "9IntroduccionRStudio.html#referencias",
+    "href": "9IntroduccionRStudio.html#referencias",
     "title": "9  Introducción a R",
     "section": "10.3 Referencias",
     "text": "10.3 Referencias\nNo olvides las referencias",
@@ -208,8 +208,8 @@
     ]
   },
   {
-    "objectID": "2Tiposdedatos.html",
-    "href": "2Tiposdedatos.html",
+    "objectID": "10Tiposdedatos.html",
+    "href": "10Tiposdedatos.html",
     "title": "10  Estructuras de datos en R",
     "section": "",
     "text": "No importa cuán complejo sea nuestro análisis, todos los datos en R pertenecerán a alguno de los siguientes tipos:\n\ndoble\nentero\ncomplejo\nlógico\ncaracter\n\nEste concepto nos ayudará a aprender una de las herramientas más poderosas de R; la manipulación de diversos tipos de datos en conjunto en lo que se denomina un data-frame.\nAdemás de los tipos de datos, existen diferentes maneras de organizar los datos en R, denominadas estructuras de datos. La estructura de datos más simple es un vector, una secuencia de datos del mismo tipo. Un vector se puede crear con la función c() .\nchar_vector&lt;-c(\"a\",\"b\",\"c\",\"c\",\"d\")\ntypeof(char_vector)\n“character”\nUna estructura de datos más compleja es el factor, que contiene nombres de las categorías (llamados niveles) y una secuencia de ocurrencias de dichas categorías.\nchar_factor&lt;-as.factor(char_vector)\nchar_factor\nlevels: a b c\nEjercicio en etherpad:\n¿Qué tipo de datos están presentes en cada uno de los siguientes vectores?\nvec1&lt;-c(\"34\",\"127\", \"26-7i\")\nvec2&lt;-c(4L,12L,152L)\nvec3&lt;-c(34,147,26+7i)\nNota: Si usamos “” para definir un objeto, R lo leerá como un caracter, independientemente de que estemos escribiendo números. La mayúscula después de un número indica que R lo guardará como entero.\n\n11 Manipulación de data frames\nLos data frames son estructuras de datos potentes en R. Podemos comenzar a crear un conjunto de datos simulado:\nmusician &lt;- data.frame(people = c(\"Medtner\", \"Radwimps\", \"Shakira\"),\n                         pieces = c(722,187,68),\n                         likes = c(0,1,1))\n&gt; musician\nEl contenido de nuestro nuevo objeto:\n     people pieces likes \n   1  Medtner    722     0 \n   2 Radwimps    187     1 \n   3  Shakira     68     1\nPara comprobar que nuestro objeto es un data frame podemos usar class().\nclass(musician)\n\"data.frame\"\nUn dataframe es una colección de vectores (una lista), cuyos componentes deben ser del mismo tipo de datos dentro de cada vector.\nINSERTAR FIGURA3. estructura de marco de datos creado.\nPodemos explorar nuestro objeto extrayendo columnas con el operador $.\nmusician$people\nPodemos también extraer información de un lugar específico en nuestros datos utilizando la nomenclatura de matriz [-,-] donde el primer número dentro de los corchetes especifica el número de fila y el segundo el número de columna:\nINSERTAR FIGURA 4.\nmusician[3,2]",
@@ -219,8 +219,8 @@
     ]
   },
   {
-    "objectID": "3Graficandoconggplot.html",
-    "href": "3Graficandoconggplot.html",
+    "objectID": "11Graficandoconggplot.html",
+    "href": "11Graficandoconggplot.html",
     "title": "11  Creando gráficos con ggplot2",
     "section": "",
     "text": "11.1 Librerías de R\nHasta ahora hemos usado las funciones básicas incluidas en el lenguaje R. Sin embargo, R puede usar grupos de funciones para diversos propósitos. Estos se llaman paquetes o librerías. Una librería es una familia de unidades de código con funciones, clases y variables específicas que juntas implementan una serie de tareas relacionadas.\nInstalar una librería es como comprar un nuevo equipo de laboratorio. Cargar un paquete es como sacar ese equipo de su caja y colocarlo en el espacio de trabajo. Los paquetes proporcionan funcionalidad adicional al código base de R, similar a como el nuevo equipo de laboratorio agrega funcionalidad a un espacio de laboratorio.\nR tiene su propio sisteme de gráficos básico pero usaremos una librería que nos ayudará a crear figuras más artísticas: ggplot2.\nInstalamos la librería\nAhora que está instalada, debemos cargarla. Siempre se recomienda cargar todas las bibliotecas que se usarán en un script al inicio de la sesión.",
@@ -230,8 +230,8 @@
     ]
   },
   {
-    "objectID": "3Graficandoconggplot.html#librerías-de-r",
-    "href": "3Graficandoconggplot.html#librerías-de-r",
+    "objectID": "11Graficandoconggplot.html#librerías-de-r",
+    "href": "11Graficandoconggplot.html#librerías-de-r",
     "title": "11  Creando gráficos con ggplot2",
     "section": "",
     "text": "install.packages(\"ggplot2\")\n\nlibrary(ggplot2)",
@@ -241,8 +241,8 @@
     ]
   },
   {
-    "objectID": "3Graficandoconggplot.html#visualización-con-ggplot2",
-    "href": "3Graficandoconggplot.html#visualización-con-ggplot2",
+    "objectID": "11Graficandoconggplot.html#visualización-con-ggplot2",
+    "href": "11Graficandoconggplot.html#visualización-con-ggplot2",
     "title": "11  Creando gráficos con ggplot2",
     "section": "11.2 Visualización con ggplot2",
     "text": "11.2 Visualización con ggplot2\nggplot2 se creó con la idea de que cualquier gráfico puede expresarse con tres componentes:\n\nConjunto de datos\nCoordenadas\nConjunto de geoms (aka la representación visual de los datos)\n\nEstas geoms pueden considerarse capas superpuestas, por lo que es necesario tener especial cuidado al mostrar capas de información útiles que transmitan un mensaje.\nINSERTAR https://r.qcbs.ca/workshop03/book-en/images/gglayers.png\nmusician\nIntentaremos crear una figura sólo con los datos y coordenadas de los componentes.\nggplot(data= musician,\n       mapping = aes(x = people, y = pieces))\nINSERTAR FIGURA 1.\nDescribiendo el código anterior. Primero llamamos a la función ggplot. Esto le dirá a R que queremos crear una gráfica y los parámetros indicados dentro de esta función se aplicarán a todas las capas del gráfico. Dimos dos argumentos al código:\n\nLos datos que queremos mostrar en nuestra figura, es decir data=musician\nLa forma de mostrarlos en el gráfico, es decir, mapping = aes(x=people, y=pieces), que le indicará a ggplot cómo se mapearán las variables en el gráfico.\n\nEn este caso x es el nombre de los grupos, mientras que y es el número de piezas que cada uno de ellos compuso. Con esto hemos hecho la base de nuestro gráfico, pero no podemos ver los datos porque no hemos elegido una forma gráfica de representarlos (geoms).\nggplot(data= musician,\n        mapping = aes(x = people, y = pieces))+\n  geom_col()\nINSERTAR FIGURA\nAlgunos elementos del gráfico pueden ser informativos o meramente decorativos. si queremos que sean informativos deben estar dentro de la aes() e indicar qué información mostrarán. si queremos que sean decorativos, deben estar fuera de aes(). Veamos como funciona.\nggplot(data= musician,\n       mapping = aes(x = people, y = pieces))+\n  geom_col(color = \"blue\")\nINSERTAR FIGURA\nggplot(data= musician,\n       mapping = aes(x = people, y = pieces))+\n  geom_col(aes(color= likes))\nINSERTAR FIGURA\n\n11.2.1 Pidiendo ayuda\nSi alguna vez tienes problemas para correr alguna función, puedes usar el signo ? para conseguir más información desde la interfaz de RStudio. Por ejemplo ??barplot abrirá la ventana de ayuda en el panel derecho inferior.",
@@ -252,8 +252,8 @@
     ]
   },
   {
-    "objectID": "3Graficandoconggplot.html#el-cielo-es-el-límite",
-    "href": "3Graficandoconggplot.html#el-cielo-es-el-límite",
+    "objectID": "11Graficandoconggplot.html#el-cielo-es-el-límite",
+    "href": "11Graficandoconggplot.html#el-cielo-es-el-límite",
     "title": "11  Creando gráficos con ggplot2",
     "section": "11.3 El cielo es el límite",
     "text": "11.3 El cielo es el límite\nExisten muchas otras geoms por explorar. Claro que necesitamos un data frame mucho más complejo para poder hacer figuras más complejas. También depende cómo quieres mostrar tus datos o qué quieres mostrar.\n\n11.3.1 Referencias\nINSERTAR REFERENCIAS\nReproducibilidad genómica en R",
@@ -263,8 +263,8 @@
     ]
   },
   {
-    "objectID": "1Iniciandomiproyectometagenomico.html",
-    "href": "1Iniciandomiproyectometagenomico.html",
+    "objectID": "12Iniciandomiproyectometagenomico.html",
+    "href": "12Iniciandomiproyectometagenomico.html",
     "title": "12  Procesamiento y visualización de datos",
     "section": "",
     "text": "12.0.1 Introducción\nMuchas de las herramientas para el análisis metagenómico se utilizan en línea de comando por las siguientes razones:\nEn esta sección aplicarás los conocimientos para implementar un workflow común en metagenómica: identificar Unidades Taxonómicas Operacionales (OTU) en muestras tomadas de metagenomas.\nComenzaremos con un conjunto de lecturas/reads secuenciados en archivos con formato .fastq. Realizaremos algunos pasos de control de calidad, ensamblaremos los reads en contigs y finalizaremos identificando y visualizando los OTUs en estas muestras.\nToma en cuenta que a medida que avanzamos en esta sección, aunque no utilices el mismo flujo de trabajo, aprenderás a implementar herramientas bioinformáticas importantes en línea de comandos.",
@@ -274,8 +274,8 @@
     ]
   },
   {
-    "objectID": "1Iniciandomiproyectometagenomico.html#comienza-tu-proyecto-metagenómico",
-    "href": "1Iniciandomiproyectometagenomico.html#comienza-tu-proyecto-metagenómico",
+    "objectID": "12Iniciandomiproyectometagenomico.html#comienza-tu-proyecto-metagenómico",
+    "href": "12Iniciandomiproyectometagenomico.html#comienza-tu-proyecto-metagenómico",
     "title": "12  Procesamiento y visualización de datos",
     "section": "12.1 Comienza tu proyecto metagenómico",
     "text": "12.1 Comienza tu proyecto metagenómico\n\n12.1.1 Metagenómica\nLos metagenómas son colecciones de secuencias genómicas de varios microorganismos que coexisten en un determinado espacio. Nos brindan información sobre la composición taxonómica, metabolómica e incluso funcional de las comunidades que estudiamos. Los metagenómas se emplean habitualmente para investigar la ecología de nichos, como por ejemplo el intestino humano o el fondo marino.\nDado que los metagenomas son mezclas de secuencias que perteneven a diferentes especies, un flujo de trabajo metagenómico está diseñado para responder dos preguntas:\n\n¿Qué especies están representadas en la muestra?\n¿Qué son capaces de hacer?\n\nPara determinar qué especies están presentes en un nicho, debemos realizar una asignación taxonómica de las secuencias obtenidas. Para determinar sus capacidades podemos examinar los genes codificados directamente en el metagenoma o encontrar genes asociados a las especies encontradas. Para determinar qué metodología usar es fundamental saber qué preguntas queremos responder.\n\n\n12.1.2 Shotgun y amplicon\nExisten dos rutas para obtener información de una muestra:\n\nMetagenómica por Shotgun\nMetabarcoding\n\nCon la metagenómica por Shotgun, secuenciamos partes aleatorias (idealmente todas las partes del genoma) de los genomas presentes en una muestra. Podemos buscar el origen de estas piezas (es decir, su taxonomía) y tratar de encontrar también a qué parte corresponden. Es posible obtener genomas individuales completos de un metagenoma shotgun (MAGs). Sin embargo, el ensamblaje de MAG requiere muchas secuencias genómicas de un organismo (gran profundidad de secuenciación), lo cual se vuelve un reto cuando nuestra especie de interés no es muy abundante en la muestra o ambiente. Finalmente la secuenciación es costosa y hacer réplicas técnicas y biológicas puede ser prohibitivamente costoso.\nPor el contrario, el metabarcoding suele ser una técnica más económica. Este menor coste se debe a las especificaciones de la técnica, la cual consiste en la recopilación de pequeños fragmentos genómicos presentes en la comunidad y amplificados mediante PCR. La conservación de regiones genómicas entre especies es la razón por la que los amplicones más populares para bacterias utilizados en esta metodología con los 16S. Sin embargo, esta técnica se limita a ofrecernos la taxonomía del organismo. Interponiendo la posibilidad de proveer información metabólica.\nINSERTAR FIGURA DE FLUJO DE TRABAJO\nSobre los metadatos\nEn la mayoría de los casos, las diferencias observadas al comparar metagenomas pueden correlacionarse con los metadatos, por lo que debemos dedicar una sección de nuestro diseño experimental a los metadatos que esperamos recopilar y registrar.\nLos datos que vamos a utilizar son de un estudio sobre la respuesta de la comunidad bacteriana de Cuatro Ciénegas al enriquecimiento de nutrientes. La comparación entre comunidades bacterianas demostró que algunos rasgos genómicos como el tamaño medio del genoma, el contenido de GC, el número total de genes de ARNt y ARNr y el sesgo en el uso de codones, se modificaron significativamente cuando la comunidad bacteriana se sometió a los distintos tratamientos (entorno natural, oligotrófico, deficiente en fósforo y un tratamiento de fertilización).\nDe acuerdo con los resultados de este estudio, ¿qué estrategia crees que utilizaron en este estudio?\n\n\n12.1.3 En Etherpad:\nSegún la importancia de los metadatos, ¿qué otra información puedes recomendar agregar a la tabla de metadatos?\nNota:\nLos resultados de este estudio, las secuencias sin procesar y los metadatos se pueden encontrar en el SRA del NCBI y se almacenaron en el BioProject PRJEB22811.\nNota:\nOtras bases de datos metagenómicos públicas son: MG-RAST, MGnify, GM Repo, Marine Metagenomics Portal y Terrestrial Metagenome DB.",
@@ -285,8 +285,8 @@
     ]
   },
   {
-    "objectID": "1Iniciandomiproyectometagenomico.html#referencias",
-    "href": "1Iniciandomiproyectometagenomico.html#referencias",
+    "objectID": "12Iniciandomiproyectometagenomico.html#referencias",
+    "href": "12Iniciandomiproyectometagenomico.html#referencias",
     "title": "12  Procesamiento y visualización de datos",
     "section": "12.2 Referencias",
     "text": "12.2 Referencias\nEpisodios 2 y 3 (Análisis de control de calidad y filtrado de secuencias) son adaptaciones de los episodios correspondientes en la lección/taller Data Wrangling and Processing for Genomics en The Carpentries.",
@@ -296,8 +296,8 @@
     ]
   },
   {
-    "objectID": "2Controldecalidad.html",
-    "href": "2Controldecalidad.html",
+    "objectID": "13Controldecalidad.html",
+    "href": "13Controldecalidad.html",
     "title": "13  Control de calidad",
     "section": "",
     "text": "13.0.1 Flujos de análisis bioinformático en metagenómica\nAl trabajar con datos de secuenciación, los reads/lecturas que obtienes del secuenciador deben pasar a través de varias herramientas para generar el resultado final deseado. La ejecución de este conjunto de herramientas en un orden específico se conoce como pipeline o flujo de análisis.\nINSERTAR FOTO DE PIPELINE\nEstos pipelines adoptan un enfoque plug-and-play en el sentido de que el archivo de salida de uno de ellos es fácilmente convertido en archivo de salida para el siguiente.",
@@ -307,8 +307,8 @@
     ]
   },
   {
-    "objectID": "2Controldecalidad.html#referencias",
-    "href": "2Controldecalidad.html#referencias",
+    "objectID": "13Controldecalidad.html#referencias",
+    "href": "13Controldecalidad.html#referencias",
     "title": "13  Control de calidad",
     "section": "13.1 Referencias",
     "text": "13.1 Referencias\nAquí puedes encontrar mayor información sobre cada una de las secciones del resultado de FastQC.",
