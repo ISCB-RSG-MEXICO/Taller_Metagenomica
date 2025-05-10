@@ -16,20 +16,20 @@ book:
       - 3DatosdeNCBI.qmd
     - part: "**Sección 2** - Introducción a línea de comandos"
       chapters:
-      - 1IntroduccionnavigationShell.qmd
-      - 2Operacionesyexploraciondefastq.qmd
-      - 3Redireccion.qmd
-      - 4Buclesscriptsdescarga.qmd
-      - 5Organizacionproyecto.qmd
+      - 4IntroduccionnavigationShell.qmd
+      - 5Operacionesyexploraciondefastq.qmd
+      - 6Redireccion.qmd
+      - 7Buclesscriptsdescarga.qmd
+      - 8Organizacionproyecto.qmd
     - part: "**Sección 3** - Primeros pasos con R Studio"  
       chapters:
-      - 1IntroduccionRStudio.qmd
-      - 2Tiposdedatos.qmd
-      - 3Graficandoconggplot.qmd
+      - 9IntroduccionRStudio.qmd
+      - 10Tiposdedatos.qmd
+      - 11Graficandoconggplot.qmd
     - part: "**Sección 4** - Procesamiento y visualización de datos metagenómicos"
       chapters:
-      - 1Iniciandomiproyectometagenomico.qmd
-      - 2Controldecalidad.qmd
+      - 12Iniciandomiproyectometagenomico.qmd
+      - 13Controldecalidad.qmd
     
   # Information
   repo-url: https://iscb-rsg-mexico.github.io/Taller_Metagenomica/ # link de Github
