@@ -4,167 +4,317 @@
     "href": "index.html",
     "title": "Workshop",
     "section": "",
-    "text": "Información general\n\n\nSobre el curso 📌Requisitos previosAgenda 📆\n\n\nFuente del curso\n\nFechas: Dias de la semana/ dias del mes\nDuración del curso: X horas\n\nInstructores:\n\nEvelia Lorena Coss-Navarrete - PostDoc, LIIGH-UNAM. Pagina web\nAaron Espinosa Jaime - Estudiante de maestria, Cinvestav-LANGEBIO.\nAndrés Arredondo - Ciencias Agrogenómicas, CCM-UNAM.\n\nAyudantes:\n\nDaniel Chávez - Profesor invitado, UAGro.\nCamilo Pérez - Estudiante de doctorado, Cinvestav-LANGEBIO.\nAbel Lovaco Flores - Estudiante de maestria, Cinvestav-Irapuato.\nIsrael Aguilar - Posdoc, Tec de Monterrey.\nMariana Devon - Estudiante de maestría, UAM.\nAndrés Arredondo - Ciencias Agrogenómicas, CCM-UNAM.\n\nResumen:\nPara que es el curso, que se va abordar y que se espera que aprendan. Ejemplo:\nEste tutorial te enseñará los conceptos fundamentales en el empleo y manejo de Bash Shell, incluyendo la creación de scripts de Bash, generación de programas con funcionalidades sencillas aplicables a bioinformática y a programación en general.\nObjetivos:\nEn esta guía rápida aprenderás a:Daniel Chávez - Profesor invitado, UAGro.\n\nCamilo Pérez - Estudiante de doctorado, Cinvestav-LANGEBIO.\nAbel Lovaco Flores - Estudiante de maestria, Cinvestav-Irapuato.\nIsrael Aguilar - Posdoc, Tec de Monterrey.\nMariana Devon - Estudiante de maestría, UAM.\nAndrés Arredondo - Ciencias Agrogenómicas, CCM-UNAM.Crear y gestionar un repositorio.\nIniciar y administrar una nueva rama.\nRealizar cambios en un archivo y enviarlos a GitHub como confirmación.\nCrear tu página de inicio en Github.\nCrear tu página web.\n\nCitar y reutilizar el material del curso\nLos datos del curso se pueden reutilizar y adaptar libremente con la debida atribución. Todos los datos de los cursos de estos repositorios están sujetos a la licencia Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).\n\n\n\nDebes tener una cuenta de usuario de GitHub. Para más información, consulta “Creación de una cuenta en GitHub”.\nNo necesitas saber cómo codificar, utilizar la línea de comandos o instalar Git (el software de control de versiones en el que está compilado GitHub).\nContar con una terminal con Git, en Windows puedes usar Git Bash.\n\n\n\n\n\n\n\n\n\n\nTema\nTiempo\n\n\n\n\n🔷 Sección 1 - (11:30 - 13:30 h) (7 marzo)\n\n\n\n\nCreación de una cuenta en GitHub\n\n5 min\n\n\n\nIntroducción a Git / GitHub\n\n15 min\n\n\n\nActividad 1: Sincronización y llaves\n\n15 min\n\n\n☕ Coffee break (10 min) - (12:00-12:10) ☕\n10 min\n\n\n🔷  Sección 2 - (12:10-13:00 h)\n\n\n\n\nComandos usados en Github y RStudio\n\n25 min\n\n\n\nActividad 2: Pagina de inicio en GitHub\n\n15 min\n\n\n🔷  Sección 3 - (11:30 - 13:30 h) (14 marzo)\n\n\n\n\nBuenas practicas en R\n\n30 min\n\n\n\nActividad 3: Pagina web en GitHub\n\n1:30 min"
+    "text": "Información general\n\n\nSobre el curso 📌Requisitos previosAgenda 📆\n\n\nEl contenido de este curso se realizó en base al material realizado por The Carpentries-lab.\n\nFechas: 22 y 23 de Mayo del 2025\nDuración del curso: 12 horas\nHorario: 9 am a 4 pm\n\nInstructores:\n\nAaron Espinosa Jaime - UGA, Cinvestav Irapuato.\nJosé Yahir Cabrera González - Instituto de Biociencias, UNACH Tapachula.\n\nAyudantes:\n\nMariana Devon - Estudiante de maestría, UAM.\nAndrés Arredondo - Ciencias Agrogenómicas, CCM-UNAM.\n\nResumen:\nEste taller tiene como objetivo principal abordar los conceptos básicos, habilidades y herramientas para trabajar con datos metagenómicos. Este taller comprende varias lecciones que incluyen desde la organización y buenas prácticas, introducción a la línea de comandos y su aplicación para análisis de calidad y por último el uso de R studio para comparar diversidad entre las muestras de estudio.\nObjetivos:\nEn este taller aprenderás a:\n\nOrganizar y colectar metadatos para tu proyecto metagenómico.\nAcceder a bases de datos públicos.\nTrabajar y vincularte a servidores remotos.\nNavegar en el contenido de tus carpetas desde la terminal de Shell.\nModificar, crear y mover archivos desde la terminal.\nUtilizar y familiarizarte con la interfaz de R studio.\nDescargar y emplear librerías de R.\nAnalizar datos metagenómicos crudos.\nInterpretar tus resultados.\n\nCitar y reutilizar el material del curso\nLos datos del curso se pueden reutilizar y adaptar libremente con la debida atribución. Todos los datos de los cursos de estos repositorios están sujetos a la licencia Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).\n\n\n\nDebes contar con una computadora o laptop con acceso a internet. No se recomienda el uso de tablets para este taller.\nNo es necesario que sepas utilizar la terminal o R studio. Sin embargo, es necesario que tengas los conocimientos básicos de microbiología y conceptos de biología.\nNo es necesario descargar R studio y/o emuladores de terminal de Unix para este taller.\n\n\n\n\n\n\n\n\n\n\nTema\nTiempo\n\n\n\n\n🔷 Sección 1 - (11:30 - 13:30 h) (7 marzo)\n\n\n\n\nCreación de una cuenta en GitHub\n\n5 min\n\n\n\nIntroducción a Git / GitHub\n\n15 min\n\n\n\nActividad 1: Sincronización y llaves\n\n15 min\n\n\n☕ Coffee break (10 min) - (12:00-12:10) ☕\n10 min\n\n\n🔷  Sección 2 - (12:10-13:00 h)\n\n\n\n\nComandos usados en Github y RStudio\n\n25 min\n\n\n\nActividad 2: Pagina de inicio en GitHub\n\n15 min\n\n\n🔷  Sección 3 - (11:30 - 13:30 h) (14 marzo)\n\n\n\n\nBuenas practicas en R\n\n30 min\n\n\n\nActividad 3: Pagina web en GitHub\n\n1:30 min",
+    "crumbs": [
+      "Información general"
+    ]
   },
   {
-    "objectID": "Cap1.html#preparación-del-directorio-de-trabajo",
-    "href": "Cap1.html#preparación-del-directorio-de-trabajo",
-    "title": "1  Recordatorio de pasos en Bash",
-    "section": "1.1 Preparación del directorio de trabajo",
-    "text": "1.1 Preparación del directorio de trabajo\n\nRuta / Camino absoluto\ncd /home/usuario/data/\nRuta / Camino relativo\ncd ../ # Ir a la carpeta anterior"
+    "objectID": "1Ordendedatos.html",
+    "href": "1Ordendedatos.html",
+    "title": "1  Organización de proyectos metagenómicos",
+    "section": "",
+    "text": "1.1 Importancia del orden en experimentos\nLa base de cualquier proyecto de investigación es el correcto orden de los datos. No solamente facilita el análisis sino que además permite compartir y colaborar con otros grupos. Documentar un proyecto que implica secuenciación de datos incluye varios componentes. Algunos de ellos incluyen la metadata de las condiciones del experimento, mediciones con los parámetros experimentales, preparación de secuenciación, información de las muestras, las propias secuencias y los archivos y flujos de cualquier análisis bioinformático. La organización de tus datos experimentales te prepara para ejecutar proyectos bioinformáticos de manera efectiva.\nEste taller utiliza datos de un ensayo medio ambiental: Genomic adaptations in information processing underpins trophic strategy in a whole-ecosystem nutrient enrichment experiment de Jordan G. Okie y colaboradores. En este trabajo los autores comparan las diferencias entre las comunidades microbianas en sus medios naturales, oligotróficos y deficientes de fósforo, una poza de Cuatro Ciénegas y la misma comunidad microbiana bajo tratamiento de fertilización.",
+    "crumbs": [
+      "**Sección 1** - Organización de proyectos metagenómicos",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Organización de proyectos metagenómicos</span>"
+    ]
   },
   {
-    "objectID": "Cap1.html#comandos-básicos",
-    "href": "Cap1.html#comandos-básicos",
-    "title": "1  Recordatorio de pasos en Bash",
-    "section": "1.2 Comandos básicos",
-    "text": "1.2 Comandos básicos\n\n\n\n\n\n\n\n\nComandos\nInformación\nArgumentos\n\n\n\n\nssh\nConexión a servidores\nssh usuario@servidor.mx\n\n\nls\nObservar el contenido de los archivos en una carpeta\nls directorio/\n\n\ncd\nMoverse de directorios\ncd /home/usuario/data/\n\n\nmkdir\nCrear un nuevo directorio\nmkdir data\n\n\nrmdir\nEliminar el directorio\nrmkdir -rf data\n\n\nnano/vim\nEditores de texto plano\nnano Archivo.txt / vim Archivo.txt\n\n\ncp\nCopiar archivos\ncp Archivo1.txt /home/usuario/data/\n\n\nmv\nMover un archivo o carpeta\n\n\n\necho\nPara llamar y/o declarar variables\necho “Hello world”\n\n\nchmod\nCambiar permisos del usuario\nchmod 777 data/\n\n\nrsync\nDescargar o subir archivos\n\n\n\nscp\nDescargar o subir archivos"
+    "objectID": "1Ordendedatos.html#referencias",
+    "href": "1Ordendedatos.html#referencias",
+    "title": "1  Organización de proyectos metagenómicos",
+    "section": "1.2 Referencias",
+    "text": "1.2 Referencias\nNo olvides las referencias",
+    "crumbs": [
+      "**Sección 1** - Organización de proyectos metagenómicos",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Organización de proyectos metagenómicos</span>"
+    ]
   },
   {
-    "objectID": "intro.html#referencias",
-    "href": "intro.html#referencias",
-    "title": "2  Introducción Sobre el Workshop",
-    "section": "2.1 Referencias",
-    "text": "2.1 Referencias\nNo olvides las referencias"
+    "objectID": "2Planificaciondeproyectos.html",
+    "href": "2Planificaciondeproyectos.html",
+    "title": "2  Organización de proyectos metagenómicos",
+    "section": "",
+    "text": "2.1 Importancia del orden en experimentos\nLa base de cualquier proyecto de investigación es el correcto orden de los datos. No solamente facilita el análisis sino que además permite compartir y colaborar con otros grupos. Documentar un proyecto que implica secuenciación de datos incluye varios componentes. Algunos de ellos incluyen la metadata de las condiciones del experimento, mediciones con los parámetros experimentales, preparación de secuenciación, información de las muestras, las propias secuencias y los archivos y flujos de cualquier análisis bioinformático. La organización de tus datos experimentales te prepara para ejecutar proyectos bioinformáticos de manera efectiva.\nEste taller utiliza datos de un ensayo medio ambiental: Genomic adaptations in information processing underpins trophic strategy in a whole-ecosystem nutrient enrichment experiment de Jordan G. Okie y colaboradores. En este trabajo los autores comparan las diferencias entre las comunidades microbianas en sus medios naturales, oligotróficos y deficientes de fósforo, una poza de Cuatro Ciénegas y la misma comunidad microbiana bajo tratamiento de fertilización.",
+    "crumbs": [
+      "**Sección 1** - Organización de proyectos metagenómicos",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Organización de proyectos metagenómicos</span>"
+    ]
   },
   {
-    "objectID": "Cap2.html#referencia",
-    "href": "Cap2.html#referencia",
-    "title": "3  Instalar Git Bash en Windows",
-    "section": "3.1 Referencia",
-    "text": "3.1 Referencia\n\nGuia de instalacion de Git Bash"
+    "objectID": "2Planificaciondeproyectos.html#referencias",
+    "href": "2Planificaciondeproyectos.html#referencias",
+    "title": "2  Organización de proyectos metagenómicos",
+    "section": "2.2 Referencias",
+    "text": "2.2 Referencias\nNo olvides las referencias",
+    "crumbs": [
+      "**Sección 1** - Organización de proyectos metagenómicos",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Organización de proyectos metagenómicos</span>"
+    ]
   },
   {
-    "objectID": "Cap3.html#paso-1.-generar-una-llave-pública",
-    "href": "Cap3.html#paso-1.-generar-una-llave-pública",
-    "title": "4  Conectar a GitHub con SSH",
-    "section": "4.1 Paso 1. Generar una llave pública",
-    "text": "4.1 Paso 1. Generar una llave pública\n\n\n\n\n\n\nActividad (15 min)\n\n\n\nDeberan contar con:\n\nUna cuenta en GitHub\nR y RStudio actualizados\nGit instalado\nColoca en la terminal la siguiente información para generar una clave con el mismo correo que usaste para registrar tu cuenta en GitHub.\nssh-keygen -t ed25519 -C \"your_email@example.com\"\nNOTA: Si no cuentas con ssh-keygen instalado, primero corre este código.\nsudo apt-get install ssh-keygen\n\n\n\nCuando ejecutes el programa, te va a preguntar si quieres generar una frase, identificar y como quieres nombrar la llave. Si no quieres complicarte presiona 3 veces ENTER, hasta que te parezca una pantalla como al siguiente:\n\nPosteriormente, tendras una carpeta llamada .ssh/, entra en esa carpeta y tendras dos archivos, si no los renombraste tendran el nombre de id_ed25519.\n\nid_ed25519: llave local, no la vamos a usar. Tampoco la compartas.\nid_ed25519.pub : llave publica. La usaremos para copiarla en los servidores que usaremos.\n\nVamos a abrir la terminal y vamos a ver el contenido de la carpeta .ssh/:\nls .ssh/"
+    "objectID": "3DatosdeNCBI.html",
+    "href": "3DatosdeNCBI.html",
+    "title": "3  Operaciones en archivos y carpetas",
+    "section": "",
+    "text": "Iremos haciendo las operaciones en los archivos fastq\nuso de wildcards en combinación con comandos básicos.\nejemplo:\ncd ~/dc_workshop/data/untrimmed_fastq\n $ ls *.fastq\nout JC1A_R1.fastq JP4D_R1.fastq\nOtros shortcuts como crtl + D, history o clear (ctrl + L)\nEn history !260 para repetir la línea 260 (Para comandos muy elaborados, tener un ejemplo antes de ver este short cut)\nlectura de archivos cat, less (funciones de las teclas espacio, b, g, G y q), manual, checar sus diferencias.\nHEAD vs TAIL. (comienza uso de las flags, por ejemplo -n 10 que lee 10 líneas en el archivo)\nDetalles del formato FASTQ\ncopiar archivos, crear directorios, mover y renombrar archivos. Enfasis en tener cuidado con sobreescribir archivos.\nBORRAR\nCopiar ejercicio 1, Make backup folder with write-protected permissions",
+    "crumbs": [
+      "**Sección 1** - Organización de proyectos metagenómicos",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Operaciones en archivos y carpetas</span>"
+    ]
   },
   {
-    "objectID": "Cap3.html#paso-2.-copiar-la-clave-ssh-pública",
-    "href": "Cap3.html#paso-2.-copiar-la-clave-ssh-pública",
-    "title": "4  Conectar a GitHub con SSH",
-    "section": "4.2 Paso 2. Copiar la clave SSH pública",
-    "text": "4.2 Paso 2. Copiar la clave SSH pública\n\nAccede a la terminal en tu computadora.\nCopia la clave SSH generada anteriormente usando el siguiente comando:\n\ncat ~/.ssh/id_ed25519.pub\nEste comando mostrará tu clave pública en la terminal.\n\nSelecciona y copia toda la clave que aparece en la terminal. Asegúrate de copiar desde ssh-rsa hasta el final de tu correo electrónico."
+    "objectID": "1IntroduccionnavigationShell.html",
+    "href": "1IntroduccionnavigationShell.html",
+    "title": "4  Introducción a Shell",
+    "section": "",
+    "text": "4.1 Preparación del directorio de trabajo\nUn Shell es un programa de computador que presenta una interfaz en línea de comando que permite ejecutar funciones en el computador utilizando comandos especiales en vez de tener un control a través de una interfaz gráfica que combina el uso de un ratón o mouse y un teclado de computador.\nINSERTAR FOTO\nCOMENZAR CON CONEXIÓN AL SERVIDOR (10 minutos)\nPath relativo y absoluto\nAlgunos comandos cd, mkdir, pwd\nejercicio (5 minutos) en equipos de encontrar el archivo.txt y poner el path absoluto de la ubicación del archivo.\nRepaso de comandos",
+    "crumbs": [
+      "**Sección 2** - Introducción a línea de comandos",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introducción a Shell</span>"
+    ]
   },
   {
-    "objectID": "Cap3.html#paso-3.-agregar-la-clave-ssh-a-tu-cuenta-de-github",
-    "href": "Cap3.html#paso-3.-agregar-la-clave-ssh-a-tu-cuenta-de-github",
-    "title": "4  Conectar a GitHub con SSH",
-    "section": "4.3 Paso 3. Agregar la clave SSH a tu cuenta de GitHub",
-    "text": "4.3 Paso 3. Agregar la clave SSH a tu cuenta de GitHub\n\nInicia sesión en GitHub en tu navegador.\nHaz clic en tu foto de perfil en la esquina superior derecha y selecciona “Settings” (Configuración).\nEn el menú lateral izquierdo, selecciona “SSH and GPG keys”.\nHaz clic en el botón verde “New SSH key”.\nEn el campo “Title”, ingresa un nombre descriptivo para tu clave (por ejemplo, “Mi computadora personal”).\nEn el campo “Key”, pega la clave SSH que copiaste previamente de la terminal.\nHaz clic en “Add SSH key” para guardar la clave."
+    "objectID": "1IntroduccionnavigationShell.html#preparación-del-directorio-de-trabajo",
+    "href": "1IntroduccionnavigationShell.html#preparación-del-directorio-de-trabajo",
+    "title": "4  Introducción a Shell",
+    "section": "",
+    "text": "Ruta / Camino absoluto\ncd /home/usuario/data/\nRuta / Camino relativo\ncd ../ # Ir a la carpeta anterior",
+    "crumbs": [
+      "**Sección 2** - Introducción a línea de comandos",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introducción a Shell</span>"
+    ]
   },
   {
-    "objectID": "Cap3.html#paso-4.-configurar-rstudio-para-usar-git-bash-como-terminal",
-    "href": "Cap3.html#paso-4.-configurar-rstudio-para-usar-git-bash-como-terminal",
-    "title": "4  Conectar a GitHub con SSH",
-    "section": "4.4 Paso 4. Configurar RStudio para usar Git Bash como terminal",
-    "text": "4.4 Paso 4. Configurar RStudio para usar Git Bash como terminal\n\nAbre RStudio.\nDirígete a Tools (Herramientas) en la barra superior y selecciona Global Options (Opciones globales).\nEn el menú de opciones globales, selecciona la pestaña Terminal.\nEn el campo New terminal open with, selecciona Git Bash.\n\nHaz clic en Apply y luego en OK."
+    "objectID": "1IntroduccionnavigationShell.html#comandos-básicos",
+    "href": "1IntroduccionnavigationShell.html#comandos-básicos",
+    "title": "4  Introducción a Shell",
+    "section": "4.2 Comandos básicos",
+    "text": "4.2 Comandos básicos\n\n\n\n\n\n\n\n\nComandos\nInformación\nArgumentos\n\n\n\n\nssh\nConexión a servidores\nssh usuario@servidor.mx\n\n\nls\nObservar el contenido de los archivos en una carpeta\nls directorio/\n\n\ncd\nMoverse de directorios\ncd /home/usuario/data/\n\n\nmkdir\nCrear un nuevo directorio\nmkdir data\n\n\nrmdir\nEliminar el directorio\nrmkdir -rf data\n\n\nnano/vim\nEditores de texto plano\nnano Archivo.txt / vim Archivo.txt\n\n\ncp\nCopiar archivos\ncp Archivo1.txt /home/usuario/data/\n\n\nmv\nMover un archivo o carpeta\n\n\n\necho\nPara llamar y/o declarar variables\necho “Hello world”\n\n\nchmod\nCambiar permisos del usuario\nchmod 777 data/\n\n\nrsync\nDescargar o subir archivos\n\n\n\nscp\nDescargar o subir archivos",
+    "crumbs": [
+      "**Sección 2** - Introducción a línea de comandos",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introducción a Shell</span>"
+    ]
   },
   {
-    "objectID": "Cap3.html#paso-5.-abrir-la-terminal-de-git-bash-en-rstudio",
-    "href": "Cap3.html#paso-5.-abrir-la-terminal-de-git-bash-en-rstudio",
-    "title": "4  Conectar a GitHub con SSH",
-    "section": "4.5 Paso 5. Abrir la terminal de Git Bash en RStudio",
-    "text": "4.5 Paso 5. Abrir la terminal de Git Bash en RStudio\nAhora, para abrir la terminal de Git Bash dentro de RStudio, solo tienes que:\n\nIr al Tools , hacer clic en Terminal y en abrir New terminal.\nDeberías ver que se abre una nueva sesión con Git Bash como la terminal predeterminada."
+    "objectID": "2Operacionesyexploraciondefastq.html",
+    "href": "2Operacionesyexploraciondefastq.html",
+    "title": "5  Operaciones en archivos y carpetas",
+    "section": "",
+    "text": "Iremos haciendo las operaciones en los archivos fastq\nuso de wildcards en combinación con comandos básicos.\nejemplo:\ncd ~/dc_workshop/data/untrimmed_fastq\n $ ls *.fastq\nout JC1A_R1.fastq JP4D_R1.fastq\nOtros shortcuts como crtl + D, history o clear (ctrl + L)\nEn history !260 para repetir la línea 260 (Para comandos muy elaborados, tener un ejemplo antes de ver este short cut)\nlectura de archivos cat, less (funciones de las teclas espacio, b, g, G y q), manual, checar sus diferencias.\nHEAD vs TAIL. (comienza uso de las flags, por ejemplo -n 10 que lee 10 líneas en el archivo)\nDetalles del formato FASTQ\ncopiar archivos, crear directorios, mover y renombrar archivos. Enfasis en tener cuidado con sobreescribir archivos.\nBORRAR\nCopiar ejercicio 1, Make backup folder with write-protected permissions",
+    "crumbs": [
+      "**Sección 2** - Introducción a línea de comandos",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Operaciones en archivos y carpetas</span>"
+    ]
   },
   {
-    "objectID": "Cap3.html#paso-6.-verificar-la-conexión",
-    "href": "Cap3.html#paso-6.-verificar-la-conexión",
-    "title": "4  Conectar a GitHub con SSH",
-    "section": "4.6 Paso 6. Verificar la conexión",
-    "text": "4.6 Paso 6. Verificar la conexión\nVuelve a la terminal y ejecuta el siguiente comando para verificar que tu clave SSH está correctamente configurada con GitHub:\nssh -T git@github.com\nEn caso de que se necesite, puedes especificar la llave que usaste:\nssh -i ~/.ssh/id_ed25519.pub -T git@github.com\nEl comando ssh -T git@github.com simplemente verifica que tu clave privada se está usando correctamente y que tu clave pública ha sido registrada en GitHub.\nSi es la primera vez que te conectas a GitHub con SSH, puede que veas un mensaje que te pregunte si deseas continuar conectándote. Escribe “yes”.\nSi todo está bien configurado, deberías ver un mensaje similar a este:\nHi username! You've successfully authenticated, but GitHub does not provide shell access.\nEsto confirmará que tu clave SSH se ha agregado correctamente a tu cuenta de GitHub y que la conexión es exitosa.\n\n4.6.1 Solución a Error de Configuración de Usuario en Git\nEl comando git config se utiliza para configurar opciones en Git, y los siguientes comandos en particular se usan para establecer tu nombre y correo electrónico globalmente en tu configuración de Git:\ngit config --global user.email \"you@example.com\"\ngit config --global user.name \"Your Name\"\n\ngit config --global user.email \"you@example.com\"\n\nEste comando configura tu dirección de correo electrónico, la cual será utilizada en todos tus commits de Git. El correo electrónico asociado con los commits es importante porque ayuda a identificar quién realizó qué cambios en el repositorio. –global significa que esta configuración se aplicará a todos los repositorios en tu máquina.\n\ngit config --global user.name \"Your Name\"\n\nEste comando establece tu nombre de usuario, que también se asociará con los commits que realices. Al igual que el correo electrónico, se utilizará en todos tus commits en cualquier repositorio de Git en tu máquina."
+    "objectID": "3Redireccion.html",
+    "href": "3Redireccion.html",
+    "title": "6  Conectar a GitHub con SSH",
+    "section": "",
+    "text": "buscando en archivos (uso de less y grep).\nAbreviaciones de los nucleótidos y N.\ncd ~/dc_workshop/data/untrimmed_fastq\nDeterminación de la calidad. Con grep? NNNNNNNNNNNN en JC1A_R2.fastq\nflags del -B1 y -A2\nCopiar ejercicio 1: Using grep (10 minutos) en\nRedirección de datos con “&gt;” bad_reads.txt\nwc bad_reads.txt\nEjercicio 2: uso de wc\nCombinacion de grep -b1 -a2 flags, redireccion",
+    "crumbs": [
+      "**Sección 2** - Introducción a línea de comandos",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Conectar a GitHub con SSH</span>"
+    ]
   },
   {
-    "objectID": "Cap3.html#referencias",
-    "href": "Cap3.html#referencias",
-    "title": "4  Conectar a GitHub con SSH",
-    "section": "4.7 Referencias",
-    "text": "4.7 Referencias\n\nHaydee tutorial: Temas Selectos de Análisis Numérico y Computación Científica: Computo científico para el análisis de datos\nAlejandra Medina tutorial: Control de versiones con GitHub y RStudio"
+    "objectID": "4Buclesscriptsdescarga.html",
+    "href": "4Buclesscriptsdescarga.html",
+    "title": "7  Bucles",
+    "section": "",
+    "text": "8 NANO and VIM for writting loops\nIntroduccion a Bucles\nIntroducción a Nano e introducción a VIM (meme fighting).\nInstrucciones básicas para ambos. copiar las de nano e incluir las vim.\nEjercicio 1 editar con nano y editar con vim. (10 minutos) equipos de 5",
+    "crumbs": [
+      "**Sección 2** - Introducción a línea de comandos",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Bucles</span>"
+    ]
   },
   {
-    "objectID": "Cap4.html#github-primero-rstudio-después",
-    "href": "Cap4.html#github-primero-rstudio-después",
-    "title": "5  Comandos usados en Github y RStudio",
-    "section": "5.1 GitHub primero, RStudio después…",
-    "text": "5.1 GitHub primero, RStudio después…\n\nCrea un repositorio en GitHub: mi_repositorio &gt; Public &gt; YES initialize this repository with a README &gt; clicken el gran botón verde “Create repository”\nEn RStudio crea un nuevo proyecto: File &gt; New Project &gt; Version Control &gt; Git. Ahi pega el URL del repositorio https://github.com/mi_usuario/mi_repositorio.git. Da click en Create Project.\n\nEsto nos generará los siguientes elementos:\n\nUn directorio nuevo\nUn repositorio Git enlazado a al repositorio de GitHub\nUn proyecto en RStudio\n\nCon este procedimiento ya no es necesario preocuparse por configurar controles remotos Git y rastrear ramas en la línea de comandos."
+    "objectID": "4Buclesscriptsdescarga.html#referencias",
+    "href": "4Buclesscriptsdescarga.html#referencias",
+    "title": "7  Bucles",
+    "section": "9.1 Referencias",
+    "text": "9.1 Referencias\n\nHaydee tutorial: Temas Selectos de Análisis Numérico y Computación Científica: Computo científico para el análisis de datos\nAlejandra Medina tutorial: Control de versiones con GitHub y RStudio",
+    "crumbs": [
+      "**Sección 2** - Introducción a línea de comandos",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Bucles</span>"
+    ]
   },
   {
-    "objectID": "Cap4.html#comentar-pull-y-push-en-rstudio",
-    "href": "Cap4.html#comentar-pull-y-push-en-rstudio",
-    "title": "5  Comandos usados en Github y RStudio",
-    "section": "5.2 Comentar, pull y push en Rstudio",
-    "text": "5.2 Comentar, pull y push en Rstudio\n\n\n\n\n\nCon la flecha azul podemos hacer pull (RECUERDA HACERLO ANTES DE HACER UN PUSH), y con la flecha verde un push. Para poder comentar y hacer push debemos marcar con una palomita mediante un click en las pequeñas cajas blancas de la columna Staged, damos click en commit lo cual nos abre la siguiente ventana.\n\nVolvemos a dar click en commit, y finalizamos con push (flecha verde)."
+    "objectID": "5Organizacionproyecto.html",
+    "href": "5Organizacionproyecto.html",
+    "title": "8  Organización de proyectos",
+    "section": "",
+    "text": "8.1 Referencias\nKey steps\nEjercicio 1: Making and organized file system (equipos de 5 x 5 minutos): Mensaje con pista: busqueda en el manual.\nDocumenta tu actividad en el proyecto\nhistory\nEjercicio 2: Crea un registro de los comandos que has utilizado el día de hoy.",
+    "crumbs": [
+      "**Sección 2** - Introducción a línea de comandos",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Organización de proyectos</span>"
+    ]
   },
   {
-    "objectID": "Cap4.html#pagina-de-inicio-en-github",
-    "href": "Cap4.html#pagina-de-inicio-en-github",
-    "title": "5  Comandos usados en Github y RStudio",
-    "section": "5.3 Pagina de inicio en GitHub",
-    "text": "5.3 Pagina de inicio en GitHub\n\n\n\n\n\n\nActividad\n\n\n\n\nEn GitHub, crea un repositorio con el mismo nombre de usuario. Ejemplo: Mi usuario es EveliaCoss y mi repositorio se llama EveliaCoss, dandome la siguiente liga https://github.com/EveliaCoss/EveliaCoss\nAgrega un README al repositorio con tu informacion. Por Default ya trae una plantilla, modificala y adaptala a tu gusto.\nVisualiza como cambia tu inicio en el Github.\nSincroniza el GitHub en RStudio y realiza los cambios desde ahi."
+    "objectID": "5Organizacionproyecto.html#referencias",
+    "href": "5Organizacionproyecto.html#referencias",
+    "title": "8  Organización de proyectos",
+    "section": "",
+    "text": "Haydee tutorial: Temas Selectos de Análisis Numérico y Computación Científica: Computo científico para el análisis de datos\nAlejandra Medina tutorial: Control de versiones con GitHub y RStudio\nWilson, et al. 2014. Best Practices for Scientific Computing. PLOS Biology\nEvelia Coss - tutorial Buenas practicas en R\nEvelia Coss - Make your CV tutorial",
+    "crumbs": [
+      "**Sección 2** - Introducción a línea de comandos",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Organización de proyectos</span>"
+    ]
   },
   {
-    "objectID": "Cap4.html#referencias",
-    "href": "Cap4.html#referencias",
-    "title": "5  Comandos usados en Github y RStudio",
-    "section": "5.4 Referencias",
-    "text": "5.4 Referencias\n\nHaydee tutorial: Temas Selectos de Análisis Numérico y Computación Científica: Computo científico para el análisis de datos\nAlejandra Medina tutorial: Control de versiones con GitHub y RStudio"
+    "objectID": "1IntroduccionRStudio.html",
+    "href": "1IntroduccionRStudio.html",
+    "title": "9  Introducción a R",
+    "section": "",
+    "text": "10 Insertar figura de RStudio:\nR se utiliza para nombrar un lenguaje de programación y el software que lee e interpreta las instrucciones escritas en el script. Se especializa en el análisis estadístico y la generación de gráficos.\nAlgunas de las ventajas de trabajar con R son:\nPor su parte, RStudio es el programa (en forma de interfaz gráfica) más popular para la escritura de scripts que además nos permite navegar por los archivos, inspeccionar variables y visualizar nuestros gráficos.\nExplicar cada una de las secciones.",
+    "crumbs": [
+      "**Sección 3** - Primeros pasos con R Studio",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Introducción a R</span>"
+    ]
   },
   {
-    "objectID": "Cap5.html#materiales-informativos",
-    "href": "Cap5.html#materiales-informativos",
-    "title": "6  Buenas practicas en R",
-    "section": "6.1 Materiales informativos",
-    "text": "6.1 Materiales informativos\n\nCurso de Joselyn Cristina Chávez Fuentes\nMe ayudo mucho este Video\nDocumentación de funciones de Andrés Arredondo Cruz\n\n💪 Estuve muy intensa viendo su codigo. Muchas gracias por tenerlos publico."
+    "objectID": "1IntroduccionRStudio.html#revisión-de-la-configuración",
+    "href": "1IntroduccionRStudio.html#revisión-de-la-configuración",
+    "title": "9  Introducción a R",
+    "section": "10.1 Revisión de la configuración",
+    "text": "10.1 Revisión de la configuración\nAl igual que en la Shell o línea de comandos, es recomendable mantener los datos relacionados en una sola carpeta. En RStudio, a esta carpeta se le llama directorio de trabajo y es donde se guardarán y buscarán los archivos. Cuando se necesite comprobar la ubicación del actual directorio de trabajo, se utiliza getwd().\nSi tu directorio de trabajo actual no es el esperado, puedes cambiarlo haciendo clic en el icono del engranaje azul en la opción Establecer como directorio de trabajo/Set as a working directory.",
+    "crumbs": [
+      "**Sección 3** - Primeros pasos con R Studio",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Introducción a R</span>"
+    ]
   },
   {
-    "objectID": "Cap5.html#un-algoritmo-nos-permite-resolver-un-problema",
-    "href": "Cap5.html#un-algoritmo-nos-permite-resolver-un-problema",
-    "title": "6  Buenas practicas en R",
-    "section": "6.2 Un algoritmo nos permite resolver un problema ⭐",
-    "text": "6.2 Un algoritmo nos permite resolver un problema ⭐\nUn algoritmo es un método para resolver un problema mediante una serie de pasos definidos, precisos y finitos.\n\nDefinido: si se sigue dos veces, se obtiene el mismo resultado. Es reproducible.\nPreciso: implica el orden de realización de cada uno de los pasos.\nFinito: Tiene un numero determinado de pasos, implica que tiene un fin.\n\n\nUn algoritmo podemos definirlo como un programa o software."
+    "objectID": "1IntroduccionRStudio.html#código-en-r",
+    "href": "1IntroduccionRStudio.html#código-en-r",
+    "title": "9  Introducción a R",
+    "section": "10.2 Código en R",
+    "text": "10.2 Código en R\nEn la consola se pueden escribir y ejecutar comandos de manera inmediata. Aquí se mostrarán los resultados de la ejecución de esos comandos (como en Shell). Puedes escribir instrucciones cuando veas signo “&gt;” en la consola y pulsar “Enter” para ejecutar, sin embargo estas órdenes se olvidarán al cerrar la sesión. Aquí entra en juego la reproducibilidad.\nPor ello es conveniente escribir los comandos que queremos guardar en nuestro editor de scripts y guardarlo periódicamente. Podemos ejecutar nuestras líneas de código en el script con el atajo Ctrl + Enter (Cmd + Return). De esta manera el comando de la línea actual será seleccionado y se enviará por la consola para su ejecución.\nEl tiempo puede ser enemigo o aliado de la memoria. Por ello es importante asegurarnos de recordar por qué escribimos qué comandos en nuestros scripts. Se pueden dejar comentarios (líneas de texto no ejecutables) comenzando una línea con #.",
+    "crumbs": [
+      "**Sección 3** - Primeros pasos con R Studio",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Introducción a R</span>"
+    ]
   },
   {
-    "objectID": "Cap5.html#para-escribir-un-buen-software-necesitas",
-    "href": "Cap5.html#para-escribir-un-buen-software-necesitas",
-    "title": "6  Buenas practicas en R",
-    "section": "6.3 Para escribir un buen software necesitas:",
-    "text": "6.3 Para escribir un buen software necesitas:\n\nEscribir código mantenible (maintainable code), usar control de versiones (version control) y rastreadores de problemas (issue trackers), revisiones de código (code reviews), pruebas unitarias (unit testing) y automatización de tareas (task automation).\nWilson, et al. 2014. PLOS Biology\n\nCon el fin de previnir retracciones.\n\n\n\n\n\n\nPasos para escribir un buen software\n\n\n\n\nAnálisis del problema / Definir el problema\nDiseño del algoritmo / Diseño del programa\nCodificación / Escribir el código\nCompilación y ejecución del programa\nVerificación / Realizar pruebas\nDepuración / Detectar los errores y corregirlos\n\n\nProgramacion defensiva\n\n\nDocumentación"
+    "objectID": "1IntroduccionRStudio.html#referencias",
+    "href": "1IntroduccionRStudio.html#referencias",
+    "title": "9  Introducción a R",
+    "section": "10.3 Referencias",
+    "text": "10.3 Referencias\nNo olvides las referencias",
+    "crumbs": [
+      "**Sección 3** - Primeros pasos con R Studio",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Introducción a R</span>"
+    ]
   },
   {
-    "objectID": "Cap5.html#paso-7-documentación",
-    "href": "Cap5.html#paso-7-documentación",
-    "title": "6  Buenas practicas en R",
-    "section": "6.4 Paso 7: Documentación",
-    "text": "6.4 Paso 7: Documentación\n\n\n\n\n\n\nNote\n\n\n\n\nAutor (author): Su nombre\nDia (date): Fecha de creación\nPaquetes (packages)\nDirectorio de trabajo (Working directory): En que carpeta se encuentra tu datos y programa.\nInformación descriptiva del programa (Description): ¿Para qué sirve el programa? Ej: El siguiente programa realiza la suma de dos numeros enteros a partir de la entrada del usuario y posteriormente la imprime en pantalla.\nUsage ¿Cómo se utiliza?\nArgumentos (Arguments)\n\nInformación de entrada (Data Inputs): Ej: Solo numeros enteros (sin decimales).\nInformación de salida (Outpus): Graficas, figuras, tablas, etc."
+    "objectID": "2Tiposdedatos.html",
+    "href": "2Tiposdedatos.html",
+    "title": "10  Estructuras de datos en R",
+    "section": "",
+    "text": "No importa cuán complejo sea nuestro análisis, todos los datos en R pertenecerán a alguno de los siguientes tipos:\n\ndoble\nentero\ncomplejo\nlógico\ncaracter\n\nEste concepto nos ayudará a aprender una de las herramientas más poderosas de R; la manipulación de diversos tipos de datos en conjunto en lo que se denomina un data-frame.\nAdemás de los tipos de datos, existen diferentes maneras de organizar los datos en R, denominadas estructuras de datos. La estructura de datos más simple es un vector, una secuencia de datos del mismo tipo. Un vector se puede crear con la función c() .\nchar_vector&lt;-c(\"a\",\"b\",\"c\",\"c\",\"d\")\ntypeof(char_vector)\n“character”\nUna estructura de datos más compleja es el factor, que contiene nombres de las categorías (llamados niveles) y una secuencia de ocurrencias de dichas categorías.\nchar_factor&lt;-as.factor(char_vector)\nchar_factor\nlevels: a b c\nEjercicio en etherpad:\n¿Qué tipo de datos están presentes en cada uno de los siguientes vectores?\nvec1&lt;-c(\"34\",\"127\", \"26-7i\")\nvec2&lt;-c(4L,12L,152L)\nvec3&lt;-c(34,147,26+7i)\nNota: Si usamos “” para definir un objeto, R lo leerá como un caracter, independientemente de que estemos escribiendo números. La mayúscula después de un número indica que R lo guardará como entero.\n\n11 Manipulación de data frames\nLos data frames son estructuras de datos potentes en R. Podemos comenzar a crear un conjunto de datos simulado:\nmusician &lt;- data.frame(people = c(\"Medtner\", \"Radwimps\", \"Shakira\"),\n                         pieces = c(722,187,68),\n                         likes = c(0,1,1))\n&gt; musician\nEl contenido de nuestro nuevo objeto:\n     people pieces likes \n   1  Medtner    722     0 \n   2 Radwimps    187     1 \n   3  Shakira     68     1\nPara comprobar que nuestro objeto es un data frame podemos usar class().\nclass(musician)\n\"data.frame\"\nUn dataframe es una colección de vectores (una lista), cuyos componentes deben ser del mismo tipo de datos dentro de cada vector.\nINSERTAR FIGURA3. estructura de marco de datos creado.\nPodemos explorar nuestro objeto extrayendo columnas con el operador $.\nmusician$people\nPodemos también extraer información de un lugar específico en nuestros datos utilizando la nomenclatura de matriz [-,-] donde el primer número dentro de los corchetes especifica el número de fila y el segundo el número de columna:\nINSERTAR FIGURA 4.\nmusician[3,2]",
+    "crumbs": [
+      "**Sección 3** - Primeros pasos con R Studio",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Estructuras de datos en R</span>"
+    ]
   },
   {
-    "objectID": "Cap5.html#puntos-claves-para-buenas-practicas-en-bioinfo",
-    "href": "Cap5.html#puntos-claves-para-buenas-practicas-en-bioinfo",
-    "title": "6  Buenas practicas en R",
-    "section": "6.5 Puntos claves para buenas practicas en bioinfo ⭐",
-    "text": "6.5 Puntos claves para buenas practicas en bioinfo ⭐\n\nEscriba programas para personas, no para computadoras (Documenta qué hace y por qué). - Se coherente en la nomenclatura, indentación y otros aspectos del estilo.\nDivide los programas en funciones cortas de un solo propósito. 💻 📚\nNo repitas tu código. Crea pasos reproducibles o que se repitan por si solas. ➰\nPlanifique los errores (Programacion defensiva) 🚩\nOptimice el software sólo después de que funcione correctamente. - Si funciona no lo modifiques, simplificalo.\nColaborar - Busque siempre bibliotecas de software bien mantenidas que hagan lo que necesita. 👥\n\n\n\n\n\n\n\nEjemplo de como realizo mis documentos 💜\n\n\n\nAqui les dejo el script que les doy a mis alumnos VisualizacionDatos.R del curso de Análisis de datos de RNA-Seq."
+    "objectID": "3Graficandoconggplot.html",
+    "href": "3Graficandoconggplot.html",
+    "title": "11  Creando gráficos con ggplot2",
+    "section": "",
+    "text": "11.1 Librerías de R\nHasta ahora hemos usado las funciones básicas incluidas en el lenguaje R. Sin embargo, R puede usar grupos de funciones para diversos propósitos. Estos se llaman paquetes o librerías. Una librería es una familia de unidades de código con funciones, clases y variables específicas que juntas implementan una serie de tareas relacionadas.\nInstalar una librería es como comprar un nuevo equipo de laboratorio. Cargar un paquete es como sacar ese equipo de su caja y colocarlo en el espacio de trabajo. Los paquetes proporcionan funcionalidad adicional al código base de R, similar a como el nuevo equipo de laboratorio agrega funcionalidad a un espacio de laboratorio.\nR tiene su propio sisteme de gráficos básico pero usaremos una librería que nos ayudará a crear figuras más artísticas: ggplot2.\nInstalamos la librería\nAhora que está instalada, debemos cargarla. Siempre se recomienda cargar todas las bibliotecas que se usarán en un script al inicio de la sesión.",
+    "crumbs": [
+      "**Sección 3** - Primeros pasos con R Studio",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Creando gráficos con ggplot2</span>"
+    ]
   },
   {
-    "objectID": "Cap5.html#pagina-web-en-github",
-    "href": "Cap5.html#pagina-web-en-github",
-    "title": "6  Buenas practicas en R",
-    "section": "6.6 Pagina web en GitHub",
-    "text": "6.6 Pagina web en GitHub\n\n\n\n\n\n\nActividad\n\n\n\n\nEn GitHub, crea un repositorio con el mismo nombre de usuario y agregale “.github.io”. Ejemplo: Mi usuario es EveliaCoss y mi repositorio se llama “EveliaCoss.github.io”, dandome la siguiente liga https://github.com/EveliaCoss/EveliaCoss.github.io\nDescarga el archivo index.Rmd y modificalo con tu informacion en tu repositorio.\nNo olvides sincronizar el GitHub en RStudio y realiza los cambios desde ahi.\nEn GitHub, convierte en pagina web tu repositorio en Settings &gt; Pages &gt; Branch cambia a Main y root &gt; Save"
+    "objectID": "3Graficandoconggplot.html#librerías-de-r",
+    "href": "3Graficandoconggplot.html#librerías-de-r",
+    "title": "11  Creando gráficos con ggplot2",
+    "section": "",
+    "text": "install.packages(\"ggplot2\")\n\nlibrary(ggplot2)",
+    "crumbs": [
+      "**Sección 3** - Primeros pasos con R Studio",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Creando gráficos con ggplot2</span>"
+    ]
   },
   {
-    "objectID": "Cap5.html#top-github-users-by-public-contributions-in-mexico",
-    "href": "Cap5.html#top-github-users-by-public-contributions-in-mexico",
-    "title": "6  Buenas practicas en R",
-    "section": "6.7 Top GitHub Users By Public Contributions in Mexico",
-    "text": "6.7 Top GitHub Users By Public Contributions in Mexico"
+    "objectID": "3Graficandoconggplot.html#visualización-con-ggplot2",
+    "href": "3Graficandoconggplot.html#visualización-con-ggplot2",
+    "title": "11  Creando gráficos con ggplot2",
+    "section": "11.2 Visualización con ggplot2",
+    "text": "11.2 Visualización con ggplot2\nggplot2 se creó con la idea de que cualquier gráfico puede expresarse con tres componentes:\n\nConjunto de datos\nCoordenadas\nConjunto de geoms (aka la representación visual de los datos)\n\nEstas geoms pueden considerarse capas superpuestas, por lo que es necesario tener especial cuidado al mostrar capas de información útiles que transmitan un mensaje.\nINSERTAR https://r.qcbs.ca/workshop03/book-en/images/gglayers.png\nmusician\nIntentaremos crear una figura sólo con los datos y coordenadas de los componentes.\nggplot(data= musician,\n       mapping = aes(x = people, y = pieces))\nINSERTAR FIGURA 1.\nDescribiendo el código anterior. Primero llamamos a la función ggplot. Esto le dirá a R que queremos crear una gráfica y los parámetros indicados dentro de esta función se aplicarán a todas las capas del gráfico. Dimos dos argumentos al código:\n\nLos datos que queremos mostrar en nuestra figura, es decir data=musician\nLa forma de mostrarlos en el gráfico, es decir, mapping = aes(x=people, y=pieces), que le indicará a ggplot cómo se mapearán las variables en el gráfico.\n\nEn este caso x es el nombre de los grupos, mientras que y es el número de piezas que cada uno de ellos compuso. Con esto hemos hecho la base de nuestro gráfico, pero no podemos ver los datos porque no hemos elegido una forma gráfica de representarlos (geoms).\nggplot(data= musician,\n        mapping = aes(x = people, y = pieces))+\n  geom_col()\nINSERTAR FIGURA\nAlgunos elementos del gráfico pueden ser informativos o meramente decorativos. si queremos que sean informativos deben estar dentro de la aes() e indicar qué información mostrarán. si queremos que sean decorativos, deben estar fuera de aes(). Veamos como funciona.\nggplot(data= musician,\n       mapping = aes(x = people, y = pieces))+\n  geom_col(color = \"blue\")\nINSERTAR FIGURA\nggplot(data= musician,\n       mapping = aes(x = people, y = pieces))+\n  geom_col(aes(color= likes))\nINSERTAR FIGURA\n\n11.2.1 Pidiendo ayuda\nSi alguna vez tienes problemas para correr alguna función, puedes usar el signo ? para conseguir más información desde la interfaz de RStudio. Por ejemplo ??barplot abrirá la ventana de ayuda en el panel derecho inferior.",
+    "crumbs": [
+      "**Sección 3** - Primeros pasos con R Studio",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Creando gráficos con ggplot2</span>"
+    ]
   },
   {
-    "objectID": "Cap5.html#referencias",
-    "href": "Cap5.html#referencias",
-    "title": "6  Buenas practicas en R",
-    "section": "6.8 Referencias",
-    "text": "6.8 Referencias\n\nHaydee tutorial: Temas Selectos de Análisis Numérico y Computación Científica: Computo científico para el análisis de datos\nAlejandra Medina tutorial: Control de versiones con GitHub y RStudio\nWilson, et al. 2014. Best Practices for Scientific Computing. PLOS Biology\nEvelia Coss - tutorial Buenas practicas en R\nEvelia Coss - Make your CV tutorial"
+    "objectID": "3Graficandoconggplot.html#el-cielo-es-el-límite",
+    "href": "3Graficandoconggplot.html#el-cielo-es-el-límite",
+    "title": "11  Creando gráficos con ggplot2",
+    "section": "11.3 El cielo es el límite",
+    "text": "11.3 El cielo es el límite\nExisten muchas otras geoms por explorar. Claro que necesitamos un data frame mucho más complejo para poder hacer figuras más complejas. También depende cómo quieres mostrar tus datos o qué quieres mostrar.\n\n11.3.1 Referencias\nINSERTAR REFERENCIAS\nReproducibilidad genómica en R",
+    "crumbs": [
+      "**Sección 3** - Primeros pasos con R Studio",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Creando gráficos con ggplot2</span>"
+    ]
+  },
+  {
+    "objectID": "1Iniciandomiproyectometagenomico.html",
+    "href": "1Iniciandomiproyectometagenomico.html",
+    "title": "12  Procesamiento y visualización de datos",
+    "section": "",
+    "text": "12.0.1 Introducción\nMuchas de las herramientas para el análisis metagenómico se utilizan en línea de comando por las siguientes razones:\nEn esta sección aplicarás los conocimientos para implementar un workflow común en metagenómica: identificar Unidades Taxonómicas Operacionales (OTU) en muestras tomadas de metagenomas.\nComenzaremos con un conjunto de lecturas/reads secuenciados en archivos con formato .fastq. Realizaremos algunos pasos de control de calidad, ensamblaremos los reads en contigs y finalizaremos identificando y visualizando los OTUs en estas muestras.\nToma en cuenta que a medida que avanzamos en esta sección, aunque no utilices el mismo flujo de trabajo, aprenderás a implementar herramientas bioinformáticas importantes en línea de comandos.",
+    "crumbs": [
+      "**Sección 4** - Procesamiento y visualización de datos metagenómicos",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Procesamiento y visualización de datos</span>"
+    ]
+  },
+  {
+    "objectID": "1Iniciandomiproyectometagenomico.html#comienza-tu-proyecto-metagenómico",
+    "href": "1Iniciandomiproyectometagenomico.html#comienza-tu-proyecto-metagenómico",
+    "title": "12  Procesamiento y visualización de datos",
+    "section": "12.1 Comienza tu proyecto metagenómico",
+    "text": "12.1 Comienza tu proyecto metagenómico\n\n12.1.1 Metagenómica\nLos metagenómas son colecciones de secuencias genómicas de varios microorganismos que coexisten en un determinado espacio. Nos brindan información sobre la composición taxonómica, metabolómica e incluso funcional de las comunidades que estudiamos. Los metagenómas se emplean habitualmente para investigar la ecología de nichos, como por ejemplo el intestino humano o el fondo marino.\nDado que los metagenomas son mezclas de secuencias que perteneven a diferentes especies, un flujo de trabajo metagenómico está diseñado para responder dos preguntas:\n\n¿Qué especies están representadas en la muestra?\n¿Qué son capaces de hacer?\n\nPara determinar qué especies están presentes en un nicho, debemos realizar una asignación taxonómica de las secuencias obtenidas. Para determinar sus capacidades podemos examinar los genes codificados directamente en el metagenoma o encontrar genes asociados a las especies encontradas. Para determinar qué metodología usar es fundamental saber qué preguntas queremos responder.\n\n\n12.1.2 Shotgun y amplicon\nExisten dos rutas para obtener información de una muestra:\n\nMetagenómica por Shotgun\nMetabarcoding\n\nCon la metagenómica por Shotgun, secuenciamos partes aleatorias (idealmente todas las partes del genoma) de los genomas presentes en una muestra. Podemos buscar el origen de estas piezas (es decir, su taxonomía) y tratar de encontrar también a qué parte corresponden. Es posible obtener genomas individuales completos de un metagenoma shotgun (MAGs). Sin embargo, el ensamblaje de MAG requiere muchas secuencias genómicas de un organismo (gran profundidad de secuenciación), lo cual se vuelve un reto cuando nuestra especie de interés no es muy abundante en la muestra o ambiente. Finalmente la secuenciación es costosa y hacer réplicas técnicas y biológicas puede ser prohibitivamente costoso.\nPor el contrario, el metabarcoding suele ser una técnica más económica. Este menor coste se debe a las especificaciones de la técnica, la cual consiste en la recopilación de pequeños fragmentos genómicos presentes en la comunidad y amplificados mediante PCR. La conservación de regiones genómicas entre especies es la razón por la que los amplicones más populares para bacterias utilizados en esta metodología con los 16S. Sin embargo, esta técnica se limita a ofrecernos la taxonomía del organismo. Interponiendo la posibilidad de proveer información metabólica.\nINSERTAR FIGURA DE FLUJO DE TRABAJO\nSobre los metadatos\nEn la mayoría de los casos, las diferencias observadas al comparar metagenomas pueden correlacionarse con los metadatos, por lo que debemos dedicar una sección de nuestro diseño experimental a los metadatos que esperamos recopilar y registrar.\nLos datos que vamos a utilizar son de un estudio sobre la respuesta de la comunidad bacteriana de Cuatro Ciénegas al enriquecimiento de nutrientes. La comparación entre comunidades bacterianas demostró que algunos rasgos genómicos como el tamaño medio del genoma, el contenido de GC, el número total de genes de ARNt y ARNr y el sesgo en el uso de codones, se modificaron significativamente cuando la comunidad bacteriana se sometió a los distintos tratamientos (entorno natural, oligotrófico, deficiente en fósforo y un tratamiento de fertilización).\nDe acuerdo con los resultados de este estudio, ¿qué estrategia crees que utilizaron en este estudio?\n\n\n12.1.3 En Etherpad:\nSegún la importancia de los metadatos, ¿qué otra información puedes recomendar agregar a la tabla de metadatos?\nNota:\nLos resultados de este estudio, las secuencias sin procesar y los metadatos se pueden encontrar en el SRA del NCBI y se almacenaron en el BioProject PRJEB22811.\nNota:\nOtras bases de datos metagenómicos públicas son: MG-RAST, MGnify, GM Repo, Marine Metagenomics Portal y Terrestrial Metagenome DB.",
+    "crumbs": [
+      "**Sección 4** - Procesamiento y visualización de datos metagenómicos",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Procesamiento y visualización de datos</span>"
+    ]
+  },
+  {
+    "objectID": "1Iniciandomiproyectometagenomico.html#referencias",
+    "href": "1Iniciandomiproyectometagenomico.html#referencias",
+    "title": "12  Procesamiento y visualización de datos",
+    "section": "12.2 Referencias",
+    "text": "12.2 Referencias\nEpisodios 2 y 3 (Análisis de control de calidad y filtrado de secuencias) son adaptaciones de los episodios correspondientes en la lección/taller Data Wrangling and Processing for Genomics en The Carpentries.",
+    "crumbs": [
+      "**Sección 4** - Procesamiento y visualización de datos metagenómicos",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Procesamiento y visualización de datos</span>"
+    ]
+  },
+  {
+    "objectID": "2Controldecalidad.html",
+    "href": "2Controldecalidad.html",
+    "title": "13  Control de calidad",
+    "section": "",
+    "text": "13.0.1 Flujos de análisis bioinformático en metagenómica\nAl trabajar con datos de secuenciación, los reads/lecturas que obtienes del secuenciador deben pasar a través de varias herramientas para generar el resultado final deseado. La ejecución de este conjunto de herramientas en un orden específico se conoce como pipeline o flujo de análisis.\nINSERTAR FOTO DE PIPELINE\nEstos pipelines adoptan un enfoque plug-and-play en el sentido de que el archivo de salida de uno de ellos es fácilmente convertido en archivo de salida para el siguiente.",
+    "crumbs": [
+      "**Sección 4** - Procesamiento y visualización de datos metagenómicos",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Control de calidad</span>"
+    ]
+  },
+  {
+    "objectID": "2Controldecalidad.html#referencias",
+    "href": "2Controldecalidad.html#referencias",
+    "title": "13  Control de calidad",
+    "section": "13.1 Referencias",
+    "text": "13.1 Referencias\nAquí puedes encontrar mayor información sobre cada una de las secciones del resultado de FastQC.",
+    "crumbs": [
+      "**Sección 4** - Procesamiento y visualización de datos metagenómicos",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Control de calidad</span>"
+    ]
   }
 ]

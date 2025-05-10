@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Aaron E. Jaime y Yahir Cabrera">
-<meta name="dcterms.date" content="2025-05-22">
 
-<title>Workshop</title>
+<title>10&nbsp; Estructuras de datos en R – Workshop</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -32,7 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./1Ordendedatos.html" rel="next">
+<link href="./3Graficandoconggplot.html" rel="next">
+<link href="./1IntroduccionRStudio.html" rel="prev">
 <link href="./rsgMexico.jpeg" rel="icon" type="image/jpeg">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -85,7 +118,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Información general</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1IntroduccionRStudio.html"><strong>Sección 3</strong> - Primeros pasos con R Studio</a></li><li class="breadcrumb-item"><a href="./2Tiposdedatos.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Estructuras de datos en R</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -139,7 +172,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Información general</span></a>
   </div>
 </li>
@@ -230,7 +263,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2Tiposdedatos.html" class="sidebar-item-text sidebar-link">
+  <a href="./2Tiposdedatos.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Estructuras de datos en R</span></span></a>
   </div>
 </li>
@@ -275,35 +308,23 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#información-general" id="toc-información-general" class="nav-link active" data-scroll-target="#información-general">Información general</a></li>
+  <li><a href="#manipulación-de-data-frames" id="toc-manipulación-de-data-frames" class="nav-link active" data-scroll-target="#manipulación-de-data-frames"><span class="header-section-number">11</span> Manipulación de data frames</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1IntroduccionRStudio.html"><strong>Sección 3</strong> - Primeros pasos con R Studio</a></li><li class="breadcrumb-item"><a href="./2Tiposdedatos.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Estructuras de datos en R</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Workshop</h1>
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Estructuras de datos en R</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Aaron E. Jaime y Yahir Cabrera </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">May 22, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -313,141 +334,51 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="figures/rsgMexico.jpeg" class="img-fluid" width="200"></p>
-</div>
-</div>
-</div>
-<section id="información-general" class="level1 unnumbered">
-<h1 class="unnumbered">Información general</h1>
+<p>No importa cuán complejo sea nuestro análisis, todos los datos en R pertenecerán a alguno de los siguientes tipos:</p>
 <ul>
-<li><div class="tabset-margin-container"></div><div class="panel-tabset" data-group="globalInfo">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Sobre el curso 📌</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Requisitos previos</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Agenda 📆</a></li></ul>
-<div class="tab-content" data-group="globalInfo">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>El contenido de este curso se realizó en base al material realizado por The Carpentries-lab.</p>
-<ul>
-<li><p><strong>Fechas:</strong> 22 y 23 de Mayo del 2025</p></li>
-<li><p><strong>Duración del curso:</strong> 12 horas</p></li>
-<li><p><strong>Horario:</strong> 9 am a 4 pm</p></li>
+<li>doble</li>
+<li>entero</li>
+<li>complejo</li>
+<li>lógico</li>
+<li>caracter</li>
 </ul>
-<h4 id="instructores" class="anchored"><strong>Instructores:</strong></h4>
-<ul>
-<li><strong>Aaron Espinosa Jaime -</strong> UGA, Cinvestav Irapuato.</li>
-<li><strong>José Yahir Cabrera González</strong> - Instituto de Biociencias, UNACH Tapachula.</li>
-</ul>
-<p>Ayudantes:</p>
-<ul>
-<li><p><strong>Mariana Devon -</strong> Estudiante de maestría, UAM.</p></li>
-<li><p><strong>Andrés Arredondo</strong> - Ciencias Agrogenómicas, CCM-UNAM.</p></li>
-</ul>
-<h4 id="resumen" class="anchored"><strong>Resumen:</strong></h4>
-<p>Este taller tiene como objetivo principal <strong>abordar los conceptos básicos, habilidades y herramientas para trabajar con datos metagenómicos.</strong> Este taller comprende varias lecciones que incluyen desde la <strong>organización y buenas prácticas, introducción a la línea de comandos y su aplicación para análisis de calidad y por último el uso de R studio para comparar diversidad entre las muestras de estudio.</strong></p>
-<h4 id="objetivos" class="anchored"><strong>Objetivos:</strong></h4>
-<p>En este taller aprenderás a:</p>
-<ul>
-<li><p>Organizar y colectar metadatos para tu proyecto metagenómico.</p></li>
-<li><p>Acceder a bases de datos públicos.</p></li>
-<li><p>Trabajar y vincularte a servidores remotos.</p></li>
-<li><p>Navegar en el contenido de tus carpetas desde la terminal de Shell.</p></li>
-<li><p>Modificar, crear y mover archivos desde la terminal.</p></li>
-<li><p>Utilizar y familiarizarte con la interfaz de R studio.</p></li>
-<li><p>Descargar y emplear librerías de R.</p></li>
-<li><p>Analizar datos metagenómicos crudos.</p></li>
-<li><p>Interpretar tus resultados.</p></li>
-</ul>
-<h2 id="citar-y-reutilizar-el-material-del-curso" class="anchored" data-anchor-id="información-general">Citar y reutilizar el material del curso</h2>
-<p>Los datos del curso se pueden reutilizar y adaptar libremente con la debida atribución. Todos los datos de los cursos de estos repositorios están sujetos a la licencia <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<ul>
-<li><p>Debes contar con una computadora o laptop con acceso a internet. No se recomienda el uso de tablets para este taller.</p></li>
-<li><p>No es necesario que sepas utilizar la terminal o R studio. Sin embargo, es necesario que tengas los conocimientos básicos de microbiología y conceptos de biología.</p></li>
-<li><p>No es necesario descargar R studio y/o emuladores de terminal de Unix para este taller.</p></li>
-</ul>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<table class="caption-top table">
-<colgroup>
-<col style="width: 73%">
-<col style="width: 20%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Tema</th>
-<th style="text-align: center;">Tiempo</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>🔷 <strong>Sección</strong> <strong>1 - (11:30 - 13:30 h) (7 marzo)</strong></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td><ul>
-<li>Creación de una cuenta en GitHub</li>
-</ul></td>
-<td style="text-align: center;">5 min</td>
-</tr>
-<tr class="odd">
-<td><ul>
-<li>Introducción a Git / GitHub</li>
-</ul></td>
-<td style="text-align: center;">15 min</td>
-</tr>
-<tr class="even">
-<td><ul>
-<li><strong>Actividad 1</strong>: Sincronización y llaves</li>
-</ul></td>
-<td style="text-align: center;">15 min</td>
-</tr>
-<tr class="odd">
-<td>☕ <em>Coffee break (10 min) - (12:00-12:10) ☕</em></td>
-<td style="text-align: center;">10 min</td>
-</tr>
-<tr class="even">
-<td>🔷&nbsp; <strong>Sección</strong> <strong>2 - (12:10-13:00 h)</strong></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td><ul>
-<li>Comandos usados en Github y RStudio</li>
-</ul></td>
-<td style="text-align: center;">25 min</td>
-</tr>
-<tr class="even">
-<td><ul>
-<li><strong>Actividad 2:</strong> Pagina de inicio en GitHub</li>
-</ul></td>
-<td style="text-align: center;">15 min</td>
-</tr>
-<tr class="odd">
-<td>🔷&nbsp; <strong>Sección 3 - (11:30 - 13:30 h) (14 marzo)</strong></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td><ul>
-<li>Buenas practicas en R</li>
-</ul></td>
-<td style="text-align: center;">30 min</td>
-</tr>
-<tr class="odd">
-<td><ul>
-<li><strong>Actividad 3:</strong> Pagina web en GitHub</li>
-</ul></td>
-<td style="text-align: center;">1:30 min</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div></li>
-</ul>
+<p>Este concepto nos ayudará a aprender una de las herramientas más poderosas de R; la manipulación de diversos tipos de datos en conjunto en lo que se denomina un <strong>data-frame.</strong></p>
+<p>Además de los tipos de datos, existen diferentes maneras de organizar los datos en R, denominadas estructuras de datos. La estructura de datos más simple es un vector, una secuencia de datos del mismo tipo. Un vector se puede crear con la función <code>c()</code> .</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>char_vector<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"a"</span>,<span class="st">"b"</span>,<span class="st">"c"</span>,<span class="st">"c"</span>,<span class="st">"d"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(char_vector)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>“character”</p>
+<p>Una estructura de datos más compleja es el factor, que contiene nombres de las categorías (llamados niveles) y una secuencia de ocurrencias de dichas categorías.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>char_factor<span class="ot">&lt;-</span><span class="fu">as.factor</span>(char_vector)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>char_factor</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>levels: a b c</p>
+<p>Ejercicio en etherpad:</p>
+<p>¿Qué tipo de datos están presentes en cada uno de los siguientes vectores?</p>
+<p><code>vec1&lt;-c("34","127", "26-7i")</code></p>
+<p><code>vec2&lt;-c(4L,12L,152L)</code></p>
+<p><code>vec3&lt;-c(34,147,26+7i)</code></p>
+<p>Nota: Si usamos “” para definir un objeto, R lo leerá como un caracter, independientemente de que estemos escribiendo números. La mayúscula después de un número indica que R lo guardará como entero.</p>
+<section id="manipulación-de-data-frames" class="level1" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> Manipulación de data frames</h1>
+<p>Los data frames son estructuras de datos potentes en R. Podemos comenzar a crear un conjunto de datos simulado:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>musician <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">people =</span> <span class="fu">c</span>(<span class="st">"Medtner"</span>, <span class="st">"Radwimps"</span>, <span class="st">"Shakira"</span>),</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                         <span class="at">pieces =</span> <span class="fu">c</span>(<span class="dv">722</span>,<span class="dv">187</span>,<span class="dv">68</span>),</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                         <span class="at">likes =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>))</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> musician</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>El contenido de nuestro nuevo objeto:</p>
+<pre><code>     people pieces likes 
+   1  Medtner    722     0 
+   2 Radwimps    187     1 
+   3  Shakira     68     1</code></pre>
+<p>Para comprobar que nuestro objeto es un data frame podemos usar <code>class()</code>.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(musician)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>"data.frame"</code></pre>
+<p>Un dataframe es una colección de vectores (una lista), cuyos componentes deben ser del mismo tipo de datos dentro de cada vector.</p>
+<p>INSERTAR FIGURA3. estructura de marco de datos creado.</p>
+<p>Podemos explorar nuestro objeto extrayendo columnas con el operador <code>$</code>.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>musician<span class="sc">$</span>people</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Podemos también extraer información de un lugar específico en nuestros datos utilizando la nomenclatura de matriz <code>[-,-]</code> donde el primer número dentro de los corchetes especifica el número de fila y el segundo el número de columna:</p>
+<p>INSERTAR FIGURA 4.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>musician[<span class="dv">3</span>,<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
@@ -1016,10 +947,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./1IntroduccionRStudio.html" class="pagination-link" aria-label="Introducción a R">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introducción a R</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./1Ordendedatos.html" class="pagination-link" aria-label="Organización de proyectos metagenómicos">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Organización de proyectos metagenómicos</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./3Graficandoconggplot.html" class="pagination-link" aria-label="Creando gráficos con ggplot2">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Creando gráficos con ggplot2</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

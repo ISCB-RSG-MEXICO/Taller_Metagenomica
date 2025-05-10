@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Aaron E. Jaime y Yahir Cabrera">
-<meta name="dcterms.date" content="2025-05-22">
 
-<title>Workshop</title>
+<title>13&nbsp; Control de calidad – Workshop</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -32,7 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./1Ordendedatos.html" rel="next">
+<link href="./1Iniciandomiproyectometagenomico.html" rel="prev">
 <link href="./rsgMexico.jpeg" rel="icon" type="image/jpeg">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -85,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Información general</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1Iniciandomiproyectometagenomico.html"><strong>Sección 4</strong> - Procesamiento y visualización de datos metagenómicos</a></li><li class="breadcrumb-item"><a href="./2Controldecalidad.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Control de calidad</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -139,7 +171,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Información general</span></a>
   </div>
 </li>
@@ -259,7 +291,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2Controldecalidad.html" class="sidebar-item-text sidebar-link">
+  <a href="./2Controldecalidad.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
   </div>
 </li>
@@ -275,35 +307,29 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#información-general" id="toc-información-general" class="nav-link active" data-scroll-target="#información-general">Información general</a></li>
+  <li><a href="#flujos-de-análisis-bioinformático-en-metagenómica" id="toc-flujos-de-análisis-bioinformático-en-metagenómica" class="nav-link active" data-scroll-target="#flujos-de-análisis-bioinformático-en-metagenómica"><span class="header-section-number">13.0.1</span> Flujos de análisis bioinformático en metagenómica</a></li>
+  <li><a href="#detalles-del-formato-fastq" id="toc-detalles-del-formato-fastq" class="nav-link" data-scroll-target="#detalles-del-formato-fastq"><span class="header-section-number">13.0.2</span> Detalles del formato FASTQ</a></li>
+  <li><a href="#activando-ambiente-metagenómico" id="toc-activando-ambiente-metagenómico" class="nav-link" data-scroll-target="#activando-ambiente-metagenómico"><span class="header-section-number">13.0.3</span> Activando ambiente Metagenómico</a></li>
+  <li><a href="#control-de-calidad-con-fastqc" id="toc-control-de-calidad-con-fastqc" class="nav-link" data-scroll-target="#control-de-calidad-con-fastqc"><span class="header-section-number">13.0.4</span> Control de calidad con FastQC</a></li>
+  <li><a href="#corre-fastqc" id="toc-corre-fastqc" class="nav-link" data-scroll-target="#corre-fastqc"><span class="header-section-number">13.0.5</span> Corre FastQC</a></li>
+  <li><a href="#visualización-de-resultados-con-fastqc" id="toc-visualización-de-resultados-con-fastqc" class="nav-link" data-scroll-target="#visualización-de-resultados-con-fastqc"><span class="header-section-number">13.0.6</span> Visualización de resultados con FastQC</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">13.1</span> Referencias</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1Iniciandomiproyectometagenomico.html"><strong>Sección 4</strong> - Procesamiento y visualización de datos metagenómicos</a></li><li class="breadcrumb-item"><a href="./2Controldecalidad.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Control de calidad</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Workshop</h1>
+<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Control de calidad</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Aaron E. Jaime y Yahir Cabrera </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">May 22, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -313,141 +339,94 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="figures/rsgMexico.jpeg" class="img-fluid" width="200"></p>
-</div>
-</div>
-</div>
-<section id="información-general" class="level1 unnumbered">
-<h1 class="unnumbered">Información general</h1>
-<ul>
-<li><div class="tabset-margin-container"></div><div class="panel-tabset" data-group="globalInfo">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Sobre el curso 📌</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Requisitos previos</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Agenda 📆</a></li></ul>
-<div class="tab-content" data-group="globalInfo">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>El contenido de este curso se realizó en base al material realizado por The Carpentries-lab.</p>
-<ul>
-<li><p><strong>Fechas:</strong> 22 y 23 de Mayo del 2025</p></li>
-<li><p><strong>Duración del curso:</strong> 12 horas</p></li>
-<li><p><strong>Horario:</strong> 9 am a 4 pm</p></li>
-</ul>
-<h4 id="instructores" class="anchored"><strong>Instructores:</strong></h4>
-<ul>
-<li><strong>Aaron Espinosa Jaime -</strong> UGA, Cinvestav Irapuato.</li>
-<li><strong>José Yahir Cabrera González</strong> - Instituto de Biociencias, UNACH Tapachula.</li>
-</ul>
-<p>Ayudantes:</p>
-<ul>
-<li><p><strong>Mariana Devon -</strong> Estudiante de maestría, UAM.</p></li>
-<li><p><strong>Andrés Arredondo</strong> - Ciencias Agrogenómicas, CCM-UNAM.</p></li>
-</ul>
-<h4 id="resumen" class="anchored"><strong>Resumen:</strong></h4>
-<p>Este taller tiene como objetivo principal <strong>abordar los conceptos básicos, habilidades y herramientas para trabajar con datos metagenómicos.</strong> Este taller comprende varias lecciones que incluyen desde la <strong>organización y buenas prácticas, introducción a la línea de comandos y su aplicación para análisis de calidad y por último el uso de R studio para comparar diversidad entre las muestras de estudio.</strong></p>
-<h4 id="objetivos" class="anchored"><strong>Objetivos:</strong></h4>
-<p>En este taller aprenderás a:</p>
-<ul>
-<li><p>Organizar y colectar metadatos para tu proyecto metagenómico.</p></li>
-<li><p>Acceder a bases de datos públicos.</p></li>
-<li><p>Trabajar y vincularte a servidores remotos.</p></li>
-<li><p>Navegar en el contenido de tus carpetas desde la terminal de Shell.</p></li>
-<li><p>Modificar, crear y mover archivos desde la terminal.</p></li>
-<li><p>Utilizar y familiarizarte con la interfaz de R studio.</p></li>
-<li><p>Descargar y emplear librerías de R.</p></li>
-<li><p>Analizar datos metagenómicos crudos.</p></li>
-<li><p>Interpretar tus resultados.</p></li>
-</ul>
-<h2 id="citar-y-reutilizar-el-material-del-curso" class="anchored" data-anchor-id="información-general">Citar y reutilizar el material del curso</h2>
-<p>Los datos del curso se pueden reutilizar y adaptar libremente con la debida atribución. Todos los datos de los cursos de estos repositorios están sujetos a la licencia <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<ul>
-<li><p>Debes contar con una computadora o laptop con acceso a internet. No se recomienda el uso de tablets para este taller.</p></li>
-<li><p>No es necesario que sepas utilizar la terminal o R studio. Sin embargo, es necesario que tengas los conocimientos básicos de microbiología y conceptos de biología.</p></li>
-<li><p>No es necesario descargar R studio y/o emuladores de terminal de Unix para este taller.</p></li>
-</ul>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<table class="caption-top table">
-<colgroup>
-<col style="width: 73%">
-<col style="width: 20%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Tema</th>
-<th style="text-align: center;">Tiempo</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>🔷 <strong>Sección</strong> <strong>1 - (11:30 - 13:30 h) (7 marzo)</strong></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td><ul>
-<li>Creación de una cuenta en GitHub</li>
-</ul></td>
-<td style="text-align: center;">5 min</td>
-</tr>
-<tr class="odd">
-<td><ul>
-<li>Introducción a Git / GitHub</li>
-</ul></td>
-<td style="text-align: center;">15 min</td>
-</tr>
-<tr class="even">
-<td><ul>
-<li><strong>Actividad 1</strong>: Sincronización y llaves</li>
-</ul></td>
-<td style="text-align: center;">15 min</td>
-</tr>
-<tr class="odd">
-<td>☕ <em>Coffee break (10 min) - (12:00-12:10) ☕</em></td>
-<td style="text-align: center;">10 min</td>
-</tr>
-<tr class="even">
-<td>🔷&nbsp; <strong>Sección</strong> <strong>2 - (12:10-13:00 h)</strong></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td><ul>
-<li>Comandos usados en Github y RStudio</li>
-</ul></td>
-<td style="text-align: center;">25 min</td>
-</tr>
-<tr class="even">
-<td><ul>
-<li><strong>Actividad 2:</strong> Pagina de inicio en GitHub</li>
-</ul></td>
-<td style="text-align: center;">15 min</td>
-</tr>
-<tr class="odd">
-<td>🔷&nbsp; <strong>Sección 3 - (11:30 - 13:30 h) (14 marzo)</strong></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td><ul>
-<li>Buenas practicas en R</li>
-</ul></td>
-<td style="text-align: center;">30 min</td>
-</tr>
-<tr class="odd">
-<td><ul>
-<li><strong>Actividad 3:</strong> Pagina web en GitHub</li>
-</ul></td>
-<td style="text-align: center;">1:30 min</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div></li>
-</ul>
+<section id="flujos-de-análisis-bioinformático-en-metagenómica" class="level3" data-number="13.0.1">
+<h3 data-number="13.0.1" class="anchored" data-anchor-id="flujos-de-análisis-bioinformático-en-metagenómica"><span class="header-section-number">13.0.1</span> Flujos de análisis bioinformático en metagenómica</h3>
+<p>Al trabajar con datos de secuenciación, los reads/lecturas que obtienes del secuenciador deben pasar a través de varias herramientas para generar el resultado final deseado. La ejecución de este conjunto de herramientas en un orden específico se conoce como pipeline o flujo de análisis.</p>
+<p>INSERTAR FOTO DE PIPELINE</p>
+<p>Estos pipelines adoptan un enfoque plug-and-play en el sentido de que el archivo de salida de uno de ellos es fácilmente convertido en archivo de salida para el siguiente.</p>
+</section>
+<section id="detalles-del-formato-fastq" class="level3" data-number="13.0.2">
+<h3 data-number="13.0.2" class="anchored" data-anchor-id="detalles-del-formato-fastq"><span class="header-section-number">13.0.2</span> Detalles del <a href="https://en.wikipedia.org/wiki/Phred_quality_score">formato FASTQ</a></h3>
+<p>Aunque pueda parecer complicado, el formato FASTQ sigue un patrón de 4 líneas que facilitan su interpretación.</p>
+<ol type="1">
+<li>La primera línea siempre comienza con ‘@’ seguido de la información del read/lectura.</li>
+<li>La segunda línea es la propia secuencia de DNA.</li>
+<li>La tercera línea siempre comienza con el signo ‘+’ y algunas veces contiene la misma información de reads que la primera línea.</li>
+<li>La cuarta línea es una cadena de caracteres que representa los valores de calidad y estrictamente debe tener el mismo número de caracteres que la línea 2.</li>
+</ol>
+<div class="sourceCode" id="cb1" data-eval="FALSE"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd ~/dc_workshop/data/untrimmed_fastq/</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> gunzip JP4D_R1.fastq.gz</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> head <span class="at">-n</span> 4 JP4D_R1.fastq</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Each quality score represents the probability that the corresponding nucleotide call is incorrect. These probability values are the results of the base calling algorithm and depend on how much signal was captured for the base incorporation. This quality score is logarithmically based, so a quality score of 10 reflects a base call accuracy of 90%, but a quality score of 20 reflects a base call accuracy of 99%. In this&nbsp;<a href="https://drive5.com/usearch/manual/quality_score.html">link</a>&nbsp;you can find more information about quality scores.</p>
+<p>In real life, you won’t be assessing the quality of your reads by visually inspecting your FASTQ files. Instead, you’ll use a software program to assess read quality and filter out poor reads. We’ll first use a program called <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/">FastQC</a> to visualize the quality of our reads. Later in our workflow, we’ll use another program to filter out poor-quality reads.</p>
+<p>First, let’s make available our metagenomics software:</p>
+</section>
+<section id="activando-ambiente-metagenómico" class="level3" data-number="13.0.3">
+<h3 data-number="13.0.3" class="anchored" data-anchor-id="activando-ambiente-metagenómico"><span class="header-section-number">13.0.3</span> Activando ambiente Metagenómico</h3>
+<p>Environments are part of a bioinformatic tendency to do reproducible research; they are a way to share and maintain our programs in their needed versions used for a pipeline with our colleagues and our future self. FastQC has not been activated in the (base) environment, but this AWS instance came with an environment called metagenomics. We need to activate it in order to start using FastQC.</p>
+<p>We will use <a href="https://docs.conda.io/en/latest/">Conda</a> as our environment manager. Conda is an open-source package and environment management system that runs on Windows, macOS and Linux. Conda environments are activated with the <code>conda activate</code> direction:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> conda activate metagenomics</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># (metagenomics) $</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now, if we call <a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/">FastQC</a>, a long help page will be displayed on our screen.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fastqc</span> <span class="at">-h</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#FastQC - A high throughput sequence QC analysis tool</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SYNOPSIS</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#        fastqc seqfile1 seqfile2 .. seqfileN</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#    fastqc [-o output dir] [--(no)extract] [-f fastq|bam|sam]</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">#           [-c contaminant file] seqfile1 .. seqfileN</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">#DESCRIPTION</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">#    FastQC reads a set of sequence files and produces from each one a quality</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">#    control report consisting of many different modules, each one of</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">#    which will help to identify a different potential type of problem in your</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">#    data.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="control-de-calidad-con-fastqc" class="level3" data-number="13.0.4">
+<h3 data-number="13.0.4" class="anchored" data-anchor-id="control-de-calidad-con-fastqc"><span class="header-section-number">13.0.4</span> Control de calidad con FastQC</h3>
+<p>FastQC has several features that can give you a quick impression of any problems your data may have, so you can consider these issues before moving forward with your analyses. Rather than looking at quality scores for each read, FastQC looks at quality collectively across all reads within a sample. The image below shows one FastQC-generated plot that indicates a very high-quality sample:</p>
+<p>INSERTAR FOTO DE QC.html BUENA CALIDAD Y MALA</p>
+</section>
+<section id="corre-fastqc" class="level3" data-number="13.0.5">
+<h3 data-number="13.0.5" class="anchored" data-anchor-id="corre-fastqc"><span class="header-section-number">13.0.5</span> Corre FastQC</h3>
+<p>We will now assess the quality of the reads that we downloaded. First, make sure you’re still in the&nbsp;<code>untrimmed_fastq</code>&nbsp;directory.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd ~/dc_workshop/data/untrimmed_fastq/ </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>FastQC acepta múltiples archivos como entrada, tanto archivos comprimidos como descomprimidos, por lo que podemos usar el&nbsp;comodín <code>\*.fastq*</code> para ejecutar FastQC en todos los archivos FASTQ en este directorio.</p>
+<pre><code>$ fastqc *.fastq* </code></pre>
+<p>Verás un mensaje de salida que se actualiza automáticamente, este indica el progreso del análisis. Comienza así:</p>
+<pre class="o"><code>Started analysis of JC1A_R1.fastq.gz                  Approx 5% complete for JC1A_R1.fastq.gz                Approx 10% complete for JC1A_R1.fastq.gz               Approx 15% complete for JC1A_R1.fastq.gz               Approx 20% complete for JC1A_R1.fastq.gz               Approx 25% complete for JC1A_R1.fastq.gz              Approx 30% complete for JC1A_R1.fastq.gz               Approx 35% complete for JC1A_R1.fastq.gz</code></pre>
+<p>FastQC tardará unos minutos en ejecutarse en nuestros cuatro archivos FASTQ. Al finalizar el análisis, volverá a aparecer el mensaje. Su pantalla se verá así:</p>
+<pre><code>Approx 80% complete for JP4D_R2.fastq.gz 
+Approx 85% complete for JP4D_R2.fastq.gz 
+Approx 90% complete for JP4D_R2.fastq.gz 
+Approx 95% complete for JP4D_R2.fastq.gz 
+Analysis complete for JP4D_R2.fastq.gz $</code></pre>
+<p>El programa FastQC ha creado varios archivos nuevos dentro de nuestro&nbsp;<code>data/untrimmed_fastq/</code>directorio.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>JC1A_R1_fastqc.html  JC1A_R2_fastqc.html  
+JP4D_R1.fastq        JP4D_R2_fastqc.html   JC1A_R1_fastqc.zip   JC1A_R2_fastqc.zip   JP4D_R1_fastqc.html  JP4D_R2_fastqc.zip 
+JC1A_R1.fastq.gz     JC1A_R2.fastq.gz     JP4D_R1_fastqc.zip   JP4D_R2.fastq.gz
+TruSeq3-PE.fa</code></pre>
+<p>Para cada archivo FASTQ de entrada, FastQC creó un archivo en formato <code>.zip</code> y <code>.html</code> con el mismo nombre. El archivo&nbsp;<code>.html</code> es una página web que muestra el informe resumido de cada una de nuestras muestras.</p>
+<p>Queremos mantener nuestros archivos de datos y nuestros archivos de resultados separados, por lo que moveremos estos archivos de salida a un nuevo directorio dentro de nuestro&nbsp;<code>results/</code>directorio.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> mkdir <span class="at">-p</span> ~/dc_workshop/results/fastqc_untrimmed_reads $ mv <span class="pp">*</span>.zip ~/dc_workshop/results/fastqc_untrimmed_reads/  </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> mv <span class="pp">*</span>.html ~/dc_workshop/results/fastqc_untrimmed_reads/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="visualización-de-resultados-con-fastqc" class="level3" data-number="13.0.6">
+<h3 data-number="13.0.6" class="anchored" data-anchor-id="visualización-de-resultados-con-fastqc"><span class="header-section-number">13.0.6</span> Visualización de resultados con FastQC</h3>
+<p>Nos cambiamos a la carpeta donde movimos nuestros archivos.</p>
+<pre><code>$ cd ~/dc_workshop/results/fastqc_untrimmed_reads/</code></pre>
+<p>En equipos de 5, Ejercicio de analizar calidad de archvios. 2 minutos.</p>
+<p>Contestar ¿Qué muestras tienen la mejor calidad de secuencia de bases? ¿Qué muestras tienen la peor?</p>
+</section>
+<section id="referencias" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="referencias"><span class="header-section-number">13.1</span> Referencias</h2>
+<p>Aquí puedes encontrar mayor información sobre cada una de las secciones del resultado de <a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/">FastQC.</a></p>
 
 
 </section>
@@ -1016,11 +995,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./1Iniciandomiproyectometagenomico.html" class="pagination-link" aria-label="Procesamiento y visualización de datos">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Procesamiento y visualización de datos</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./1Ordendedatos.html" class="pagination-link" aria-label="Organización de proyectos metagenómicos">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Organización de proyectos metagenómicos</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

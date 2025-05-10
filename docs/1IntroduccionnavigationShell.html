@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Aaron E. Jaime y Yahir Cabrera">
-<meta name="dcterms.date" content="2025-05-22">
 
-<title>Workshop</title>
+<title>4&nbsp; Introducción a Shell – Workshop</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -32,7 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./1Ordendedatos.html" rel="next">
+<link href="./2Operacionesyexploraciondefastq.html" rel="next">
+<link href="./3DatosdeNCBI.html" rel="prev">
 <link href="./rsgMexico.jpeg" rel="icon" type="image/jpeg">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -85,7 +118,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Información general</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1IntroduccionnavigationShell.html"><strong>Sección 2</strong> - Introducción a línea de comandos</a></li><li class="breadcrumb-item"><a href="./1IntroduccionnavigationShell.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introducción a Shell</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -139,7 +172,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Información general</span></a>
   </div>
 </li>
@@ -183,7 +216,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./1IntroduccionnavigationShell.html" class="sidebar-item-text sidebar-link">
+  <a href="./1IntroduccionnavigationShell.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introducción a Shell</span></span></a>
   </div>
 </li>
@@ -275,35 +308,24 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#información-general" id="toc-información-general" class="nav-link active" data-scroll-target="#información-general">Información general</a></li>
+  <li><a href="#preparación-del-directorio-de-trabajo" id="toc-preparación-del-directorio-de-trabajo" class="nav-link active" data-scroll-target="#preparación-del-directorio-de-trabajo"><span class="header-section-number">4.1</span> Preparación del directorio de trabajo</a></li>
+  <li><a href="#comandos-básicos" id="toc-comandos-básicos" class="nav-link" data-scroll-target="#comandos-básicos"><span class="header-section-number">4.2</span> <strong>Comandos básicos</strong></a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1IntroduccionnavigationShell.html"><strong>Sección 2</strong> - Introducción a línea de comandos</a></li><li class="breadcrumb-item"><a href="./1IntroduccionnavigationShell.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introducción a Shell</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Workshop</h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introducción a Shell</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Aaron E. Jaime y Yahir Cabrera </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">May 22, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -313,141 +335,100 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="figures/rsgMexico.jpeg" class="img-fluid" width="200"></p>
-</div>
-</div>
-</div>
-<section id="información-general" class="level1 unnumbered">
-<h1 class="unnumbered">Información general</h1>
+<p>Un Shell es un programa de computador que presenta una interfaz en línea de comando que permite ejecutar funciones en el computador utilizando comandos especiales en vez de tener un control a través de una interfaz gráfica que combina el uso de un ratón o <em>mouse</em> y un teclado de computador.</p>
+<p>INSERTAR FOTO</p>
+<p>COMENZAR CON CONEXIÓN AL SERVIDOR (10 minutos)</p>
+<p>Path relativo y absoluto</p>
+<p>Algunos comandos cd, mkdir, pwd</p>
+<p>ejercicio (5 minutos) en equipos de encontrar el archivo.txt y poner el path absoluto de la ubicación del archivo.</p>
+<p>Repaso de comandos</p>
+<section id="preparación-del-directorio-de-trabajo" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="preparación-del-directorio-de-trabajo"><span class="header-section-number">4.1</span> Preparación del directorio de trabajo</h2>
 <ul>
-<li><div class="tabset-margin-container"></div><div class="panel-tabset" data-group="globalInfo">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Sobre el curso 📌</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Requisitos previos</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Agenda 📆</a></li></ul>
-<div class="tab-content" data-group="globalInfo">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>El contenido de este curso se realizó en base al material realizado por The Carpentries-lab.</p>
-<ul>
-<li><p><strong>Fechas:</strong> 22 y 23 de Mayo del 2025</p></li>
-<li><p><strong>Duración del curso:</strong> 12 horas</p></li>
-<li><p><strong>Horario:</strong> 9 am a 4 pm</p></li>
+<li><p>Ruta / Camino absoluto</p>
+<div class="sourceCode" id="cb1" data-code-copy="true" data-eval="false"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /home/usuario/data/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Ruta / Camino relativo</p>
+<div class="sourceCode" id="cb2" data-code-copy="true" data-eval="false"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ../ <span class="co"># Ir a la carpeta anterior</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ul>
-<h4 id="instructores" class="anchored"><strong>Instructores:</strong></h4>
-<ul>
-<li><strong>Aaron Espinosa Jaime -</strong> UGA, Cinvestav Irapuato.</li>
-<li><strong>José Yahir Cabrera González</strong> - Instituto de Biociencias, UNACH Tapachula.</li>
-</ul>
-<p>Ayudantes:</p>
-<ul>
-<li><p><strong>Mariana Devon -</strong> Estudiante de maestría, UAM.</p></li>
-<li><p><strong>Andrés Arredondo</strong> - Ciencias Agrogenómicas, CCM-UNAM.</p></li>
-</ul>
-<h4 id="resumen" class="anchored"><strong>Resumen:</strong></h4>
-<p>Este taller tiene como objetivo principal <strong>abordar los conceptos básicos, habilidades y herramientas para trabajar con datos metagenómicos.</strong> Este taller comprende varias lecciones que incluyen desde la <strong>organización y buenas prácticas, introducción a la línea de comandos y su aplicación para análisis de calidad y por último el uso de R studio para comparar diversidad entre las muestras de estudio.</strong></p>
-<h4 id="objetivos" class="anchored"><strong>Objetivos:</strong></h4>
-<p>En este taller aprenderás a:</p>
-<ul>
-<li><p>Organizar y colectar metadatos para tu proyecto metagenómico.</p></li>
-<li><p>Acceder a bases de datos públicos.</p></li>
-<li><p>Trabajar y vincularte a servidores remotos.</p></li>
-<li><p>Navegar en el contenido de tus carpetas desde la terminal de Shell.</p></li>
-<li><p>Modificar, crear y mover archivos desde la terminal.</p></li>
-<li><p>Utilizar y familiarizarte con la interfaz de R studio.</p></li>
-<li><p>Descargar y emplear librerías de R.</p></li>
-<li><p>Analizar datos metagenómicos crudos.</p></li>
-<li><p>Interpretar tus resultados.</p></li>
-</ul>
-<h2 id="citar-y-reutilizar-el-material-del-curso" class="anchored" data-anchor-id="información-general">Citar y reutilizar el material del curso</h2>
-<p>Los datos del curso se pueden reutilizar y adaptar libremente con la debida atribución. Todos los datos de los cursos de estos repositorios están sujetos a la licencia <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<ul>
-<li><p>Debes contar con una computadora o laptop con acceso a internet. No se recomienda el uso de tablets para este taller.</p></li>
-<li><p>No es necesario que sepas utilizar la terminal o R studio. Sin embargo, es necesario que tengas los conocimientos básicos de microbiología y conceptos de biología.</p></li>
-<li><p>No es necesario descargar R studio y/o emuladores de terminal de Unix para este taller.</p></li>
-</ul>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+</section>
+<section id="comandos-básicos" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="comandos-básicos"><span class="header-section-number">4.2</span> <strong>Comandos básicos</strong></h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 73%">
-<col style="width: 20%">
+<col style="width: 24%">
+<col style="width: 43%">
+<col style="width: 31%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Tema</th>
-<th style="text-align: center;">Tiempo</th>
+<th>Comandos</th>
+<th>Información</th>
+<th>Argumentos</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>🔷 <strong>Sección</strong> <strong>1 - (11:30 - 13:30 h) (7 marzo)</strong></td>
-<td style="text-align: center;"></td>
+<td><code>ssh</code></td>
+<td>Conexión a servidores</td>
+<td>ssh usuario@servidor.mx</td>
 </tr>
 <tr class="even">
-<td><ul>
-<li>Creación de una cuenta en GitHub</li>
-</ul></td>
-<td style="text-align: center;">5 min</td>
+<td><code>ls</code></td>
+<td>Observar el contenido de los archivos en una carpeta</td>
+<td>ls directorio/</td>
 </tr>
 <tr class="odd">
-<td><ul>
-<li>Introducción a Git / GitHub</li>
-</ul></td>
-<td style="text-align: center;">15 min</td>
+<td><code>cd</code></td>
+<td>Moverse de directorios</td>
+<td>cd /home/usuario/data/</td>
 </tr>
 <tr class="even">
-<td><ul>
-<li><strong>Actividad 1</strong>: Sincronización y llaves</li>
-</ul></td>
-<td style="text-align: center;">15 min</td>
+<td><code>mkdir</code></td>
+<td>Crear un nuevo directorio</td>
+<td>mkdir data</td>
 </tr>
 <tr class="odd">
-<td>☕ <em>Coffee break (10 min) - (12:00-12:10) ☕</em></td>
-<td style="text-align: center;">10 min</td>
+<td><code>rmdir</code></td>
+<td>Eliminar el directorio</td>
+<td>rmkdir -rf data</td>
 </tr>
 <tr class="even">
-<td>🔷&nbsp; <strong>Sección</strong> <strong>2 - (12:10-13:00 h)</strong></td>
-<td style="text-align: center;"></td>
+<td><code>nano</code>/<code>vim</code></td>
+<td>Editores de texto plano</td>
+<td>nano Archivo.txt / vim Archivo.txt</td>
 </tr>
 <tr class="odd">
-<td><ul>
-<li>Comandos usados en Github y RStudio</li>
-</ul></td>
-<td style="text-align: center;">25 min</td>
+<td><code>cp</code></td>
+<td>Copiar archivos</td>
+<td>cp Archivo1.txt /home/usuario/data/</td>
 </tr>
 <tr class="even">
-<td><ul>
-<li><strong>Actividad 2:</strong> Pagina de inicio en GitHub</li>
-</ul></td>
-<td style="text-align: center;">15 min</td>
+<td><code>mv</code></td>
+<td>Mover un archivo o carpeta</td>
+<td></td>
 </tr>
 <tr class="odd">
-<td>🔷&nbsp; <strong>Sección 3 - (11:30 - 13:30 h) (14 marzo)</strong></td>
-<td style="text-align: center;"></td>
+<td><code>echo</code></td>
+<td>Para llamar y/o declarar variables</td>
+<td>echo “Hello world”</td>
 </tr>
 <tr class="even">
-<td><ul>
-<li>Buenas practicas en R</li>
-</ul></td>
-<td style="text-align: center;">30 min</td>
+<td><code>chmod</code></td>
+<td>Cambiar permisos del usuario</td>
+<td>chmod 777 data/</td>
 </tr>
 <tr class="odd">
-<td><ul>
-<li><strong>Actividad 3:</strong> Pagina web en GitHub</li>
-</ul></td>
-<td style="text-align: center;">1:30 min</td>
+<td><code>rsync</code></td>
+<td>Descargar o subir archivos</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>scp</code></td>
+<td>Descargar o subir archivos</td>
+<td></td>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-</div></li>
-</ul>
 
 
 </section>
@@ -1016,10 +997,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./3DatosdeNCBI.html" class="pagination-link" aria-label="Operaciones en archivos y carpetas">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Operaciones en archivos y carpetas</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./1Ordendedatos.html" class="pagination-link" aria-label="Organización de proyectos metagenómicos">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Organización de proyectos metagenómicos</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./2Operacionesyexploraciondefastq.html" class="pagination-link" aria-label="Operaciones en archivos y carpetas">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Operaciones en archivos y carpetas</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
