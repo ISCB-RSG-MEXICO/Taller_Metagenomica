@@ -20,14 +20,12 @@ book:
     - Leccion2-4_Bucles_scripts_descarga.qmd
     - Leccion2-5_Organizacion_proyecto.qmd
   - part: "**Sección 3** - Primeros pasos con R Studio"  
-    - Leccion3-1_IntroduccionShell.qmd
-    - Leccion3-2_Navegacion-operacion.qmd
-    - Leccion3-3_
-    - Leccion3-4_Bucles.qmd
-    - Leccion3-5_
+    - Leccion3-1_Introduccion_RStudio.qmd
+    - Leccion3-2_Tipos_de_datos.qmd
+    - Leccion3-3_Graficando_con_ggplot.qmd
   - part: "**Sección 4** - Procesamiento y visualización de datos metagenómicos"
-    - Leccion4-1_IntroduccionShell.qmd
-    - Leccion4-2_Navegacion-operacion.qmd
+    - Leccion4-1_Iniciando_mi_proyecto_metagenomico.qmd
+    - Leccion4-2_Control_de_calidad.qmd
     - Leccion4-3_
     - Leccion4-4_
     - Leccion4-5_
