@@ -10,20 +10,24 @@ book:
   chapters:
     - index.qmd
     - part: "**Sección 1** - Organización de proyectos metagenómicos"
+      chapters:
       - 1Ordendedatos.qmd
       - 2Planificaciondeproyectos.qmd
       - 3DatosdeNCBI.qmd
     - part: "**Sección 2** - Introducción a línea de comandos"
+      chapters:
       - 1IntroduccionnavigationShell.qmd
       - 2Operacionesyexploraciondefastq.qmd
       - 3Redireccion.qmd
       - 4Buclesscriptsdescarga.qmd
       - 5Organizacionproyecto.qmd
     - part: "**Sección 3** - Primeros pasos con R Studio"  
+      chapters:
       - 1IntroduccionRStudio.qmd
       - 2Tiposdedatos.qmd
       - 3Graficandoconggplot.qmd
     - part: "**Sección 4** - Procesamiento y visualización de datos metagenómicos"
+      chapters:
       - 1Iniciandomiproyectometagenomico.qmd
       - 2Controldecalidad.qmd
     
