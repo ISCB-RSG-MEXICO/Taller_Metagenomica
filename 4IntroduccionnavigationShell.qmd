@@ -31,7 +31,7 @@ Repaso de comandos
 ## **Comandos básicos**
 
 | Comandos | Información | Argumentos |
-|----|----|----|
+|------------------------|------------------------|------------------------|
 | `ssh` | Conexión a servidores | ssh usuario\@servidor.mx |
 | `ls` | Observar el contenido de los archivos en una carpeta | ls directorio/ |
 | `cd` | Moverse de directorios | cd /home/usuario/data/ |
@@ -44,3 +44,127 @@ Repaso de comandos
 | `chmod` | Cambiar permisos del usuario | chmod 777 data/ |
 | `rsync` | Descargar o subir archivos |  |
 | `scp` | Descargar o subir archivos |  |
+
+------------------------------------------------------------------------
+
+# Introducción al Shell (yahir versión)
+
+### 🔹 ¿Qué es un Shell?
+
+Un Shell es un programa que permite interactuar con el sistema operativo
+
+utilizando comandos en lugar de una interfaz gráfica (GUI).
+
+### 🎯 ¿Por qué usar un Shell?
+
+1️⃣ Muchas herramientas bioinformáticas solo se usan en Shell.
+
+2️⃣ Permite automatizar tareas repetitivas.
+
+3️⃣ Minimiza errores humanos.
+
+4️⃣ Hace que los pasos sean reproducibles y se puedan compartir fácilmente.
+
+5️⃣ Facilita el acceso a servidores remotos para análisis de datos grandes.
+
+================================
+
+### 🔹 Navegación en el sistema de archivos:
+
+================================
+
+### 📌 1️ Ver el directorio en el que te encuentras:
+
+------------------------------------------------------------------------
+
+`pwd`\
+👉 Este comando significa "Print Working Directory". Nos dice en qué carpeta estamos parados.
+
+------------------------------------------------------------------------
+
+### 📌 2️ Listar los archivos y carpetas en el directorio actual:
+
+`ls`\
+👉 Muestra los archivos y directorios que existen en esa ubicación.
+
+`ls -a` Lista TODO, incluidos ocultos
+
+------------------------------------------------------------------------
+
+### 📌 3️ Cambiar de directorio:
+
+`cd nombre_del_directorio`\
+👉 Esto te lleva al directorio especificado.
+
+## 👉 Ejemplo:
+
+Si estás en `/home/dcuser` y quieres entrar a un subdirectorio:
+
+`cd dc_workshop`
+
+------------------------------------------------------------------------
+
+### 📌 4 Volver al directorio principal: 
+
+`cd ~`
+
+### 📌 5 Subir un nivel en la estructura de carpetas: 
+
+`cd ..`
+
+### 📌 6 Atajos útiles:
+
+-   `cd` sin argumentos te lleva al directorio principal (home).
+
+-   `cd -` te lleva al último directorio en el que estuviste.
+
+================================
+
+### **🔹 Autocompletado (Tab):**
+
+Es una función que te permite completar nombres de archivos o carpetas
+
+al presionar la tecla "`Tab`".
+
+👉 Ejemplo:
+
+Si escribes:
+
+`cd dc<tab>`\
+\# El Shell completará el nombre a `dc_workshop` si existe.
+
+## 🔐 2. Permisos de archivos
+
+**Ver permisos** con `ls -l`
+
+``` {#code .bash}
+ls -l youfoundit.txt
+```
+
+``` {#output .bash}
+-rw-rw-r-- 1 usuario grupo 0 May 27 23:16 youfoundit.txt
+```
+
+\[imagen\]
+
+**Quitar permiso de escritura** al dueño con `chmod`:
+
+```         
+chmod -w youfoundit.txt
+ls -l youfoundit.txt
+# -r--r--r-- 1 usuario grupo 0 May 27 23:16 youfoundit.txt
+```
+
+##  3. Rutas absolutas vs. relativas
+
+-   **Ruta absoluta**: parte de `/`
+
+    ```         
+    cd /home/usuario/dc_workshop/.hidden
+    ```
+
+    **Ruta relativa**: parte de tu directorio actual
+
+    ```         
+    cd dc_workshop/.hidden
+    ```
