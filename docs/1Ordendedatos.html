@@ -160,13 +160,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./2Planificaciondeproyectos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Organización de proyectos metagenómicos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Planificación de proyectos</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./3DatosdeNCBI.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Operaciones en archivos y carpetas</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Examinando datos del NCBI</span></span></a>
   </div>
 </li>
       </ul>
@@ -274,8 +274,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#importancia-del-orden-en-experimentos" id="toc-importancia-del-orden-en-experimentos" class="nav-link active" data-scroll-target="#importancia-del-orden-en-experimentos"><span class="header-section-number">1.1</span> Importancia del orden en experimentos</a></li>
-  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">1.2</span> Referencias</a></li>
+  <li><a href="#en-esta-lección-aprenderás" id="toc-en-esta-lección-aprenderás" class="nav-link active" data-scroll-target="#en-esta-lección-aprenderás"><span class="header-section-number">1.0.1</span> En esta lección aprenderás:</a></li>
+  <li><a href="#importancia-del-orden-en-experimentos" id="toc-importancia-del-orden-en-experimentos" class="nav-link" data-scroll-target="#importancia-del-orden-en-experimentos"><span class="header-section-number">1.1</span> Importancia del orden en experimentos</a>
+  <ul>
+  <li><a href="#contexto" id="toc-contexto" class="nav-link" data-scroll-target="#contexto"><span class="header-section-number">1.1.1</span> Contexto:</a></li>
+  </ul></li>
+  <li><a href="#discusión-1" id="toc-discusión-1" class="nav-link" data-scroll-target="#discusión-1"><span class="header-section-number">1.2</span> <strong>Discusión 1</strong></a></li>
+  <li><a href="#notas-sobre-su-experimento" id="toc-notas-sobre-su-experimento" class="nav-link" data-scroll-target="#notas-sobre-su-experimento"><span class="header-section-number">1.4</span> <strong>Notas sobre su experimento</strong></a></li>
+  <li><a href="#metadatos-datos-sobre-el-experimento" id="toc-metadatos-datos-sobre-el-experimento" class="nav-link" data-scroll-target="#metadatos-datos-sobre-el-experimento"><span class="header-section-number">1.6</span> <strong>Metadatos: Datos sobre el experimento</strong></a></li>
+  <li><a href="#discusión-2.-qué-información-escribirías-en-tu-archivo-readme" id="toc-discusión-2.-qué-información-escribirías-en-tu-archivo-readme" class="nav-link" data-scroll-target="#discusión-2.-qué-información-escribirías-en-tu-archivo-readme"><span class="header-section-number">1.8</span> <strong>Discusión 2. ¿Qué información escribirías en tu archivo README?</strong></a>
+  <ul>
+  <li><a href="#estructuración-de-datos-en-hojas-de-cálculo" id="toc-estructuración-de-datos-en-hojas-de-cálculo" class="nav-link" data-scroll-target="#estructuración-de-datos-en-hojas-de-cálculo"><span class="header-section-number">1.9.1</span> <strong>Estructuración de datos en hojas de cálculo</strong></a></li>
+  </ul></li>
+  <li><a href="#discusión-3.-organización-de-hoja-de-cálculo-en-excel" id="toc-discusión-3.-organización-de-hoja-de-cálculo-en-excel" class="nav-link" data-scroll-target="#discusión-3.-organización-de-hoja-de-cálculo-en-excel"><span class="header-section-number">1.10</span> Discusión 3. Organización de hoja de cálculo en Excel</a></li>
+  <li><a href="#notas-adicionales-sobre-la-limpieza-de-los-datos" id="toc-notas-adicionales-sobre-la-limpieza-de-los-datos" class="nav-link" data-scroll-target="#notas-adicionales-sobre-la-limpieza-de-los-datos"><span class="header-section-number">1.12</span> <strong>Notas adicionales sobre la limpieza de los datos</strong></a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">1.13</span> Referencias</a></li>
   </ul>
 </nav>
     </div>
@@ -301,14 +314,119 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="en-esta-lección-aprenderás" class="level3" data-number="1.0.1">
+<h3 data-number="1.0.1" class="anchored" data-anchor-id="en-esta-lección-aprenderás"><span class="header-section-number">1.0.1</span> En esta lección aprenderás:</h3>
+<ul>
+<li>Estructurar tus metadatos y la información de tu experimento.</li>
+<li>Prepararte para entender, organizar y almacenar tus datos de secuenciación.</li>
+<li>Acceder y descargar datos de bases de datos.</li>
+</ul>
+</section>
 <section id="importancia-del-orden-en-experimentos" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="importancia-del-orden-en-experimentos"><span class="header-section-number">1.1</span> Importancia del orden en experimentos</h2>
+<p>Cuando pensamos en los datos para un proyecto de secuenciación, solemos empezar por pensar en los datos de secuenciación que recibimos del centro de secuenciación, pero igual de importante, o incluso más, son los datos generados sobre las secuencias antes de que lleguen al centro. Estos datos se suelen denominar <strong>metadatos</strong>. Los datos de secuencia en sí mismos son inútiles sin la información sobre lo que secuenció.</p>
 <p>La base de cualquier proyecto de investigación es el correcto orden de los datos. No solamente facilita el análisis sino que además permite compartir y colaborar con otros grupos. Documentar un proyecto que implica secuenciación de datos incluye varios componentes. <strong>Algunos de ellos incluyen la metadata de las condiciones del experimento, mediciones con los parámetros experimentales, preparación de secuenciación, información de las muestras, las propias secuencias y los archivos y flujos de cualquier análisis bioinformático.</strong> La organización de tus datos experimentales te prepara para ejecutar proyectos bioinformáticos de manera efectiva.</p>
+<section id="contexto" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="contexto"><span class="header-section-number">1.1.1</span> Contexto:</h3>
 <p>Este taller utiliza datos de un ensayo medio ambiental: <a href="Okie, J. G., Poret-Peterson, A. T., Lee, Z. M., Richter, A., Alcaraz, L. D., Eguiarte, L. E., ... &amp; Elser, J. J. (2020). Genomic adaptations in information processing underpin trophic strategy in a whole-ecosystem nutrient enrichment experiment. Elife, 9, e49816."><strong>Genomic adaptations in information processing underpins trophic strategy in a whole-ecosystem nutrient enrichment experiment</strong></a> de Jordan G. Okie y colaboradores. En este trabajo los autores comparan las diferencias entre las comunidades microbianas en sus medios naturales, oligotróficos y deficientes de fósforo, una poza de Cuatro Ciénegas y la misma comunidad microbiana bajo tratamiento de fertilización.</p>
 </section>
-<section id="referencias" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="referencias"><span class="header-section-number">1.2</span> Referencias</h2>
-<p>No olvides las referencias</p>
+</section>
+<section id="discusión-1" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="discusión-1"><span class="header-section-number">1.2</span> <strong>Discusión 1</strong></h2>
+<p>En el archivo colaborativo de Etherpad, discute:<br>
+¿Qué tipos de datos e información ha generado antes de enviar su ADN/ARN para secuenciar?</p>
+<blockquote class="blockquote">
+<h2 id="solución" data-number="1.3" class="anchored"><span class="header-section-number">1.3</span> <strong>Solución</strong></h2>
+<p>Tipos de archivos e información que ha generado:</p>
+<ul>
+<li><p>Hoja de cálculo o datos tabulares con los datos de su experimento y todo lo que estaba midiendo para su estudio.</p></li>
+<li><p>Notas en el cuaderno de laboratorio sobre cómo realizó esos experimentos.</p></li>
+<li><p>Datos en hojas de cálculo o tablas sobre las muestras enviadas para secuenciación. Los centros de secuenciación suelen tener un formato específico que requieren, con el nombre de la muestra, la concentración de ADN y otra información.</p></li>
+<li><p>Anotaciones del cuaderno de laboratorio sobre cómo preparaste el ADN/ARN para la secuenciación y el tipo de secuenciación que estás realizando, por ejemplo, Illumina HiSeq de extremos emparejados. Probablemente también habrá otras ideas. ¿Esta información y datos fueron mayores de lo que esperabas?</p></li>
+</ul>
+</blockquote>
+</section>
+<section id="notas-sobre-su-experimento" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="notas-sobre-su-experimento"><span class="header-section-number">1.4</span> <strong>Notas sobre su experimento</strong></h2>
+<p>Las notas sobre su experimento, incluyendo cómo preparó sus muestras para la secuenciación, deben estar en su cuaderno de laboratorio, ya sea físico o electrónico. Para obtener más instrucciones sobre buenos cuadernos de laboratorio, consulte la sección sobre <a href="http://www.hhmi.org/sites/default/files/Educational%20Materials/Lab%20Management/Making%20the%20Right%20Moves/moves2_ch8.pdf">Gestión de Datos y Cuadernos de Laboratorio</a> del Instituto Médico Howard Hughes “Making the Right Moves: A Practical Guide to Scientifıc Management for Postdocs and New Faculty”.</p>
+<p>Incluir fechas en las páginas de su cuaderno de laboratorio, en las propias muestras y en cualquier registro sobre ellas le ayudará a asociar todo posteriormente. Usar fechas también ayuda a crear identificadores únicos, ya que, incluso si procesa la misma muestra dos veces, no suele hacerlo el mismo día o, si lo hace, lo sabe y les asigna nombres como A y B.</p>
+<blockquote class="blockquote">
+<h2 id="identificadores-únicos" data-number="1.5" class="anchored"><span class="header-section-number">1.5</span> <strong>Identificadores únicos</strong></h2>
+<p>Los identificadores únicos son nombres únicos para una muestra o un conjunto de datos de secuenciación. Son nombres que solo existen para esos datos. Tener estos nombres únicos facilita su posterior seguimiento.</p>
+</blockquote>
+</section>
+<section id="metadatos-datos-sobre-el-experimento" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="metadatos-datos-sobre-el-experimento"><span class="header-section-number">1.6</span> <strong>Metadatos: Datos sobre el experimento</strong></h2>
+<p>Los datos del experimento suelen recopilarse en <strong>hojas de cálculo</strong> , como Excel. Además de la hoja de cálculo, resulta práctico crear un archivo de texto llamado <strong>README</strong> . Este archivo <strong>contiene información sobre el proyecto de investigación, cómo se generaron las muestras y cómo leer la hoja de cálculo de metadatos</strong>. Esta información es muy práctica cuando se trabaja en equipo, ya que más personas se unen al proyecto incluso en las diferentes etapas del experimento. Este orden puede ayudar a tus colaboradores a comprender mejor la información.</p>
+<blockquote class="blockquote">
+<h2 id="estándares-de-metadatos" data-number="1.7" class="anchored"><span class="header-section-number">1.7</span> <strong>Estándares de metadatos</strong></h2>
+<p>El tipo de datos que se recopilarán depende del experimento. Dependiendo del área, se tienen formas específicas de estructurar sus metadatos, de modo que sean coherentes y se puedan entender y utilizar. El Centro de Curación Digital mantiene <a href="http://www.dcc.ac.uk/resources/metadata-standards/list">una lista de estándares de metadatos</a> , y algunos de ellos, especialmente relevantes para los datos genómicos, están disponibles en el <a href="https://www.gensc.org/pages/projects.html">Consorcio de Estándares Genómicos</a> . En particular, la calidad del ensamblaje y una estimación de la integridad y contaminación del genoma son <a href="https://www.nature.com/articles/nbt.3893">estándares para los Genomas Ensamblados de Metagenoma</a> (MAG).</p>
+<p><a href="https://data.research.cornell.edu/content/readme">La Universidad de Cornell nos proporciona una guía</a> útil y <a href="https://github.com/nselem/organization-metagenomics/blob/master/files/AUTHOR_DATASET_ReadmeTemplate.txt">un archivo</a> de plantilla para escribir metadatos de estilo README en caso de que no existan estándares de metadatos para su tipo de datos. Al enviar datos a una organización, es posible que le proporcionen un archivo con especificaciones sobre<br>
+los metadatos necesarios para su plataforma. Por ejemplo, MG-RAST proporciona un archivo como <a href="https://carpentries-lab.github.io/metagenomics-organization/files/01_MGRAST_DATA.xlsx">este</a> .</p>
+</blockquote>
+</section>
+<section id="discusión-2.-qué-información-escribirías-en-tu-archivo-readme" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="discusión-2.-qué-información-escribirías-en-tu-archivo-readme"><span class="header-section-number">1.8</span> <strong>Discusión 2. ¿Qué información escribirías en tu archivo README?</strong></h2>
+<p>Supongamos que en su campo aún no existen estándares de metadatos. Piense en la cantidad mínima de información que alguien necesitaría para poder trabajar con sus datos sin hablar con usted. ¿Qué tipo de información incluiría en su archivo README?</p>
+<blockquote class="blockquote">
+<h2 id="solución-1" data-number="1.9" class="anchored"><span class="header-section-number">1.9</span> <strong>Solución</strong></h2>
+<p>Algunos ejemplos de aclaraciones que deben escribirse en el README son:</p>
+<ul>
+<li>Formato de fecha (mm-dd-aaaa o dd-mm-aaaa, por ejemplo).</li>
+<li>Significado de abreviaturas.</li>
+<li>Significado o patrón seguido para construir los identificadores únicos de las muestras.</li>
+<li>Detalles sobre la metodología.</li>
+<li>Información de contacto de las personas que realizaron la recolección y/o experimentos.</li>
+<li>Significado de cada nombre de variable.</li>
+</ul>
+</blockquote>
+<section id="estructuración-de-datos-en-hojas-de-cálculo" class="level3" data-number="1.9.1">
+<h3 data-number="1.9.1" class="anchored" data-anchor-id="estructuración-de-datos-en-hojas-de-cálculo"><span class="header-section-number">1.9.1</span> <strong>Estructuración de datos en hojas de cálculo</strong></h3>
+<p>A menudo, introducimos datos que nos facilitan la lectura y el trabajo, ¡porque somos humanos! Las computadoras necesitan datos estructurados para poder utilizarlos. Por lo tanto, para usar estos datos en un flujo de trabajo computacional, debemos pensar como computadoras al usar hojas de cálculo.</p>
+<p>Las reglas más importantes para utilizar programas de hojas de cálculo para datos:</p>
+<ul>
+<li><strong>Deje los datos sin procesar</strong>, ¡no los modifique!</li>
+<li>Cada observación debe localizarse en <strong>su propia fila</strong>.</li>
+<li>Coloque todas sus <strong>variables en columnas</strong>. <strong>Las variables son la información que tenemos sobre nuestra muestra</strong> (genotipo, fenotipo, tratamiento, etc.).</li>
+<li>Los nombres de las columnas deben ser <strong>explicativos pero sin espacios</strong>. Use ‘-’, ‘_’ o <a href="https://en.wikipedia.org/wiki/Camel_case">mayúsculas y minúsculas</a> en lugar de espacios. Por ejemplo, “library-prep-method” es mejor que “library Preparation Method” o “prep”, ya que los ordenadores interpretan los espacios de forma específica.</li>
+<li>Exporte los datos limpios a un formato de texto como <code>.csv</code> (valores separados por comas). Este formato garantiza que cualquier persona pueda usar los datos que requieren la mayoría de los repositorios.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="01_tidiness_datasheet_example_messy.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1086"></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="discusión-3.-organización-de-hoja-de-cálculo-en-excel" class="level2" data-number="1.10">
+<h2 data-number="1.10" class="anchored" data-anchor-id="discusión-3.-organización-de-hoja-de-cálculo-en-excel"><span class="header-section-number">1.10</span> Discusión 3. Organización de hoja de cálculo en Excel</h2>
+<p>Estes es un ejemplo de una hoja de cálculo generada a partir de un experimento de secuenciación. En el documento colaborativo Etherpad, discute los problemas que identificas en esta hoja.</p>
+<blockquote class="blockquote">
+<h2 id="solución-2" data-number="1.11" class="anchored"><span class="header-section-number">1.11</span> <strong>Solución</strong></h2>
+<p>Esta hoja contiene una gran cantidad de potenciales errores. Haciendo algunos pequeños cambios puedes impactar positivamente la eficiencia y confianza durante la limpieza y análsis. A continuación encontrarás una lista de correcciones:</p>
+<ul>
+<li>Evitar usar multiples tablas.</li>
+<li>Evitar usar multiples pestañas.</li>
+<li>No rellenar con ceros.</li>
+<li>No usar valores nulos.</li>
+<li>No usar formatos de tablas (colores, negritas, etc).</li>
+<li>No dejar comentarios en las celdas.</li>
+<li>Evita usar espacios tanto en nombres de columnas como en valores de celdas.</li>
+<li>Cuidado con el formato de fechas.</li>
+</ul>
+</blockquote>
+</section>
+<section id="notas-adicionales-sobre-la-limpieza-de-los-datos" class="level2" data-number="1.12">
+<h2 data-number="1.12" class="anchored" data-anchor-id="notas-adicionales-sobre-la-limpieza-de-los-datos"><span class="header-section-number">1.12</span> <strong>Notas adicionales sobre la limpieza de los datos</strong></h2>
+<p>¡No temas! Si ya comenzaste tu proyecto y no está configurado así, aún hay oportunidades para actualizarlo. Uno de los mayores desafíos son los datos tabulares que no están formateados para que las computadoras puedan usarlos o que presentan inconsistencias que dificultan su análisis.</p>
+<p>Al trabajar en la línea de comandos, es problemático poner espacios en los nombres de directorios y archivos.</p>
+<p>Se describe más práctica sobre cómo estructurar datos en nuestra <a href="http://www.datacarpentry.org/spreadsheet-ecology-lesson/02-common-mistakes/">lección de hoja de cálculo de ecología de carpintería de datos.</a></p>
+<p>Herramientas como <a href="http://www.datacarpentry.org/OpenRefine-ecology-lesson/">OpenRefine</a> pueden ayudarle a limpiar sus datos.</p>
+</section>
+<section id="referencias" class="level2" data-number="1.13">
+<h2 data-number="1.13" class="anchored" data-anchor-id="referencias"><span class="header-section-number">1.13</span> Referencias</h2>
+<p><a href="https://datamanagement.hms.harvard.edu/collect-analyze/documentation-metadata">Organización de datos-Harvard</a></p>
+<p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7323761/">La metadata cuenta: artículo</a></p>
 
 
 </section>
@@ -882,8 +1000,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./2Planificaciondeproyectos.html" class="pagination-link" aria-label="Organización de proyectos metagenómicos">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Organización de proyectos metagenómicos</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./2Planificaciondeproyectos.html" class="pagination-link" aria-label="Planificación de proyectos">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Planificación de proyectos</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

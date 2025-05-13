@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Operaciones en archivos y carpetas – Workshop</title>
+<title>3&nbsp; Examinando datos del NCBI – Workshop</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -84,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1Ordendedatos.html"><strong>Sección 1</strong> - Organización de proyectos metagenómicos</a></li><li class="breadcrumb-item"><a href="./3DatosdeNCBI.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Operaciones en archivos y carpetas</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1Ordendedatos.html"><strong>Sección 1</strong> - Organización de proyectos metagenómicos</a></li><li class="breadcrumb-item"><a href="./3DatosdeNCBI.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Examinando datos del NCBI</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -160,13 +160,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./2Planificaciondeproyectos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Organización de proyectos metagenómicos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Planificación de proyectos</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./3DatosdeNCBI.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Operaciones en archivos y carpetas</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Examinando datos del NCBI</span></span></a>
   </div>
 </li>
       </ul>
@@ -269,15 +269,25 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#bases-de-datos" id="toc-bases-de-datos" class="nav-link active" data-scroll-target="#bases-de-datos"><span class="header-section-number">3.1</span> Bases de datos</a>
+  <ul>
+  <li><a href="#acerca-de-la-sequence-read-archive" id="toc-acerca-de-la-sequence-read-archive" class="nav-link" data-scroll-target="#acerca-de-la-sequence-read-archive"><span class="header-section-number">3.1.1</span> Acerca de la Sequence Read Archive:</a></li>
+  </ul></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">3.2</span> Referencias:</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1Ordendedatos.html"><strong>Sección 1</strong> - Organización de proyectos metagenómicos</a></li><li class="breadcrumb-item"><a href="./3DatosdeNCBI.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Operaciones en archivos y carpetas</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1Ordendedatos.html"><strong>Sección 1</strong> - Organización de proyectos metagenómicos</a></li><li class="breadcrumb-item"><a href="./3DatosdeNCBI.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Examinando datos del NCBI</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Operaciones en archivos y carpetas</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Examinando datos del NCBI</span></h1>
 </div>
 
 
@@ -294,22 +304,43 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>Iremos haciendo las operaciones en los archivos fastq</strong></p>
-<p>uso de wildcards en combinación con comandos básicos.</p>
-<p>ejemplo:</p>
-<pre><code>cd ~/dc_workshop/data/untrimmed_fastq</code></pre>
-<pre><code> $ ls *.fastq</code></pre>
-<p>out JC1A_R1.fastq JP4D_R1.fastq</p>
-<p>Otros shortcuts como crtl + D, history o clear (ctrl + L)</p>
-<p>En history !260 para repetir la línea 260 (Para comandos muy elaborados, tener un ejemplo antes de ver este short cut)</p>
-<p>lectura de archivos cat, less (funciones de las teclas espacio, b, g, G y q), manual, checar sus diferencias.</p>
-<p>HEAD vs TAIL. (comienza uso de las flags, por ejemplo -n 10 que lee 10 líneas en el archivo)</p>
-<p>Detalles del formato FASTQ</p>
-<p>copiar archivos, crear directorios, mover y renombrar archivos. Enfasis en tener cuidado con sobreescribir archivos.</p>
-<p>BORRAR</p>
-<p>Copiar ejercicio 1, Make backup folder with write-protected permissions</p>
+<section id="bases-de-datos" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="bases-de-datos"><span class="header-section-number">3.1</span> Bases de datos</h2>
+<p>En la mayoría de los experimentos normalmente pensamos en generar datos de secuenciación. Sin embargo, <strong>casi todos los análisis utilizan datos de referencia para comparar o anotar ciertos datos</strong>. <strong>Incluso podrías realizar un proyecto solamente de datos que ya están almacenados en bases de datos.</strong> Esta data es un recurso esencial para el análisis de datos genómicos.</p>
+<p>Normalmente cuando publicas un artículo, las revistas requieren que almacenes tus datos en un repositorio público. <strong>Compartir tus datos hace que puedan ser incluídos en otros trabajos y tener citas.</strong></p>
+<p>Hay una gran variedad de bases de datos públicas. Algunos organismos modelo cuentan con sus propias bases de datos. Las dos más grandes son la National Center for Biotechnology Information (NCBI) y la European Nucleotide Archive (EMBL-EBI). El Sequence Read Archive (SRA) pertenece al NCBI.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="paper-okie.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>La siguiente imagen muestra los archivos adicionales/suplementarios del artículo y que contienen información de la localización de los datos de secuenciación. Siempre puedes buscar en <strong>Disponibilidad de datos</strong> dentro de las secciones de los artículos.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="additional-files-okie.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>Sigue los siguientes pasos para accesar al SRA usando la infomación de arriba.</p>
+<p>El artículo refiere al BioProject con ID “<em>PRJEB22811</em>” en el NCBI. Ve al <a href="https://www.ncbi.nlm.nih.gov/">sitio web del NCBI</a> y pega el ID.</p>
+<p>Verás un link al BioProject “<em>Cuatro Ciénegas Lagunita Fertilization Experiment</em>”.</p>
+<p>En la página del BioProject, encuentra el acceso en <em>SRA Experiments</em> en la tabla de “<em>Project Data</em>”.</p>
+<p>Este link te guiará a todas (40) las muestras de este BioProject. Selecciona la muestra número 40. En la parte superior de la pestaña encontrarás el enlace “<em>Send results to Run Selector/Enviar los resultados a Run Selector</em>”. Este enlace te redireccionará al SRA Run Selector. En esta página encontrarás los datos de secuenciación así como los metadatos del experimento para la muestra #40.</p>
+<p>En la sección Select podemos ver el número de Runs, Bytes y Bases que contiene la muestra. Si das clic en metadata se descargará el archivo de metadatos de la muestra.</p>
+<p><img src="SRA1.png" class="img-fluid"></p>
+<section id="acerca-de-la-sequence-read-archive" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="acerca-de-la-sequence-read-archive"><span class="header-section-number">3.1.1</span> Acerca de la Sequence Read Archive:</h3>
+<ul>
+<li><p><a href="https://www.ncbi.nlm.nih.gov/sra/docs/sragrowth/">SRA Documentación</a></p></li>
+<li><p><a href="https://github.com/ncbi/sra-tools/wiki">SRA toolkit documentación</a></p></li>
+</ul>
+</section>
+</section>
+<section id="referencias" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="referencias"><span class="header-section-number">3.2</span> Referencias:</h2>
+<p>Okie JG, Poret-Peterson AT, Lee ZM, Richter A, Alcaraz LD, Eguiarte LE, Siefert JL, Souza V, Dupont CL, Elser JJ. Genomic adaptations in information processing underpin trophic strategy in a whole-ecosystem nutrient enrichment experiment. Elife. 2020 Jan 28;9:e49816. doi: 10.7554/eLife.49816. PMID: 31989922; PMCID: PMC7028357. <a href="https://elifesciences.org/articles/49816">Artículo</a></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -875,8 +906,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./2Planificaciondeproyectos.html" class="pagination-link" aria-label="Organización de proyectos metagenómicos">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Organización de proyectos metagenómicos</span></span>
+      <a href="./2Planificaciondeproyectos.html" class="pagination-link" aria-label="Planificación de proyectos">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Planificación de proyectos</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

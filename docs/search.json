@@ -14,7 +14,84 @@
     "href": "1Ordendedatos.html",
     "title": "1  Organización de proyectos metagenómicos",
     "section": "",
-    "text": "1.1 Importancia del orden en experimentos\nLa base de cualquier proyecto de investigación es el correcto orden de los datos. No solamente facilita el análisis sino que además permite compartir y colaborar con otros grupos. Documentar un proyecto que implica secuenciación de datos incluye varios componentes. Algunos de ellos incluyen la metadata de las condiciones del experimento, mediciones con los parámetros experimentales, preparación de secuenciación, información de las muestras, las propias secuencias y los archivos y flujos de cualquier análisis bioinformático. La organización de tus datos experimentales te prepara para ejecutar proyectos bioinformáticos de manera efectiva.\nEste taller utiliza datos de un ensayo medio ambiental: Genomic adaptations in information processing underpins trophic strategy in a whole-ecosystem nutrient enrichment experiment de Jordan G. Okie y colaboradores. En este trabajo los autores comparan las diferencias entre las comunidades microbianas en sus medios naturales, oligotróficos y deficientes de fósforo, una poza de Cuatro Ciénegas y la misma comunidad microbiana bajo tratamiento de fertilización.",
+    "text": "1.0.1 En esta lección aprenderás:",
+    "crumbs": [
+      "**Sección 1** - Organización de proyectos metagenómicos",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Organización de proyectos metagenómicos</span>"
+    ]
+  },
+  {
+    "objectID": "1Ordendedatos.html#importancia-del-orden-en-experimentos",
+    "href": "1Ordendedatos.html#importancia-del-orden-en-experimentos",
+    "title": "1  Organización de proyectos metagenómicos",
+    "section": "1.1 Importancia del orden en experimentos",
+    "text": "1.1 Importancia del orden en experimentos\nCuando pensamos en los datos para un proyecto de secuenciación, solemos empezar por pensar en los datos de secuenciación que recibimos del centro de secuenciación, pero igual de importante, o incluso más, son los datos generados sobre las secuencias antes de que lleguen al centro. Estos datos se suelen denominar metadatos. Los datos de secuencia en sí mismos son inútiles sin la información sobre lo que secuenció.\nLa base de cualquier proyecto de investigación es el correcto orden de los datos. No solamente facilita el análisis sino que además permite compartir y colaborar con otros grupos. Documentar un proyecto que implica secuenciación de datos incluye varios componentes. Algunos de ellos incluyen la metadata de las condiciones del experimento, mediciones con los parámetros experimentales, preparación de secuenciación, información de las muestras, las propias secuencias y los archivos y flujos de cualquier análisis bioinformático. La organización de tus datos experimentales te prepara para ejecutar proyectos bioinformáticos de manera efectiva.\n\n1.1.1 Contexto:\nEste taller utiliza datos de un ensayo medio ambiental: Genomic adaptations in information processing underpins trophic strategy in a whole-ecosystem nutrient enrichment experiment de Jordan G. Okie y colaboradores. En este trabajo los autores comparan las diferencias entre las comunidades microbianas en sus medios naturales, oligotróficos y deficientes de fósforo, una poza de Cuatro Ciénegas y la misma comunidad microbiana bajo tratamiento de fertilización.",
+    "crumbs": [
+      "**Sección 1** - Organización de proyectos metagenómicos",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Organización de proyectos metagenómicos</span>"
+    ]
+  },
+  {
+    "objectID": "1Ordendedatos.html#discusión-1",
+    "href": "1Ordendedatos.html#discusión-1",
+    "title": "1  Organización de proyectos metagenómicos",
+    "section": "1.2 Discusión 1",
+    "text": "1.2 Discusión 1\nEn el archivo colaborativo de Etherpad, discute:\n¿Qué tipos de datos e información ha generado antes de enviar su ADN/ARN para secuenciar?\n\n1.3 Solución\nTipos de archivos e información que ha generado:\n\nHoja de cálculo o datos tabulares con los datos de su experimento y todo lo que estaba midiendo para su estudio.\nNotas en el cuaderno de laboratorio sobre cómo realizó esos experimentos.\nDatos en hojas de cálculo o tablas sobre las muestras enviadas para secuenciación. Los centros de secuenciación suelen tener un formato específico que requieren, con el nombre de la muestra, la concentración de ADN y otra información.\nAnotaciones del cuaderno de laboratorio sobre cómo preparaste el ADN/ARN para la secuenciación y el tipo de secuenciación que estás realizando, por ejemplo, Illumina HiSeq de extremos emparejados. Probablemente también habrá otras ideas. ¿Esta información y datos fueron mayores de lo que esperabas?",
+    "crumbs": [
+      "**Sección 1** - Organización de proyectos metagenómicos",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Organización de proyectos metagenómicos</span>"
+    ]
+  },
+  {
+    "objectID": "1Ordendedatos.html#notas-sobre-su-experimento",
+    "href": "1Ordendedatos.html#notas-sobre-su-experimento",
+    "title": "1  Organización de proyectos metagenómicos",
+    "section": "1.4 Notas sobre su experimento",
+    "text": "1.4 Notas sobre su experimento\nLas notas sobre su experimento, incluyendo cómo preparó sus muestras para la secuenciación, deben estar en su cuaderno de laboratorio, ya sea físico o electrónico. Para obtener más instrucciones sobre buenos cuadernos de laboratorio, consulte la sección sobre Gestión de Datos y Cuadernos de Laboratorio del Instituto Médico Howard Hughes “Making the Right Moves: A Practical Guide to Scientifıc Management for Postdocs and New Faculty”.\nIncluir fechas en las páginas de su cuaderno de laboratorio, en las propias muestras y en cualquier registro sobre ellas le ayudará a asociar todo posteriormente. Usar fechas también ayuda a crear identificadores únicos, ya que, incluso si procesa la misma muestra dos veces, no suele hacerlo el mismo día o, si lo hace, lo sabe y les asigna nombres como A y B.\n\n1.5 Identificadores únicos\nLos identificadores únicos son nombres únicos para una muestra o un conjunto de datos de secuenciación. Son nombres que solo existen para esos datos. Tener estos nombres únicos facilita su posterior seguimiento.",
+    "crumbs": [
+      "**Sección 1** - Organización de proyectos metagenómicos",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Organización de proyectos metagenómicos</span>"
+    ]
+  },
+  {
+    "objectID": "1Ordendedatos.html#metadatos-datos-sobre-el-experimento",
+    "href": "1Ordendedatos.html#metadatos-datos-sobre-el-experimento",
+    "title": "1  Organización de proyectos metagenómicos",
+    "section": "1.6 Metadatos: Datos sobre el experimento",
+    "text": "1.6 Metadatos: Datos sobre el experimento\nLos datos del experimento suelen recopilarse en hojas de cálculo , como Excel. Además de la hoja de cálculo, resulta práctico crear un archivo de texto llamado README . Este archivo contiene información sobre el proyecto de investigación, cómo se generaron las muestras y cómo leer la hoja de cálculo de metadatos. Esta información es muy práctica cuando se trabaja en equipo, ya que más personas se unen al proyecto incluso en las diferentes etapas del experimento. Este orden puede ayudar a tus colaboradores a comprender mejor la información.\n\n1.7 Estándares de metadatos\nEl tipo de datos que se recopilarán depende del experimento. Dependiendo del área, se tienen formas específicas de estructurar sus metadatos, de modo que sean coherentes y se puedan entender y utilizar. El Centro de Curación Digital mantiene una lista de estándares de metadatos , y algunos de ellos, especialmente relevantes para los datos genómicos, están disponibles en el Consorcio de Estándares Genómicos . En particular, la calidad del ensamblaje y una estimación de la integridad y contaminación del genoma son estándares para los Genomas Ensamblados de Metagenoma (MAG).\nLa Universidad de Cornell nos proporciona una guía útil y un archivo de plantilla para escribir metadatos de estilo README en caso de que no existan estándares de metadatos para su tipo de datos. Al enviar datos a una organización, es posible que le proporcionen un archivo con especificaciones sobre\nlos metadatos necesarios para su plataforma. Por ejemplo, MG-RAST proporciona un archivo como este .",
+    "crumbs": [
+      "**Sección 1** - Organización de proyectos metagenómicos",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Organización de proyectos metagenómicos</span>"
+    ]
+  },
+  {
+    "objectID": "1Ordendedatos.html#discusión-2.-qué-información-escribirías-en-tu-archivo-readme",
+    "href": "1Ordendedatos.html#discusión-2.-qué-información-escribirías-en-tu-archivo-readme",
+    "title": "1  Organización de proyectos metagenómicos",
+    "section": "1.8 Discusión 2. ¿Qué información escribirías en tu archivo README?",
+    "text": "1.8 Discusión 2. ¿Qué información escribirías en tu archivo README?\nSupongamos que en su campo aún no existen estándares de metadatos. Piense en la cantidad mínima de información que alguien necesitaría para poder trabajar con sus datos sin hablar con usted. ¿Qué tipo de información incluiría en su archivo README?\n\n1.9 Solución\nAlgunos ejemplos de aclaraciones que deben escribirse en el README son:\n\nFormato de fecha (mm-dd-aaaa o dd-mm-aaaa, por ejemplo).\nSignificado de abreviaturas.\nSignificado o patrón seguido para construir los identificadores únicos de las muestras.\nDetalles sobre la metodología.\nInformación de contacto de las personas que realizaron la recolección y/o experimentos.\nSignificado de cada nombre de variable.\n\n\n\n1.9.1 Estructuración de datos en hojas de cálculo\nA menudo, introducimos datos que nos facilitan la lectura y el trabajo, ¡porque somos humanos! Las computadoras necesitan datos estructurados para poder utilizarlos. Por lo tanto, para usar estos datos en un flujo de trabajo computacional, debemos pensar como computadoras al usar hojas de cálculo.\nLas reglas más importantes para utilizar programas de hojas de cálculo para datos:\n\nDeje los datos sin procesar, ¡no los modifique!\nCada observación debe localizarse en su propia fila.\nColoque todas sus variables en columnas. Las variables son la información que tenemos sobre nuestra muestra (genotipo, fenotipo, tratamiento, etc.).\nLos nombres de las columnas deben ser explicativos pero sin espacios. Use ‘-’, ‘_’ o mayúsculas y minúsculas en lugar de espacios. Por ejemplo, “library-prep-method” es mejor que “library Preparation Method” o “prep”, ya que los ordenadores interpretan los espacios de forma específica.\nExporte los datos limpios a un formato de texto como .csv (valores separados por comas). Este formato garantiza que cualquier persona pueda usar los datos que requieren la mayoría de los repositorios.",
+    "crumbs": [
+      "**Sección 1** - Organización de proyectos metagenómicos",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Organización de proyectos metagenómicos</span>"
+    ]
+  },
+  {
+    "objectID": "1Ordendedatos.html#discusión-3.-organización-de-hoja-de-cálculo-en-excel",
+    "href": "1Ordendedatos.html#discusión-3.-organización-de-hoja-de-cálculo-en-excel",
+    "title": "1  Organización de proyectos metagenómicos",
+    "section": "1.10 Discusión 3. Organización de hoja de cálculo en Excel",
+    "text": "1.10 Discusión 3. Organización de hoja de cálculo en Excel\nEstes es un ejemplo de una hoja de cálculo generada a partir de un experimento de secuenciación. En el documento colaborativo Etherpad, discute los problemas que identificas en esta hoja.\n\n1.11 Solución\nEsta hoja contiene una gran cantidad de potenciales errores. Haciendo algunos pequeños cambios puedes impactar positivamente la eficiencia y confianza durante la limpieza y análsis. A continuación encontrarás una lista de correcciones:\n\nEvitar usar multiples tablas.\nEvitar usar multiples pestañas.\nNo rellenar con ceros.\nNo usar valores nulos.\nNo usar formatos de tablas (colores, negritas, etc).\nNo dejar comentarios en las celdas.\nEvita usar espacios tanto en nombres de columnas como en valores de celdas.\nCuidado con el formato de fechas.",
+    "crumbs": [
+      "**Sección 1** - Organización de proyectos metagenómicos",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Organización de proyectos metagenómicos</span>"
+    ]
+  },
+  {
+    "objectID": "1Ordendedatos.html#notas-adicionales-sobre-la-limpieza-de-los-datos",
+    "href": "1Ordendedatos.html#notas-adicionales-sobre-la-limpieza-de-los-datos",
+    "title": "1  Organización de proyectos metagenómicos",
+    "section": "1.12 Notas adicionales sobre la limpieza de los datos",
+    "text": "1.12 Notas adicionales sobre la limpieza de los datos\n¡No temas! Si ya comenzaste tu proyecto y no está configurado así, aún hay oportunidades para actualizarlo. Uno de los mayores desafíos son los datos tabulares que no están formateados para que las computadoras puedan usarlos o que presentan inconsistencias que dificultan su análisis.\nAl trabajar en la línea de comandos, es problemático poner espacios en los nombres de directorios y archivos.\nSe describe más práctica sobre cómo estructurar datos en nuestra lección de hoja de cálculo de ecología de carpintería de datos.\nHerramientas como OpenRefine pueden ayudarle a limpiar sus datos.",
     "crumbs": [
       "**Sección 1** - Organización de proyectos metagenómicos",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Organización de proyectos metagenómicos</span>"
@@ -24,8 +101,8 @@
     "objectID": "1Ordendedatos.html#referencias",
     "href": "1Ordendedatos.html#referencias",
     "title": "1  Organización de proyectos metagenómicos",
-    "section": "1.2 Referencias",
-    "text": "1.2 Referencias\nNo olvides las referencias",
+    "section": "1.13 Referencias",
+    "text": "1.13 Referencias\nOrganización de datos-Harvard\nLa metadata cuenta: artículo",
     "crumbs": [
       "**Sección 1** - Organización de proyectos metagenómicos",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Organización de proyectos metagenómicos</span>"
@@ -34,34 +111,100 @@
   {
     "objectID": "2Planificaciondeproyectos.html",
     "href": "2Planificaciondeproyectos.html",
-    "title": "2  Organización de proyectos metagenómicos",
+    "title": "2  Planificación de proyectos",
     "section": "",
-    "text": "2.1 Importancia del orden en experimentos\nLa base de cualquier proyecto de investigación es el correcto orden de los datos. No solamente facilita el análisis sino que además permite compartir y colaborar con otros grupos. Documentar un proyecto que implica secuenciación de datos incluye varios componentes. Algunos de ellos incluyen la metadata de las condiciones del experimento, mediciones con los parámetros experimentales, preparación de secuenciación, información de las muestras, las propias secuencias y los archivos y flujos de cualquier análisis bioinformático. La organización de tus datos experimentales te prepara para ejecutar proyectos bioinformáticos de manera efectiva.\nEste taller utiliza datos de un ensayo medio ambiental: Genomic adaptations in information processing underpins trophic strategy in a whole-ecosystem nutrient enrichment experiment de Jordan G. Okie y colaboradores. En este trabajo los autores comparan las diferencias entre las comunidades microbianas en sus medios naturales, oligotróficos y deficientes de fósforo, una poza de Cuatro Ciénegas y la misma comunidad microbiana bajo tratamiento de fertilización.",
+    "text": "2.1 Grandes conjuntos de datos\nEn el contexto más importante, los métodos y enfoques que necesitamos en bioinformática son los mismos que necesitamos en el laboratorio o en el campo: planificar, documentar y organizar son la clave para una ciencia reproducible y de calidad.",
     "crumbs": [
       "**Sección 1** - Organización de proyectos metagenómicos",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Organización de proyectos metagenómicos</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Planificación de proyectos</span>"
+    ]
+  },
+  {
+    "objectID": "2Planificaciondeproyectos.html#discusión1-cuáles-son-los-principales-retos-al-trabajar-con-datos-de-secuenciación",
+    "href": "2Planificaciondeproyectos.html#discusión1-cuáles-son-los-principales-retos-al-trabajar-con-datos-de-secuenciación",
+    "title": "2  Planificación de proyectos",
+    "section": "2.2 Discusión1: ¿Cuáles son los principales retos al trabajar con datos de secuenciación?",
+    "text": "2.2 Discusión1: ¿Cuáles son los principales retos al trabajar con datos de secuenciación?\n\n2.3 Solución\nCuando se trata de trabajar con grandes conjuntos de datos el primer reto es el almacenamiento. Dependiendo de la cantidad de datos que esperas, podrías anticipar el espacio que necesitas no solo para almacenarlo.\nDe igual manera, es importante que identifiques las necesidades computacionales para analizar dicha cantidad de datos.\nEs una buena práctica: tener una copia de tus datos (crudos) y quitar permisos para que cualquiera pueda modificarlos.",
+    "crumbs": [
+      "**Sección 1** - Organización de proyectos metagenómicos",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Planificación de proyectos</span>"
+    ]
+  },
+  {
+    "objectID": "2Planificaciondeproyectos.html#envío-de-muestras-a-la-instalación",
+    "href": "2Planificaciondeproyectos.html#envío-de-muestras-a-la-instalación",
+    "title": "2  Planificación de proyectos",
+    "section": "2.4 Envío de muestras a la instalación",
+    "text": "2.4 Envío de muestras a la instalación\nEl primer paso para enviar su muestra a secuenciación será completar un formulario que documente los metadatos. Consulte el siguiente ejemplo de hoja de cálculo de envío. De manera grupal, identifica las posibles mejoras en el llenado de este formato.",
+    "crumbs": [
+      "**Sección 1** - Organización de proyectos metagenómicos",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Planificación de proyectos</span>"
+    ]
+  },
+  {
+    "objectID": "2Planificaciondeproyectos.html#recuperación-de-datos-de-secuenciación-de-muestras-de-la-instalación",
+    "href": "2Planificaciondeproyectos.html#recuperación-de-datos-de-secuenciación-de-muestras-de-la-instalación",
+    "title": "2  Planificación de proyectos",
+    "section": "2.5 Recuperación de datos de secuenciación de muestras de la instalación",
+    "text": "2.5 Recuperación de datos de secuenciación de muestras de la instalación\nCuando reciba los datos del centro de secuenciación, recibirá documentación (metadatos), así como los archivos de secuencia. En grupo, descarga y examina los siguientes archivos de ejemplo:\n\nResultados de la secuenciación - texto\nResultados de secuenciación - Excel\n\n\n2.5.1 Contesta las siguientes preguntas:\n\n¿Cómo se organizan estas muestras?\nSi quisiera relacionar los nombres de los archivos con los nombres de muestra enviados anteriormente (por ejemplo, tipo salvaje), ¿podría hacerlo?\n¿Qué significan las extensiones _R1/_R2 en los nombres de archivos?\n¿Qué indica la extensión ‘.gz’ en los nombres de archivos?\n¿Cuál es el tamaño total del archivo? ¿Qué desafíos podrían existir a la hora de descargar y compartir estos datos?\n\n\n2.5.2 Solución\n\nLas muestras están organizadas por sample_id\nPara relacionar nombres de archivos, utilice sample_id y haga una BUSCARV en la hoja de envío\nLas extensiones _R1/_R2 significan “Lectura 1” y “Lectura 2” de cada muestra\nLa extensión ‘.gz’ significa que es un formato comprimido tipo “gzip” para ahorrar espacio en disco.\nEl tamaño de todos los archivos combinados es de 1113,60 GB (¡más de un terabyte!). Para transferir archivos de este tamaño, debe validar el tamaño del archivo después de la transferencia. Es posible realizar comprobaciones de integridad absoluta de los archivos después de las transferencias y utilizar métodos para acelerar las transferencias, pero esto queda fuera del alcance de esta lección.",
+    "crumbs": [
+      "**Sección 1** - Organización de proyectos metagenómicos",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Planificación de proyectos</span>"
+    ]
+  },
+  {
+    "objectID": "2Planificaciondeproyectos.html#pautas-para-el-almacenamiento-de-datos",
+    "href": "2Planificaciondeproyectos.html#pautas-para-el-almacenamiento-de-datos",
+    "title": "2  Planificación de proyectos",
+    "section": "2.6 Pautas para el almacenamiento de datos",
+    "text": "2.6 Pautas para el almacenamiento de datos\nLos datos crudos que recibirás de la compañía de secuenciación son los cimientos de tu análisis. Es necesario que tengas acceso a estos datos en caso de que sea necesario volver a realizar análisis o corroboraciones.\n\nGuarde los datos en un lugar accesible para usted y los demás miembros de su laboratorio. Como mínimo, usted y el responsable del laboratorio deberían tener acceso.\nAlmacene los datos en un lugar con copias de seguridad redundantes. Deben estar respaldados en dos ubicaciones en diferentes áreas físicas.\nDeje los datos sin procesar. Trabajará con estos datos, pero no desea modificar esta copia almacenada de los datos originales. Si modifica los datos, nunca podrá acceder a esos archivos originales. Explicaremos cómo evitar modificar archivos accidentalmente en una lección posterior de este taller (consulte Permisos de archivos) .",
+    "crumbs": [
+      "**Sección 1** - Organización de proyectos metagenómicos",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Planificación de proyectos</span>"
     ]
   },
   {
     "objectID": "2Planificaciondeproyectos.html#referencias",
     "href": "2Planificaciondeproyectos.html#referencias",
-    "title": "2  Organización de proyectos metagenómicos",
-    "section": "2.2 Referencias",
-    "text": "2.2 Referencias\nNo olvides las referencias",
+    "title": "2  Planificación de proyectos",
+    "section": "2.7 Referencias",
+    "text": "2.7 Referencias\nL. Welch, F. Lewitter, R. Schwartz, C. Brooksbank, P. Radivojac, B. Gaeta y M. Schneider, ‘ Directrices curriculares de bioinformática: hacia una definición de competencias básicas ’, PLoS Comput Biol, vol. 10, no. 3, p. e1003496, 2014.",
     "crumbs": [
       "**Sección 1** - Organización de proyectos metagenómicos",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Organización de proyectos metagenómicos</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Planificación de proyectos</span>"
     ]
   },
   {
     "objectID": "3DatosdeNCBI.html",
     "href": "3DatosdeNCBI.html",
-    "title": "3  Operaciones en archivos y carpetas",
+    "title": "3  Examinando datos del NCBI",
     "section": "",
-    "text": "Iremos haciendo las operaciones en los archivos fastq\nuso de wildcards en combinación con comandos básicos.\nejemplo:\ncd ~/dc_workshop/data/untrimmed_fastq\n $ ls *.fastq\nout JC1A_R1.fastq JP4D_R1.fastq\nOtros shortcuts como crtl + D, history o clear (ctrl + L)\nEn history !260 para repetir la línea 260 (Para comandos muy elaborados, tener un ejemplo antes de ver este short cut)\nlectura de archivos cat, less (funciones de las teclas espacio, b, g, G y q), manual, checar sus diferencias.\nHEAD vs TAIL. (comienza uso de las flags, por ejemplo -n 10 que lee 10 líneas en el archivo)\nDetalles del formato FASTQ\ncopiar archivos, crear directorios, mover y renombrar archivos. Enfasis en tener cuidado con sobreescribir archivos.\nBORRAR\nCopiar ejercicio 1, Make backup folder with write-protected permissions",
+    "text": "3.1 Bases de datos\nEn la mayoría de los experimentos normalmente pensamos en generar datos de secuenciación. Sin embargo, casi todos los análisis utilizan datos de referencia para comparar o anotar ciertos datos. Incluso podrías realizar un proyecto solamente de datos que ya están almacenados en bases de datos. Esta data es un recurso esencial para el análisis de datos genómicos.\nNormalmente cuando publicas un artículo, las revistas requieren que almacenes tus datos en un repositorio público. Compartir tus datos hace que puedan ser incluídos en otros trabajos y tener citas.\nHay una gran variedad de bases de datos públicas. Algunos organismos modelo cuentan con sus propias bases de datos. Las dos más grandes son la National Center for Biotechnology Information (NCBI) y la European Nucleotide Archive (EMBL-EBI). El Sequence Read Archive (SRA) pertenece al NCBI.\nLa siguiente imagen muestra los archivos adicionales/suplementarios del artículo y que contienen información de la localización de los datos de secuenciación. Siempre puedes buscar en Disponibilidad de datos dentro de las secciones de los artículos.\nSigue los siguientes pasos para accesar al SRA usando la infomación de arriba.\nEl artículo refiere al BioProject con ID “PRJEB22811” en el NCBI. Ve al sitio web del NCBI y pega el ID.\nVerás un link al BioProject “Cuatro Ciénegas Lagunita Fertilization Experiment”.\nEn la página del BioProject, encuentra el acceso en SRA Experiments en la tabla de “Project Data”.\nEste link te guiará a todas (40) las muestras de este BioProject. Selecciona la muestra número 40. En la parte superior de la pestaña encontrarás el enlace “Send results to Run Selector/Enviar los resultados a Run Selector”. Este enlace te redireccionará al SRA Run Selector. En esta página encontrarás los datos de secuenciación así como los metadatos del experimento para la muestra #40.\nEn la sección Select podemos ver el número de Runs, Bytes y Bases que contiene la muestra. Si das clic en metadata se descargará el archivo de metadatos de la muestra.",
     "crumbs": [
       "**Sección 1** - Organización de proyectos metagenómicos",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Operaciones en archivos y carpetas</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Examinando datos del NCBI</span>"
+    ]
+  },
+  {
+    "objectID": "3DatosdeNCBI.html#bases-de-datos",
+    "href": "3DatosdeNCBI.html#bases-de-datos",
+    "title": "3  Examinando datos del NCBI",
+    "section": "",
+    "text": "3.1.1 Acerca de la Sequence Read Archive:\n\nSRA Documentación\nSRA toolkit documentación",
+    "crumbs": [
+      "**Sección 1** - Organización de proyectos metagenómicos",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Examinando datos del NCBI</span>"
+    ]
+  },
+  {
+    "objectID": "3DatosdeNCBI.html#referencias",
+    "href": "3DatosdeNCBI.html#referencias",
+    "title": "3  Examinando datos del NCBI",
+    "section": "3.2 Referencias:",
+    "text": "3.2 Referencias:\nOkie JG, Poret-Peterson AT, Lee ZM, Richter A, Alcaraz LD, Eguiarte LE, Siefert JL, Souza V, Dupont CL, Elser JJ. Genomic adaptations in information processing underpin trophic strategy in a whole-ecosystem nutrient enrichment experiment. Elife. 2020 Jan 28;9:e49816. doi: 10.7554/eLife.49816. PMID: 31989922; PMCID: PMC7028357. Artículo",
+    "crumbs": [
+      "**Sección 1** - Organización de proyectos metagenómicos",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Examinando datos del NCBI</span>"
     ]
   },
   {

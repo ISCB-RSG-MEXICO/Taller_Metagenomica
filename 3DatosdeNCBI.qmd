@@ -16,15 +16,15 @@ La siguiente imagen muestra los archivos adicionales/suplementarios del artícul
 
 Sigue los siguientes pasos para accesar al SRA usando la infomación de arriba.
 
-El artículo refiere al BioProject con ID "*PRJEB22811*" en el NCBI. Ve al [sitio web del NCBI](https://www.ncbi.nlm.nih.gov/) y pega el ID.
+1.  El artículo refiere al BioProject con ID "*PRJEB22811*" en el NCBI. Ve al [sitio web del NCBI](https://www.ncbi.nlm.nih.gov/) y pega el ID.
 
-Verás un link al BioProject "*Cuatro Ciénegas Lagunita Fertilization Experiment*".
+2.  Verás un link al BioProject "*Cuatro Ciénegas Lagunita Fertilization Experiment*".
 
-En la página del BioProject, encuentra el acceso en *SRA Experiments* en la tabla de "*Project Data*".
+3.  En la página del BioProject, encuentra el acceso en *SRA Experiments* en la tabla de "*Project Data*".
 
-Este link te guiará a todas (40) las muestras de este BioProject. Selecciona la muestra número 40. En la parte superior de la pestaña encontrarás el enlace "*Send results to Run Selector/Enviar los resultados a Run Selector*". Este enlace te redireccionará al SRA Run Selector. En esta página encontrarás los datos de secuenciación así como los metadatos del experimento para la muestra #40.
+4.  Este link te guiará a todas (40) las muestras de este BioProject. Selecciona la muestra número 40. En la parte superior de la pestaña encontrarás el enlace "*Send results to Run Selector/Enviar los resultados a Run Selector*". Este enlace te redireccionará al SRA Run Selector. En esta página encontrarás los datos de secuenciación así como los metadatos del experimento para la muestra #40.
 
-En la sección Select podemos ver el número de Runs, Bytes y Bases que contiene la muestra. Si das clic en metadata se descargará el archivo de metadatos de la muestra.
+5.  En la sección Select podemos ver el número de Runs, Bytes y Bases que contiene la muestra. Si das clic en metadata se descargará el archivo de metadatos de la muestra.
 
 ![](SRA1.png)
 
