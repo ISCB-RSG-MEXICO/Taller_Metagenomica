@@ -1,17 +1,24 @@
 # Organización de proyectos metagenómicos
 
+### En esta lección aprenderás:
+
+-   Estructurar tus metadatos y la información de tu experimento.
+-   Prepararte para entender, organizar y almacenar tus datos de secuenciación.
+-   Acceder y descargar datos de bases de datos.
+
 ## Importancia del orden en experimentos
+
+Cuando pensamos en los datos para un proyecto de secuenciación, solemos empezar por pensar en los datos de secuenciación que recibimos del centro de secuenciación, pero igual de importante, o incluso más, son los datos generados sobre las secuencias antes de que lleguen al centro. Estos datos se suelen denominar **metadatos**. Los datos de secuencia en sí mismos son inútiles sin la información sobre lo que secuenció.
 
 La base de cualquier proyecto de investigación es el correcto orden de los datos. No solamente facilita el análisis sino que además permite compartir y colaborar con otros grupos. Documentar un proyecto que implica secuenciación de datos incluye varios componentes. **Algunos de ellos incluyen la metadata de las condiciones del experimento, mediciones con los parámetros experimentales, preparación de secuenciación, información de las muestras, las propias secuencias y los archivos y flujos de cualquier análisis bioinformático.** La organización de tus datos experimentales te prepara para ejecutar proyectos bioinformáticos de manera efectiva.
 
-Este taller utiliza datos de un ensayo medio ambiental: [**Genomic adaptations in information processing underpins trophic strategy in a whole-ecosystem nutrient enrichment experiment**](Okie,%20J.%20G.,%20Poret-Peterson,%20A.%20T.,%20Lee,%20Z.%20M.,%20Richter,%20A.,%20Alcaraz,%20L.%20D.,%20Eguiarte,%20L.%20E.,%20...%20&%20Elser,%20J.%20J.%20(2020).%20Genomic%20adaptations%20in%20information%20processing%20underpin%20trophic%20strategy%20in%20a%20whole-ecosystem%20nutrient%20enrichment%20experiment.%20Elife,%209,%20e49816.) de Jordan G. Okie y colaboradores. En este trabajo los autores comparan las diferencias entre las comunidades microbianas en sus medios naturales, oligotróficos y deficientes de fósforo, una poza de Cuatro Ciénegas y la misma comunidad microbiana bajo tratamiento de fertilización.
+### Contexto:
 
-Cuando pensamos en los datos para un proyecto de secuenciación, solemos empezar por pensar en los datos de secuenciación que recibimos del centro de secuenciación, pero igual de importante, o incluso más, son los datos generados sobre las secuencias antes de que lleguen al centro. Estos datos se suelen denominar metadatos. Los datos de secuencia en sí mismos son inútiles sin la información sobre lo que secuenció.
+Este taller utiliza datos de un ensayo medio ambiental: [**Genomic adaptations in information processing underpins trophic strategy in a whole-ecosystem nutrient enrichment experiment**](Okie,%20J.%20G.,%20Poret-Peterson,%20A.%20T.,%20Lee,%20Z.%20M.,%20Richter,%20A.,%20Alcaraz,%20L.%20D.,%20Eguiarte,%20L.%20E.,%20...%20&%20Elser,%20J.%20J.%20(2020).%20Genomic%20adaptations%20in%20information%20processing%20underpin%20trophic%20strategy%20in%20a%20whole-ecosystem%20nutrient%20enrichment%20experiment.%20Elife,%209,%20e49816.) de Jordan G. Okie y colaboradores. En este trabajo los autores comparan las diferencias entre las comunidades microbianas en sus medios naturales, oligotróficos y deficientes de fósforo, una poza de Cuatro Ciénegas y la misma comunidad microbiana bajo tratamiento de fertilización.
 
 ## **Discusión 1**
 
-Con la persona que está a tu lado, habla sobre:
-
+En el archivo colaborativo de Etherpad, discute:\
 ¿Qué tipos de datos e información ha generado antes de enviar su ADN/ARN para secuenciar?
 
 > ## **Solución**
@@ -28,7 +35,7 @@ Con la persona que está a tu lado, habla sobre:
 
 ## **Notas sobre su experimento**
 
-Las notas sobre su experimento, incluyendo cómo preparó sus muestras para la secuenciación, deben estar en su cuaderno de laboratorio, ya sea físico o electrónico. Para obtener directrices sobre buenos cuadernos de laboratorio, consulte la sección sobre [Gestión de Datos y Cuadernos de Laboratorio](http://www.hhmi.org/sites/default/files/Educational%20Materials/Lab%20Management/Making%20the%20Right%20Moves/moves2_ch8.pdf) del Instituto Médico Howard Hughes "Making the Right Moves: A Practical Guide to Scientifıc Management for Postdocs and New Faculty" .
+Las notas sobre su experimento, incluyendo cómo preparó sus muestras para la secuenciación, deben estar en su cuaderno de laboratorio, ya sea físico o electrónico. Para obtener más instrucciones sobre buenos cuadernos de laboratorio, consulte la sección sobre [Gestión de Datos y Cuadernos de Laboratorio](http://www.hhmi.org/sites/default/files/Educational%20Materials/Lab%20Management/Making%20the%20Right%20Moves/moves2_ch8.pdf) del Instituto Médico Howard Hughes "Making the Right Moves: A Practical Guide to Scientifıc Management for Postdocs and New Faculty".
 
 Incluir fechas en las páginas de su cuaderno de laboratorio, en las propias muestras y en cualquier registro sobre ellas le ayudará a asociar todo posteriormente. Usar fechas también ayuda a crear identificadores únicos, ya que, incluso si procesa la misma muestra dos veces, no suele hacerlo el mismo día o, si lo hace, lo sabe y les asigna nombres como A y B.
 
@@ -38,11 +45,11 @@ Incluir fechas en las páginas de su cuaderno de laboratorio, en las propias mue
 
 ## **Metadatos: Datos sobre el experimento**
 
-Los datos del experimento suelen recopilarse en **hojas de cálculo** , como Excel. Además de la hoja de cálculo, resulta práctico crear un archivo de texto llamado **README** . Este archivo contiene información sobre el proyecto de investigación, cómo se generaron las muestras y cómo leer la hoja de cálculo de metadatos. Esta información es muy práctica cuando se trabaja en equipo, ya que más personas se unen al proyecto incluso en las diferentes etapas del experimento. Este orden puede ayudar a tus colaboradores a comprender mejor la información.
+Los datos del experimento suelen recopilarse en **hojas de cálculo** , como Excel. Además de la hoja de cálculo, resulta práctico crear un archivo de texto llamado **README** . Este archivo **contiene información sobre el proyecto de investigación, cómo se generaron las muestras y cómo leer la hoja de cálculo de metadatos**. Esta información es muy práctica cuando se trabaja en equipo, ya que más personas se unen al proyecto incluso en las diferentes etapas del experimento. Este orden puede ayudar a tus colaboradores a comprender mejor la información.
 
 > ## **Estándares de metadatos**
 >
-> El tipo de datos que se recopilarán depende del experimento; a menudo, existen directrices de los estándares de metadatos. Muchos campos tienen formas específicas de estructurar sus metadatos, de modo que sean coherentes y se puedan utilizar en toda el área. El Centro de Curación Digital mantiene [una lista de estándares de metadatos](http://www.dcc.ac.uk/resources/metadata-standards/list) , y algunos de ellos, especialmente relevantes para los datos genómicos, están disponibles en el [Consorcio de Estándares Genómicos](https://www.gensc.org/pages/projects.html) . En particular, la calidad del ensamblaje y una estimación de la integridad y contaminación del genoma son [estándares para los Genomas Ensamblados de Metagenoma](https://www.nature.com/articles/nbt.3893) (MAG).
+> El tipo de datos que se recopilarán depende del experimento. Dependiendo del área, se tienen formas específicas de estructurar sus metadatos, de modo que sean coherentes y se puedan entender y utilizar. El Centro de Curación Digital mantiene [una lista de estándares de metadatos](http://www.dcc.ac.uk/resources/metadata-standards/list) , y algunos de ellos, especialmente relevantes para los datos genómicos, están disponibles en el [Consorcio de Estándares Genómicos](https://www.gensc.org/pages/projects.html) . En particular, la calidad del ensamblaje y una estimación de la integridad y contaminación del genoma son [estándares para los Genomas Ensamblados de Metagenoma](https://www.nature.com/articles/nbt.3893) (MAG).
 >
 > [La Universidad de Cornell nos proporciona una guía](https://data.research.cornell.edu/content/readme) útil y [un archivo](https://github.com/nselem/organization-metagenomics/blob/master/files/AUTHOR_DATASET_ReadmeTemplate.txt) de plantilla para escribir metadatos de estilo README en caso de que no existan estándares de metadatos para su tipo de datos. Al enviar datos a una organización, es posible que le proporcionen un archivo con especificaciones sobre\
 > los metadatos necesarios para su plataforma. Por ejemplo, MG-RAST proporciona un archivo como [este](https://carpentries-lab.github.io/metagenomics-organization/files/01_MGRAST_DATA.xlsx) .
@@ -56,36 +63,42 @@ Supongamos que en su campo aún no existen estándares de metadatos. Piense en l
 > Algunos ejemplos de aclaraciones que deben escribirse en el README son:
 >
 > -   Formato de fecha (mm-dd-aaaa o dd-mm-aaaa, por ejemplo).
->
 > -   Significado de abreviaturas.
->
 > -   Significado o patrón seguido para construir los identificadores únicos de las muestras.
->
 > -   Detalles sobre la metodología.
->
 > -   Información de contacto de las personas que realizaron la recolección y/o experimentos.
->
 > -   Significado de cada nombre de variable.
 
 ### **Estructuración de datos en hojas de cálculo**
 
-Independientemente del tipo de datos que se recopilen, existen métodos estándar para introducirlos en la hoja de cálculo para facilitar su posterior análisis. A menudo, introducimos datos que nos facilitan la lectura y el trabajo, ¡porque somos humanos! Las computadoras necesitan datos estructurados para poder utilizarlos. Por lo tanto, para usar estos datos en un flujo de trabajo computacional, debemos pensar como computadoras al usar hojas de cálculo.
+A menudo, introducimos datos que nos facilitan la lectura y el trabajo, ¡porque somos humanos! Las computadoras necesitan datos estructurados para poder utilizarlos. Por lo tanto, para usar estos datos en un flujo de trabajo computacional, debemos pensar como computadoras al usar hojas de cálculo.
 
-Las reglas cardinales para utilizar programas de hojas de cálculo para datos:
+Las reglas más importantes para utilizar programas de hojas de cálculo para datos:
 
--   Deje los datos sin procesar, ¡no los modifique!
+-   **Deje los datos sin procesar**, ¡no los modifique!
+-   Cada observación debe localizarse en **su propia fila**.
+-   Coloque todas sus **variables en columnas**. **Las variables son la información que tenemos sobre nuestra muestra** (genotipo, fenotipo, tratamiento, etc.).
+-   Los nombres de las columnas deben ser **explicativos pero sin espacios**. Use '-', '\_' o [mayúsculas y minúsculas](https://en.wikipedia.org/wiki/Camel_case) en lugar de espacios. Por ejemplo, "library-prep-method" es mejor que "library Preparation Method" o "prep", ya que los ordenadores interpretan los espacios de forma específica.
+-   Exporte los datos limpios a un formato de texto como `.csv` (valores separados por comas). Este formato garantiza que cualquier persona pueda usar los datos que requieren la mayoría de los repositorios.
 
--   Coloque cada observación en su propia fila. Una observación es cada una de nuestras muestras, los sujetos para los que almacenamos información en la hoja de cálculo.
+![](01_tidiness_datasheet_example_messy.png){fig-align="center" width="1086"}
 
--   Coloque todas sus variables en columnas. Las variables son la información que tenemos sobre nuestra muestra (genotipo, fenotipo, tratamiento, etc.).
+## Discusión 3. Organización de hoja de cálculo en Excel
 
--   Los nombres de las columnas deben ser explicativos, pero sin espacios. Use '-', '\_' o [mayúsculas y minúsculas](https://en.wikipedia.org/wiki/Camel_case) en lugar de espacios. Por ejemplo, "library-prep-method" o "LibraryPrep" es mejor que "library Preparation Method" o "prep", ya que los ordenadores interpretan los espacios de forma específica.
+Estes es un ejemplo de una hoja de cálculo generada a partir de un experimento de secuenciación. En el documento colaborativo Etherpad, discute los problemas que identificas en esta hoja.
 
--   No combine varios datos en una sola celda. A veces parece una sola cosa, pero piense si es la única manera de poder usar u ordenar esos datos. Por ejemplo, en lugar de tener una columna con el nombre de la especie y la cepa (p. ej., *E. coli* K12), tendría una columna con el nombre de la especie ( *E. coli* ) y otra con el nombre de la cepa (K12). Dependiendo del tipo de análisis que desee realizar, incluso podría separar los nombres de género y especie en columnas distintas.
-
--   Exporte los datos limpios a un formato de texto como CSV (valores separados por comas). Este formato garantiza que cualquier persona pueda usar los datos que requieren la mayoría de los repositorios.
-
-INSERTAR FOTO DE TABLA
+> ## **Solución**
+>
+> Esta hoja contiene una gran cantidad de potenciales errores. Haciendo algunos pequeños cambios puedes impactar positivamente la eficiencia y confianza durante la limpieza y análsis. A continuación encontrarás una lista de correcciones:
+>
+> -   Evitar usar multiples tablas.
+> -   Evitar usar multiples pestañas.
+> -   No rellenar con ceros.
+> -   No usar valores nulos.
+> -   No usar formatos de tablas (colores, negritas, etc).
+> -   No dejar comentarios en las celdas.
+> -   Evita usar espacios tanto en nombres de columnas como en valores de celdas.
+> -   Cuidado con el formato de fechas.
 
 ## **Notas adicionales sobre la limpieza de los datos**
 
@@ -99,4 +112,6 @@ Herramientas como [OpenRefine](http://www.datacarpentry.org/OpenRefine-ecology-l
 
 ## Referencias
 
-No olvides las referencias
+[Organización de datos-Harvard](https://datamanagement.hms.harvard.edu/collect-analyze/documentation-metadata)
+
+[La metadata cuenta: artículo](https://pmc.ncbi.nlm.nih.gov/articles/PMC7323761/)

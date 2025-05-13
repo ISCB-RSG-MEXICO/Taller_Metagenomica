@@ -1,33 +1,39 @@
-# Operaciones en archivos y carpetas
+# Examinando datos del NCBI
 
-**Iremos haciendo las operaciones en los archivos fastq**
+## Bases de datos
 
-uso de wildcards en combinación con comandos básicos.
+En la mayoría de los experimentos normalmente pensamos en generar datos de secuenciación. Sin embargo, **casi todos los análisis utilizan datos de referencia para comparar o anotar ciertos datos**. **Incluso podrías realizar un proyecto solamente de datos que ya están almacenados en bases de datos.** Esta data es un recurso esencial para el análisis de datos genómicos.
 
-ejemplo:
+Normalmente cuando publicas un artículo, las revistas requieren que almacenes tus datos en un repositorio público. **Compartir tus datos hace que puedan ser incluídos en otros trabajos y tener citas.**
 
-```         
-cd ~/dc_workshop/data/untrimmed_fastq
-```
+Hay una gran variedad de bases de datos públicas. Algunos organismos modelo cuentan con sus propias bases de datos. Las dos más grandes son la National Center for Biotechnology Information (NCBI) y la European Nucleotide Archive (EMBL-EBI). El Sequence Read Archive (SRA) pertenece al NCBI.
 
-```         
- $ ls *.fastq
-```
+![](paper-okie.png){fig-align="center"}
 
-out JC1A_R1.fastq JP4D_R1.fastq
+La siguiente imagen muestra los archivos adicionales/suplementarios del artículo y que contienen información de la localización de los datos de secuenciación. Siempre puedes buscar en **Disponibilidad de datos** dentro de las secciones de los artículos.
 
-Otros shortcuts como crtl + D, history o clear (ctrl + L)
+![](additional-files-okie.png){fig-align="center"}
 
-En history !260 para repetir la línea 260 (Para comandos muy elaborados, tener un ejemplo antes de ver este short cut)
+Sigue los siguientes pasos para accesar al SRA usando la infomación de arriba.
 
-lectura de archivos cat, less (funciones de las teclas espacio, b, g, G y q), manual, checar sus diferencias.
+El artículo refiere al BioProject con ID "*PRJEB22811*" en el NCBI. Ve al [sitio web del NCBI](https://www.ncbi.nlm.nih.gov/) y pega el ID.
 
-HEAD vs TAIL. (comienza uso de las flags, por ejemplo -n 10 que lee 10 líneas en el archivo)
+Verás un link al BioProject "*Cuatro Ciénegas Lagunita Fertilization Experiment*".
 
-Detalles del formato FASTQ
+En la página del BioProject, encuentra el acceso en *SRA Experiments* en la tabla de "*Project Data*".
 
-copiar archivos, crear directorios, mover y renombrar archivos. Enfasis en tener cuidado con sobreescribir archivos.
+Este link te guiará a todas (40) las muestras de este BioProject. Selecciona la muestra número 40. En la parte superior de la pestaña encontrarás el enlace "*Send results to Run Selector/Enviar los resultados a Run Selector*". Este enlace te redireccionará al SRA Run Selector. En esta página encontrarás los datos de secuenciación así como los metadatos del experimento para la muestra #40.
 
-BORRAR
+En la sección Select podemos ver el número de Runs, Bytes y Bases que contiene la muestra. Si das clic en metadata se descargará el archivo de metadatos de la muestra.
 
-Copiar ejercicio 1, Make backup folder with write-protected permissions
+![](SRA1.png)
+
+### Acerca de la Sequence Read Archive:
+
+-   [SRA Documentación](https://www.ncbi.nlm.nih.gov/sra/docs/sragrowth/)
+
+-   [SRA toolkit documentación](https://github.com/ncbi/sra-tools/wiki)
+
+## Referencias:
+
+Okie JG, Poret-Peterson AT, Lee ZM, Richter A, Alcaraz LD, Eguiarte LE, Siefert JL, Souza V, Dupont CL, Elser JJ. Genomic adaptations in information processing underpin trophic strategy in a whole-ecosystem nutrient enrichment experiment. Elife. 2020 Jan 28;9:e49816. doi: 10.7554/eLife.49816. PMID: 31989922; PMCID: PMC7028357. [Artículo](https://elifesciences.org/articles/49816)

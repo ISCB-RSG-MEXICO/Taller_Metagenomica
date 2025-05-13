@@ -31,7 +31,7 @@ Repaso de comandos
 ## **Comandos básicos**
 
 | Comandos | Información | Argumentos |
-|------------------|--------------------------------|-----------------------|
+|----|----|----|
 | `ssh` | Conexión a servidores | ssh usuario\@servidor.mx |
 | `ls` | Observar el contenido de los archivos en una carpeta | ls directorio/ |
 | `cd` | Moverse de directorios | cd /home/usuario/data/ |
