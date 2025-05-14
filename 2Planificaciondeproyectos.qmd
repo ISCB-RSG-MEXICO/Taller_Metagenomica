@@ -6,7 +6,7 @@ En el contexto más importante, los métodos y enfoques que necesitamos en bioin
 
 ## Discusión1: ¿Cuáles son los principales retos al trabajar con datos de secuenciación?
 
-> ## **Solución** 
+> ## **Solución**
 >
 > Cuando se trata de trabajar con grandes conjuntos de datos el primer reto es el almacenamiento. Dependiendo de la cantidad de datos que esperas, podrías anticipar el espacio que necesitas no solo para almacenarlo.
 >

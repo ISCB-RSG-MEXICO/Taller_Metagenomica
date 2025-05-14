@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -274,12 +308,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#insertar-figura-de-rstudio" id="toc-insertar-figura-de-rstudio" class="nav-link active" data-scroll-target="#insertar-figura-de-rstudio"><span class="header-section-number">10</span> <strong>Insertar figura de RStudio:</strong></a>
-  <ul>
-  <li><a href="#revisión-de-la-configuración" id="toc-revisión-de-la-configuración" class="nav-link" data-scroll-target="#revisión-de-la-configuración"><span class="header-section-number">10.1</span> <strong>Revisión de la configuración</strong></a></li>
-  <li><a href="#código-en-r" id="toc-código-en-r" class="nav-link" data-scroll-target="#código-en-r"><span class="header-section-number">10.2</span> Código en R</a></li>
-  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">10.3</span> Referencias</a></li>
-  </ul></li>
+  <li><a href="#revisión-de-la-configuración" id="toc-revisión-de-la-configuración" class="nav-link active" data-scroll-target="#revisión-de-la-configuración"><span class="header-section-number">9.1</span> <strong>Revisión de la configuración</strong></a></li>
+  <li><a href="#código-en-r" id="toc-código-en-r" class="nav-link" data-scroll-target="#código-en-r"><span class="header-section-number">9.2</span> Código en R</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">9.3</span> Referencias</a></li>
   </ul>
 </nav>
     </div>
@@ -305,7 +336,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>R</strong> se utiliza para nombrar un lenguaje de programación y el software que lee e interpreta las instrucciones escritas en el script. Se especializa en el análisis estadístico y la generación de gráficos.</p>
+<p><strong>R</strong> se utiliza para nombrar un <strong>lenguaje de programación y el software que lee e interpreta las instrucciones escritas en el script</strong>. Se especializa en el análisis estadístico y la generación de gráficos.</p>
 <p>Algunas de las ventajas de trabajar con R son:</p>
 <ul>
 <li>El código R es reproducible</li>
@@ -316,26 +347,54 @@ ul.task-list li input[type="checkbox"] {
 <li>¡R es gratis!</li>
 </ul>
 <p>Por su parte, <strong>RStudio</strong> es el programa (en forma de interfaz gráfica) más popular para la escritura de scripts que además nos permite navegar por los archivos, inspeccionar variables y visualizar nuestros gráficos.</p>
-<section id="insertar-figura-de-rstudio" class="level1" data-number="10">
-<h1 data-number="10"><span class="header-section-number">10</span> <strong>Insertar figura de RStudio:</strong></h1>
-<p>Explicar cada una de las secciones.</p>
-<section id="revisión-de-la-configuración" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="revisión-de-la-configuración"><span class="header-section-number">10.1</span> <strong>Revisión de la configuración</strong></h2>
-<p>Al igual que en la Shell o línea de comandos, es recomendable mantener los datos relacionados en una sola carpeta. En RStudio, a esta carpeta se le llama <strong>directorio de trabajo</strong> y es donde se guardarán y buscarán los archivos. Cuando se necesite comprobar la ubicación del actual directorio de trabajo, se utiliza <code>getwd()</code><em>.</em></p>
+<div class="callout callout-style-simple callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Navega la interfaz de RStudio
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Tómate un momento para explorar la interfaz de RStudio.</p>
+</div>
+</div>
+<p><img src="Welcome_Rscript.png" class="img-fluid"></p>
+<p>Al abrir R Studio por primera vez, verás tres paneles en la pantalla. Para ver los cuatro paneles de la imagen, deberás crear un nuevo script. Ve a la pestaña: <strong>Archivo/File</strong> &gt; <strong>New File/Nuevo Archivo</strong> &gt; <strong>R Script.</strong></p>
+<p>Comenzando de la esquina superior izquierda tenemos:</p>
+<ol type="1">
+<li>El editor de código fuente o editor de scripts</li>
+<li>El panel de espacio de trabajo e historial</li>
+<li>Consola de R Studio y,</li>
+<li>Panel de archivos, gráficos, paquetes y ayuda</li>
+</ol>
+<section id="revisión-de-la-configuración" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="revisión-de-la-configuración"><span class="header-section-number">9.1</span> <strong>Revisión de la configuración</strong></h2>
+<p>Al igual que en la Shell o línea de comandos, es recomendable mantener los datos relacionados en una sola carpeta. En RStudio, a esta carpeta se le llama <strong>directorio de trabajo</strong> y es donde se guardarán y buscarán los archivos. Cuando se necesite comprobar la ubicación del actual directorio de trabajo, se utiliza <code>getwd()</code> directo en la consola de R Studio, en el editor de scripts o en el panel de archivos.</p>
 <p>Si tu directorio de trabajo actual no es el esperado, puedes cambiarlo haciendo clic en el icono del engranaje azul en la opción <em>Establecer como directorio de trabajo/Set as a working directory.</em></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">setwd</span>(<span class="st">"~/dc_workshop/taxonomy"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="código-en-r" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="código-en-r"><span class="header-section-number">10.2</span> Código en R</h2>
-<p>En la consola se pueden escribir y ejecutar comandos de manera inmediata. Aquí se mostrarán los resultados de la ejecución de esos comandos (como en Shell). Puedes escribir instrucciones cuando veas signo “<code>&gt;</code>” en la consola y pulsar “<code>Enter</code>” para ejecutar, sin embargo estas órdenes se olvidarán al cerrar la sesión. Aquí entra en juego la <strong>reproducibilidad</strong>.</p>
+<section id="código-en-r" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="código-en-r"><span class="header-section-number">9.2</span> Código en R</h2>
+<p>En la consola se pueden escribir y ejecutar comandos de manera inmediata. Aquí se mostrarán los resultados de la ejecución de esos comandos (como en Shell). Puedes escribir instrucciones cuando veas signo “<code>&gt;</code>” en la consola y pulsar “<code>Enter</code>” para ejecutar.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="dv">4</span><span class="sc">+</span><span class="dv">3</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> addition <span class="ot">&lt;-</span> <span class="dv">4</span><span class="sc">+</span><span class="dv">3</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> substraction <span class="ot">&lt;-</span><span class="dv">2</span><span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> total <span class="ot">&lt;-</span> addition <span class="sc">+</span>substraction</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> total</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Sin embargo, estas órdenes y operaciones se olvidarán al cerrar la sesión. Aquí entra en juego la 💫<strong>reproducibilidad</strong>💫.</p>
 <p>Por ello es conveniente escribir los comandos que queremos guardar en nuestro editor de scripts y guardarlo periódicamente. Podemos ejecutar nuestras líneas de código en el script con el atajo <code>Ctrl</code> + <code>Enter</code> (<code>Cmd</code> + <code>Return</code>). De esta manera el comando de la línea actual será seleccionado y se enviará por la consola para su ejecución.</p>
 <p>El tiempo puede ser enemigo o aliado de la memoria. Por ello es importante asegurarnos de recordar por qué escribimos qué comandos en nuestros scripts. Se pueden dejar comentarios (líneas de texto no ejecutables) comenzando una línea con <code>#</code>.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Hagamos matemáticas en RStudio. Cuántas veces al año los super mercados cambian el pan que usan de muestra?</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Si es que lo hacen cada 15 días:</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="dv">365</span><span class="sc">/</span><span class="dv">15</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="referencias" class="level2" data-number="10.3">
-<h2 data-number="10.3" class="anchored" data-anchor-id="referencias"><span class="header-section-number">10.3</span> Referencias</h2>
-<p>No olvides las referencias</p>
+<section id="referencias" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="referencias"><span class="header-section-number">9.3</span> Referencias</h2>
+<p><a href="https://www.uvm.edu/~tdonovan/RforFledglings/">R para recién salidos del cascarón</a></p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

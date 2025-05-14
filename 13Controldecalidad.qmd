@@ -4,7 +4,7 @@
 
 Al trabajar con datos de secuenciación, los reads/lecturas que obtienes del secuenciador deben pasar a través de varias herramientas para generar el resultado final deseado. La ejecución de este conjunto de herramientas en un orden específico se conoce como pipeline o flujo de análisis.
 
-INSERTAR FOTO DE PIPELINE
+![](figures/03-02-01.png){fig-align="center"}
 
 Estos pipelines adoptan un enfoque plug-and-play en el sentido de que el archivo de salida de uno de ellos es fácilmente convertido en archivo de salida para el siguiente.
 
@@ -67,7 +67,9 @@ fastqc -h
 
 FastQC has several features that can give you a quick impression of any problems your data may have, so you can consider these issues before moving forward with your analyses. Rather than looking at quality scores for each read, FastQC looks at quality collectively across all reads within a sample. The image below shows one FastQC-generated plot that indicates a very high-quality sample:
 
-INSERTAR FOTO DE QC.html BUENA CALIDAD Y MALA
+![](figures/03-02-03.png){fig-align="center"}
+
+![](figures/03-02-04.png){fig-align="center"}
 
 ### Corre FastQC
 

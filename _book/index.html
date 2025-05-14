@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Dra. Evelia Coss">
-<meta name="dcterms.date" content="2024-10-15">
+<meta name="author" content="Aaron E. Jaime & Yahir Cabrera González">
+<meta name="dcterms.date" content="2025-05-22">
 
-<title>Control de versiones con GitHub y RStudio</title>
+<title>Metagenómica: Análisis de comunidades microbianas</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -142,7 +142,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Control de versiones con GitHub y RStudio</h1>
+<h1 class="title">Metagenómica: Análisis de comunidades microbianas</h1>
 </div>
 
 
@@ -152,14 +152,14 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Dra. Evelia Coss </p>
+             <p>Aaron E. Jaime </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 15, 2024</p>
+      <p class="date">May 22, 2025</p>
     </div>
   </div>
   
@@ -172,7 +172,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="https://liigh.unam.mx/wp-content/uploads/2016/05/logo-liigh-unam.png" class="img-fluid"></p>
+<p><img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Frsg-mexico.iscbsc.org%2F&psig=AOvVaw0U4T80mpKUFQGJTVqN2yv-&ust=1747284762729000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCMim2o6Voo0DFQAAAAAdAAAAABAE" class="img-fluid"></p>
 </div>
 </div>
 </div>
@@ -183,34 +183,33 @@ ul.task-list li input[type="checkbox"] {
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Sobre el curso 📌</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Requisitos previos</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Agenda 📆</a></li></ul>
 <div class="tab-content" data-group="globalInfo">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>Este documento se basa en "<a href="https://happygitwithr.com/">Happy Git with R</a>" de Jenny Bryan, los STAT 545 TAs, Jim Hester, así como las<a href="https://docs.github.com/es/get-started/start-your-journey/hello-world">guías practicas de Github</a>.</p>
+<p>Este documento se basa en "<a href="https://carpentries-lab.github.io/metagenomics-workshop/">Metagenomics workshop</a>" Claudia Zirión Martínez; Diego Garfias Gallegos; Tania Vanessa Arellano Fernández; Aarón Espinosa Jaime; Edder D Bustos Díaz; José Abel Lovaco Flores; Luis Gerardo Tejero Gómez; J Abraham Avelar Rivas; Nelly Sélem (March , 2023) A Data Carpentry- Style Metagenomics Workshop.
 <ul>
-<li><p><strong>Fechas:</strong> 16 y 18 octubre 2024</p></li>
-<li><p><strong>Duración del curso:</strong> 3 horas y 30 minutos</p></li>
+<li><p><strong>Fechas:</strong> 22 y 23 de Mayo 2025</p></li>
+<li><p><strong>Duración del curso:</strong> 14 horas</p></li>
 </ul>
-<h4 id="instructora" class="anchored"><strong>Instructora:</strong></h4>
+<h4 id="instructorxs" class="anchored"><strong>Instructorxs:</strong></h4>
 <ul>
-<li><strong>Evelia Lorena Coss-Navarrete</strong> - PostDoc, LIIGH-UNAM.</li>
+<li><strong>Aaron Espinosa Jaime</strong> - MSc, UGA, CINVESTAV Irapuato.</li>
+<li><strong>Yahir Cabrera González</strong> - IBT, IBC, UNACH.</li>
 </ul>
 <h4 id="resumen" class="anchored"><strong>Resumen:</strong></h4>
-<p>Este tutorial te enseñará los conceptos fundamentales de GitHub, incluyendo <strong>repositorios, ramas, confirmaciones y solicitudes de cambio</strong>. A través de la creación de tu propio repositorio personalizado y pagina web, aprenderás a gestionar el flujo de trabajo de las solicitudes de cambio, un método ampliamente utilizado para colaborar en la creación y revisión de código.</p>
+<p>Este tutorial está diseñado para enseñar a los investigadorxs, conceptos, habilidades y herramientas básicas para trabajar con datos, permitiéndoles optimizar su trabajo con mayor rapidez y eficiencia.  </p>
 <h4 id="objetivos" class="anchored"><strong>Objetivos:</strong></h4>
-<p>En esta guía rápida aprenderás a:</p>
+<p>Este taller utiliza el enfoque de <strong>Data Carpentry</strong> para enseñar:</p>
 <ol type="1">
-<li><p>Crear y gestionar un repositorio.</p></li>
-<li><p>Iniciar y administrar una nueva rama.</p></li>
-<li><p>Realizar cambios en un archivo y enviarlos a GitHub como confirmación.</p></li>
-<li><p>Crear tu página de inicio en Github.</p></li>
-<li><p>Crear tu página web.</p></li>
+<li><p>Buenas prácticas para la organización de proyectos y datos bioinformáticos.</p></li>
+<li><p>Uso de utilidades de línea de comandos para la gestión y análisis de datos.</p></li>
+<li><p>Herramientas de línea de comandos para analizar la calidad de secuencias.</p></li>
+<li><p>Uso de R Studio y bibliotecas de R para comparar la diversidad entre muestras.</p></li>
+<li><p>Conexión y uso de servidores remotos.</p></li>
 </ol>
 <h2 id="citar-y-reutilizar-el-material-del-curso" class="anchored" data-anchor-id="información-general">Citar y reutilizar el material del curso</h2>
 <p>Los datos del curso se pueden reutilizar y adaptar libremente con la debida atribución. Todos los datos de los cursos de estos repositorios están sujetos a la licencia <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <ul>
-<li><p>Debes tener una <strong>cuenta de usuario de GitHub</strong>. Para más información, consulta “<a href="https://docs.github.com/es/get-started/start-your-journey/creating-an-account-on-github">Creación de una cuenta en GitHub</a>”.</p></li>
-<li><p>No necesitas saber cómo codificar, utilizar la línea de comandos o instalar Git (el software de control de versiones en el que está compilado GitHub).</p></li>
-<li><p>Contar con una terminal con Git, en Windows puedes usar <a href="https://miguel-mx.github.io/2024-01-24-ccm-unam-swc/">Git Bash.</a></p></li>
+<li><p>Contar con acceso a una laptop o computadora personal y tener acceso a internet.</a></p></li>
 </ul>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
@@ -227,76 +226,169 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td>🔷 <strong>Section 1 - Introduction and Quality control (45 min) - (8:30 - 10:00 h)</strong></td>
+<td>1️⃣ <strong>Día 1 </strong></td>
+<td style="text-align: center;"></td>
+</tr>
+<tbody>
+<tr class="odd">
+<td>🔷 <strong>Sección 1 - Organización de proyectos (90 min) - (9:00 - 10:30 h)</strong></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="even">
 <td><ul>
-<li>Creación de una cuenta en GitHub</li>
+<li>Organización de proyectos metagenómicos: detrás de los datos de secuenciación</li>
 </ul></td>
-<td style="text-align: center;">5 min</td>
+<td style="text-align: center;"> 20 min (9:15-9:35)</td>
 </tr>
 <tr class="odd">
 <td><ul>
-<li>Introducción a Git / GitHub</li>
+<li>Planeación de proyectos</li>
 </ul></td>
-<td style="text-align: center;">15 min (9:45- 10:00)</td>
+<td style="text-align: center;">20 min (9:35- 9:55)</td>
 </tr>
 <tr class="even">
 <td><ul>
-<li><strong>Practical 13:</strong> scATAC-seq Pre-Processing and Quality Control</li>
+<li> Examinando datos del NCBI</li>
 </ul></td>
-<td style="text-align: center;">30 min<br>
-(10:00-10:30)</td>
+<td style="text-align: center;">25 min (9:55-10:20)</td>
 </tr>
 <tr class="odd">
-<td>☕ <em>Coffee break (10 min) - (10:30-11:00 h) ☕</em></td>
+<td>☕ <em>Coffee break (13 min) - (10:30-11:00 h) ☕</em></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="even">
-<td>🔷&nbsp;<strong>Section 2 - scATAC-seq Downstream analysis</strong> <strong>(2 h) - (11:00-13:00 h)</strong></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td><ul>
-<li><strong>Practical 14:</strong> scATAC-seq Downstream</li>
-</ul></td>
-<td style="text-align: center;">1 h<br>
-(11:00-12:00)</td>
-</tr>
-<tr class="even">
-<td><ul>
-<li><strong>Practical 15:</strong> Analyses and scRNA-seq Integration</li>
-</ul></td>
-<td style="text-align: center;">1 h<br>
-(12:00-13:00)</td>
-</tr>
-<tr class="odd">
-<td><em>🍖🍗 Lunch (1 h) - (13:00 - 14:00) 🍖🍗</em></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td>🔷&nbsp;<strong>Section 3 - Motif analysis and results (14:00 - 15:30 h)</strong></td>
+<td>🔷&nbsp;<strong>Sección 2 - Introducción a la línea de comandos</strong> <strong>(2 h) - (11:00-12:00 h)</strong></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
 <td><ul>
-<li><strong>Practical 16:</strong> Motif analysis with Signac</li>
+<li><strong> Introducción a Shell</li>
 </ul></td>
-<td style="text-align: center;">30 min<br>
-(14:00-14:30)</td>
+<td style="text-align: center;">20 min (11:00-11:20)</td>
 </tr>
 <tr class="even">
 <td><ul>
-<li><strong>Practical 17:</strong> Exploring results (graphs)</li>
+<li><strong> Operaciones en archivos y carpetas</li>
+</ul></td>
+<td style="text-align: center;">20 min (11:20-11:40)</td>
+</tr>
+<tr class="odd">
+<td><ul>
+<li><strong> Redirección </li>
+</ul></td>
+<td style="text-align: center;">30 min h(11:40-12:10)</td>
+</tr>
+<tr class="even">
+<td><ul>
+<li><strong> Bucles y edición de archivos</li>
+</ul></td>
+<td style="text-align: center;">30 minutos (12:10-12:40)</td>
+</tr>
+<tr class="odd">
+<td><ul>
+<li><strong> Organización de proyectos </li>
+</tr>
+<tr class="even">
+</ul></td>
+<td style="text-align: center;">10 min h(12:40-13:00)</td>
+</tr>
+<td><em>🍖🍗 Lunch (1 h) - (13:00 - 14:00) 🍖🍗 </em></td>
+<td style="text-align: center;"></td>
+</tr>
+<td>🔷&nbsp;<strong>Sección 3 - Introducción a R</strong> <strong>(1 h) - (14:00 - 15:00 h)</strong></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td><ul>
+<li><strong> Introducción a RStudio</li>
+</ul></td>
+<td style="text-align: center;">15 min (14:00-14:15)</td>
+</tr>
+<tr class="even">
+<td><ul>
+<li><strong>  Estructuras de datos en R</li>
+</ul></td>
+<td style="text-align: center;">15 min (14:15-14:30)</td>
+</tr>
+<tr class="odd">
+<td><ul>
+<li><strong>Graficando con ggplot</li>
 </ul></td>
 <td style="text-align: center;">30 min (14:30-15:00)</td>
 </tr>
+<tbody>
+<tr class="odd">
+<td>2️⃣ <strong>Día 2 </strong></td>
+<td style="text-align: center;"></td>
+</tr>
+<tbody>
+<tr class="odd">
+<td>🔷 <strong>Sección 4 -  Procesamiento y visualización de datos metagenómicos (X min) - (9:00 - 15:00)</strong></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td><ul>
+<li>Iniciando mi proyecto metagenómico</li>
+</ul></td>
+<td style="text-align: center;"> 20 min (9:05-9:25)</td>
+</tr>
 <tr class="odd">
 <td><ul>
-<li>Other tools used in scATAC-seq</li>
+<li>Control de calidad</li>
 </ul></td>
-<td style="text-align: center;">30 min (15:00-15:30)</td>
+<td style="text-align: center;"> 35 min (9:25- 10:00)</td>
+</tr>
+<tr class="even">
+<td>☕ <em>Coffee break (30 min) - (10:30-11:00 h) ☕</em></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<li><strong> Filtrado de datos de secuenciación</li>
+</ul></td>
+<td style="text-align: center;">30 min (11:00-11:30)</td>
+</tr>
+<tr class="even">
+<td><ul>
+<li><strong> Ensamble metagenómico</li>
+</ul></td>
+<td style="text-align: center;">20 min (11:30-11:50)</td>
+</tr>
+<tr class="odd">
+<td><ul>
+<li><strong> Binning metagenómico </li>
+</ul></td>
+<td style="text-align: center;">20 min h(11:50-12:15)</td>
+</tr>
+<tr class="even">
+<td><ul>
+<li><strong> Asignación taxonómica y visualización </li>
+</ul></td>
+<td style="text-align: center;">30 minutos (12:15-12:45)</td>
+</tr>
+<tr class="odd">
+<td><ul>
+<li><strong> Explorando la taxonomía con paqueterías de R </li>
+</ul></td>
+<td style="text-align: center;">15 min h(12:45-13:00)</td>
+</tr>
+<tr class="even">
+<td><em>🍖🍗 Lunch (1 h) - (13:00 - 14:00) 🍖🍗 </em></td>
+<td style="text-align: center;"></td>
+</tr>
+<td><strong>  Explorando la diversidad con paqueterías de R </li>
+</ul></td>
+<td style="text-align: center;">30 min h(14:00-14:30)</td>
+</tr>
+<tr class="odd">
+<td><ul>
+<li><strong>  Análisis taxonómico </li>
+</ul></td>
+<td style="text-align: center;">30 min (14:30-15:00)</td>
+</tr><tr class="even">
+<td><ul>
+<li><strong>  Recursos extra </li>
+</ul></td>
+<td style="text-align: center;">5 min (15:00)</td>
 </tr>
 </tbody>
 </table>
@@ -547,7 +639,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
       <a href="./intro.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción a Git / GitHub</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Metagenómica: Análisis de comunidades microbianas</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

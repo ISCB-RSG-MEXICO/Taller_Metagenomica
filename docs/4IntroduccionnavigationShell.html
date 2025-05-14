@@ -310,6 +310,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#preparación-del-directorio-de-trabajo" id="toc-preparación-del-directorio-de-trabajo" class="nav-link active" data-scroll-target="#preparación-del-directorio-de-trabajo"><span class="header-section-number">4.1</span> Preparación del directorio de trabajo</a></li>
   <li><a href="#comandos-básicos" id="toc-comandos-básicos" class="nav-link" data-scroll-target="#comandos-básicos"><span class="header-section-number">4.2</span> <strong>Comandos básicos</strong></a></li>
+  <li><a href="#introducción-al-shell-yahir-versión" id="toc-introducción-al-shell-yahir-versión" class="nav-link" data-scroll-target="#introducción-al-shell-yahir-versión"><span class="header-section-number">5</span> Introducción al Shell (yahir versión)</a>
+  <ul>
+  <li><a href="#qué-es-un-shell" id="toc-qué-es-un-shell" class="nav-link" data-scroll-target="#qué-es-un-shell"><span class="header-section-number">5.0.1</span> 🔹 ¿Qué es un Shell?</a></li>
+  <li><a href="#por-qué-usar-un-shell" id="toc-por-qué-usar-un-shell" class="nav-link" data-scroll-target="#por-qué-usar-un-shell"><span class="header-section-number">5.0.2</span> 🎯 ¿Por qué usar un Shell?</a></li>
+  <li><a href="#navegación-en-el-sistema-de-archivos" id="toc-navegación-en-el-sistema-de-archivos" class="nav-link" data-scroll-target="#navegación-en-el-sistema-de-archivos"><span class="header-section-number">5.0.3</span> 🔹 Navegación en el sistema de archivos:</a></li>
+  <li><a href="#ver-el-directorio-en-el-que-te-encuentras" id="toc-ver-el-directorio-en-el-que-te-encuentras" class="nav-link" data-scroll-target="#ver-el-directorio-en-el-que-te-encuentras"><span class="header-section-number">5.0.4</span> 📌 1️ Ver el directorio en el que te encuentras:</a></li>
+  <li><a href="#listar-los-archivos-y-carpetas-en-el-directorio-actual" id="toc-listar-los-archivos-y-carpetas-en-el-directorio-actual" class="nav-link" data-scroll-target="#listar-los-archivos-y-carpetas-en-el-directorio-actual"><span class="header-section-number">5.0.5</span> 📌 2️ Listar los archivos y carpetas en el directorio actual:</a></li>
+  <li><a href="#cambiar-de-directorio" id="toc-cambiar-de-directorio" class="nav-link" data-scroll-target="#cambiar-de-directorio"><span class="header-section-number">5.0.6</span> 📌 3️ Cambiar de directorio:</a></li>
+  <li><a href="#ejemplo" id="toc-ejemplo" class="nav-link" data-scroll-target="#ejemplo"><span class="header-section-number">5.1</span> 👉 Ejemplo:</a>
+  <ul class="collapse">
+  <li><a href="#volver-al-directorio-principal" id="toc-volver-al-directorio-principal" class="nav-link" data-scroll-target="#volver-al-directorio-principal"><span class="header-section-number">5.1.1</span> 📌 4 Volver al directorio principal:</a></li>
+  <li><a href="#subir-un-nivel-en-la-estructura-de-carpetas" id="toc-subir-un-nivel-en-la-estructura-de-carpetas" class="nav-link" data-scroll-target="#subir-un-nivel-en-la-estructura-de-carpetas"><span class="header-section-number">5.1.2</span> 📌 5 Subir un nivel en la estructura de carpetas:</a></li>
+  <li><a href="#atajos-útiles" id="toc-atajos-útiles" class="nav-link" data-scroll-target="#atajos-útiles"><span class="header-section-number">5.1.3</span> 📌 6 Atajos útiles:</a></li>
+  <li><a href="#autocompletado-tab" id="toc-autocompletado-tab" class="nav-link" data-scroll-target="#autocompletado-tab"><span class="header-section-number">5.1.4</span> <strong>🔹 Autocompletado (Tab):</strong></a></li>
+  </ul></li>
+  <li><a href="#permisos-de-archivos" id="toc-permisos-de-archivos" class="nav-link" data-scroll-target="#permisos-de-archivos"><span class="header-section-number">5.2</span> 🔐 2. Permisos de archivos</a></li>
+  <li><a href="#rutas-absolutas-vs.-relativas" id="toc-rutas-absolutas-vs.-relativas" class="nav-link" data-scroll-target="#rutas-absolutas-vs.-relativas"><span class="header-section-number">5.3</span> 3. Rutas absolutas vs.&nbsp;relativas</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -429,8 +447,100 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
+<hr>
+</section>
+<section id="introducción-al-shell-yahir-versión" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Introducción al Shell (yahir versión)</h1>
+<section id="qué-es-un-shell" class="level3" data-number="5.0.1">
+<h3 data-number="5.0.1" class="anchored" data-anchor-id="qué-es-un-shell"><span class="header-section-number">5.0.1</span> 🔹 ¿Qué es un Shell?</h3>
+<p>Un Shell es un programa que permite interactuar con el sistema operativo</p>
+<p>utilizando comandos en lugar de una interfaz gráfica (GUI).</p>
+</section>
+<section id="por-qué-usar-un-shell" class="level3" data-number="5.0.2">
+<h3 data-number="5.0.2" class="anchored" data-anchor-id="por-qué-usar-un-shell"><span class="header-section-number">5.0.2</span> 🎯 ¿Por qué usar un Shell?</h3>
+<p>1️⃣ Muchas herramientas bioinformáticas solo se usan en Shell.</p>
+<p>2️⃣ Permite automatizar tareas repetitivas.</p>
+<p>3️⃣ Minimiza errores humanos.</p>
+<p>4️⃣ Hace que los pasos sean reproducibles y se puedan compartir fácilmente.</p>
+<p>5️⃣ Facilita el acceso a servidores remotos para análisis de datos grandes.</p>
+<p>================================</p>
+</section>
+<section id="navegación-en-el-sistema-de-archivos" class="level3" data-number="5.0.3">
+<h3 data-number="5.0.3" class="anchored" data-anchor-id="navegación-en-el-sistema-de-archivos"><span class="header-section-number">5.0.3</span> 🔹 Navegación en el sistema de archivos:</h3>
+<p>================================</p>
+</section>
+<section id="ver-el-directorio-en-el-que-te-encuentras" class="level3" data-number="5.0.4">
+<h3 data-number="5.0.4" class="anchored" data-anchor-id="ver-el-directorio-en-el-que-te-encuentras"><span class="header-section-number">5.0.4</span> 📌 1️ Ver el directorio en el que te encuentras:</h3>
+<hr>
+<p><code>pwd</code><br>
+👉 Este comando significa “Print Working Directory”. Nos dice en qué carpeta estamos parados.</p>
+<hr>
+</section>
+<section id="listar-los-archivos-y-carpetas-en-el-directorio-actual" class="level3" data-number="5.0.5">
+<h3 data-number="5.0.5" class="anchored" data-anchor-id="listar-los-archivos-y-carpetas-en-el-directorio-actual"><span class="header-section-number">5.0.5</span> 📌 2️ Listar los archivos y carpetas en el directorio actual:</h3>
+<p><code>ls</code><br>
+👉 Muestra los archivos y directorios que existen en esa ubicación.</p>
+<p><code>ls -a</code> Lista TODO, incluidos ocultos</p>
+<hr>
+</section>
+<section id="cambiar-de-directorio" class="level3" data-number="5.0.6">
+<h3 data-number="5.0.6" class="anchored" data-anchor-id="cambiar-de-directorio"><span class="header-section-number">5.0.6</span> 📌 3️ Cambiar de directorio:</h3>
+<p><code>cd nombre_del_directorio</code><br>
+👉 Esto te lleva al directorio especificado.</p>
+</section>
+<section id="ejemplo" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="ejemplo"><span class="header-section-number">5.1</span> 👉 Ejemplo:</h2>
+<p>Si estás en <code>/home/dcuser</code> y quieres entrar a un subdirectorio:</p>
+<p><code>cd dc_workshop</code></p>
+<hr>
+<section id="volver-al-directorio-principal" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="volver-al-directorio-principal"><span class="header-section-number">5.1.1</span> 📌 4 Volver al directorio principal:</h3>
+<p><code>cd ~</code></p>
+</section>
+<section id="subir-un-nivel-en-la-estructura-de-carpetas" class="level3" data-number="5.1.2">
+<h3 data-number="5.1.2" class="anchored" data-anchor-id="subir-un-nivel-en-la-estructura-de-carpetas"><span class="header-section-number">5.1.2</span> 📌 5 Subir un nivel en la estructura de carpetas:</h3>
+<p><code>cd ..</code></p>
+</section>
+<section id="atajos-útiles" class="level3" data-number="5.1.3">
+<h3 data-number="5.1.3" class="anchored" data-anchor-id="atajos-útiles"><span class="header-section-number">5.1.3</span> 📌 6 Atajos útiles:</h3>
+<ul>
+<li><p><code>cd</code> sin argumentos te lleva al directorio principal (home).</p></li>
+<li><p><code>cd -</code> te lleva al último directorio en el que estuviste.</p></li>
+</ul>
+<p>================================</p>
+</section>
+<section id="autocompletado-tab" class="level3" data-number="5.1.4">
+<h3 data-number="5.1.4" class="anchored" data-anchor-id="autocompletado-tab"><span class="header-section-number">5.1.4</span> <strong>🔹 Autocompletado (Tab):</strong></h3>
+<p>Es una función que te permite completar nombres de archivos o carpetas</p>
+<p>al presionar la tecla “<code>Tab</code>”.</p>
+<p>👉 Ejemplo:</p>
+<p>Si escribes:</p>
+<p><code>cd dc&lt;tab&gt;</code><br>
+# El Shell completará el nombre a <code>dc_workshop</code> si existe.</p>
+</section>
+</section>
+<section id="permisos-de-archivos" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="permisos-de-archivos"><span class="header-section-number">5.2</span> 🔐 2. Permisos de archivos</h2>
+<p><strong>Ver permisos</strong> con <code>ls -l</code></p>
+<div class="sourceCode" id="code"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="code-1"><a href="#code-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-l</span> youfoundit.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="output"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="output-1"><a href="#output-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-rw-r--</span> 1 usuario grupo 0 May 27 23:16 youfoundit.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>[imagen]</p>
+<p><strong>Quitar permiso de escritura</strong> al dueño con <code>chmod</code>:</p>
+<pre><code>chmod -w youfoundit.txt
+ls -l youfoundit.txt
+# -r--r--r-- 1 usuario grupo 0 May 27 23:16 youfoundit.txt</code></pre>
+</section>
+<section id="rutas-absolutas-vs.-relativas" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="rutas-absolutas-vs.-relativas"><span class="header-section-number">5.3</span> 3. Rutas absolutas vs.&nbsp;relativas</h2>
+<ul>
+<li><p><strong>Ruta absoluta</strong>: parte de <code>/</code></p>
+<pre><code>cd /home/usuario/dc_workshop/.hidden</code></pre>
+<p><strong>Ruta relativa</strong>: parte de tu directorio actual</p>
+<pre><code>cd dc_workshop/.hidden</code></pre></li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

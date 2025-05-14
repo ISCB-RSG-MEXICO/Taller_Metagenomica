@@ -23,8 +23,9 @@ En esta ocasión, nos entusiasma la idea de que te interese el curso **Metagenó
 
 ### Instructores 👨‍🏫
 
+-   **Aarón Espinosa Jaime** - Maestría, UGA-CINVESTAV Irapuato
+
 -   **José Yahir Cabrera González** - Biotecnología, IBC-UNACH
--   **Aarón Espinosa Jaime** - Maestría, UGA, Cinvestav Irapuato
 
 ### Ayudantes
 
@@ -43,7 +44,7 @@ Este taller utiliza el enfoque de **Data Carpentry** para enseñar:
 -   Uso de utilidades de línea de comandos para la gestión y análisis de datos.
 -   Herramientas de línea de comandos para analizar la calidad de secuencias.
 -   Uso de R Studio y bibliotecas de R para comparar la diversidad entre muestras.
--   Conexión y uso de la computación en la nube.
+-   Conexión y uso de servidores remotos.
 
 Este taller está diseñado para impartirse durante dos días completos.
 

@@ -24,7 +24,7 @@ lectura de archivos cat, less (funciones de las teclas espacio, b, g, G y q), ma
 
 HEAD vs TAIL. (comienza uso de las flags, por ejemplo -n 10 que lee 10 líneas en el archivo)
 
-Detalles del formato FASTQ
+NO PONER Detalles del formato FASTQ, EN ULTIMA LECCION SE VE A PROFUNDIDAD
 
 copiar archivos, crear directorios, mover y renombrar archivos. Enfasis en tener cuidado con sobreescribir archivos.
 
