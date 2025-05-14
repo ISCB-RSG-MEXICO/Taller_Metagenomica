@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; Introducción a Shell – Workshop</title>
+<title>16&nbsp; Control de calidad – Workshop</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./5Operacionesyexploraciondefastq.html" rel="next">
-<link href="./3DatosdeNCBI.html" rel="prev">
+<link href="./17Asignaciontaxonomica.html" rel="next">
+<link href="./15Ensamblemetagenomico.html" rel="prev">
 <link href="./rsgMexico.jpeg" rel="icon" type="image/jpeg">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -118,7 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./4IntroduccionnavigationShell.html"><strong>Sección 2</strong> - Introducción a línea de comandos</a></li><li class="breadcrumb-item"><a href="./4IntroduccionnavigationShell.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introducción a Shell</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./12Iniciandomiproyectometagenomico.html"><strong>Sección 4</strong> - Procesamiento y visualización de datos metagenómicos</a></li><li class="breadcrumb-item"><a href="./16Binningmetagenomico.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Control de calidad</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -216,7 +216,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./4IntroduccionnavigationShell.html" class="sidebar-item-text sidebar-link active">
+  <a href="./4IntroduccionnavigationShell.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introducción a Shell</span></span></a>
   </div>
 </li>
@@ -310,7 +310,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./16Binningmetagenomico.html" class="sidebar-item-text sidebar-link">
+  <a href="./16Binningmetagenomico.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
   </div>
 </li>
@@ -356,35 +356,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preparación-del-directorio-de-trabajo" id="toc-preparación-del-directorio-de-trabajo" class="nav-link active" data-scroll-target="#preparación-del-directorio-de-trabajo"><span class="header-section-number">4.1</span> Preparación del directorio de trabajo</a></li>
-  <li><a href="#comandos-básicos" id="toc-comandos-básicos" class="nav-link" data-scroll-target="#comandos-básicos"><span class="header-section-number">4.2</span> <strong>Comandos básicos</strong></a></li>
-  <li><a href="#introducción-al-shell-yahir-versión" id="toc-introducción-al-shell-yahir-versión" class="nav-link" data-scroll-target="#introducción-al-shell-yahir-versión"><span class="header-section-number">5</span> Introducción al Shell (yahir versión)</a>
-  <ul>
-  <li><a href="#qué-es-un-shell" id="toc-qué-es-un-shell" class="nav-link" data-scroll-target="#qué-es-un-shell"><span class="header-section-number">5.0.1</span> 🔹 ¿Qué es un Shell?</a></li>
-  <li><a href="#por-qué-usar-un-shell" id="toc-por-qué-usar-un-shell" class="nav-link" data-scroll-target="#por-qué-usar-un-shell"><span class="header-section-number">5.0.2</span> 🎯 ¿Por qué usar un Shell?</a></li>
-  <li><a href="#navegación-en-el-sistema-de-archivos" id="toc-navegación-en-el-sistema-de-archivos" class="nav-link" data-scroll-target="#navegación-en-el-sistema-de-archivos"><span class="header-section-number">5.0.3</span> 🔹 Navegación en el sistema de archivos:</a></li>
-  <li><a href="#ver-el-directorio-en-el-que-te-encuentras" id="toc-ver-el-directorio-en-el-que-te-encuentras" class="nav-link" data-scroll-target="#ver-el-directorio-en-el-que-te-encuentras"><span class="header-section-number">5.0.4</span> 📌 1️ Ver el directorio en el que te encuentras:</a></li>
-  <li><a href="#listar-los-archivos-y-carpetas-en-el-directorio-actual" id="toc-listar-los-archivos-y-carpetas-en-el-directorio-actual" class="nav-link" data-scroll-target="#listar-los-archivos-y-carpetas-en-el-directorio-actual"><span class="header-section-number">5.0.5</span> 📌 2️ Listar los archivos y carpetas en el directorio actual:</a></li>
-  <li><a href="#cambiar-de-directorio" id="toc-cambiar-de-directorio" class="nav-link" data-scroll-target="#cambiar-de-directorio"><span class="header-section-number">5.0.6</span> 📌 3️ Cambiar de directorio:</a></li>
-  <li><a href="#ejemplo" id="toc-ejemplo" class="nav-link" data-scroll-target="#ejemplo"><span class="header-section-number">5.1</span> 👉 Ejemplo:</a>
-  <ul class="collapse">
-  <li><a href="#volver-al-directorio-principal" id="toc-volver-al-directorio-principal" class="nav-link" data-scroll-target="#volver-al-directorio-principal"><span class="header-section-number">5.1.1</span> 📌 4 Volver al directorio principal:</a></li>
-  <li><a href="#subir-un-nivel-en-la-estructura-de-carpetas" id="toc-subir-un-nivel-en-la-estructura-de-carpetas" class="nav-link" data-scroll-target="#subir-un-nivel-en-la-estructura-de-carpetas"><span class="header-section-number">5.1.2</span> 📌 5 Subir un nivel en la estructura de carpetas:</a></li>
-  <li><a href="#atajos-útiles" id="toc-atajos-útiles" class="nav-link" data-scroll-target="#atajos-útiles"><span class="header-section-number">5.1.3</span> 📌 6 Atajos útiles:</a></li>
-  <li><a href="#autocompletado-tab" id="toc-autocompletado-tab" class="nav-link" data-scroll-target="#autocompletado-tab"><span class="header-section-number">5.1.4</span> <strong>🔹 Autocompletado (Tab):</strong></a></li>
-  </ul></li>
-  <li><a href="#permisos-de-archivos" id="toc-permisos-de-archivos" class="nav-link" data-scroll-target="#permisos-de-archivos"><span class="header-section-number">5.2</span> 🔐 2. Permisos de archivos</a></li>
-  <li><a href="#rutas-absolutas-vs.-relativas" id="toc-rutas-absolutas-vs.-relativas" class="nav-link" data-scroll-target="#rutas-absolutas-vs.-relativas"><span class="header-section-number">5.3</span> 3. Rutas absolutas vs.&nbsp;relativas</a></li>
-  </ul></li>
+  <li><a href="#flujos-de-análisis-bioinformático-en-metagenómica" id="toc-flujos-de-análisis-bioinformático-en-metagenómica" class="nav-link active" data-scroll-target="#flujos-de-análisis-bioinformático-en-metagenómica"><span class="header-section-number">16.0.1</span> Flujos de análisis bioinformático en metagenómica</a></li>
+  <li><a href="#detalles-del-formato-fastq" id="toc-detalles-del-formato-fastq" class="nav-link" data-scroll-target="#detalles-del-formato-fastq"><span class="header-section-number">16.0.2</span> Detalles del formato FASTQ</a></li>
+  <li><a href="#activando-ambiente-metagenómico" id="toc-activando-ambiente-metagenómico" class="nav-link" data-scroll-target="#activando-ambiente-metagenómico"><span class="header-section-number">16.0.3</span> Activando ambiente Metagenómico</a></li>
+  <li><a href="#control-de-calidad-con-fastqc" id="toc-control-de-calidad-con-fastqc" class="nav-link" data-scroll-target="#control-de-calidad-con-fastqc"><span class="header-section-number">16.0.4</span> Control de calidad con FastQC</a></li>
+  <li><a href="#corre-fastqc" id="toc-corre-fastqc" class="nav-link" data-scroll-target="#corre-fastqc"><span class="header-section-number">16.0.5</span> Corre FastQC</a></li>
+  <li><a href="#visualización-de-resultados-con-fastqc" id="toc-visualización-de-resultados-con-fastqc" class="nav-link" data-scroll-target="#visualización-de-resultados-con-fastqc"><span class="header-section-number">16.0.6</span> Visualización de resultados con FastQC</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">16.1</span> Referencias</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./4IntroduccionnavigationShell.html"><strong>Sección 2</strong> - Introducción a línea de comandos</a></li><li class="breadcrumb-item"><a href="./4IntroduccionnavigationShell.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introducción a Shell</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./12Iniciandomiproyectometagenomico.html"><strong>Sección 4</strong> - Procesamiento y visualización de datos metagenómicos</a></li><li class="breadcrumb-item"><a href="./16Binningmetagenomico.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Control de calidad</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introducción a Shell</span></h1>
+<h1 class="title"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Control de calidad</span></h1>
 </div>
 
 
@@ -401,194 +388,109 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Un Shell es un programa de computador que presenta una interfaz en línea de comando que permite ejecutar funciones en el computador utilizando comandos especiales en vez de tener un control a través de una interfaz gráfica que combina el uso de un ratón o <em>mouse</em> y un teclado de computador.</p>
-<p>INSERTAR FOTO</p>
-<p>COMENZAR CON CONEXIÓN AL SERVIDOR (10 minutos)</p>
-<p>Path relativo y absoluto</p>
-<p>Algunos comandos cd, mkdir, pwd</p>
-<p>ejercicio (5 minutos) en equipos de encontrar el archivo.txt y poner el path absoluto de la ubicación del archivo.</p>
-<p>Repaso de comandos</p>
-<section id="preparación-del-directorio-de-trabajo" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="preparación-del-directorio-de-trabajo"><span class="header-section-number">4.1</span> Preparación del directorio de trabajo</h2>
-<ul>
-<li><p>Ruta / Camino absoluto</p>
-<div class="sourceCode" id="cb1" data-code-copy="true" data-eval="false"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /home/usuario/data/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Ruta / Camino relativo</p>
-<div class="sourceCode" id="cb2" data-code-copy="true" data-eval="false"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ../ <span class="co"># Ir a la carpeta anterior</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-</ul>
+<section id="flujos-de-análisis-bioinformático-en-metagenómica" class="level3" data-number="16.0.1">
+<h3 data-number="16.0.1" class="anchored" data-anchor-id="flujos-de-análisis-bioinformático-en-metagenómica"><span class="header-section-number">16.0.1</span> Flujos de análisis bioinformático en metagenómica</h3>
+<p>Al trabajar con datos de secuenciación, los reads/lecturas que obtienes del secuenciador deben pasar a través de varias herramientas para generar el resultado final deseado. La ejecución de este conjunto de herramientas en un orden específico se conoce como pipeline o flujo de análisis.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/03-02-01.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>Estos pipelines adoptan un enfoque plug-and-play en el sentido de que el archivo de salida de uno de ellos es fácilmente convertido en archivo de salida para el siguiente.</p>
 </section>
-<section id="comandos-básicos" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="comandos-básicos"><span class="header-section-number">4.2</span> <strong>Comandos básicos</strong></h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Comandos</th>
-<th>Información</th>
-<th>Argumentos</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>ssh</code></td>
-<td>Conexión a servidores</td>
-<td>ssh usuario@servidor.mx</td>
-</tr>
-<tr class="even">
-<td><code>ls</code></td>
-<td>Observar el contenido de los archivos en una carpeta</td>
-<td>ls directorio/</td>
-</tr>
-<tr class="odd">
-<td><code>cd</code></td>
-<td>Moverse de directorios</td>
-<td>cd /home/usuario/data/</td>
-</tr>
-<tr class="even">
-<td><code>mkdir</code></td>
-<td>Crear un nuevo directorio</td>
-<td>mkdir data</td>
-</tr>
-<tr class="odd">
-<td><code>rmdir</code></td>
-<td>Eliminar el directorio</td>
-<td>rmkdir -rf data</td>
-</tr>
-<tr class="even">
-<td><code>nano</code>/<code>vim</code></td>
-<td>Editores de texto plano</td>
-<td>nano Archivo.txt / vim Archivo.txt</td>
-</tr>
-<tr class="odd">
-<td><code>cp</code></td>
-<td>Copiar archivos</td>
-<td>cp Archivo1.txt /home/usuario/data/</td>
-</tr>
-<tr class="even">
-<td><code>mv</code></td>
-<td>Mover un archivo o carpeta</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><code>echo</code></td>
-<td>Para llamar y/o declarar variables</td>
-<td>echo “Hello world”</td>
-</tr>
-<tr class="even">
-<td><code>chmod</code></td>
-<td>Cambiar permisos del usuario</td>
-<td>chmod 777 data/</td>
-</tr>
-<tr class="odd">
-<td><code>rsync</code></td>
-<td>Descargar o subir archivos</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><code>scp</code></td>
-<td>Descargar o subir archivos</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<hr>
+<section id="detalles-del-formato-fastq" class="level3" data-number="16.0.2">
+<h3 data-number="16.0.2" class="anchored" data-anchor-id="detalles-del-formato-fastq"><span class="header-section-number">16.0.2</span> Detalles del <a href="https://en.wikipedia.org/wiki/Phred_quality_score">formato FASTQ</a></h3>
+<p>Aunque pueda parecer complicado, el formato FASTQ sigue un patrón de 4 líneas que facilitan su interpretación.</p>
+<ol type="1">
+<li>La primera línea siempre comienza con ‘@’ seguido de la información del read/lectura.</li>
+<li>La segunda línea es la propia secuencia de DNA.</li>
+<li>La tercera línea siempre comienza con el signo ‘+’ y algunas veces contiene la misma información de reads que la primera línea.</li>
+<li>La cuarta línea es una cadena de caracteres que representa los valores de calidad y estrictamente debe tener el mismo número de caracteres que la línea 2.</li>
+</ol>
+<div class="sourceCode" id="cb1" data-eval="FALSE"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd ~/dc_workshop/data/untrimmed_fastq/</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> gunzip JP4D_R1.fastq.gz</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> head <span class="at">-n</span> 4 JP4D_R1.fastq</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Each quality score represents the probability that the corresponding nucleotide call is incorrect. These probability values are the results of the base calling algorithm and depend on how much signal was captured for the base incorporation. This quality score is logarithmically based, so a quality score of 10 reflects a base call accuracy of 90%, but a quality score of 20 reflects a base call accuracy of 99%. In this&nbsp;<a href="https://drive5.com/usearch/manual/quality_score.html">link</a>&nbsp;you can find more information about quality scores.</p>
+<p>In real life, you won’t be assessing the quality of your reads by visually inspecting your FASTQ files. Instead, you’ll use a software program to assess read quality and filter out poor reads. We’ll first use a program called <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/">FastQC</a> to visualize the quality of our reads. Later in our workflow, we’ll use another program to filter out poor-quality reads.</p>
+<p>First, let’s make available our metagenomics software:</p>
 </section>
-<section id="introducción-al-shell-yahir-versión" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Introducción al Shell (yahir versión)</h1>
-<section id="qué-es-un-shell" class="level3" data-number="5.0.1">
-<h3 data-number="5.0.1" class="anchored" data-anchor-id="qué-es-un-shell"><span class="header-section-number">5.0.1</span> 🔹 ¿Qué es un Shell?</h3>
-<p>Un Shell es un programa que permite interactuar con el sistema operativo</p>
-<p>utilizando comandos en lugar de una interfaz gráfica (GUI).</p>
+<section id="activando-ambiente-metagenómico" class="level3" data-number="16.0.3">
+<h3 data-number="16.0.3" class="anchored" data-anchor-id="activando-ambiente-metagenómico"><span class="header-section-number">16.0.3</span> Activando ambiente Metagenómico</h3>
+<p>Environments are part of a bioinformatic tendency to do reproducible research; they are a way to share and maintain our programs in their needed versions used for a pipeline with our colleagues and our future self. FastQC has not been activated in the (base) environment, but this AWS instance came with an environment called metagenomics. We need to activate it in order to start using FastQC.</p>
+<p>We will use <a href="https://docs.conda.io/en/latest/">Conda</a> as our environment manager. Conda is an open-source package and environment management system that runs on Windows, macOS and Linux. Conda environments are activated with the <code>conda activate</code> direction:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> conda activate metagenomics</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># (metagenomics) $</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now, if we call <a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/">FastQC</a>, a long help page will be displayed on our screen.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fastqc</span> <span class="at">-h</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#FastQC - A high throughput sequence QC analysis tool</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SYNOPSIS</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#        fastqc seqfile1 seqfile2 .. seqfileN</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#    fastqc [-o output dir] [--(no)extract] [-f fastq|bam|sam]</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">#           [-c contaminant file] seqfile1 .. seqfileN</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">#DESCRIPTION</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">#    FastQC reads a set of sequence files and produces from each one a quality</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">#    control report consisting of many different modules, each one of</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">#    which will help to identify a different potential type of problem in your</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">#    data.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="por-qué-usar-un-shell" class="level3" data-number="5.0.2">
-<h3 data-number="5.0.2" class="anchored" data-anchor-id="por-qué-usar-un-shell"><span class="header-section-number">5.0.2</span> 🎯 ¿Por qué usar un Shell?</h3>
-<p>1️⃣ Muchas herramientas bioinformáticas solo se usan en Shell.</p>
-<p>2️⃣ Permite automatizar tareas repetitivas.</p>
-<p>3️⃣ Minimiza errores humanos.</p>
-<p>4️⃣ Hace que los pasos sean reproducibles y se puedan compartir fácilmente.</p>
-<p>5️⃣ Facilita el acceso a servidores remotos para análisis de datos grandes.</p>
-<p>================================</p>
+<section id="control-de-calidad-con-fastqc" class="level3" data-number="16.0.4">
+<h3 data-number="16.0.4" class="anchored" data-anchor-id="control-de-calidad-con-fastqc"><span class="header-section-number">16.0.4</span> Control de calidad con FastQC</h3>
+<p>FastQC has several features that can give you a quick impression of any problems your data may have, so you can consider these issues before moving forward with your analyses. Rather than looking at quality scores for each read, FastQC looks at quality collectively across all reads within a sample. The image below shows one FastQC-generated plot that indicates a very high-quality sample:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/03-02-03.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/03-02-04.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
 </section>
-<section id="navegación-en-el-sistema-de-archivos" class="level3" data-number="5.0.3">
-<h3 data-number="5.0.3" class="anchored" data-anchor-id="navegación-en-el-sistema-de-archivos"><span class="header-section-number">5.0.3</span> 🔹 Navegación en el sistema de archivos:</h3>
-<p>================================</p>
+<section id="corre-fastqc" class="level3" data-number="16.0.5">
+<h3 data-number="16.0.5" class="anchored" data-anchor-id="corre-fastqc"><span class="header-section-number">16.0.5</span> Corre FastQC</h3>
+<p>We will now assess the quality of the reads that we downloaded. First, make sure you’re still in the&nbsp;<code>untrimmed_fastq</code>&nbsp;directory.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd ~/dc_workshop/data/untrimmed_fastq/ </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>FastQC acepta múltiples archivos como entrada, tanto archivos comprimidos como descomprimidos, por lo que podemos usar el&nbsp;comodín <code>\*.fastq*</code> para ejecutar FastQC en todos los archivos FASTQ en este directorio.</p>
+<pre><code>$ fastqc *.fastq* </code></pre>
+<p>Verás un mensaje de salida que se actualiza automáticamente, este indica el progreso del análisis. Comienza así:</p>
+<pre class="o"><code>Started analysis of JC1A_R1.fastq.gz                  Approx 5% complete for JC1A_R1.fastq.gz                Approx 10% complete for JC1A_R1.fastq.gz               Approx 15% complete for JC1A_R1.fastq.gz               Approx 20% complete for JC1A_R1.fastq.gz               Approx 25% complete for JC1A_R1.fastq.gz              Approx 30% complete for JC1A_R1.fastq.gz               Approx 35% complete for JC1A_R1.fastq.gz</code></pre>
+<p>FastQC tardará unos minutos en ejecutarse en nuestros cuatro archivos FASTQ. Al finalizar el análisis, volverá a aparecer el mensaje. Su pantalla se verá así:</p>
+<pre><code>Approx 80% complete for JP4D_R2.fastq.gz 
+Approx 85% complete for JP4D_R2.fastq.gz 
+Approx 90% complete for JP4D_R2.fastq.gz 
+Approx 95% complete for JP4D_R2.fastq.gz 
+Analysis complete for JP4D_R2.fastq.gz $</code></pre>
+<p>El programa FastQC ha creado varios archivos nuevos dentro de nuestro&nbsp;<code>data/untrimmed_fastq/</code>directorio.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>JC1A_R1_fastqc.html  JC1A_R2_fastqc.html  
+JP4D_R1.fastq        JP4D_R2_fastqc.html   JC1A_R1_fastqc.zip   JC1A_R2_fastqc.zip   JP4D_R1_fastqc.html  JP4D_R2_fastqc.zip 
+JC1A_R1.fastq.gz     JC1A_R2.fastq.gz     JP4D_R1_fastqc.zip   JP4D_R2.fastq.gz
+TruSeq3-PE.fa</code></pre>
+<p>Para cada archivo FASTQ de entrada, FastQC creó un archivo en formato <code>.zip</code> y <code>.html</code> con el mismo nombre. El archivo&nbsp;<code>.html</code> es una página web que muestra el informe resumido de cada una de nuestras muestras.</p>
+<p>Queremos mantener nuestros archivos de datos y nuestros archivos de resultados separados, por lo que moveremos estos archivos de salida a un nuevo directorio dentro de nuestro&nbsp;<code>results/</code>directorio.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> mkdir <span class="at">-p</span> ~/dc_workshop/results/fastqc_untrimmed_reads $ mv <span class="pp">*</span>.zip ~/dc_workshop/results/fastqc_untrimmed_reads/  </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> mv <span class="pp">*</span>.html ~/dc_workshop/results/fastqc_untrimmed_reads/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="ver-el-directorio-en-el-que-te-encuentras" class="level3" data-number="5.0.4">
-<h3 data-number="5.0.4" class="anchored" data-anchor-id="ver-el-directorio-en-el-que-te-encuentras"><span class="header-section-number">5.0.4</span> 📌 1️ Ver el directorio en el que te encuentras:</h3>
-<hr>
-<p><code>pwd</code><br>
-👉 Este comando significa “Print Working Directory”. Nos dice en qué carpeta estamos parados.</p>
-<hr>
+<section id="visualización-de-resultados-con-fastqc" class="level3" data-number="16.0.6">
+<h3 data-number="16.0.6" class="anchored" data-anchor-id="visualización-de-resultados-con-fastqc"><span class="header-section-number">16.0.6</span> Visualización de resultados con FastQC</h3>
+<p>Nos cambiamos a la carpeta donde movimos nuestros archivos.</p>
+<pre><code>$ cd ~/dc_workshop/results/fastqc_untrimmed_reads/</code></pre>
+<p>En equipos de 5, Ejercicio de analizar calidad de archvios. 2 minutos.</p>
+<p>Contestar ¿Qué muestras tienen la mejor calidad de secuencia de bases? ¿Qué muestras tienen la peor?</p>
 </section>
-<section id="listar-los-archivos-y-carpetas-en-el-directorio-actual" class="level3" data-number="5.0.5">
-<h3 data-number="5.0.5" class="anchored" data-anchor-id="listar-los-archivos-y-carpetas-en-el-directorio-actual"><span class="header-section-number">5.0.5</span> 📌 2️ Listar los archivos y carpetas en el directorio actual:</h3>
-<p><code>ls</code><br>
-👉 Muestra los archivos y directorios que existen en esa ubicación.</p>
-<p><code>ls -a</code> Lista TODO, incluidos ocultos</p>
-<hr>
-</section>
-<section id="cambiar-de-directorio" class="level3" data-number="5.0.6">
-<h3 data-number="5.0.6" class="anchored" data-anchor-id="cambiar-de-directorio"><span class="header-section-number">5.0.6</span> 📌 3️ Cambiar de directorio:</h3>
-<p><code>cd nombre_del_directorio</code><br>
-👉 Esto te lleva al directorio especificado.</p>
-</section>
-<section id="ejemplo" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="ejemplo"><span class="header-section-number">5.1</span> 👉 Ejemplo:</h2>
-<p>Si estás en <code>/home/dcuser</code> y quieres entrar a un subdirectorio:</p>
-<p><code>cd dc_workshop</code></p>
-<hr>
-<section id="volver-al-directorio-principal" class="level3" data-number="5.1.1">
-<h3 data-number="5.1.1" class="anchored" data-anchor-id="volver-al-directorio-principal"><span class="header-section-number">5.1.1</span> 📌 4 Volver al directorio principal:</h3>
-<p><code>cd ~</code></p>
-</section>
-<section id="subir-un-nivel-en-la-estructura-de-carpetas" class="level3" data-number="5.1.2">
-<h3 data-number="5.1.2" class="anchored" data-anchor-id="subir-un-nivel-en-la-estructura-de-carpetas"><span class="header-section-number">5.1.2</span> 📌 5 Subir un nivel en la estructura de carpetas:</h3>
-<p><code>cd ..</code></p>
-</section>
-<section id="atajos-útiles" class="level3" data-number="5.1.3">
-<h3 data-number="5.1.3" class="anchored" data-anchor-id="atajos-útiles"><span class="header-section-number">5.1.3</span> 📌 6 Atajos útiles:</h3>
-<ul>
-<li><p><code>cd</code> sin argumentos te lleva al directorio principal (home).</p></li>
-<li><p><code>cd -</code> te lleva al último directorio en el que estuviste.</p></li>
-</ul>
-<p>================================</p>
-</section>
-<section id="autocompletado-tab" class="level3" data-number="5.1.4">
-<h3 data-number="5.1.4" class="anchored" data-anchor-id="autocompletado-tab"><span class="header-section-number">5.1.4</span> <strong>🔹 Autocompletado (Tab):</strong></h3>
-<p>Es una función que te permite completar nombres de archivos o carpetas</p>
-<p>al presionar la tecla “<code>Tab</code>”.</p>
-<p>👉 Ejemplo:</p>
-<p>Si escribes:</p>
-<p><code>cd dc&lt;tab&gt;</code><br>
-# El Shell completará el nombre a <code>dc_workshop</code> si existe.</p>
-</section>
-</section>
-<section id="permisos-de-archivos" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="permisos-de-archivos"><span class="header-section-number">5.2</span> 🔐 2. Permisos de archivos</h2>
-<p><strong>Ver permisos</strong> con <code>ls -l</code></p>
-<div class="sourceCode" id="code"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="code-1"><a href="#code-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-l</span> youfoundit.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="output"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="output-1"><a href="#output-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-rw-r--</span> 1 usuario grupo 0 May 27 23:16 youfoundit.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>[imagen]</p>
-<p><strong>Quitar permiso de escritura</strong> al dueño con <code>chmod</code>:</p>
-<pre><code>chmod -w youfoundit.txt
-ls -l youfoundit.txt
-# -r--r--r-- 1 usuario grupo 0 May 27 23:16 youfoundit.txt</code></pre>
-</section>
-<section id="rutas-absolutas-vs.-relativas" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="rutas-absolutas-vs.-relativas"><span class="header-section-number">5.3</span> 3. Rutas absolutas vs.&nbsp;relativas</h2>
-<ul>
-<li><p><strong>Ruta absoluta</strong>: parte de <code>/</code></p>
-<pre><code>cd /home/usuario/dc_workshop/.hidden</code></pre>
-<p><strong>Ruta relativa</strong>: parte de tu directorio actual</p>
-<pre><code>cd dc_workshop/.hidden</code></pre></li>
-</ul>
+<section id="referencias" class="level2" data-number="16.1">
+<h2 data-number="16.1" class="anchored" data-anchor-id="referencias"><span class="header-section-number">16.1</span> Referencias</h2>
+<p>Aquí puedes encontrar mayor información sobre cada una de las secciones del resultado de <a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/">FastQC.</a></p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1155,13 +1057,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./3DatosdeNCBI.html" class="pagination-link" aria-label="Examinando datos del NCBI">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Examinando datos del NCBI</span></span>
+      <a href="./15Ensamblemetagenomico.html" class="pagination-link" aria-label="Control de calidad">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Control de calidad</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./5Operacionesyexploraciondefastq.html" class="pagination-link" aria-label="Operaciones en archivos y carpetas">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Operaciones en archivos y carpetas</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./17Asignaciontaxonomica.html" class="pagination-link" aria-label="Control de calidad">
+        <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Control de calidad</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

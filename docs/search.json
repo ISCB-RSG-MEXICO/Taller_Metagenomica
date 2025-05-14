@@ -241,11 +241,44 @@
     ]
   },
   {
+    "objectID": "4IntroduccionnavigationShell.html#ejemplo",
+    "href": "4IntroduccionnavigationShell.html#ejemplo",
+    "title": "4  Introducción a Shell",
+    "section": "5.1 👉 Ejemplo:",
+    "text": "5.1 👉 Ejemplo:\nSi estás en /home/dcuser y quieres entrar a un subdirectorio:\ncd dc_workshop\n\n\n5.1.1 📌 4 Volver al directorio principal:\ncd ~\n\n\n5.1.2 📌 5 Subir un nivel en la estructura de carpetas:\ncd ..\n\n\n5.1.3 📌 6 Atajos útiles:\n\ncd sin argumentos te lleva al directorio principal (home).\ncd - te lleva al último directorio en el que estuviste.\n\n================================\n\n\n5.1.4 🔹 Autocompletado (Tab):\nEs una función que te permite completar nombres de archivos o carpetas\nal presionar la tecla “Tab”.\n👉 Ejemplo:\nSi escribes:\ncd dc&lt;tab&gt;\n# El Shell completará el nombre a dc_workshop si existe.",
+    "crumbs": [
+      "**Sección 2** - Introducción a línea de comandos",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introducción a Shell</span>"
+    ]
+  },
+  {
+    "objectID": "4IntroduccionnavigationShell.html#permisos-de-archivos",
+    "href": "4IntroduccionnavigationShell.html#permisos-de-archivos",
+    "title": "4  Introducción a Shell",
+    "section": "5.2 🔐 2. Permisos de archivos",
+    "text": "5.2 🔐 2. Permisos de archivos\nVer permisos con ls -l\nls -l youfoundit.txt\n-rw-rw-r-- 1 usuario grupo 0 May 27 23:16 youfoundit.txt\n[imagen]\nQuitar permiso de escritura al dueño con chmod:\nchmod -w youfoundit.txt\nls -l youfoundit.txt\n# -r--r--r-- 1 usuario grupo 0 May 27 23:16 youfoundit.txt",
+    "crumbs": [
+      "**Sección 2** - Introducción a línea de comandos",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introducción a Shell</span>"
+    ]
+  },
+  {
+    "objectID": "4IntroduccionnavigationShell.html#rutas-absolutas-vs.-relativas",
+    "href": "4IntroduccionnavigationShell.html#rutas-absolutas-vs.-relativas",
+    "title": "4  Introducción a Shell",
+    "section": "5.3 3. Rutas absolutas vs. relativas",
+    "text": "5.3 3. Rutas absolutas vs. relativas\n\nRuta absoluta: parte de /\ncd /home/usuario/dc_workshop/.hidden\nRuta relativa: parte de tu directorio actual\ncd dc_workshop/.hidden",
+    "crumbs": [
+      "**Sección 2** - Introducción a línea de comandos",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introducción a Shell</span>"
+    ]
+  },
+  {
     "objectID": "5Operacionesyexploraciondefastq.html",
     "href": "5Operacionesyexploraciondefastq.html",
     "title": "5  Operaciones en archivos y carpetas",
     "section": "",
-    "text": "Iremos haciendo las operaciones en los archivos fastq\nuso de wildcards en combinación con comandos básicos.\nejemplo:\ncd ~/dc_workshop/data/untrimmed_fastq\n $ ls *.fastq\nout JC1A_R1.fastq JP4D_R1.fastq\nOtros shortcuts como crtl + D, history o clear (ctrl + L)\nEn history !260 para repetir la línea 260 (Para comandos muy elaborados, tener un ejemplo antes de ver este short cut)\nlectura de archivos cat, less (funciones de las teclas espacio, b, g, G y q), manual, checar sus diferencias.\nHEAD vs TAIL. (comienza uso de las flags, por ejemplo -n 10 que lee 10 líneas en el archivo)\nDetalles del formato FASTQ\ncopiar archivos, crear directorios, mover y renombrar archivos. Enfasis en tener cuidado con sobreescribir archivos.\nBORRAR\nCopiar ejercicio 1, Make backup folder with write-protected permissions",
+    "text": "Iremos haciendo las operaciones en los archivos fastq\nuso de wildcards en combinación con comandos básicos.\nejemplo:\ncd ~/dc_workshop/data/untrimmed_fastq\n $ ls *.fastq\nout JC1A_R1.fastq JP4D_R1.fastq\nOtros shortcuts como crtl + D, history o clear (ctrl + L)\nEn history !260 para repetir la línea 260 (Para comandos muy elaborados, tener un ejemplo antes de ver este short cut)\nlectura de archivos cat, less (funciones de las teclas espacio, b, g, G y q), manual, checar sus diferencias.\nHEAD vs TAIL. (comienza uso de las flags, por ejemplo -n 10 que lee 10 líneas en el archivo)\nNO PONER Detalles del formato FASTQ, EN ULTIMA LECCION SE VE A PROFUNDIDAD\ncopiar archivos, crear directorios, mover y renombrar archivos. Enfasis en tener cuidado con sobreescribir archivos.\nBORRAR\nCopiar ejercicio 1, Make backup folder with write-protected permissions",
     "crumbs": [
       "**Sección 2** - Introducción a línea de comandos",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Operaciones en archivos y carpetas</span>"
@@ -254,12 +287,12 @@
   {
     "objectID": "6Redireccion.html",
     "href": "6Redireccion.html",
-    "title": "6  Conectar a GitHub con SSH",
+    "title": "6  Redirección",
     "section": "",
     "text": "buscando en archivos (uso de less y grep).\nAbreviaciones de los nucleótidos y N.\ncd ~/dc_workshop/data/untrimmed_fastq\nDeterminación de la calidad. Con grep? NNNNNNNNNNNN en JC1A_R2.fastq\nflags del -B1 y -A2\nCopiar ejercicio 1: Using grep (10 minutos) en\nRedirección de datos con “&gt;” bad_reads.txt\nwc bad_reads.txt\nEjercicio 2: uso de wc\nCombinacion de grep -b1 -a2 flags, redireccion",
     "crumbs": [
       "**Sección 2** - Introducción a línea de comandos",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Conectar a GitHub con SSH</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Redirección</span>"
     ]
   },
   {
@@ -388,7 +421,7 @@
     "href": "11Graficandoconggplot.html#visualización-con-ggplot2",
     "title": "11  Creando gráficos con ggplot2",
     "section": "11.2 Visualización con ggplot2",
-    "text": "11.2 Visualización con ggplot2\nggplot2 se creó con la idea de que cualquier gráfico puede expresarse con tres componentes:\n\nConjunto de datos\nCoordenadas\nConjunto de geoms (aka la representación visual de los datos)\n\nEstas geoms pueden considerarse capas superpuestas, por lo que es necesario tener especial cuidado al mostrar capas de información útiles que transmitan un mensaje.\nINSERTAR https://r.qcbs.ca/workshop03/book-en/images/gglayers.png\nmusician\nIntentaremos crear una figura sólo con los datos y coordenadas de los componentes.\nggplot(data= musician,\n       mapping = aes(x = people, y = pieces))\nINSERTAR FIGURA 1.\nDescribiendo el código anterior. Primero llamamos a la función ggplot. Esto le dirá a R que queremos crear una gráfica y los parámetros indicados dentro de esta función se aplicarán a todas las capas del gráfico. Dimos dos argumentos al código:\n\nLos datos que queremos mostrar en nuestra figura, es decir data=musician\nLa forma de mostrarlos en el gráfico, es decir, mapping = aes(x=people, y=pieces), que le indicará a ggplot cómo se mapearán las variables en el gráfico.\n\nEn este caso x es el nombre de los grupos, mientras que y es el número de piezas que cada uno de ellos compuso. Con esto hemos hecho la base de nuestro gráfico, pero no podemos ver los datos porque no hemos elegido una forma gráfica de representarlos (geoms).\nggplot(data= musician,\n        mapping = aes(x = people, y = pieces))+\n  geom_col()\nINSERTAR FIGURA\nAlgunos elementos del gráfico pueden ser informativos o meramente decorativos. si queremos que sean informativos deben estar dentro de la aes() e indicar qué información mostrarán. si queremos que sean decorativos, deben estar fuera de aes(). Veamos como funciona.\nggplot(data= musician,\n       mapping = aes(x = people, y = pieces))+\n  geom_col(color = \"blue\")\nINSERTAR FIGURA\nggplot(data= musician,\n       mapping = aes(x = people, y = pieces))+\n  geom_col(aes(color= likes))\nINSERTAR FIGURA\n\n11.2.1 Pidiendo ayuda\nSi alguna vez tienes problemas para correr alguna función, puedes usar el signo ? para conseguir más información desde la interfaz de RStudio. Por ejemplo ??barplot abrirá la ventana de ayuda en el panel derecho inferior.",
+    "text": "11.2 Visualización con ggplot2\nggplot2 se creó con la idea de que cualquier gráfico puede expresarse con tres componentes:\n\nConjunto de datos\nCoordenadas\nConjunto de geoms (aka la representación visual de los datos)\n\nEstas geoms pueden considerarse capas superpuestas, por lo que es necesario tener especial cuidado al mostrar capas de información útiles que transmitan un mensaje.\n\nmusician\nIntentaremos crear una figura sólo con los datos y coordenadas de los componentes.\nggplot(data= musician,\n       mapping = aes(x = people, y = pieces))\n\n\n\n\n\nDescribiendo el código anterior. Primero llamamos a la función ggplot. Esto le dirá a R que queremos crear una gráfica y los parámetros indicados dentro de esta función se aplicarán a todas las capas del gráfico. Dimos dos argumentos al código:\n\nLos datos que queremos mostrar en nuestra figura, es decir data=musician\nLa forma de mostrarlos en el gráfico, es decir, mapping = aes(x=people, y=pieces), que le indicará a ggplot cómo se mapearán las variables en el gráfico.\n\nEn este caso x es el nombre de los grupos, mientras que y es el número de piezas que cada uno de ellos compuso. Con esto hemos hecho la base de nuestro gráfico, pero no podemos ver los datos porque no hemos elegido una forma gráfica de representarlos (geoms).\nggplot(data= musician,\n        mapping = aes(x = people, y = pieces))+\n  geom_col()\n\nAlgunos elementos del gráfico pueden ser informativos o meramente decorativos. si queremos que sean informativos deben estar dentro de la aes() e indicar qué información mostrarán. si queremos que sean decorativos, deben estar fuera de aes(). Veamos como funciona.\nggplot(data= musician,\n       mapping = aes(x = people, y = pieces))+\n  geom_col(color = \"blue\")\n\nggplot(data= musician,\n       mapping = aes(x = people, y = pieces))+\n  geom_col(aes(color= likes))\n\n\n11.2.1 Pidiendo ayuda\nSi alguna vez tienes problemas para correr alguna función, puedes usar el signo ? para conseguir más información desde la interfaz de RStudio. Por ejemplo ??barplot abrirá la ventana de ayuda en el panel derecho inferior.",
     "crumbs": [
       "**Sección 3** - Primeros pasos con R Studio",
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Creando gráficos con ggplot2</span>"
@@ -408,34 +441,34 @@
   {
     "objectID": "12Iniciandomiproyectometagenomico.html",
     "href": "12Iniciandomiproyectometagenomico.html",
-    "title": "12  Procesamiento y visualización de datos",
+    "title": "12  Iniciando mi proyecto metagenómico",
     "section": "",
     "text": "12.0.1 Introducción\nMuchas de las herramientas para el análisis metagenómico se utilizan en línea de comando por las siguientes razones:\nEn esta sección aplicarás los conocimientos para implementar un workflow común en metagenómica: identificar Unidades Taxonómicas Operacionales (OTU) en muestras tomadas de metagenomas.\nComenzaremos con un conjunto de lecturas/reads secuenciados en archivos con formato .fastq. Realizaremos algunos pasos de control de calidad, ensamblaremos los reads en contigs y finalizaremos identificando y visualizando los OTUs en estas muestras.\nToma en cuenta que a medida que avanzamos en esta sección, aunque no utilices el mismo flujo de trabajo, aprenderás a implementar herramientas bioinformáticas importantes en línea de comandos.",
     "crumbs": [
       "**Sección 4** - Procesamiento y visualización de datos metagenómicos",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Procesamiento y visualización de datos</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Iniciando mi proyecto metagenómico</span>"
     ]
   },
   {
     "objectID": "12Iniciandomiproyectometagenomico.html#comienza-tu-proyecto-metagenómico",
     "href": "12Iniciandomiproyectometagenomico.html#comienza-tu-proyecto-metagenómico",
-    "title": "12  Procesamiento y visualización de datos",
+    "title": "12  Iniciando mi proyecto metagenómico",
     "section": "12.1 Comienza tu proyecto metagenómico",
-    "text": "12.1 Comienza tu proyecto metagenómico\n\n12.1.1 Metagenómica\nLos metagenómas son colecciones de secuencias genómicas de varios microorganismos que coexisten en un determinado espacio. Nos brindan información sobre la composición taxonómica, metabolómica e incluso funcional de las comunidades que estudiamos. Los metagenómas se emplean habitualmente para investigar la ecología de nichos, como por ejemplo el intestino humano o el fondo marino.\nDado que los metagenomas son mezclas de secuencias que perteneven a diferentes especies, un flujo de trabajo metagenómico está diseñado para responder dos preguntas:\n\n¿Qué especies están representadas en la muestra?\n¿Qué son capaces de hacer?\n\nPara determinar qué especies están presentes en un nicho, debemos realizar una asignación taxonómica de las secuencias obtenidas. Para determinar sus capacidades podemos examinar los genes codificados directamente en el metagenoma o encontrar genes asociados a las especies encontradas. Para determinar qué metodología usar es fundamental saber qué preguntas queremos responder.\n\n\n12.1.2 Shotgun y amplicon\nExisten dos rutas para obtener información de una muestra:\n\nMetagenómica por Shotgun\nMetabarcoding\n\nCon la metagenómica por Shotgun, secuenciamos partes aleatorias (idealmente todas las partes del genoma) de los genomas presentes en una muestra. Podemos buscar el origen de estas piezas (es decir, su taxonomía) y tratar de encontrar también a qué parte corresponden. Es posible obtener genomas individuales completos de un metagenoma shotgun (MAGs). Sin embargo, el ensamblaje de MAG requiere muchas secuencias genómicas de un organismo (gran profundidad de secuenciación), lo cual se vuelve un reto cuando nuestra especie de interés no es muy abundante en la muestra o ambiente. Finalmente la secuenciación es costosa y hacer réplicas técnicas y biológicas puede ser prohibitivamente costoso.\nPor el contrario, el metabarcoding suele ser una técnica más económica. Este menor coste se debe a las especificaciones de la técnica, la cual consiste en la recopilación de pequeños fragmentos genómicos presentes en la comunidad y amplificados mediante PCR. La conservación de regiones genómicas entre especies es la razón por la que los amplicones más populares para bacterias utilizados en esta metodología con los 16S. Sin embargo, esta técnica se limita a ofrecernos la taxonomía del organismo. Interponiendo la posibilidad de proveer información metabólica.\nINSERTAR FIGURA DE FLUJO DE TRABAJO\nSobre los metadatos\nEn la mayoría de los casos, las diferencias observadas al comparar metagenomas pueden correlacionarse con los metadatos, por lo que debemos dedicar una sección de nuestro diseño experimental a los metadatos que esperamos recopilar y registrar.\nLos datos que vamos a utilizar son de un estudio sobre la respuesta de la comunidad bacteriana de Cuatro Ciénegas al enriquecimiento de nutrientes. La comparación entre comunidades bacterianas demostró que algunos rasgos genómicos como el tamaño medio del genoma, el contenido de GC, el número total de genes de ARNt y ARNr y el sesgo en el uso de codones, se modificaron significativamente cuando la comunidad bacteriana se sometió a los distintos tratamientos (entorno natural, oligotrófico, deficiente en fósforo y un tratamiento de fertilización).\nDe acuerdo con los resultados de este estudio, ¿qué estrategia crees que utilizaron en este estudio?\n\n\n12.1.3 En Etherpad:\nSegún la importancia de los metadatos, ¿qué otra información puedes recomendar agregar a la tabla de metadatos?\nNota:\nLos resultados de este estudio, las secuencias sin procesar y los metadatos se pueden encontrar en el SRA del NCBI y se almacenaron en el BioProject PRJEB22811.\nNota:\nOtras bases de datos metagenómicos públicas son: MG-RAST, MGnify, GM Repo, Marine Metagenomics Portal y Terrestrial Metagenome DB.",
+    "text": "12.1 Comienza tu proyecto metagenómico\n\n12.1.1 Metagenómica\nLos metagenómas son colecciones de secuencias genómicas de varios microorganismos que coexisten en un determinado espacio. Nos brindan información sobre la composición taxonómica, metabolómica e incluso funcional de las comunidades que estudiamos. Los metagenómas se emplean habitualmente para investigar la ecología de nichos, como por ejemplo el intestino humano o el fondo marino.\nDado que los metagenomas son mezclas de secuencias que perteneven a diferentes especies, un flujo de trabajo metagenómico está diseñado para responder dos preguntas:\n\n¿Qué especies están representadas en la muestra?\n¿Qué son capaces de hacer?\n\nPara determinar qué especies están presentes en un nicho, debemos realizar una asignación taxonómica de las secuencias obtenidas. Para determinar sus capacidades podemos examinar los genes codificados directamente en el metagenoma o encontrar genes asociados a las especies encontradas. Para determinar qué metodología usar es fundamental saber qué preguntas queremos responder.\n\n\n12.1.2 Shotgun y amplicon\nExisten dos rutas para obtener información de una muestra:\n\nMetagenómica por Shotgun\nMetabarcoding\n\nCon la metagenómica por Shotgun, secuenciamos partes aleatorias (idealmente todas las partes del genoma) de los genomas presentes en una muestra. Podemos buscar el origen de estas piezas (es decir, su taxonomía) y tratar de encontrar también a qué parte corresponden. Es posible obtener genomas individuales completos de un metagenoma shotgun (MAGs). Sin embargo, el ensamblaje de MAG requiere muchas secuencias genómicas de un organismo (gran profundidad de secuenciación), lo cual se vuelve un reto cuando nuestra especie de interés no es muy abundante en la muestra o ambiente. Finalmente la secuenciación es costosa y hacer réplicas técnicas y biológicas puede ser prohibitivamente costoso.\nPor el contrario, el metabarcoding suele ser una técnica más económica. Este menor coste se debe a las especificaciones de la técnica, la cual consiste en la recopilación de pequeños fragmentos genómicos presentes en la comunidad y amplificados mediante PCR. La conservación de regiones genómicas entre especies es la razón por la que los amplicones más populares para bacterias utilizados en esta metodología con los 16S. Sin embargo, esta técnica se limita a ofrecernos la taxonomía del organismo. Interponiendo la posibilidad de proveer información metabólica.\n\n\n\n\n\n\n\n12.1.3 Sobre los metadatos\nEn la mayoría de los casos, las diferencias observadas al comparar metagenomas pueden correlacionarse con los metadatos, por lo que debemos dedicar una sección de nuestro diseño experimental a los metadatos que esperamos recopilar y registrar.\nLos datos que vamos a utilizar son de un estudio sobre la respuesta de la comunidad bacteriana de Cuatro Ciénegas al enriquecimiento de nutrientes. La comparación entre comunidades bacterianas demostró que algunos rasgos genómicos como el tamaño medio del genoma, el contenido de GC, el número total de genes de ARNt y ARNr y el sesgo en el uso de codones, se modificaron significativamente cuando la comunidad bacteriana se sometió a los distintos tratamientos (entorno natural, oligotrófico, deficiente en fósforo y un tratamiento de fertilización).\nDe acuerdo con los resultados de este estudio, ¿qué estrategia crees que utilizaron en este estudio?\n\n\n12.1.4 En Etherpad:\nSegún la importancia de los metadatos, ¿qué otra información puedes recomendar agregar a la tabla de metadatos?\n\n\n\n\n\n\nNote\n\n\n\nNota:\nLos resultados de este estudio, las secuencias sin procesar y los metadatos se pueden encontrar en el SRA del NCBI y se almacenaron en el BioProject PRJEB22811.\n\n\n\n\n\n\n\n\nNote\n\n\n\nNota:\nOtras bases de datos metagenómicos públicas son: MG-RAST, MGnify, GM Repo, Marine Metagenomics Portal y Terrestrial Metagenome DB.",
     "crumbs": [
       "**Sección 4** - Procesamiento y visualización de datos metagenómicos",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Procesamiento y visualización de datos</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Iniciando mi proyecto metagenómico</span>"
     ]
   },
   {
     "objectID": "12Iniciandomiproyectometagenomico.html#referencias",
     "href": "12Iniciandomiproyectometagenomico.html#referencias",
-    "title": "12  Procesamiento y visualización de datos",
+    "title": "12  Iniciando mi proyecto metagenómico",
     "section": "12.2 Referencias",
     "text": "12.2 Referencias\nEpisodios 2 y 3 (Análisis de control de calidad y filtrado de secuencias) son adaptaciones de los episodios correspondientes en la lección/taller Data Wrangling and Processing for Genomics en The Carpentries.",
     "crumbs": [
       "**Sección 4** - Procesamiento y visualización de datos metagenómicos",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Procesamiento y visualización de datos</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Iniciando mi proyecto metagenómico</span>"
     ]
   },
   {
@@ -443,7 +476,7 @@
     "href": "13Controldecalidad.html",
     "title": "13  Control de calidad",
     "section": "",
-    "text": "13.0.1 Flujos de análisis bioinformático en metagenómica\nAl trabajar con datos de secuenciación, los reads/lecturas que obtienes del secuenciador deben pasar a través de varias herramientas para generar el resultado final deseado. La ejecución de este conjunto de herramientas en un orden específico se conoce como pipeline o flujo de análisis.\nINSERTAR FOTO DE PIPELINE\nEstos pipelines adoptan un enfoque plug-and-play en el sentido de que el archivo de salida de uno de ellos es fácilmente convertido en archivo de salida para el siguiente.",
+    "text": "13.0.1 Flujos de análisis bioinformático en metagenómica\nAl trabajar con datos de secuenciación, los reads/lecturas que obtienes del secuenciador deben pasar a través de varias herramientas para generar el resultado final deseado. La ejecución de este conjunto de herramientas en un orden específico se conoce como pipeline o flujo de análisis.\nEstos pipelines adoptan un enfoque plug-and-play en el sentido de que el archivo de salida de uno de ellos es fácilmente convertido en archivo de salida para el siguiente.",
     "crumbs": [
       "**Sección 4** - Procesamiento y visualización de datos metagenómicos",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>Control de calidad</span>"
@@ -461,36 +494,179 @@
     ]
   },
   {
-    "objectID": "4IntroduccionnavigationShell.html#ejemplo",
-    "href": "4IntroduccionnavigationShell.html#ejemplo",
-    "title": "4  Introducción a Shell",
-    "section": "5.1 👉 Ejemplo:",
-    "text": "5.1 👉 Ejemplo:\nSi estás en /home/dcuser y quieres entrar a un subdirectorio:\ncd dc_workshop\n\n\n5.1.1 📌 4 Volver al directorio principal:\ncd ~\n\n\n5.1.2 📌 5 Subir un nivel en la estructura de carpetas:\ncd ..\n\n\n5.1.3 📌 6 Atajos útiles:\n\ncd sin argumentos te lleva al directorio principal (home).\ncd - te lleva al último directorio en el que estuviste.\n\n================================\n\n\n5.1.4 🔹 Autocompletado (Tab):\nEs una función que te permite completar nombres de archivos o carpetas\nal presionar la tecla “Tab”.\n👉 Ejemplo:\nSi escribes:\ncd dc&lt;tab&gt;\n# El Shell completará el nombre a dc_workshop si existe.",
+    "objectID": "14Filtraciondedatosdesecuenciacion.html",
+    "href": "14Filtraciondedatosdesecuenciacion.html",
+    "title": "14  Control de calidad",
+    "section": "",
+    "text": "14.0.1 Flujos de análisis bioinformático en metagenómica\nAl trabajar con datos de secuenciación, los reads/lecturas que obtienes del secuenciador deben pasar a través de varias herramientas para generar el resultado final deseado. La ejecución de este conjunto de herramientas en un orden específico se conoce como pipeline o flujo de análisis.\nEstos pipelines adoptan un enfoque plug-and-play en el sentido de que el archivo de salida de uno de ellos es fácilmente convertido en archivo de salida para el siguiente.",
     "crumbs": [
-      "**Sección 2** - Introducción a línea de comandos",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introducción a Shell</span>"
+      "**Sección 4** - Procesamiento y visualización de datos metagenómicos",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Control de calidad</span>"
     ]
   },
   {
-    "objectID": "4IntroduccionnavigationShell.html#permisos-de-archivos",
-    "href": "4IntroduccionnavigationShell.html#permisos-de-archivos",
-    "title": "4  Introducción a Shell",
-    "section": "5.2 🔐 2. Permisos de archivos",
-    "text": "5.2 🔐 2. Permisos de archivos\nVer permisos con ls -l\nls -l youfoundit.txt\n-rw-rw-r-- 1 usuario grupo 0 May 27 23:16 youfoundit.txt\n[imagen]\nQuitar permiso de escritura al dueño con chmod:\nchmod -w youfoundit.txt\nls -l youfoundit.txt\n# -r--r--r-- 1 usuario grupo 0 May 27 23:16 youfoundit.txt",
+    "objectID": "14Filtraciondedatosdesecuenciacion.html#referencias",
+    "href": "14Filtraciondedatosdesecuenciacion.html#referencias",
+    "title": "14  Control de calidad",
+    "section": "14.1 Referencias",
+    "text": "14.1 Referencias\nAquí puedes encontrar mayor información sobre cada una de las secciones del resultado de FastQC.",
     "crumbs": [
-      "**Sección 2** - Introducción a línea de comandos",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introducción a Shell</span>"
+      "**Sección 4** - Procesamiento y visualización de datos metagenómicos",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Control de calidad</span>"
     ]
   },
   {
-    "objectID": "4IntroduccionnavigationShell.html#rutas-absolutas-vs.-relativas",
-    "href": "4IntroduccionnavigationShell.html#rutas-absolutas-vs.-relativas",
-    "title": "4  Introducción a Shell",
-    "section": "5.3 3. Rutas absolutas vs. relativas",
-    "text": "5.3 3. Rutas absolutas vs. relativas\n\nRuta absoluta: parte de /\ncd /home/usuario/dc_workshop/.hidden\nRuta relativa: parte de tu directorio actual\ncd dc_workshop/.hidden",
+    "objectID": "15Ensamblemetagenomico.html",
+    "href": "15Ensamblemetagenomico.html",
+    "title": "15  Control de calidad",
+    "section": "",
+    "text": "15.0.1 Flujos de análisis bioinformático en metagenómica\nAl trabajar con datos de secuenciación, los reads/lecturas que obtienes del secuenciador deben pasar a través de varias herramientas para generar el resultado final deseado. La ejecución de este conjunto de herramientas en un orden específico se conoce como pipeline o flujo de análisis.\nEstos pipelines adoptan un enfoque plug-and-play en el sentido de que el archivo de salida de uno de ellos es fácilmente convertido en archivo de salida para el siguiente.",
     "crumbs": [
-      "**Sección 2** - Introducción a línea de comandos",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introducción a Shell</span>"
+      "**Sección 4** - Procesamiento y visualización de datos metagenómicos",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Control de calidad</span>"
+    ]
+  },
+  {
+    "objectID": "15Ensamblemetagenomico.html#referencias",
+    "href": "15Ensamblemetagenomico.html#referencias",
+    "title": "15  Control de calidad",
+    "section": "15.1 Referencias",
+    "text": "15.1 Referencias\nAquí puedes encontrar mayor información sobre cada una de las secciones del resultado de FastQC.",
+    "crumbs": [
+      "**Sección 4** - Procesamiento y visualización de datos metagenómicos",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Control de calidad</span>"
+    ]
+  },
+  {
+    "objectID": "16Binningmetagenomico.html",
+    "href": "16Binningmetagenomico.html",
+    "title": "16  Control de calidad",
+    "section": "",
+    "text": "16.0.1 Flujos de análisis bioinformático en metagenómica\nAl trabajar con datos de secuenciación, los reads/lecturas que obtienes del secuenciador deben pasar a través de varias herramientas para generar el resultado final deseado. La ejecución de este conjunto de herramientas en un orden específico se conoce como pipeline o flujo de análisis.\nEstos pipelines adoptan un enfoque plug-and-play en el sentido de que el archivo de salida de uno de ellos es fácilmente convertido en archivo de salida para el siguiente.",
+    "crumbs": [
+      "**Sección 4** - Procesamiento y visualización de datos metagenómicos",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Control de calidad</span>"
+    ]
+  },
+  {
+    "objectID": "16Binningmetagenomico.html#referencias",
+    "href": "16Binningmetagenomico.html#referencias",
+    "title": "16  Control de calidad",
+    "section": "16.1 Referencias",
+    "text": "16.1 Referencias\nAquí puedes encontrar mayor información sobre cada una de las secciones del resultado de FastQC.",
+    "crumbs": [
+      "**Sección 4** - Procesamiento y visualización de datos metagenómicos",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Control de calidad</span>"
+    ]
+  },
+  {
+    "objectID": "17Asignaciontaxonomica.html",
+    "href": "17Asignaciontaxonomica.html",
+    "title": "17  Control de calidad",
+    "section": "",
+    "text": "17.0.1 Flujos de análisis bioinformático en metagenómica\nAl trabajar con datos de secuenciación, los reads/lecturas que obtienes del secuenciador deben pasar a través de varias herramientas para generar el resultado final deseado. La ejecución de este conjunto de herramientas en un orden específico se conoce como pipeline o flujo de análisis.\nEstos pipelines adoptan un enfoque plug-and-play en el sentido de que el archivo de salida de uno de ellos es fácilmente convertido en archivo de salida para el siguiente.",
+    "crumbs": [
+      "**Sección 4** - Procesamiento y visualización de datos metagenómicos",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Control de calidad</span>"
+    ]
+  },
+  {
+    "objectID": "17Asignaciontaxonomica.html#referencias",
+    "href": "17Asignaciontaxonomica.html#referencias",
+    "title": "17  Control de calidad",
+    "section": "17.1 Referencias",
+    "text": "17.1 Referencias\nAquí puedes encontrar mayor información sobre cada una de las secciones del resultado de FastQC.",
+    "crumbs": [
+      "**Sección 4** - Procesamiento y visualización de datos metagenómicos",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Control de calidad</span>"
+    ]
+  },
+  {
+    "objectID": "18Exploraciondetaxonomiaconr.html",
+    "href": "18Exploraciondetaxonomiaconr.html",
+    "title": "18  Control de calidad",
+    "section": "",
+    "text": "18.0.1 Flujos de análisis bioinformático en metagenómica\nAl trabajar con datos de secuenciación, los reads/lecturas que obtienes del secuenciador deben pasar a través de varias herramientas para generar el resultado final deseado. La ejecución de este conjunto de herramientas en un orden específico se conoce como pipeline o flujo de análisis.\nEstos pipelines adoptan un enfoque plug-and-play en el sentido de que el archivo de salida de uno de ellos es fácilmente convertido en archivo de salida para el siguiente.",
+    "crumbs": [
+      "**Sección 4** - Procesamiento y visualización de datos metagenómicos",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Control de calidad</span>"
+    ]
+  },
+  {
+    "objectID": "18Exploraciondetaxonomiaconr.html#referencias",
+    "href": "18Exploraciondetaxonomiaconr.html#referencias",
+    "title": "18  Control de calidad",
+    "section": "18.1 Referencias",
+    "text": "18.1 Referencias\nAquí puedes encontrar mayor información sobre cada una de las secciones del resultado de FastQC.",
+    "crumbs": [
+      "**Sección 4** - Procesamiento y visualización de datos metagenómicos",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Control de calidad</span>"
+    ]
+  },
+  {
+    "objectID": "19Exploraciondediversidad.html",
+    "href": "19Exploraciondediversidad.html",
+    "title": "19  Control de calidad",
+    "section": "",
+    "text": "19.0.1 Flujos de análisis bioinformático en metagenómica\nAl trabajar con datos de secuenciación, los reads/lecturas que obtienes del secuenciador deben pasar a través de varias herramientas para generar el resultado final deseado. La ejecución de este conjunto de herramientas en un orden específico se conoce como pipeline o flujo de análisis.\nEstos pipelines adoptan un enfoque plug-and-play en el sentido de que el archivo de salida de uno de ellos es fácilmente convertido en archivo de salida para el siguiente.",
+    "crumbs": [
+      "**Sección 4** - Procesamiento y visualización de datos metagenómicos",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Control de calidad</span>"
+    ]
+  },
+  {
+    "objectID": "19Exploraciondediversidad.html#referencias",
+    "href": "19Exploraciondediversidad.html#referencias",
+    "title": "19  Control de calidad",
+    "section": "19.1 Referencias",
+    "text": "19.1 Referencias\nAquí puedes encontrar mayor información sobre cada una de las secciones del resultado de FastQC.",
+    "crumbs": [
+      "**Sección 4** - Procesamiento y visualización de datos metagenómicos",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Control de calidad</span>"
+    ]
+  },
+  {
+    "objectID": "20Analisistaxonomico.html",
+    "href": "20Analisistaxonomico.html",
+    "title": "20  Control de calidad",
+    "section": "",
+    "text": "20.0.1 Flujos de análisis bioinformático en metagenómica\nAl trabajar con datos de secuenciación, los reads/lecturas que obtienes del secuenciador deben pasar a través de varias herramientas para generar el resultado final deseado. La ejecución de este conjunto de herramientas en un orden específico se conoce como pipeline o flujo de análisis.\nEstos pipelines adoptan un enfoque plug-and-play en el sentido de que el archivo de salida de uno de ellos es fácilmente convertido en archivo de salida para el siguiente.",
+    "crumbs": [
+      "**Sección 4** - Procesamiento y visualización de datos metagenómicos",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Control de calidad</span>"
+    ]
+  },
+  {
+    "objectID": "20Analisistaxonomico.html#referencias",
+    "href": "20Analisistaxonomico.html#referencias",
+    "title": "20  Control de calidad",
+    "section": "20.1 Referencias",
+    "text": "20.1 Referencias\nAquí puedes encontrar mayor información sobre cada una de las secciones del resultado de FastQC.",
+    "crumbs": [
+      "**Sección 4** - Procesamiento y visualización de datos metagenómicos",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Control de calidad</span>"
+    ]
+  },
+  {
+    "objectID": "21Otrosrecursos.html",
+    "href": "21Otrosrecursos.html",
+    "title": "21  Control de calidad",
+    "section": "",
+    "text": "21.0.1 Flujos de análisis bioinformático en metagenómica\nAl trabajar con datos de secuenciación, los reads/lecturas que obtienes del secuenciador deben pasar a través de varias herramientas para generar el resultado final deseado. La ejecución de este conjunto de herramientas en un orden específico se conoce como pipeline o flujo de análisis.\nEstos pipelines adoptan un enfoque plug-and-play en el sentido de que el archivo de salida de uno de ellos es fácilmente convertido en archivo de salida para el siguiente.",
+    "crumbs": [
+      "**Sección 4** - Procesamiento y visualización de datos metagenómicos",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Control de calidad</span>"
+    ]
+  },
+  {
+    "objectID": "21Otrosrecursos.html#referencias",
+    "href": "21Otrosrecursos.html#referencias",
+    "title": "21  Control de calidad",
+    "section": "21.1 Referencias",
+    "text": "21.1 Referencias\nAquí puedes encontrar mayor información sobre cada una de las secciones del resultado de FastQC.",
+    "crumbs": [
+      "**Sección 4** - Procesamiento y visualización de datos metagenómicos",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Control de calidad</span>"
     ]
   }
 ]

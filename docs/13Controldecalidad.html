@@ -64,6 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./14Filtraciondedatosdesecuenciacion.html" rel="next">
 <link href="./12Iniciandomiproyectometagenomico.html" rel="prev">
 <link href="./rsgMexico.jpeg" rel="icon" type="image/jpeg">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -228,7 +229,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./6Redireccion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Conectar a GitHub con SSH</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Redirección</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -286,13 +287,61 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./12Iniciandomiproyectometagenomico.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Procesamiento y visualización de datos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Iniciando mi proyecto metagenómico</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./13Controldecalidad.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14Filtraciondedatosdesecuenciacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15Ensamblemetagenomico.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16Binningmetagenomico.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17Asignaciontaxonomica.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18Exploraciondetaxonomiaconr.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./19Exploraciondediversidad.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./20Analisistaxonomico.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./21Otrosrecursos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
   </div>
 </li>
       </ul>
@@ -342,7 +391,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="flujos-de-análisis-bioinformático-en-metagenómica" class="level3" data-number="13.0.1">
 <h3 data-number="13.0.1" class="anchored" data-anchor-id="flujos-de-análisis-bioinformático-en-metagenómica"><span class="header-section-number">13.0.1</span> Flujos de análisis bioinformático en metagenómica</h3>
 <p>Al trabajar con datos de secuenciación, los reads/lecturas que obtienes del secuenciador deben pasar a través de varias herramientas para generar el resultado final deseado. La ejecución de este conjunto de herramientas en un orden específico se conoce como pipeline o flujo de análisis.</p>
-<p>INSERTAR FOTO DE PIPELINE</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/03-02-01.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
 <p>Estos pipelines adoptan un enfoque plug-and-play en el sentido de que el archivo de salida de uno de ellos es fácilmente convertido en archivo de salida para el siguiente.</p>
 </section>
 <section id="detalles-del-formato-fastq" class="level3" data-number="13.0.2">
@@ -390,7 +443,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="control-de-calidad-con-fastqc" class="level3" data-number="13.0.4">
 <h3 data-number="13.0.4" class="anchored" data-anchor-id="control-de-calidad-con-fastqc"><span class="header-section-number">13.0.4</span> Control de calidad con FastQC</h3>
 <p>FastQC has several features that can give you a quick impression of any problems your data may have, so you can consider these issues before moving forward with your analyses. Rather than looking at quality scores for each read, FastQC looks at quality collectively across all reads within a sample. The image below shows one FastQC-generated plot that indicates a very high-quality sample:</p>
-<p>INSERTAR FOTO DE QC.html BUENA CALIDAD Y MALA</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/03-02-03.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/03-02-04.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
 </section>
 <section id="corre-fastqc" class="level3" data-number="13.0.5">
 <h3 data-number="13.0.5" class="anchored" data-anchor-id="corre-fastqc"><span class="header-section-number">13.0.5</span> Corre FastQC</h3>
@@ -995,11 +1057,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./12Iniciandomiproyectometagenomico.html" class="pagination-link" aria-label="Procesamiento y visualización de datos">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Procesamiento y visualización de datos</span></span>
+      <a href="./12Iniciandomiproyectometagenomico.html" class="pagination-link" aria-label="Iniciando mi proyecto metagenómico">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Iniciando mi proyecto metagenómico</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./14Filtraciondedatosdesecuenciacion.html" class="pagination-link" aria-label="Control de calidad">
+        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Control de calidad</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
