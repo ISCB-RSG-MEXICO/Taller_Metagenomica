@@ -13,11 +13,9 @@ Este concepto nos ayudará a aprender una de las herramientas más poderosas de 
 Además de los tipos de datos, existen diferentes maneras de organizar los datos en R, denominadas estructuras de datos. La estructura de datos más simple es un vector, una secuencia de datos del mismo tipo. Un vector se puede crear con la función `c()` .
 
 ``` r
-char_vector<-c("a","b","c","c","d")
-typeof(char_vector)
+> char_vector<-c("a","b","c","c","d")
+> typeof(char_vector)
 ```
-
-"character"
 
 Una estructura de datos más compleja es el factor, que contiene nombres de las categorías (llamados niveles) y una secuencia de ocurrencias de dichas categorías.
 

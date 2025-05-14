@@ -1,6 +1,6 @@
 # Introducción a R
 
-**R** se utiliza para nombrar un lenguaje de programación y el software que lee e interpreta las instrucciones escritas en el script. Se especializa en el análisis estadístico y la generación de gráficos.
+**R** se utiliza para nombrar un **lenguaje de programación y el software que lee e interpreta las instrucciones escritas en el script**. Se especializa en el análisis estadístico y la generación de gráficos.
 
 Algunas de las ventajas de trabajar con R son:
 
@@ -13,24 +13,57 @@ Algunas de las ventajas de trabajar con R son:
 
 Por su parte, **RStudio** es el programa (en forma de interfaz gráfica) más popular para la escritura de scripts que además nos permite navegar por los archivos, inspeccionar variables y visualizar nuestros gráficos.
 
-# **Insertar figura de RStudio:** 
+::: {.callout-important appearance="minimal"}
+## Navega la interfaz de RStudio
 
-Explicar cada una de las secciones.
+Tómate un momento para explorar la interfaz de RStudio.
+:::
+
+![](Welcome_Rscript.png)
+
+Al abrir R Studio por primera vez, verás tres paneles en la pantalla. Para ver los cuatro paneles de la imagen, deberás crear un nuevo script. Ve a la pestaña: **Archivo/File** \> **New File/Nuevo Archivo** \> **R Script.**
+
+Comenzando de la esquina superior izquierda tenemos:
+
+1.  El editor de código fuente o editor de scripts
+2.  El panel de espacio de trabajo e historial
+3.  Consola de R Studio y,
+4.  Panel de archivos, gráficos, paquetes y ayuda
 
 ## **Revisión de la configuración**
 
-Al igual que en la Shell o línea de comandos, es recomendable mantener los datos relacionados en una sola carpeta. En RStudio, a esta carpeta se le llama **directorio de trabajo** y es donde se guardarán y buscarán los archivos. Cuando se necesite comprobar la ubicación del actual directorio de trabajo, se utiliza `getwd()`*.*
+Al igual que en la Shell o línea de comandos, es recomendable mantener los datos relacionados en una sola carpeta. En RStudio, a esta carpeta se le llama **directorio de trabajo** y es donde se guardarán y buscarán los archivos. Cuando se necesite comprobar la ubicación del actual directorio de trabajo, se utiliza `getwd()` directo en la consola de R Studio, en el editor de scripts o en el panel de archivos.
 
 Si tu directorio de trabajo actual no es el esperado, puedes cambiarlo haciendo clic en el icono del engranaje azul en la opción *Establecer como directorio de trabajo/Set as a working directory.*
 
+``` r
+> setwd("~/dc_workshop/taxonomy")
+```
+
 ## Código en R
 
-En la consola se pueden escribir y ejecutar comandos de manera inmediata. Aquí se mostrarán los resultados de la ejecución de esos comandos (como en Shell). Puedes escribir instrucciones cuando veas signo "`>`" en la consola y pulsar "`Enter`" para ejecutar, sin embargo estas órdenes se olvidarán al cerrar la sesión. Aquí entra en juego la **reproducibilidad**.
+En la consola se pueden escribir y ejecutar comandos de manera inmediata. Aquí se mostrarán los resultados de la ejecución de esos comandos (como en Shell). Puedes escribir instrucciones cuando veas signo "`>`" en la consola y pulsar "`Enter`" para ejecutar.
+
+``` r
+> 4+3
+> addition <- 4+3
+> substraction <-2+1
+> total <- addition +substraction
+> total
+```
+
+Sin embargo, estas órdenes y operaciones se olvidarán al cerrar la sesión. Aquí entra en juego la 💫**reproducibilidad**💫.
 
 Por ello es conveniente escribir los comandos que queremos guardar en nuestro editor de scripts y guardarlo periódicamente. Podemos ejecutar nuestras líneas de código en el script con el atajo `Ctrl` + `Enter` (`Cmd` + `Return`). De esta manera el comando de la línea actual será seleccionado y se enviará por la consola para su ejecución.
 
 El tiempo puede ser enemigo o aliado de la memoria. Por ello es importante asegurarnos de recordar por qué escribimos qué comandos en nuestros scripts. Se pueden dejar comentarios (líneas de texto no ejecutables) comenzando una línea con `#`.
 
+``` r
+#Hagamos matemáticas en RStudio. Cuántas veces al año los super mercados cambian el pan que usan de muestra?
+#Si es que lo hacen cada 15 días:
+> 365/15
+```
+
 ## Referencias
 
-No olvides las referencias
+[R para recién salidos del cascarón](https://www.uvm.edu/~tdonovan/RforFledglings/)
