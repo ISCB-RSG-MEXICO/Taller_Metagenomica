@@ -30,6 +30,15 @@ book:
       chapters:
       - 12Iniciandomiproyectometagenomico.qmd
       - 13Controldecalidad.qmd
+      - 14Filtraciondedatosdesecuenciacion.qmd
+      - 15Ensamblemetagenomico.qmd
+      - 16Binningmetagenomico.qmd
+      - 17Asignaciontaxonomica.qmd
+      - 18Exploraciondetaxonomiaconr.qmd
+      - 19Exploranciondediversidad.qmd
+      - 20Analisistaxonomico.qmd
+      - 21Otrosrecursos.qmd
+      
     
   # Information
   repo-url: https://iscb-rsg-mexico.github.io/Taller_Metagenomica/ # link de Github
