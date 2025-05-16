@@ -6,7 +6,7 @@ Al trabajar con datos de secuenciación, los reads/lecturas que obtienes del sec
 
 ![](figures/03-02-01.png){fig-align="center"}
 
-Estos pipelines adoptan un enfoque plug-and-play en el sentido de que el archivo de salida de uno de ellos es fácilmente convertido en archivo de salida para el siguiente.
+Estos pipelines adoptan un enfoque ***plug-and-play*** en el sentido de que el archivo de salida de uno de ellos es fácilmente convertido en archivo de salida para el siguiente.
 
 ### Detalles del [formato FASTQ](https://en.wikipedia.org/wiki/Phred_quality_score)
 
@@ -25,24 +25,43 @@ $ gunzip JP4D_R1.fastq.gz
 $ head -n 4 JP4D_R1.fastq
 ```
 
-Each quality score represents the probability that the corresponding nucleotide call is incorrect. These probability values are the results of the base calling algorithm and depend on how much signal was captured for the base incorporation. This quality score is logarithmically based, so a quality score of 10 reflects a base call accuracy of 90%, but a quality score of 20 reflects a base call accuracy of 99%. In this [link](https://drive5.com/usearch/manual/quality_score.html) you can find more information about quality scores.
+```         
+@MISEQ-LAB244-W7:156:000000000-A80CV:1:1101:12622:2006 1:N:0:CTCAGA
+CCCGTTCCTCGGGCGTGCAGTCGGGCTTGCGGTCTGCCATGTCGTGTTCGGCGTCGGTGGTGCCGATCAGGGTGAAATCCGTCTCGTAGGGGATCGCGAAGATGATCCGCCCGTCCGTGCCCTGAAAGAAATAGCACTTGTCAGATCGGAAGAGCACACGTCTGAACTCCAGTCACCTCAGAATCTCGTATGCCGTCTTCTGCTTGAAAAAAAAAAAAGCAAACCTCTCACTCCCTCTACTCTACTCCCTT
++                    
+A>>1AFC>DD111A0E0001BGEC0AEGCCGEGGFHGHHGHGHHGGHHHGGGGGGGGGGGGGHHGEGGGHHHHGHHGHHHGGHHHHGGGGGGGGGGGGGGGGHHHHHHHGGGGGGGGHGGHHHHHHHHGFHHFFGHHHHHGGGGGGGGGGGGGGGGGGGGGGGGGGGGFFFFFFFFFFFFFFFFFFFFFBFFFF@F@FFFFFFFFFFBBFF?@;@#################################### 
+```
 
-In real life, you won’t be assessing the quality of your reads by visually inspecting your FASTQ files. Instead, you’ll use a software program to assess read quality and filter out poor reads. We’ll first use a program called [FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/) to visualize the quality of our reads. Later in our workflow, we’ll use another program to filter out poor-quality reads.
+El valor numérico asignado a cada carácter depende de la plataforma de secuenciación que generó las lecturas. El secuenciador utilizado para generar nuestros datos utiliza la codificación de puntuación [PHRED](https://en.wikipedia.org/wiki/Phred_quality_score) de calidad Sanger estándar, con Illumina versión 1.8 y posteriores. A cada carácter se le asigna una puntuación de calidad entre 0 y 40, como se muestra en la tabla a continuación.
 
-First, let’s make available our metagenomics software:
+```         
+Quality encoding: !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHI                    |         |         |         |         | Quality score:    01........11........21........31........40 
+```
+
+Cada puntuación de calidad representa la probabilidad de que la llamada de nucleótido correspondiente sea incorrecta. En este [enlace](https://drive5.com/usearch/manual/quality_score.html) encontrará más información sobre las puntuaciones de calidad.
+
+En la práctica, no evaluarás la calidad de las lecturas inspeccionando visualmente los archivos FASTQ. En su lugar, existen herramientas para evaluar la calidad de las lecturas y filtrar las lecturas deficientes. Usaremos un programa llamado [FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/) para visualizar la calidad de nuestras lecturas.
+
+::: callout-caution
+## Cuidado!
+
+Es importante que tengas presente la diferencia entre FASTQC y fastq. FASTQC es el programa que realiza el control de calidad (QC) de las secuencias. Mientras que fastq es un formato de las secuencias que contiene puntajes de calidad para cada una de las bases dentro de la secuencia/lectura.
+:::
+
+Primero, pongamos a disposición nuestro software de metagenómica:
 
 ### Activando ambiente Metagenómico
 
-Environments are part of a bioinformatic tendency to do reproducible research; they are a way to share and maintain our programs in their needed versions used for a pipeline with our colleagues and our future self. FastQC has not been activated in the (base) environment, but this AWS instance came with an environment called metagenomics. We need to activate it in order to start using FastQC.
+Los **entornos o ambientes** son un componente bioinformática que busca la reproducción de la investigación; son una forma de compartir y mantener nuestros programas en las versiones necesarias, utilizadas en un proceso de desarrollo con nuestros colegas y nuestro futuro. **FastQC** no se ha activado en el entorno (base), pero el servidor en el que trabajamos incluye un entorno llamado "metagenómica". Necesitamos activarlo para empezar a usar FastQC.
 
-We will use [Conda](https://docs.conda.io/en/latest/) as our environment manager. Conda is an open-source package and environment management system that runs on Windows, macOS and Linux. Conda environments are activated with the `conda activate` direction:
+Utilizaremos [Conda](https://docs.conda.io/en/latest/) como nuestro gestor de entornos. Conda es un sistema de gestión de paquetes y entornos de código abierto compatible con Windows, macOS y Linux. Los entornos Conda se activan con la `conda activate`siguiente instrucción:
 
 ``` bash
 $ conda activate metagenomics
 # (metagenomics) $
 ```
 
-Now, if we call [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/), a long help page will be displayed on our screen.
+Una vez activado el entorno, llamamos a FastQC. Se mostrará una larga página de ayuda en nuestra pantalla.
 
 ``` bash
 fastqc -h
@@ -63,17 +82,25 @@ fastqc -h
 #    data.
 ```
 
+::: callout-tip
+## Tip: Función de ayuda
+
+La mayoría de las herramientras bioinformáticas contienen una función de ayuda (`--help` o `-h`) que nos pueden ayudar a cerciorarnos de que estamos dentro del entorno correcto y que el programa está instalado y listo para usarse.
+:::
+
 ### Control de calidad con FastQC
 
-FastQC has several features that can give you a quick impression of any problems your data may have, so you can consider these issues before moving forward with your analyses. Rather than looking at quality scores for each read, FastQC looks at quality collectively across all reads within a sample. The image below shows one FastQC-generated plot that indicates a very high-quality sample:
+FastQC tiene varias funciones que le permiten obtener una idea rápida de cualquier problema que puedan tener sus datos, para que pueda considerarlos antes de continuar con sus análisis. En lugar de analizar las puntuaciones de calidad de cada lectura, FastQC analiza la calidad colectiva de todas las lecturas de una muestra. La siguiente imagen muestra un gráfico generado por FastQC que indica una muestra de muy alta calidad:
 
 ![](figures/03-02-03.png){fig-align="center"}
+
+En cambio, un ejemplo de mala calidad en las secuencias es el siguiente.
 
 ![](figures/03-02-04.png){fig-align="center"}
 
 ### Corre FastQC
 
-We will now assess the quality of the reads that we downloaded. First, make sure you’re still in the `untrimmed_fastq` directory.
+Ahora evaluaremos la calidad de las lecturas que descargamos. Primero, asegúrate de seguir en el `untrimmed_fastq`directorio.
 
 ``` bash
 $ cd ~/dc_workshop/data/untrimmed_fastq/ 
@@ -101,7 +128,7 @@ Approx 95% complete for JP4D_R2.fastq.gz
 Analysis complete for JP4D_R2.fastq.gz $
 ```
 
-El programa FastQC ha creado varios archivos nuevos dentro de nuestro `data/untrimmed_fastq/`directorio.
+FastQC ha creado varios archivos nuevos dentro de nuestro directorio `data/untrimmed_fastq/`.
 
 ``` bash
 $ ls 
@@ -114,12 +141,13 @@ JC1A_R1.fastq.gz     JC1A_R2.fastq.gz     JP4D_R1_fastqc.zip   JP4D_R2.fastq.gz
 TruSeq3-PE.fa
 ```
 
-Para cada archivo FASTQ de entrada, FastQC creó un archivo en formato `.zip` y `.html` con el mismo nombre. El archivo `.html` es una página web que muestra el informe resumido de cada una de nuestras muestras.
+Para cada archivo FASTQ de **entrada**, FastQC creó un archivo en formato `.zip` y `.html` con el mismo nombre. El archivo `.html` es una página web que muestra el informe resumido de cada una de nuestras muestras.
 
-Queremos mantener nuestros archivos de datos y nuestros archivos de resultados separados, por lo que moveremos estos archivos de salida a un nuevo directorio dentro de nuestro `results/`directorio.
+Queremos mantener nuestros archivos de datos y nuestros archivos de resultados separados, por lo que moveremos estos archivos de salida a un nuevo directorio dentro de nuestro directorio `results/`.
 
 ``` bash
-$ mkdir -p ~/dc_workshop/results/fastqc_untrimmed_reads $ mv *.zip ~/dc_workshop/results/fastqc_untrimmed_reads/  
+$ mkdir -p ~/dc_workshop/results/fastqc_untrimmed_reads 
+$ mv *.zip ~/dc_workshop/results/fastqc_untrimmed_reads/  
 $ mv *.html ~/dc_workshop/results/fastqc_untrimmed_reads/
 ```
 
@@ -131,9 +159,24 @@ Nos cambiamos a la carpeta donde movimos nuestros archivos.
 $ cd ~/dc_workshop/results/fastqc_untrimmed_reads/
 ```
 
-En equipos de 5, Ejercicio de analizar calidad de archvios. 2 minutos.
+::: callout-warning
+## Ejercicio: Analiza la calidad de los archivos
 
-Contestar ¿Qué muestras tienen la mejor calidad de secuencia de bases? ¿Qué muestras tienen la peor?
+Sitúate en la carpeta `fastqc_untrimmed_reads.`En equipos de 5 personas durante 5 minutos.
+
+Discutan:\
+¿Qué muestras tienen la mejor calidad de secuencia de bases? ¿Qué muestras tienen la peor?
+:::
+
+Algunas de nuestras muestras no superan varias métricas de calidad utilizadas por FastQC. Sin embargo, esto no significa que debamos descartarlas. Para nuestro flujo de trabajo, eliminaremos algunas secuencias de baja calidad para reducir la tasa de falsos positivos debido a errores de secuenciación.
+
+::: callout-important
+## Variaciones en la codificación de calidad
+
+Aunque hemos utilizado un sistema de codificación de calidad específico para demostrar la interpretación de la calidad de lectura, cada secuenciador utiliza un sistema de codificación distinto. Esto significa que, según el secuenciador que se utilice para generar los datos, `#`es posible que "a" no indique una llamada de base de baja calidad.
+
+Esto se refiere principalmente a datos antiguos de Solexa/Illumina. Sin embargo, es fundamental saber qué plataforma de secuenciación se utilizó para generar los datos para indicar al programa de control de calidad qué codificación usar. Si elige la codificación incorrecta, corre el riesgo de descartar lecturas correctas o (peor aún) de no descartar lecturas incorrectas.
+:::
 
 ## Referencias
 

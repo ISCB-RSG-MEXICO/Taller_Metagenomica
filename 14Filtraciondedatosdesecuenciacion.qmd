@@ -1,3 +1,130 @@
 # Filtración de datos de secuenciación
 
+## Limpieza de reads o lecturas
+
+Para lograr eliminar secuencias de baja calidad, utilizaremos un programa llamado [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic) . Esta útil herramienta filtra las lecturas de baja calidad y elimina las bases de baja calidad de las muestras especificadas. Trimmomatic cuenta con diversas opciones para realizar su tarea. Si ejecutamos el siguiente comando, podemos ver algunas de sus opciones:
+
+``` bash
+$ trimmomatic
+```
+
+```         
+Usage:         
+PE [-version] [-threads <threads>] [-phred33|-phred64] [-trimlog <trimLogFile>] [-summary <statsSummaryFile>] [-quiet] [-validatePairs] [-basein <inputBase> | <inputFile1> <inputFile2>] [-baseout <outputBase> | <outputFile1P> <outputFile1U> <outputFile2P> <outputFile2U>] <trimmer1>...    or:         SE [-version] [-threads <threads>] [-phred33|-phred64] [-trimlog <trimLogFile>] [-summary <statsSummaryFile>] [-quiet] <inputFile> <outputFile> <trimmer1>...    or:         -version
+```
+
+Es fundamental comprender los pasos que utiliza para limpiar sus datos. En nuestro análisis, solo utilizaremos algunas opciones y pasos de recorte. Para más información sobre los argumentos y opciones de Trimmomatic, consulte [el manual de Trimmomatic](http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/TrimmomaticManual_V0.32.pdf) .
+
+![](figures/03-03-01.png){fig-align="center"}
+
+Sin embargo, un comando completo para Trimmomatic se parecerá al siguiente. Este comando es un ejemplo y no funcionará, ya que no disponemos de los archivos a los que hace referencia:
+
+```         
+$ trimmomatic PE -threads 4 SRR_1056_1.fastq SRR_1056_2.fastq \               SRR_1056_1.trimmed.fastq SRR_1056_1un.trimmed.fastq \               SRR_1056_2.trimmed.fastq SRR_1056_2un.trimmed.fastq \               ILLUMINACLIP:SRR_adapters.fa SLIDINGWINDOW:4:20 ILLUMINACLIP:TruSeq3-PE.fa:2:40:15
+```
+
+En este ejemplo, le hemos dicho a Trimmomatic:
+
+| código | significado |
+|:---|:---|
+| `PE` | que tomará un archivo de extremos emparejados como entrada |
+| `-threads 4` | utilizar cuatro subprocesos informáticos para ejecutar (esto acelerará nuestra ejecución) |
+| `SRR_1056_1.fastq` | El primer nombre del archivo de entrada. Adelante |
+| `SRR_1056_2.fastq` | el segundo nombre del archivo de entrada. Invertir |
+| `SRR_1056_1.trimmed.fastq` | El archivo de salida para los pares supervivientes del `_1`archivo |
+| `SRR_1056_1un.trimmed.fastq` | El archivo de salida para lecturas huérfanas del `_1`archivo |
+| `SRR_1056_2.trimmed.fastq` | El archivo de salida para los pares supervivientes del `_2`archivo |
+| `SRR_1056_2un.trimmed.fastq` | El archivo de salida para lecturas huérfanas del `_2`archivo |
+| `ILLUMINACLIP:SRR_adapters.fa` | para recortar los adaptadores Illumina del archivo de entrada utilizando las secuencias de adaptadores enumeradas en`SRR_adapters.fa` |
+| `SLIDINGWINDOW:4:20` | utilizar una ventana deslizante de tamaño 4 que eliminará las bases si su puntuación Phred es inferior a 20 |
+| `ILLUMINACLIP:TruSeq3-PE.fa:2:40:15` |  buscar los adaptadores en las lecturas usando el archivo `TruSeq3-PE.fa`, permitiendo hasta 2 errores en el alineamiento inicial, y que solo recorte si el alineamiento tiene una puntuación mínima de 15, evaluada con una puntuación máxima de 40 para la coincidencia. |
+
+## Ejecución de trimmomatic
+
+Ahora, ejecutaremos Trimmomatic en nuestros datos. Ve a la carpeta `untrimmed_fastq` y verifica que te encuentras en esa carpeta:
+
+```         
+$ cd ~/dc_workshop/data/untrimmed_fastq 
+$ pwd 
+```
+
+```         
+$ /home/dcuser/dc_workshop/data/untrimmed_fastq 
+```
+
+Debería tener solo cuatro archivos en este directorio. Estos archivos corresponden a las lecturas **forward** y **reverse** de las muestras JC1A y JP4D.
+
+```         
+$ ls 
+```
+
+```         
+$ JC1A_R1.fastq.gz  JC1A_R2.fastq.gz  JP4D_R1.fastq  JP4D_R2.fastq.gz  TruSeq3-PE.fa 
+```
+
+Para poder correr Trimmomatic los archivos deben estar comprimidos usando `gzip`
+
+```         
+$ trimmomatic PE JP4D_R1.fastq.gz JP4D_R2.fastq.gz \ JP4D_R1.trim.fastq.gz  JP4D_R1un.trim.fastq.gz \ JP4D_R2.trim.fastq.gz  JP4D_R2un.trim.fastq.gz \ SLIDINGWINDOW:4:20 MINLEN:35 ILLUMINACLIP:TruSeq3-PE.fa:2:40:15 
+```
+
+En la pantalla podemos ver un resumen del resultado, centrándonos en el porcentaje de lecturas descartadas (Dropped) y lecturas que se mantuvieron para ambas forward y reverse (Both surviving).
+
+```         
+TrimmomaticPE: Started with arguments:  JP4D_R1.fastq.gz JP4D_R2.fastq.gz JP4D_R1.trim.fastq.gz JP4D_R1un.trim.fastq.gz JP4D_R2.trim.fastq.gz JP4D_R2un.trim.fastq.gz SLIDINGWINDOW:4:20 MINLEN:35 ILLUMINACLIP:TruSeq3-PE.fa:2:40:15 Multiple cores found: Using 2 threads Using PrefixPair: 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT' and 'GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT' ILLUMINACLIP: Using 1 prefix pairs, 0 forward/reverse sequences, 0 forward only sequences, 0 reverse only sequences Quality encoding detected as phred33 Input Read Pairs: 1123987 Both Surviving: 751427 (66.85%) Forward Only Surviving: 341434 (30.38%) Reverse Only Surviving: 11303 (1.01%) Dropped: 19823 (1.76%) TrimmomaticPE: Completed successfully
+```
+
+Los archivos de salida también son archivos FASTQ. Deberían ser más pequeños que el archivo de entrada, ya que hemos eliminado las lecturas. Podemos confirmarlo con este comando:
+
+``` bash
+$ ls JP4D* -l -h 
+```
+
+```         
+-rw-r--r-- 1 dcuser dcuser 179M Nov 26 12:44 JP4D_R1.fastq.gz -rw-rw-r-- 1 dcuser dcuser 107M Mar 11 23:05 JP4D_R1.trim.fastq.gz 
+-rw-rw-r-- 1 dcuser dcuser  43M Mar 11 23:05 JP4D_R1un.trim.fastq.gz 
+-rw-r--r-- 1 dcuser dcuser 203M Nov 26 12:51 JP4D_R2.fastq.gz -rw-rw-r-- 1 dcuser dcuser 109M Mar 11 23:05 JP4D_R2.trim.fastq.gz 
+-rw-rw-r-- 1 dcuser dcuser 1.3M Mar 11 23:05 JP4D_R2un.trim.fastq.gz
+```
+
+Acabamos de ejecutar Trimmomatic con éxito en uno de nuestros archivos FASTQ. Sin embargo, tenemos malas noticias. Trimmomatic solo puede operar con una muestra a la vez, y tenemos más de una. La buena noticia es que podemos usar un `for`bucle para iterar rápidamente entre nuestros archivos de muestra.
+
+``` bash
+$ for infile in *_R1.fastq.gz 
+do 
+base=$(basename ${infile} _R1.fastq.gz) 
+trimmomatic PE ${infile} ${base}_R2.fastq.gz \ 
+${base}_R1.trim.fastq.gz ${base}_R1un.trim.fastq.gz \ ${base}_R2.trim.fastq.gz ${base}_R2un.trim.fastq.gz \ SLIDINGWINDOW:4:20 MINLEN:35 ILLUMINACLIP:TruSeq3-PE.fa:2:40:15 done 
+```
+
+Observa que, aunque ejecutamos Trimmomatic en el archivo `JP4D`antes de ejecutar el bucle for, solo hay un conjunto de archivos para él. Como coincidimos con la terminación `_R1.fastq.gz`, volvimos a ejecutar Trimmomatic en este archivo, sobrescribiendo nuestros primeros resultados. Esto está bien, pero es bueno tener en cuenta que ocurrió.
+
+``` bash
+ ls 
+```
+
+```         
+JC1A_R1.fastq.gz                     JP4D_R1.fastq.gz         JC1A_R1.trim.fastq.gz                JP4D_R1.trim.fastq.gz    JC1A_R1un.trim.fastq.gz              JP4D_R1un.trim.fastq.gz  JC1A_R2.fastq.gz                     JP4D_R2.fastq.gz         JC1A_R2.trim.fastq.gz                JP4D_R2.trim.fastq.gz    JC1A_R2un.trim.fastq.gz              JP4D_R2un.trim.fastq.gz  TruSeq3-PE.fa  
+```
+
+¡Hemos completado los pasos de recorte y filtrado de nuestro proceso de control de calidad! Antes de continuar, transfiramos nuestros archivos FASTQ recortados a un nuevo subdirectorio dentro de nuestro directorio `data/`.
+
+```         
+$ cd ~/dc_workshop/data/untrimmed_fastq 
+$ mkdir ../trimmed_fastq 
+$ mv *.trim* ../trimmed_fastq $ cd ../trimmed_fastq $ ls 
+```
+
+```         
+JC1A_R1.trim.fastq.gz    JP4D_R1.trim.fastq.gz                 JC1A_R1un.trim.fastq.gz  JP4D_R1un.trim.fastq.gz               JC1A_R2.trim.fastq.gz    JP4D_R2.trim.fastq.gz                 JC1A_R2un.trim.fastq.gz  JP4D_R2un.trim.fastq.gz  
+```
+
+::: callout-important
+## Tip de double check! Prueba de calidad después del filtrado
+
+Puedes reanalizar los archivos que acabas de filtrar, deberían tener un mejor desempeño en las pruebas realizadas por FASTQC
+:::
+
 ## Referencias
+
+[Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic)

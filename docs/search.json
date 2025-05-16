@@ -496,12 +496,12 @@
   {
     "objectID": "14Filtraciondedatosdesecuenciacion.html",
     "href": "14Filtraciondedatosdesecuenciacion.html",
-    "title": "14  Control de calidad",
+    "title": "14  Filtración de datos de secuenciación",
     "section": "",
-    "text": "14.0.1 Flujos de análisis bioinformático en metagenómica\nAl trabajar con datos de secuenciación, los reads/lecturas que obtienes del secuenciador deben pasar a través de varias herramientas para generar el resultado final deseado. La ejecución de este conjunto de herramientas en un orden específico se conoce como pipeline o flujo de análisis.\nEstos pipelines adoptan un enfoque plug-and-play en el sentido de que el archivo de salida de uno de ellos es fácilmente convertido en archivo de salida para el siguiente.",
+    "text": "14.1 Referencias",
     "crumbs": [
       "**Sección 4** - Procesamiento y visualización de datos metagenómicos",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Control de calidad</span>"
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Filtración de datos de secuenciación</span>"
     ]
   },
   {

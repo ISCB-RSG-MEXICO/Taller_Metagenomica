@@ -1,140 +1,122 @@
-# Control de calidad
+# Binning metagenómico
 
-### Flujos de análisis bioinformático en metagenómica
+### Binning o agrupamiento metagenómico
 
-Al trabajar con datos de secuenciación, los reads/lecturas que obtienes del secuenciador deben pasar a través de varias herramientas para generar el resultado final deseado. La ejecución de este conjunto de herramientas en un orden específico se conoce como pipeline o flujo de análisis.
+Los genomas originales de la muestra pueden separarse mediante un proceso denominado binning. Este proceso permite el análisis por separado de cada especie del metagenoma, con suficientes lecturas para reconstruir un genoma. Los genomas reconstruidos a partir de ensambles metagenómicos se denominan MAG (Genomas Ensamblados por Metagenoma). En este proceso, los contigs ensamblados del metagenoma se asignan a diferentes bins (archivos FASTA que contienen ciertos contigs). Idealmente, cada bin corresponde a un solo genoma original (un MAG).
 
-![](figures/03-02-01.png){fig-align="center"}
+![](figures/03-05-01.png){fig-align="center"}
 
-Estos pipelines adoptan un enfoque plug-and-play en el sentido de que el archivo de salida de uno de ellos es fácilmente convertido en archivo de salida para el siguiente.
+Aunque una forma obvia de separar contigs que corresponden a especies diferentes es mediante su asignación taxonómica, existen métodos más confiables que realizan la clasificación utilizando características de los contigs, como su contenido de GC, el uso de tetranucleótidos (composición) o su cobertura (abundancia).
 
-### Detalles del [formato FASTQ](https://en.wikipedia.org/wiki/Phred_quality_score)
+[Maxbin](https://sourceforge.net/projects/maxbin/files/) es un algoritmo de binning que distingue entre contigs que pertenecen a diferentes bins según sus niveles de cobertura y las frecuencias de tetranucleótidos que tienen.
 
-Aunque pueda parecer complicado, el formato FASTQ sigue un patrón de 4 líneas que facilitan su interpretación.
-
-1.  La primera línea siempre comienza con '\@' seguido de la información del read/lectura.
-2.  La segunda línea es la propia secuencia de DNA.
-3.  La tercera línea siempre comienza con el signo '+' y algunas veces contiene la misma información de reads que la primera línea.
-4.  La cuarta línea es una cadena de caracteres que representa los valores de calidad y estrictamente debe tener el mismo número de caracteres que la línea 2.
-
-``` {.bash eval="FALSE"}
-$ cd ~/dc_workshop/data/untrimmed_fastq/
-
-$ gunzip JP4D_R1.fastq.gz
-
-$ head -n 4 JP4D_R1.fastq
-```
-
-Each quality score represents the probability that the corresponding nucleotide call is incorrect. These probability values are the results of the base calling algorithm and depend on how much signal was captured for the base incorporation. This quality score is logarithmically based, so a quality score of 10 reflects a base call accuracy of 90%, but a quality score of 20 reflects a base call accuracy of 99%. In this [link](https://drive5.com/usearch/manual/quality_score.html) you can find more information about quality scores.
-
-In real life, you won’t be assessing the quality of your reads by visually inspecting your FASTQ files. Instead, you’ll use a software program to assess read quality and filter out poor reads. We’ll first use a program called [FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/) to visualize the quality of our reads. Later in our workflow, we’ll use another program to filter out poor-quality reads.
-
-First, let’s make available our metagenomics software:
-
-### Activando ambiente Metagenómico
-
-Environments are part of a bioinformatic tendency to do reproducible research; they are a way to share and maintain our programs in their needed versions used for a pipeline with our colleagues and our future self. FastQC has not been activated in the (base) environment, but this AWS instance came with an environment called metagenomics. We need to activate it in order to start using FastQC.
-
-We will use [Conda](https://docs.conda.io/en/latest/) as our environment manager. Conda is an open-source package and environment management system that runs on Windows, macOS and Linux. Conda environments are activated with the `conda activate` direction:
+Binemos o agrupemos la muestra que acabamos de ensamblar. El comando para ejecutar MaxBin es `run_MaxBin.pl`, y los argumentos que necesita son el archivo FASTA del ensamblado, el FASTQ con las lecturas forward y reverse, el directorio de salida y su nombre.
 
 ``` bash
-$ conda activate metagenomics
-# (metagenomics) $
-```
-
-Now, if we call [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/), a long help page will be displayed on our screen.
-
-``` bash
-fastqc -h
-#FastQC - A high throughput sequence QC analysis tool
-#
-#SYNOPSIS
-#
-#        fastqc seqfile1 seqfile2 .. seqfileN
-#
-#    fastqc [-o output dir] [--(no)extract] [-f fastq|bam|sam]
-#           [-c contaminant file] seqfile1 .. seqfileN
-#
-#DESCRIPTION
-#
-#    FastQC reads a set of sequence files and produces from each one a quality
-#    control report consisting of many different modules, each one of
-#    which will help to identify a different potential type of problem in your
-#    data.
-```
-
-### Control de calidad con FastQC
-
-FastQC has several features that can give you a quick impression of any problems your data may have, so you can consider these issues before moving forward with your analyses. Rather than looking at quality scores for each read, FastQC looks at quality collectively across all reads within a sample. The image below shows one FastQC-generated plot that indicates a very high-quality sample:
-
-![](figures/03-02-03.png){fig-align="center"}
-
-![](figures/03-02-04.png){fig-align="center"}
-
-### Corre FastQC
-
-We will now assess the quality of the reads that we downloaded. First, make sure you’re still in the `untrimmed_fastq` directory.
-
-``` bash
-$ cd ~/dc_workshop/data/untrimmed_fastq/ 
-```
-
-FastQC acepta múltiples archivos como entrada, tanto archivos comprimidos como descomprimidos, por lo que podemos usar el comodín `\*.fastq*` para ejecutar FastQC en todos los archivos FASTQ en este directorio.
-
-```         
-$ fastqc *.fastq* 
-```
-
-Verás un mensaje de salida que se actualiza automáticamente, este indica el progreso del análisis. Comienza así:
-
-``` o
-Started analysis of JC1A_R1.fastq.gz                  Approx 5% complete for JC1A_R1.fastq.gz                Approx 10% complete for JC1A_R1.fastq.gz               Approx 15% complete for JC1A_R1.fastq.gz               Approx 20% complete for JC1A_R1.fastq.gz               Approx 25% complete for JC1A_R1.fastq.gz              Approx 30% complete for JC1A_R1.fastq.gz               Approx 35% complete for JC1A_R1.fastq.gz
-```
-
-FastQC tardará unos minutos en ejecutarse en nuestros cuatro archivos FASTQ. Al finalizar el análisis, volverá a aparecer el mensaje. Su pantalla se verá así:
-
-```         
-Approx 80% complete for JP4D_R2.fastq.gz 
-Approx 85% complete for JP4D_R2.fastq.gz 
-Approx 90% complete for JP4D_R2.fastq.gz 
-Approx 95% complete for JP4D_R2.fastq.gz 
-Analysis complete for JP4D_R2.fastq.gz $
-```
-
-El programa FastQC ha creado varios archivos nuevos dentro de nuestro `data/untrimmed_fastq/`directorio.
-
-``` bash
-$ ls 
+$ cd ~/dc_workshop/results/assembly_JC1A $ mkdir MAXBIN $ run_MaxBin.pl -thread 8 -contig JC1A_contigs.fasta -reads ../../data/trimmed_fastq/JC1A_R1.trim.fastq.gz -reads2 ../../data/trimmed_fastq/JC1A_R2.trim.fastq.gz -out MAXBIN/JC1A
 ```
 
 ```         
-JC1A_R1_fastqc.html  JC1A_R2_fastqc.html  
-JP4D_R1.fastq        JP4D_R2_fastqc.html   JC1A_R1_fastqc.zip   JC1A_R2_fastqc.zip   JP4D_R1_fastqc.html  JP4D_R2_fastqc.zip 
-JC1A_R1.fastq.gz     JC1A_R2.fastq.gz     JP4D_R1_fastqc.zip   JP4D_R2.fastq.gz
-TruSeq3-PE.fa
+MaxBin 2.2.7 
+Thread: 12 
+Input contig: JC1A_contigs.fasta 
+Located reads file [../../data/trimmed_fastq/JC1A_R1.trim.fastq.gz] 
+Located reads file [../../data/trimmed_fastq/JC1A_R2.trim.fastq.gz] 
+out header: MAXBIN/JC1A Running Bowtie2 on reads file [../../data/trimmed_fastq/JC1A_R1.trim.fastq.gz]...this may take a while... 
+Reading SAM file to estimate abundance values... 
+Running Bowtie2 on reads file [../../data/trimmed_fastq/JC1A_R2.trim.fastq.gz]...this may take a while... 
+Reading SAM file to estimate abundance values... 
+Searching against 107 marker genes to find starting seed contigs for [JC1A_contigs.fasta]... 
+Running FragGeneScan.... 
+Running HMMER hmmsearch.... 
+Try harder to dig out marker genes from contigs. Marker gene search reveals that the dataset cannot be binned (the medium of marker gene number <= 1). Program stop.
 ```
 
-Para cada archivo FASTQ de entrada, FastQC creó un archivo en formato `.zip` y `.html` con el mismo nombre. El archivo `.html` es una página web que muestra el informe resumido de cada una de nuestras muestras.
+Parece imposible clasificar nuestro ensamblaje porque el número de genes marcadores es menor que 1. Podríamos haber esperado esto ya que sabemos que es una muestra pequeña.
 
-Queremos mantener nuestros archivos de datos y nuestros archivos de resultados separados, por lo que moveremos estos archivos de salida a un nuevo directorio dentro de nuestro `results/`directorio.
+Realizaremos el proceso de binning con la otra muestra del mismo estudio, que es más grande. El ensamblaje está precalculado en el `~/dc-workshop/mags/`directorio.
 
 ``` bash
-$ mkdir -p ~/dc_workshop/results/fastqc_untrimmed_reads $ mv *.zip ~/dc_workshop/results/fastqc_untrimmed_reads/  
-$ mv *.html ~/dc_workshop/results/fastqc_untrimmed_reads/
+$ cd ~/dc_workshop/mags/ $ mkdir MAXBIN $ run_MaxBin.pl -thread 8 -contig JP4D_contigs.fasta -reads ../data/trimmed_fastq/JP4D_R1.trim.fastq.gz -reads2 ../data/trimmed_fastq/JP4D_R2.trim.fastq.gz -out MAXBIN/JP4D
 ```
 
-### Visualización de resultados con FastQC
-
-Nos cambiamos a la carpeta donde movimos nuestros archivos.
+Tardará unos minutos en ejecutarse. Además, finalizará con un resultado como este:
 
 ```         
-$ cd ~/dc_workshop/results/fastqc_untrimmed_reads/
+========== Job finished ========== 
+Yielded 4 bins for contig (scaffold) file JP4D_contigs.fasta  Here are the output files for this run. 
+Please refer to the README file for further details.  
+
+Summary file: MAXBIN/JP4D.summary 
+Genome abundance info file: MAXBIN/JP4D.abundance 
+Marker counts: MAXBIN/JP4D.marker 
+Marker genes for each bin: MAXBIN/JP4D.marker_of_each_gene.tar.gz 
+Bin files: MAXBIN/JP4D.001.fasta - MAXBIN/JP4D.004.fasta Unbinned sequences: MAXBIN/JP4D.noclass  
+
+Store abundance information of reads file [../data/trimmed_fastq/JP4D_R1.trim.fastq.gz] in [MAXBIN/JP4D.abund1]. Store abundance information of reads file [../data/trimmed_fastq/JP4D_R2.trim.fastq.gz] in [MAXBIN/JP4D.abund2].   
+========== Elapsed Time ========== 
+0 hours 6 minutes and 56 seconds.  
 ```
 
-En equipos de 5, Ejercicio de analizar calidad de archvios. 2 minutos.
+Con el `.summary`archivo, podemos ver rápidamente los contenedores que produjo MaxBin.
 
-Contestar ¿Qué muestras tienen la mejor calidad de secuencia de bases? ¿Qué muestras tienen la peor?
+```         
+$ cat MAXBIN/JP4D.summary
+```
+
+```         
+Bin name	Completeness	Genome size	GC content 
+JP4D.001.fasta	57.9%	3141556	55.5 
+JP4D.002.fasta	87.9%	6186438	67.3 
+JP4D.003.fasta	51.4%	3289972	48.1 
+JP4D.004.fasta	77.6%	5692657	38.9
+```
+
+::: callout-caution
+## Calidad de los MAGs
+
+¿Podemos confiar en la calidad de nuestros contenedores solo con la información proporcionada? ¿Qué más necesitamos saber sobre nuestros MAG para realizar análisis posteriores con seguridad?
+
+**La integridad** es fundamental para saber con qué datos se trabaja. Si el MAG está incompleto, se puede plantear la hipótesis de que si no se encontró algo, se debe a que no se tiene un genoma completo. **El tamaño del genoma** y **el contenido de GC** son como huellas genómicas de los taxones, por lo que se puede saber si se tienen los taxones que se buscan. Dado que trabajamos con genomas mixtos de una comunidad, al intentar separarlos mediante binning, queremos saber si se lograron separarlos correctamente. Por lo tanto, necesitamos medir **la contaminación** para saber si solo tenemos un genoma en nuestro bin.
+:::
+
+## **Control de calidad**
+
+La **calidad de un MAG** depende en gran medida del **tamaño del genoma de la especie**, su **abundancia en la comunidad** y la **profundidad de su secuenciación**. Dos aspectos importantes que se pueden medir para determinar su calidad son la integridad (¿es el MAG un genoma completo?) y si está contaminado (¿contiene el MAG solo un genoma?).
+
+[CheckM](https://github.com/Ecogenomics/CheckM) es una herramienta que evalua la calidad de nuestros MAGs. Mide la integridad y la contaminación mediante el recuento de genes marcadores en los MAG. El flujo de trabajo de CheckM coloca los bins en un árbol de referencia para determinar a qué linaje corresponde y utilizar los genes marcadores adecuados para estimar los parámetros de calidad. Desafortunadamente, el flujo de trabajo de linaje consume mucha memoria, por lo que no puede ejecutarse en nuestros equipos. Sin embargo, podemos indicarle a CheckM que utilice solo genes marcadores de bacterias para reducir el consumo de memoria. Este método es menos preciso, pero también puede ser ventajoso si desea analizar todos sus bins con los mismos marcadores.
+
+Ejecutaremos el flujo de trabajo de taxonomía especificando el uso de marcadores a nivel de dominio, específico para el rango Bacteria, especificaremos que nuestros bins están en formato FASTA, que están ubicados en el directorio `MAXBIN`y que queremos nuestra salida en el directorio `CHECKM/`.
+
+```         
+$ mkdir CHECKM 
+$ checkm taxonomy_wf domain Bacteria -x fasta MAXBIN/ CHECKM/ 
+```
+
+he run will end with our results printed in the console.
+
+```         
+--------------------------------------------------------------------------------------------------------------------------------------------------------   Bin Id     Marker lineage   # genomes   # markers   # marker sets   0    1    2    3    4   5+   Completeness   Contamination   Strain heterogeneity   --------------------------------------------------------------------------------------------------------------------------------------------------------   
+JP4D.002      Bacteria         5449        104            58        3    34   40   21   5   1       94.83           76.99              11.19             
+JP4D.004      Bacteria         5449        104            58        12   40   46   6    0   0       87.30           51.64               3.12             
+JP4D.001      Bacteria         5449        104            58        24   65   11   3    1   0       70.48           13.09               0.00             
+JP4D.003      Bacteria         5449        104            58        44   49   11   0    0   0       64.44           10.27               0.00           --------------------------------------------------------------------------------------------------------------------------------------------------------
+```
+
+Podemos ejecutar el paso de calidad de CheckM `checkm qa` y hacer que imprima la salida en una `TSV`tabla en lugar de la consola. En este paso, podemos solicitar a CheckM que nos proporcione más parámetros, como el número y la longitud del contig.
+
+Idealmente, nos gustaría obtener solo un contig por bin, con una longitud similar al tamaño del genoma de los taxones correspondientes. Dado que este escenario es complejo de obtener, podemos usar parámetros que muestran la calidad de nuestro ensamblaje. Por ejemplo el N50, el cual es una métrica que se utiliza para describir la completitud del ensamble de un genoma. [¿Qué es N50?"](https://www.molecularecologist.com/2017/03/29/whats-n50/)
+
+Para obtener la tabla con estos parámetros extras, necesitamos especificar el archivo de los marcadores que CheckM utilizó en el paso anterior `Bacteria.ms`, el nombre del archivo de salida que queremos `quality_JP4D.tsv`, que queremos una tabla `--tab_table`, y la opción número 2 `-o 2`es solicitar los parámetros extras impresos en la tabla.
+
+```         
+$  checkm qa CHECKM/Bacteria.ms CHECKM/ --file CHECKM/quality_JP4D.tsv --tab_table -o 2 
+```
+
+La tabla que acabamos de crear se ve [así.](https://github.com/carpentries-lab/metagenomics-analysis/blob/gh-pages/files/quality_JP4D.tsv) Será muy útil cuando necesites documentar o comunicar tu trabajo.
+
+La cuestión de cuánta contaminación podemos tolerar y cuánta completitud necesitamos ciertamente depende de la cuestión científica que se esté abordando, pero en el artículo [de CheckM](https://genome.cshlp.org/content/25/7/1043) hay algunos parámetros que podemos seguir.
 
 ## Referencias
 
-Aquí puedes encontrar mayor información sobre cada una de las secciones del resultado de [FastQC.](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/)
+[Artículo de CheckM](https://genome.cshlp.org/content/25/7/1043)
