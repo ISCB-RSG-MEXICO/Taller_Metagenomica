@@ -21,3 +21,283 @@ wc bad_reads.txt
 Ejercicio 2: uso de wc
 
 Combinacion de grep -b1 -a2 flags, redireccion
+
+# Redirección de Entrada y Salida (yahir)
+
+## Objetivos
+
+-   Buscar patrones en archivos (`grep`).
+
+-   Guardar o añadir resultados a archivos (`>`, `>>`).
+
+-   Contar líneas (`wc -l`).
+
+-   Encadenar comandos con tuberías (`|`).
+
+-   Automatizar con bucles `for`.
+
+    ### Buscar patrones en archivos (`grep`).
+
+`grep`es una utilidad de línea de comandos para buscar en archivos de texto plano líneas que coincidan con un conjunto específico de caracteres (a veces llamado cadena) o un patrón particular (que se puede especificar mediante expresiones regulares).
+
+En esta lección, buscaremos manualmente cadenas de `N`"s" en los resultados de nuestra secuencia para ilustrar algunos principios de la búsqueda en archivos. Este tipo de búsqueda puede ser muy útil para evaluar la calidad de los resultados de la secuenciación; sin embargo, en su investigación, probablemente utilizará una herramienta bioinformática con un programa integrado para filtrar lecturas de baja calidad. Aprenderá a usar esta herramienta en [una lección posterior](https://carpentries-lab.github.io/metagenomics-analysis/02-assessing-read-quality/index.html) .
+
+Busquemos la cadena NNNNNNNNNN en el archivo JC1A_R2.fastq.
+
+```         
+$ grep NNNNNNNNNN JC1A_R2.fastq
+```
+
+Este comando imprime en la terminal **todas** las líneas del archivo `JC1A_R2.fastq` que contienen al menos 10 `N` consecutivas, sin importar lo largo o corto que sea el archivo.
+
+Quizá nos interese no solo la propia secuencia que contiene estas `N`, sino también el **identificador** de la lectura (la línea que precede inmediatamente a la secuencia en un archivo FASTQ) y sus **puntuaciones de calidad** (las dos líneas que siguen a la secuencia). Para obtener toda esta información de cada lectura, podemos usar:
+
+-   `-B1` ⇒ devuelve 1 línea **antes** de cada coincidencia (el identificador que empieza con `@`)
+
+-   `-A2` ⇒ devuelve 2 líneas **después** de cada coincidencia (la línea `+` y la cadena de calidad)
+
+> ``` bash
+> $ grep -B1 -A2 NNNNNNNNNN JC1A_R2.fastq
+> ```
+
+Uno de los bloques de líneas que devuelve este comando es:
+
+```{=html}
+@MISEQ-LAB244-W7:91:000000000-A5C7L:1:2111:5300:24013 2:N:0:TCGAAG
+NNNNNNNNNNNCNANNANNNNNCGCCGGTGTTCTNCTGGGGNACGGANACCGAGTAGATCGGAACAGCGTCGTGGAGNGAAAGAGTGTAGATCCCGGTGGGCGGCGTATCATTAAAAAAAAAACCTGCTGGTCCTTGTCTC
++
+AAA11BB3333BGG1GGEC1E?0E0B0BFDGFHD2FBH110A1BEE?A/BAFBDGH///>FEGGG><@/#//?#?/#//????########################################################################################################################################################################
+```
+
+De esta forma obtenemos, para cada lectura que contiene las 10 `N` consecutivas, su **encabezado**, la **secuencia** completa y la **línea de calidad**, todo en un solo paso.
+
+## Redirigir salida a un archivo
+
+Cuando usamos `grep` para extraer lecturas de un FASTQ con un patrón (p. ej. `NNNNNNNNNN`), toda la salida se imprime en pantalla. Para procesar esos resultados más adelante, es mejor **redirigirlos a un archivo** en lugar de dejarlos volar por la terminal.
+
+------------------------------------------------------------------------
+
+### 1️⃣ Redirección con `>`
+
+-   El operador `>` toma la salida estándar de un comando y la escribe en un fichero (sobrescribiéndolo si ya existe).
+
+-   **Ejemplo:** copiar todas las lecturas (identificador, secuencia y calidad) con 10 `N`s consecutivas a `bad_reads.txt`:
+
+    ``` bash
+    $ grep -B1 -A2 'NNNNNNNNNN' JC1A_R2.fastq > bad_reads.txt
+    $ ls -l bad_reads.txt
+    ```
+
+    ### Contar líneas, palabras y caracteres con `wc`
+
+`wc` por sí solo muestra tres valores:
+
+1.  Número de líneas
+
+2.  Número de palabras
+
+3.  Número de caracteres
+
+    ``` bash
+    $ wc bad_reads.txt
+    # Por ejemplo: " 402  489 50076 bad_reads.txt"
+    ```
+
+Si solo quieres el número de líneas (por ejemplo, para saber cuántas lecturas capturaste), usa `-l`:
+
+``` bash
+$ wc -l bad_reads.txt
+# Por ejemplo: "402 bad_reads.txt"
+```
+
+## Evitar sobrescritura y usar tuberías
+
+### 1️⃣ Overwrite (`>`) vs Append (`>>`)
+
+**`>`** crea o sobrescribe el archivo de salida.\
+Solo contiene resultados de JC1A_R1.fastq:
+
+``` bash
+$ grep -B1 -A2 'NNNNNNNNNN' JC1A_R1.fastq > bad_reads.txt 
+```
+
+``` bash
+$ wc -l bad_reads.txt # → 24 líneas
+```
+
+**`>>`** añade al final del archivo sin borrar lo que ya había.
+
+Copiamos primero de `JC1A_R2.fastq`
+
+``` bash
+$ grep -B1 -A2 'NNNNNNNNNN' JC1A_R2.fastq > bad_reads.txt  
+$ wc -l bad_reads.txt  # → 402
+```
+
+Ahora añadimos de `JC1A_R1.fastq` sin borrar:
+
+``` bash
+$ grep -B1 -A2 'NNNNNNNNNN' JC1A_R1.fastq >> bad_reads.txt  
+$ wc -l bad_reads.txt  # → 426 (402 + 24)
+```
+
+### Sin archivos intermedios: tuberías (`|`)
+
+Si solo te interesa **ver** la salida o contar coincidencias, no necesitas crear `bad_reads.txt`. Usar **pipes**:
+
+**Ver con paginación**:
+
+```         
+$ grep -B1 -A2 'NNNNNNNNNN' JC1A_R2.fastq | less
+```
+
+Navega con flechas o `Space`/`b`, sale con `q`.
+
+**Contar directamente**:
+
+```         
+$ grep -B1 -A2 'NNNNNNNNNN' *.fastq | wc -l
+```
+
+Esto te da el total de líneas encontradas (divide entre 4 si quieres el número de lecturas).
+
+## Automatizar tareas con bucles `for`
+
+Los bucles permiten repetir comandos sobre varios archivos sin volver a teclear cada uno.
+
+------------------------------------------------------------------------
+
+### Sintaxis básica
+
+``` bash
+for variable in lista_de_elementos; 
+do 
+# comandos usando "$variable"
+done
+```
+
+### Ejemplo práctico
+
+Guardemos las dos primeras líneas de cada archivo FASTQ en `seq_info.txt`:
+
+nos dirigimos a esta dirección
+`$ cd ~/dc_workshop/data/untrimmed_fastq`
+
+``` bash
+
+$ for filename in *.fastq
+> do
+> head -n 2 ${filename} >> seq_info.txt
+> done
+
+```
+
+Para ver el contenido del pequeño archivo que acabamos de crear es útil utilizar el `cat`comando.
+
+``` bash
+cat seq_info.txt
+```
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Output                                                                                                                                                                                                                                                      |
++=============================================================================================================================================================================================================================================================+
+| ```                                                                                                                                                                                                                                                         |
+| @MISEQ-LAB244-W7:91:000000000-A5C7L:1:1101:13417:1998 1:N:0:TCGNAG                                                                                                                                                                                          |
+| CTACGGCGCCATCGGCGNCCCCGGACGGTAGGAGACGGCGATGCTGGCCCTCGGCGCGGTCGCGTTCCTGAACCCCTGGCTGCTGGCGGCGCTCGCGGCGCTGCCGGTGCTCTGGGTGCTGCTGCGGGCGACGCCGCCGAGCCCGCGGCGGGTCGGATTCCCCGGCGTGCGCCCCCCGCTCCGGCTCGAGGACGCCGCACCGACGCCCCACCCCCCCCCCCGGTGGCTCCTCCTGCCGCCCTGCCTGATCC |
+| @MISEQ-LAB244-W7:91:000000000-A5C7L:1:1101:13417:1998 2:N:0:TCGNAG                                                                                                                                                                                          |
+| CGCGATCAGCAGCGGCCCGGAACCGGTCAGCCGCGCCNTGGGGTTCAGCACCGGCNNGGCGAAGGCCGCGATCGCGGCGGCGGCGATCAGGCAGCGCAGCAGCAGGAGCCACCAGGGCGTGCGGTCGGGCGTCCGTTCGGCGTCCTCGCGCCCCAGCAGCAGGCGCACGCCAGGGAATCCGACCCGCCGCCGGCTCGGCCGCGTCNCCCGCNCCCGCCCCCCGAGCACCCGNAGCCNCNCCACCGCCGCCC |
+| @MISEQ-LAB244-W7:156:000000000-A80CV:1:1101:12622:2006 1:N:0:CTCAGA                                                                                                                                                                                         |
+| CCCGTTCCTCGGGCGTGCAGTCGGGCTTGCGGTCTGCCATGTCGTGTTCGGCGTCGGTGGTGCCGATCAGGGTGAAATCCGTCTCGTAGGGGATCGCGAAGATGATCCGCCCGTCCGTGCCCTGAAAGAAATAGCACTTGTCAGATCGGAAGAGCACACGTCTGAACTCCAGTCACCTCAGAATCTCGTATGCCGTCTTCTGCTTGAAAAAAAAAAAAGCAAACCTCTCACTCCCTCTACTCTACTCCCTT |
+| @MISEQ-LAB244-W7:156:000000000-A80CV:1:1101:12622:2006 2:N:0:CTCAGA                                                                                                                                                                                         |
+| GACAAGTGCTATTTCTTTCAGGGCACGGACGGGCGGATCATCTTCGCGATCCCCTACGAGACGGATTTCACCCTGATCGGCACCACCGACGCCGAACACGACATGGCAGACCGCAAGCCCGACTGCACGCCCGAGGAACGGGAGATCGGAAGAGCGTCGTGTAGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCATTAAAAAAAAAAAGCGATCAACTCGACCGACCTGTCTTATTATATCTCACGTAA |
+| ```                                                                                                                                                                                                                                                         |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+1.  `for filename in *.fastq` → recorre **cada** `.fastq`.
+
+    > `for`: inicia un bucle.
+    >
+    > `filename`: es el nombre de la variable que irá tomando un valor distinto en cada vuelta.
+    >
+    > `in *.fastq`: indica la “lista de elementos” sobre la que vas a iterar —en este caso, todos los archivos del directorio que acaben en `.fastq`.
+
+2.  `head -n 2 "$filename"` → muestra las 2 primeras líneas.
+
+3.  `>> seq_info.txt` → **añade** esas líneas al final del archivo.
+
+4.  `done` → indica el fin del bucle.
+
+5.  `cat seq_info.txt` → muestra el contenido completo generado.
+
+------------------------------------------------------------------------
+
+### ¿Por qué usar `>>` y no `>`?
+
+-   **`>`** sobrescribe el fichero en cada iteración, dejando solo el último resultado.
+
+-   **`>>`** añade al final, acumulando la salida de **todas** las iteraciones.
+
+------------------------------------------------------------------------
+
+Con este patrón puedes:
+
+-   Descomprimir muchos archivos (`gunzip "$f"`).
+
+-   Aplicar filtros o transformaciones a lotes de datos.
+
+-   Extraer estadísticas en bloque.
+
+Los bucles `for` combinados con redirección y comodines son una herramienta muy poderosa para procesar rápidamente grandes conjuntos de archivos de forma reproducible.
+
+## Uso de `basename` en bucles `for`
+
+`basename` extrae el nombre “base” de un archivo, eliminando rutas y un sufijo común.
+
+------------------------------------------------------------------------
+
+### Ejemplo sencillo
+
+``` bash
+$ basename JC1A_R2.fastq .fastq # → JC1A_R2
+```
+
+Si el sufijo no coincide (p. ej. `.fasta`), devuelve el nombre completo:
+
+``` bash
+$ basename JC1A_R2.fastq .fasta # → JC1A_R2.fastq
+```
+
+**Integración en un bucle `for`**\
+
+Supongamos que estamos en `~/dc_workshop/data/untrimmed_fastq` y queremos procesar todos los `.fastq`, pero usar como nombre base solo el prefijo (sin `.fastq`):
+
+``` bash
+for filename in *.fastq; do
+  name=$(basename "$filename" .fastq)
+  echo "$name"
+done
+```
+
+`for filename in *.fastq; do`
+
+-   Empieza el bucle `for`.
+
+-   La variable `filename` tomará, sucesivamente, cada nombre que matchee con `*.fastq` (por ejemplo `JC1A_R1.fastq`, `JC1A_R2.fastq`, …).
+
+`name=$(basename "$filename" .fastq)`
+
+-   Ejecuta `basename` sobre el valor de `filename`.
+
+`basename "$filename" .fastq` devuelve el nombre del archivo **sin** la parte `.fastq`.
+
+-   Ese resultado se asigna a la variable `name`.
+
+`echo "$name"`
+
+-   Imprime en pantalla el contenido de `name` (p. ej. `JC1A_R1`, `JC1A_R2`, …).
+
+`done`
+
+-   Marca el fin del bloque de comandos del `for`.
+
+-   Vuelve al `for` para la siguiente iteración, o termina si ya no quedan archivos.
