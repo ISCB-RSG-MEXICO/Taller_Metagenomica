@@ -24,8 +24,8 @@ En esta ocasión, nos entusiasma la idea de que te interese el curso **Metagenó
 ### Instructores 👨‍🏫
 
 -   **Aarón Espinosa Jaime** - Maestría, UGA-CINVESTAV Irapuato
-
 -   **José Yahir Cabrera González** - Biotecnología, IBC-UNACH
+-   **Tania Vanessa Arellano Fernández** - UGA, CINVESTAV Irapuato
 
 ### Ayudantes
 
