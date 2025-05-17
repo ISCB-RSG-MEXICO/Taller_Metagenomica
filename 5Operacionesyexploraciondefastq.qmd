@@ -31,3 +31,126 @@ copiar archivos, crear directorios, mover y renombrar archivos. Enfasis en tener
 BORRAR
 
 Copiar ejercicio 1, Make backup folder with write-protected permissions
+
+# **Trabajar con archivos y directorios (yahir)**
+
+Realizamos un experimento de secuenciación y tenemos cuatro archivos de resultados, que se almacenan en nuestro directorio `untrimmed_fastq`.
+
+Navegue hasta su directorio `untrimmed_fastq`.
+
+``` bash
+$ cd ~/dc_workshop/data/untrimmed_fastq
+```
+
+``` bash
+$ cat JC1A_R2.fastq
+```
+
+`cat` como acabas de ver al ejecutar el comando, cuando el archivo es muy grande (como los que tenemos), puede resultar molesto. Siempre puedes usar Ctrl+C para detener el comando.
+
+El programa `less`es útil en este caso. `less`Abre el archivo como de solo lectura y permite navegar por él.
+
+```         
+$ less JC1A_R2.fastq
+```
+
+Algunos comandos de navegación en `less` :
+
+![Cuando estés dentro de `less` y quieras buscar un texto, haz esto:](images/clipboard-2423031106.png){alt="Cuando estés dentro de less y quieras buscar un texto, haz esto:"}
+
+-   **Buscar hacia adelante**
+
+1.- Pulsa `/` (la barra)
+
+2.- Escribe la palabra o frase que buscas
+
+3.- Pulsa `Enter`
+
+`less` saltará a la **primera** vez que aparezca después de donde estás.
+
+-   **Repetir la misma búsqueda hacia adelante**
+
+1.- Sin escribir nada nuevo,
+
+2.- pulsa `/` `Enter`
+
+`less` saltará a la **siguiente** aparición en el archivo.
+
+-   **Buscar hacia atrás**
+
+1.- Pulsa `?` (el signo de interrogación) 2.- Escribe la palabra que buscas
+
+3.- Pulsa `Enter`
+
+`less` saltará a la **última** aparición antes de donde estás.
+
+### Ver solo el principio o el final
+
+A veces solo quieres echar un vistazo rápido al inicio o al cierre de un archivo muy largo. Para ello:
+
+-   **Primeras líneas** con `head`\
+    ``` head``archivo.txt ``` muestra las primeras 10 líneas por defecto `head -n 5 archivo.txt`muestra solo las primeras 5 líneas
+
+-   **Ultimas líneas** con `tail`
+
+    `tail archivo.txt` muestra las últimas 10 líneas por defecto `tail -n 5 archivo.txt`muestra solo las últimas 5 líneas
+
+## 🛠️ **Crear, mover, copiar y eliminar**
+
+| Comando            | Qué hace                                   |
+|--------------------|--------------------------------------------|
+| `cp origen dest`   | Copia un archivo                           |
+| `mkdir nombre`     | Crea un directorio                         |
+| `mv origen dest`   | Mueve o renombra (si `dest` es un archivo) |
+| `rm archivo`       | Elimina un archivo                         |
+| `rm -r directorio` | Elimina un directorio y su contenido       |
+
+Cuando trabajas con muchos archivos (o en un servidor remoto), usar la línea de comandos es más rápido y seguro.
+
+------------------------------------------------------------------------
+
+### Copiar archivos (`cp`)
+
+``` bash
+cd ~/dc_workshop/data/untrimmed_fastq
+cp JC1A_R2.fastq JC1A_R2-copy.fastq
+```
+
+### Crear directorios (`mkdir`)
+
+``` bash
+mkdir backup
+```
+
+### Mover y renombrar (`mv`)
+
+**Mover a carpeta:**
+
+``` bash
+mv JC1A_R2-copy.fastq backup/
+ls backup
+# JC1A_R2-copy.fastq
+```
+
+**Renombrar:**
+
+```         
+cd backup
+mv JC1A_R2-copy.fastq JC1A_R2-backup.fastq
+ls
+# JC1A_R2-backup.fastq
+```
+
+### Eliminar archivos y directorios (`rm`)
+
+**Eliminar archivo:**
+
+> ``` bash
+> rm archivo.txt
+> ```
+
+**Eliminar carpeta recursivamente:**
+
+``` bash
+rm -r backup
+```
