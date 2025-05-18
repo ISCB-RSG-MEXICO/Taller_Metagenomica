@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -265,31 +299,31 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./14Filtraciondedatosdesecuenciacion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Filtración de datos de secuenciación</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15Ensamblemetagenomico.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Binning metagenómico</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./16Binningmetagenomico.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Asignación taxonómica</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./17Asignaciontaxonomica.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Explorando la diversidad con librerías de R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./18Exploraciondetaxonomiaconr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Análisis de taxonomía con R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -317,8 +351,36 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#redirección-de-entrada-y-salida-yahir" id="toc-redirección-de-entrada-y-salida-yahir" class="nav-link active" data-scroll-target="#redirección-de-entrada-y-salida-yahir"><span class="header-section-number">7</span> Redirección de Entrada y Salida (yahir)</a>
+  <ul>
+  <li><a href="#objetivos" id="toc-objetivos" class="nav-link" data-scroll-target="#objetivos"><span class="header-section-number">7.1</span> Objetivos</a></li>
+  <li><a href="#redirigir-salida-a-un-archivo" id="toc-redirigir-salida-a-un-archivo" class="nav-link" data-scroll-target="#redirigir-salida-a-un-archivo"><span class="header-section-number">7.2</span> Redirigir salida a un archivo</a>
+  <ul class="collapse">
+  <li><a href="#redirección-con" id="toc-redirección-con" class="nav-link" data-scroll-target="#redirección-con"><span class="header-section-number">7.2.1</span> 1️⃣ Redirección con <code>&gt;</code></a></li>
+  </ul></li>
+  <li><a href="#evitar-sobrescritura-y-usar-tuberías" id="toc-evitar-sobrescritura-y-usar-tuberías" class="nav-link" data-scroll-target="#evitar-sobrescritura-y-usar-tuberías"><span class="header-section-number">7.3</span> Evitar sobrescritura y usar tuberías</a>
+  <ul class="collapse">
+  <li><a href="#overwrite-vs-append" id="toc-overwrite-vs-append" class="nav-link" data-scroll-target="#overwrite-vs-append"><span class="header-section-number">7.3.1</span> 1️⃣ Overwrite (<code>&gt;</code>) vs Append (<code>&gt;&gt;</code>)</a></li>
+  <li><a href="#sin-archivos-intermedios-tuberías" id="toc-sin-archivos-intermedios-tuberías" class="nav-link" data-scroll-target="#sin-archivos-intermedios-tuberías"><span class="header-section-number">7.3.2</span> Sin archivos intermedios: tuberías (<code>|</code>)</a></li>
+  </ul></li>
+  <li><a href="#automatizar-tareas-con-bucles-for" id="toc-automatizar-tareas-con-bucles-for" class="nav-link" data-scroll-target="#automatizar-tareas-con-bucles-for"><span class="header-section-number">7.4</span> Automatizar tareas con bucles <code>for</code></a>
+  <ul class="collapse">
+  <li><a href="#sintaxis-básica" id="toc-sintaxis-básica" class="nav-link" data-scroll-target="#sintaxis-básica"><span class="header-section-number">7.4.1</span> Sintaxis básica</a></li>
+  <li><a href="#ejemplo-práctico" id="toc-ejemplo-práctico" class="nav-link" data-scroll-target="#ejemplo-práctico"><span class="header-section-number">7.4.2</span> Ejemplo práctico</a></li>
+  <li><a href="#por-qué-usar-y-no" id="toc-por-qué-usar-y-no" class="nav-link" data-scroll-target="#por-qué-usar-y-no"><span class="header-section-number">7.4.3</span> ¿Por qué usar <code>&gt;&gt;</code> y no <code>&gt;</code>?</a></li>
+  </ul></li>
+  <li><a href="#uso-de-basename-en-bucles-for" id="toc-uso-de-basename-en-bucles-for" class="nav-link" data-scroll-target="#uso-de-basename-en-bucles-for"><span class="header-section-number">7.5</span> Uso de <code>basename</code> en bucles <code>for</code></a>
+  <ul class="collapse">
+  <li><a href="#ejemplo-sencillo" id="toc-ejemplo-sencillo" class="nav-link" data-scroll-target="#ejemplo-sencillo"><span class="header-section-number">7.5.1</span> Ejemplo sencillo</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -352,8 +414,208 @@ ul.task-list li input[type="checkbox"] {
 <p>wc bad_reads.txt</p>
 <p>Ejercicio 2: uso de wc</p>
 <p>Combinacion de grep -b1 -a2 flags, redireccion</p>
+<section id="redirección-de-entrada-y-salida-yahir" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Redirección de Entrada y Salida (yahir)</h1>
+<section id="objetivos" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="objetivos"><span class="header-section-number">7.1</span> Objetivos</h2>
+<ul>
+<li><p>Buscar patrones en archivos (<code>grep</code>).</p></li>
+<li><p>Guardar o añadir resultados a archivos (<code>&gt;</code>, <code>&gt;&gt;</code>).</p></li>
+<li><p>Contar líneas (<code>wc -l</code>).</p></li>
+<li><p>Encadenar comandos con tuberías (<code>|</code>).</p></li>
+<li><p>Automatizar con bucles <code>for</code>.</p>
+<h3 id="buscar-patrones-en-archivos-grep." data-number="7.1.1" class="anchored"><span class="header-section-number">7.1.1</span> Buscar patrones en archivos (<code>grep</code>).</h3></li>
+</ul>
+<p><code>grep</code>es una utilidad de línea de comandos para buscar en archivos de texto plano líneas que coincidan con un conjunto específico de caracteres (a veces llamado cadena) o un patrón particular (que se puede especificar mediante expresiones regulares).</p>
+<p>En esta lección, buscaremos manualmente cadenas de <code>N</code>“s” en los resultados de nuestra secuencia para ilustrar algunos principios de la búsqueda en archivos. Este tipo de búsqueda puede ser muy útil para evaluar la calidad de los resultados de la secuenciación; sin embargo, en su investigación, probablemente utilizará una herramienta bioinformática con un programa integrado para filtrar lecturas de baja calidad. Aprenderá a usar esta herramienta en <a href="https://carpentries-lab.github.io/metagenomics-analysis/02-assessing-read-quality/index.html">una lección posterior</a> .</p>
+<p>Busquemos la cadena NNNNNNNNNN en el archivo JC1A_R2.fastq.</p>
+<pre><code>$ grep NNNNNNNNNN JC1A_R2.fastq</code></pre>
+<p>Este comando imprime en la terminal <strong>todas</strong> las líneas del archivo <code>JC1A_R2.fastq</code> que contienen al menos 10 <code>N</code> consecutivas, sin importar lo largo o corto que sea el archivo.</p>
+<p>Quizá nos interese no solo la propia secuencia que contiene estas <code>N</code>, sino también el <strong>identificador</strong> de la lectura (la línea que precede inmediatamente a la secuencia en un archivo FASTQ) y sus <strong>puntuaciones de calidad</strong> (las dos líneas que siguen a la secuencia). Para obtener toda esta información de cada lectura, podemos usar:</p>
+<ul>
+<li><p><code>-B1</code> ⇒ devuelve 1 línea <strong>antes</strong> de cada coincidencia (el identificador que empieza con <code>@</code>)</p></li>
+<li><p><code>-A2</code> ⇒ devuelve 2 líneas <strong>después</strong> de cada coincidencia (la línea <code>+</code> y la cadena de calidad)</p></li>
+</ul>
+<blockquote class="blockquote">
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> grep <span class="at">-B1</span> <span class="at">-A2</span> NNNNNNNNNN JC1A_R2.fastq</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</blockquote>
+<p>Uno de los bloques de líneas que devuelve este comando es:</p>
+@MISEQ-LAB244-W7:91:000000000-A5C7L:1:2111:5300:24013 2:N:0:TCGAAG
+NNNNNNNNNNNCNANNANNNNNCGCCGGTGTTCTNCTGGGGNACGGANACCGAGTAGATCGGAACAGCGTCGTGGAGNGAAAGAGTGTAGATCCCGGTGGGCGGCGTATCATTAAAAAAAAAACCTGCTGGTCCTTGTCTC
++
+AAA11BB3333BGG1GGEC1E?0E0B0BFDGFHD2FBH110A1BEE?A/BAFBDGH///&gt;FEGGG&gt;&lt;@/#//?#?/#//????########################################################################################################################################################################
+<p>De esta forma obtenemos, para cada lectura que contiene las 10 <code>N</code> consecutivas, su <strong>encabezado</strong>, la <strong>secuencia</strong> completa y la <strong>línea de calidad</strong>, todo en un solo paso.</p>
+</section>
+<section id="redirigir-salida-a-un-archivo" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="redirigir-salida-a-un-archivo"><span class="header-section-number">7.2</span> Redirigir salida a un archivo</h2>
+<p>Cuando usamos <code>grep</code> para extraer lecturas de un FASTQ con un patrón (p.&nbsp;ej. <code>NNNNNNNNNN</code>), toda la salida se imprime en pantalla. Para procesar esos resultados más adelante, es mejor <strong>redirigirlos a un archivo</strong> en lugar de dejarlos volar por la terminal.</p>
+<hr>
+<section id="redirección-con" class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="redirección-con"><span class="header-section-number">7.2.1</span> 1️⃣ Redirección con <code>&gt;</code></h3>
+<ul>
+<li><p>El operador <code>&gt;</code> toma la salida estándar de un comando y la escribe en un fichero (sobrescribiéndolo si ya existe).</p></li>
+<li><p><strong>Ejemplo:</strong> copiar todas las lecturas (identificador, secuencia y calidad) con 10 <code>N</code>s consecutivas a <code>bad_reads.txt</code>:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> grep <span class="at">-B1</span> <span class="at">-A2</span> <span class="st">'NNNNNNNNNN'</span> JC1A_R2.fastq <span class="op">&gt;</span> bad_reads.txt</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls <span class="at">-l</span> bad_reads.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 id="contar-líneas-palabras-y-caracteres-con-wc" data-number="7.2.2" class="anchored"><span class="header-section-number">7.2.2</span> Contar líneas, palabras y caracteres con <code>wc</code></h3></li>
+</ul>
+<p><code>wc</code> por sí solo muestra tres valores:</p>
+<ol type="1">
+<li><p>Número de líneas</p></li>
+<li><p>Número de palabras</p></li>
+<li><p>Número de caracteres</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> wc bad_reads.txt</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Por ejemplo: " 402  489 50076 bad_reads.txt"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ol>
+<p>Si solo quieres el número de líneas (por ejemplo, para saber cuántas lecturas capturaste), usa <code>-l</code>:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> wc <span class="at">-l</span> bad_reads.txt</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Por ejemplo: "402 bad_reads.txt"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="evitar-sobrescritura-y-usar-tuberías" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="evitar-sobrescritura-y-usar-tuberías"><span class="header-section-number">7.3</span> Evitar sobrescritura y usar tuberías</h2>
+<section id="overwrite-vs-append" class="level3" data-number="7.3.1">
+<h3 data-number="7.3.1" class="anchored" data-anchor-id="overwrite-vs-append"><span class="header-section-number">7.3.1</span> 1️⃣ Overwrite (<code>&gt;</code>) vs Append (<code>&gt;&gt;</code>)</h3>
+<p><strong><code>&gt;</code></strong> crea o sobrescribe el archivo de salida.<br>
+Solo contiene resultados de JC1A_R1.fastq:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> grep <span class="at">-B1</span> <span class="at">-A2</span> <span class="st">'NNNNNNNNNN'</span> JC1A_R1.fastq <span class="op">&gt;</span> bad_reads.txt </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> wc <span class="at">-l</span> bad_reads.txt <span class="co"># → 24 líneas</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong><code>&gt;&gt;</code></strong> añade al final del archivo sin borrar lo que ya había.</p>
+<p>Copiamos primero de <code>JC1A_R2.fastq</code></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> grep <span class="at">-B1</span> <span class="at">-A2</span> <span class="st">'NNNNNNNNNN'</span> JC1A_R2.fastq <span class="op">&gt;</span> bad_reads.txt  </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> wc <span class="at">-l</span> bad_reads.txt  <span class="co"># → 402</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Ahora añadimos de <code>JC1A_R1.fastq</code> sin borrar:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> grep <span class="at">-B1</span> <span class="at">-A2</span> <span class="st">'NNNNNNNNNN'</span> JC1A_R1.fastq <span class="op">&gt;&gt;</span> bad_reads.txt  </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> wc <span class="at">-l</span> bad_reads.txt  <span class="co"># → 426 (402 + 24)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="sin-archivos-intermedios-tuberías" class="level3" data-number="7.3.2">
+<h3 data-number="7.3.2" class="anchored" data-anchor-id="sin-archivos-intermedios-tuberías"><span class="header-section-number">7.3.2</span> Sin archivos intermedios: tuberías (<code>|</code>)</h3>
+<p>Si solo te interesa <strong>ver</strong> la salida o contar coincidencias, no necesitas crear <code>bad_reads.txt</code>. Usar <strong>pipes</strong>:</p>
+<p><strong>Ver con paginación</strong>:</p>
+<pre><code>$ grep -B1 -A2 'NNNNNNNNNN' JC1A_R2.fastq | less</code></pre>
+<p>Navega con flechas o <code>Space</code>/<code>b</code>, sale con <code>q</code>.</p>
+<p><strong>Contar directamente</strong>:</p>
+<pre><code>$ grep -B1 -A2 'NNNNNNNNNN' *.fastq | wc -l</code></pre>
+<p>Esto te da el total de líneas encontradas (divide entre 4 si quieres el número de lecturas).</p>
+</section>
+</section>
+<section id="automatizar-tareas-con-bucles-for" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="automatizar-tareas-con-bucles-for"><span class="header-section-number">7.4</span> Automatizar tareas con bucles <code>for</code></h2>
+<p>Los bucles permiten repetir comandos sobre varios archivos sin volver a teclear cada uno.</p>
+<hr>
+<section id="sintaxis-básica" class="level3" data-number="7.4.1">
+<h3 data-number="7.4.1" class="anchored" data-anchor-id="sintaxis-básica"><span class="header-section-number">7.4.1</span> Sintaxis básica</h3>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> variable <span class="kw">in</span> lista_de_elementos<span class="kw">;</span> </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span> </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># comandos usando "$variable"</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="ejemplo-práctico" class="level3" data-number="7.4.2">
+<h3 data-number="7.4.2" class="anchored" data-anchor-id="ejemplo-práctico"><span class="header-section-number">7.4.2</span> Ejemplo práctico</h3>
+<p>Guardemos las dos primeras líneas de cada archivo FASTQ en <code>seq_info.txt</code>:</p>
+<p>nos dirigimos a esta dirección <code>$ cd ~/dc_workshop/data/untrimmed_fastq</code></p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> for filename in <span class="pp">*</span>.fastq</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> do</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> head <span class="ex">-n</span> 2 <span class="va">${filename}</span> <span class="op">&gt;&gt;</span> seq_info.txt</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> done</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Para ver el contenido del pequeño archivo que acabamos de crear es útil utilizar el <code>cat</code>comando.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> seq_info.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 100%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><pre><code>@MISEQ-LAB244-W7:91:000000000-A5C7L:1:1101:13417:1998 1:N:0:TCGNAG
+CTACGGCGCCATCGGCGNCCCCGGACGGTAGGAGACGGCGATGCTGGCCCTCGGCGCGGTCGCGTTCCTGAACCCCTGGCTGCTGGCGGCGCTCGCGGCGCTGCCGGTGCTCTGGGTGCTGCTGCGGGCGACGCCGCCGAGCCCGCGGCGGGTCGGATTCCCCGGCGTGCGCCCCCCGCTCCGGCTCGAGGACGCCGCACCGACGCCCCACCCCCCCCCCCGGTGGCTCCTCCTGCCGCCCTGCCTGATCC
+@MISEQ-LAB244-W7:91:000000000-A5C7L:1:1101:13417:1998 2:N:0:TCGNAG
+CGCGATCAGCAGCGGCCCGGAACCGGTCAGCCGCGCCNTGGGGTTCAGCACCGGCNNGGCGAAGGCCGCGATCGCGGCGGCGGCGATCAGGCAGCGCAGCAGCAGGAGCCACCAGGGCGTGCGGTCGGGCGTCCGTTCGGCGTCCTCGCGCCCCAGCAGCAGGCGCACGCCAGGGAATCCGACCCGCCGCCGGCTCGGCCGCGTCNCCCGCNCCCGCCCCCCGAGCACCCGNAGCCNCNCCACCGCCGCCC
+@MISEQ-LAB244-W7:156:000000000-A80CV:1:1101:12622:2006 1:N:0:CTCAGA
+CCCGTTCCTCGGGCGTGCAGTCGGGCTTGCGGTCTGCCATGTCGTGTTCGGCGTCGGTGGTGCCGATCAGGGTGAAATCCGTCTCGTAGGGGATCGCGAAGATGATCCGCCCGTCCGTGCCCTGAAAGAAATAGCACTTGTCAGATCGGAAGAGCACACGTCTGAACTCCAGTCACCTCAGAATCTCGTATGCCGTCTTCTGCTTGAAAAAAAAAAAAGCAAACCTCTCACTCCCTCTACTCTACTCCCTT
+@MISEQ-LAB244-W7:156:000000000-A80CV:1:1101:12622:2006 2:N:0:CTCAGA
+GACAAGTGCTATTTCTTTCAGGGCACGGACGGGCGGATCATCTTCGCGATCCCCTACGAGACGGATTTCACCCTGATCGGCACCACCGACGCCGAACACGACATGGCAGACCGCAAGCCCGACTGCACGCCCGAGGAACGGGAGATCGGAAGAGCGTCGTGTAGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCATTAAAAAAAAAAAGCGATCAACTCGACCGACCTGTCTTATTATATCTCACGTAA</code></pre></td>
+</tr>
+</tbody>
+</table>
+<ol type="1">
+<li><p><code>for filename in *.fastq</code> → recorre <strong>cada</strong> <code>.fastq</code>.</p>
+<blockquote class="blockquote">
+<p><code>for</code>: inicia un bucle.</p>
+<p><code>filename</code>: es el nombre de la variable que irá tomando un valor distinto en cada vuelta.</p>
+<p><code>in *.fastq</code>: indica la “lista de elementos” sobre la que vas a iterar —en este caso, todos los archivos del directorio que acaben en <code>.fastq</code>.</p>
+</blockquote></li>
+<li><p><code>head -n 2 "$filename"</code> → muestra las 2 primeras líneas.</p></li>
+<li><p><code>&gt;&gt; seq_info.txt</code> → <strong>añade</strong> esas líneas al final del archivo.</p></li>
+<li><p><code>done</code> → indica el fin del bucle.</p></li>
+<li><p><code>cat seq_info.txt</code> → muestra el contenido completo generado.</p></li>
+</ol>
+<hr>
+</section>
+<section id="por-qué-usar-y-no" class="level3" data-number="7.4.3">
+<h3 data-number="7.4.3" class="anchored" data-anchor-id="por-qué-usar-y-no"><span class="header-section-number">7.4.3</span> ¿Por qué usar <code>&gt;&gt;</code> y no <code>&gt;</code>?</h3>
+<ul>
+<li><p><strong><code>&gt;</code></strong> sobrescribe el fichero en cada iteración, dejando solo el último resultado.</p></li>
+<li><p><strong><code>&gt;&gt;</code></strong> añade al final, acumulando la salida de <strong>todas</strong> las iteraciones.</p></li>
+</ul>
+<hr>
+<p>Con este patrón puedes:</p>
+<ul>
+<li><p>Descomprimir muchos archivos (<code>gunzip "$f"</code>).</p></li>
+<li><p>Aplicar filtros o transformaciones a lotes de datos.</p></li>
+<li><p>Extraer estadísticas en bloque.</p></li>
+</ul>
+<p>Los bucles <code>for</code> combinados con redirección y comodines son una herramienta muy poderosa para procesar rápidamente grandes conjuntos de archivos de forma reproducible.</p>
+</section>
+</section>
+<section id="uso-de-basename-en-bucles-for" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="uso-de-basename-en-bucles-for"><span class="header-section-number">7.5</span> Uso de <code>basename</code> en bucles <code>for</code></h2>
+<p><code>basename</code> extrae el nombre “base” de un archivo, eliminando rutas y un sufijo común.</p>
+<hr>
+<section id="ejemplo-sencillo" class="level3" data-number="7.5.1">
+<h3 data-number="7.5.1" class="anchored" data-anchor-id="ejemplo-sencillo"><span class="header-section-number">7.5.1</span> Ejemplo sencillo</h3>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> basename JC1A_R2.fastq .fastq <span class="co"># → JC1A_R2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Si el sufijo no coincide (p.&nbsp;ej. <code>.fasta</code>), devuelve el nombre completo:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> basename JC1A_R2.fastq .fasta <span class="co"># → JC1A_R2.fastq</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Integración en un bucle <code>for</code></strong><br>
+</p>
+<p>Supongamos que estamos en <code>~/dc_workshop/data/untrimmed_fastq</code> y queremos procesar todos los <code>.fastq</code>, pero usar como nombre base solo el prefijo (sin <code>.fastq</code>):</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> filename <span class="kw">in</span> <span class="pp">*</span>.fastq<span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="va">name</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span> <span class="st">"</span><span class="va">$filename</span><span class="st">"</span> .fastq<span class="va">)</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">echo</span> <span class="st">"</span><span class="va">$name</span><span class="st">"</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>for filename in *.fastq; do</code></p>
+<ul>
+<li><p>Empieza el bucle <code>for</code>.</p></li>
+<li><p>La variable <code>filename</code> tomará, sucesivamente, cada nombre que matchee con <code>*.fastq</code> (por ejemplo <code>JC1A_R1.fastq</code>, <code>JC1A_R2.fastq</code>, …).</p></li>
+</ul>
+<p><code>name=$(basename "$filename" .fastq)</code></p>
+<ul>
+<li>Ejecuta <code>basename</code> sobre el valor de <code>filename</code>.</li>
+</ul>
+<p><code>basename "$filename" .fastq</code> devuelve el nombre del archivo <strong>sin</strong> la parte <code>.fastq</code>.</p>
+<ul>
+<li>Ese resultado se asigna a la variable <code>name</code>.</li>
+</ul>
+<p><code>echo "$name"</code></p>
+<ul>
+<li>Imprime en pantalla el contenido de <code>name</code> (p.&nbsp;ej. <code>JC1A_R1</code>, <code>JC1A_R2</code>, …).</li>
+</ul>
+<p><code>done</code></p>
+<ul>
+<li><p>Marca el fin del bloque de comandos del <code>for</code>.</p></li>
+<li><p>Vuelve al <code>for</code> para la siguiente iteración, o termina si ya no quedan archivos.</p></li>
+</ul>
 
 
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

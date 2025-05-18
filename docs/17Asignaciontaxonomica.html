@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>17&nbsp; Control de calidad – Workshop</title>
+<title>17&nbsp; Explorando la diversidad con librerías de R – Workshop</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -118,7 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./12Iniciandomiproyectometagenomico.html"><strong>Sección 4</strong> - Procesamiento y visualización de datos metagenómicos</a></li><li class="breadcrumb-item"><a href="./17Asignaciontaxonomica.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Control de calidad</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./12Iniciandomiproyectometagenomico.html"><strong>Sección 4</strong> - Procesamiento y visualización de datos metagenómicos</a></li><li class="breadcrumb-item"><a href="./17Asignaciontaxonomica.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Explorando la diversidad con librerías de R</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -299,31 +299,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./14Filtraciondedatosdesecuenciacion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Filtración de datos de secuenciación</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15Ensamblemetagenomico.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Binning metagenómico</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./16Binningmetagenomico.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Asignación taxonómica</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./17Asignaciontaxonomica.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Explorando la diversidad con librerías de R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./18Exploraciondetaxonomiaconr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Análisis de taxonomía con R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -356,22 +356,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#flujos-de-análisis-bioinformático-en-metagenómica" id="toc-flujos-de-análisis-bioinformático-en-metagenómica" class="nav-link active" data-scroll-target="#flujos-de-análisis-bioinformático-en-metagenómica"><span class="header-section-number">17.0.1</span> Flujos de análisis bioinformático en metagenómica</a></li>
-  <li><a href="#detalles-del-formato-fastq" id="toc-detalles-del-formato-fastq" class="nav-link" data-scroll-target="#detalles-del-formato-fastq"><span class="header-section-number">17.0.2</span> Detalles del formato FASTQ</a></li>
-  <li><a href="#activando-ambiente-metagenómico" id="toc-activando-ambiente-metagenómico" class="nav-link" data-scroll-target="#activando-ambiente-metagenómico"><span class="header-section-number">17.0.3</span> Activando ambiente Metagenómico</a></li>
-  <li><a href="#control-de-calidad-con-fastqc" id="toc-control-de-calidad-con-fastqc" class="nav-link" data-scroll-target="#control-de-calidad-con-fastqc"><span class="header-section-number">17.0.4</span> Control de calidad con FastQC</a></li>
-  <li><a href="#corre-fastqc" id="toc-corre-fastqc" class="nav-link" data-scroll-target="#corre-fastqc"><span class="header-section-number">17.0.5</span> Corre FastQC</a></li>
-  <li><a href="#visualización-de-resultados-con-fastqc" id="toc-visualización-de-resultados-con-fastqc" class="nav-link" data-scroll-target="#visualización-de-resultados-con-fastqc"><span class="header-section-number">17.0.6</span> Visualización de resultados con FastQC</a></li>
-  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">17.1</span> Referencias</a></li>
+  <li><a href="#primera-inmersión-en-la-diversidad" id="toc-primera-inmersión-en-la-diversidad" class="nav-link active" data-scroll-target="#primera-inmersión-en-la-diversidad"><span class="header-section-number">17.1</span> <strong>Primera inmersión en la diversidad</strong></a></li>
+  <li><a href="#diversidad-α" id="toc-diversidad-α" class="nav-link" data-scroll-target="#diversidad-α"><span class="header-section-number">17.2</span> <strong>diversidad α</strong></a>
+  <ul>
+  <li><a href="#diversidad-β" id="toc-diversidad-β" class="nav-link" data-scroll-target="#diversidad-β"><span class="header-section-number">17.2.1</span> <strong>diversidad β</strong></a></li>
+  </ul></li>
+  <li><a href="#ejercicio-1-medida-simple-de-diversidades-alfa-y-beta." id="toc-ejercicio-1-medida-simple-de-diversidades-alfa-y-beta." class="nav-link" data-scroll-target="#ejercicio-1-medida-simple-de-diversidades-alfa-y-beta."><span class="header-section-number">17.3</span> <strong>Ejercicio 1: Medida simple de diversidades alfa y beta.</strong></a></li>
+  <li><a href="#solución" id="toc-solución" class="nav-link" data-scroll-target="#solución"><span class="header-section-number">17.4</span> <strong>Solución</strong></a></li>
+  <li><a href="#diversidad-alfa-de-la-gráfica" id="toc-diversidad-alfa-de-la-gráfica" class="nav-link" data-scroll-target="#diversidad-alfa-de-la-gráfica"><span class="header-section-number">17.5</span> <strong>Diversidad alfa de la gráfica</strong></a></li>
+  <li><a href="#abundancias-absolutas-y-relativas" id="toc-abundancias-absolutas-y-relativas" class="nav-link" data-scroll-target="#abundancias-absolutas-y-relativas"><span class="header-section-number">17.6</span> <strong>Abundancias absolutas y relativas</strong></a></li>
+  <li><a href="#diversidad-beta" id="toc-diversidad-beta" class="nav-link" data-scroll-target="#diversidad-beta"><span class="header-section-number">17.7</span> <strong>Diversidad beta</strong></a></li>
+  <li><a href="#ejercicio-3-agregar-metadatos-a-la-visualización-de-la-diversidad-beta" id="toc-ejercicio-3-agregar-metadatos-a-la-visualización-de-la-diversidad-beta" class="nav-link" data-scroll-target="#ejercicio-3-agregar-metadatos-a-la-visualización-de-la-diversidad-beta"><span class="header-section-number">17.8</span> <strong>Ejercicio 3: Agregar metadatos a la visualización de la diversidad beta</strong></a></li>
+  <li><a href="#discusión-índices-de-diversidad" id="toc-discusión-índices-de-diversidad" class="nav-link" data-scroll-target="#discusión-índices-de-diversidad"><span class="header-section-number">17.9</span> <strong>Discusión: Índices de diversidad</strong></a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">17.11</span> Referencias</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./12Iniciandomiproyectometagenomico.html"><strong>Sección 4</strong> - Procesamiento y visualización de datos metagenómicos</a></li><li class="breadcrumb-item"><a href="./17Asignaciontaxonomica.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Control de calidad</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./12Iniciandomiproyectometagenomico.html"><strong>Sección 4</strong> - Procesamiento y visualización de datos metagenómicos</a></li><li class="breadcrumb-item"><a href="./17Asignaciontaxonomica.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Explorando la diversidad con librerías de R</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Control de calidad</span></h1>
+<h1 class="title"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Explorando la diversidad con librerías de R</span></h1>
 </div>
 
 
@@ -388,107 +394,249 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="flujos-de-análisis-bioinformático-en-metagenómica" class="level3" data-number="17.0.1">
-<h3 data-number="17.0.1" class="anchored" data-anchor-id="flujos-de-análisis-bioinformático-en-metagenómica"><span class="header-section-number">17.0.1</span> Flujos de análisis bioinformático en metagenómica</h3>
-<p>Al trabajar con datos de secuenciación, los reads/lecturas que obtienes del secuenciador deben pasar a través de varias herramientas para generar el resultado final deseado. La ejecución de este conjunto de herramientas en un orden específico se conoce como pipeline o flujo de análisis.</p>
+<section id="primera-inmersión-en-la-diversidad" class="level2" data-number="17.1">
+<h2 data-number="17.1" class="anchored" data-anchor-id="primera-inmersión-en-la-diversidad"><span class="header-section-number">17.1</span> <strong>Primera inmersión en la diversidad</strong></h2>
+<p>La diversidad de especies, en su definición más simple, es el número de especies en un área determinada y su abundancia relativa (uniformidad). Una vez que conocemos la composición taxonómica de nuestros metagenomas, podemos realizar análisis de diversidad. Aquí analizaremos las dos métricas de diversidad más utilizadas: la diversidad α (dentro de un metagenoma) y la diversidad β (entre metagenomas).</p>
+<ul>
+<li>Diversidad α: Puede representarse únicamente como riqueza ( <em>es decir,</em> el número de especies diferentes en un entorno), o también puede medirse considerando la abundancia de las especies en el entorno ( <em>es decir,</em> el número de individuos de cada especie en el entorno). Para medir la diversidad α, utilizamos índices como el de Shannon, el de Simpson, el de Chao1, etc.</li>
+</ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/03-02-01.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="figures/diversidad1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-<p>Estos pipelines adoptan un enfoque plug-and-play en el sentido de que el archivo de salida de uno de ellos es fácilmente convertido en archivo de salida para el siguiente.</p>
+<ul>
+<li>La diversidad β es la diferencia (medida como distancia) entre dos o más entornos. Puede medirse con métricas como la disimilitud de Bray-Curtis, la distancia de Jaccard o la distancia Unifrac, por nombrar algunas. Cada una de estas medidas se centra en una característica de la comunidad ( <em>p.&nbsp;ej.,</em> la distancia Unifrac mide la relación filogenética entre las especies de la comunidad).</li>
+</ul>
+<p>En el siguiente ejemplo, analizaremos los componentes α y β de la diversidad de un conjunto de datos de peces en tres lagos. La forma más sencilla de calcular la diversidad β es calcular las especies distintas entre dos lagos (sitios). Tomemos como ejemplo la diversidad entre el lago A y el lago B. El número de especies en el lago A es 3. A esta cantidad, restaremos el número de estas especies que se comparten con el lago B: 2. Por lo tanto, el número de especies únicas en el lago A en comparación con el lago B es (3-2) = 1. A este número, sumaremos el resultado de las mismas operaciones, pero ahora tomaremos el lago B como nuestro sitio de referencia. Al final, la diversidad β entre el lago A y el lago B es (3-2) + (3-2) = 2. Este proceso puede repetirse, tomando cada par de lagos como los sitios de enfoque.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/diversidad2.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
 </section>
-<section id="detalles-del-formato-fastq" class="level3" data-number="17.0.2">
-<h3 data-number="17.0.2" class="anchored" data-anchor-id="detalles-del-formato-fastq"><span class="header-section-number">17.0.2</span> Detalles del <a href="https://en.wikipedia.org/wiki/Phred_quality_score">formato FASTQ</a></h3>
-<p>Aunque pueda parecer complicado, el formato FASTQ sigue un patrón de 4 líneas que facilitan su interpretación.</p>
+<section id="diversidad-α" class="level2" data-number="17.2">
+<h2 data-number="17.2" class="anchored" data-anchor-id="diversidad-α"><span class="header-section-number">17.2</span> <strong>diversidad α</strong></h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Índices de diversidad</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Shannon (H)</td>
+<td style="text-align: left;">Estimación de la riqueza y la uniformidad de especies. Mayor importancia para la riqueza.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Simpson (D)</td>
+<td style="text-align: left;">Estimación de la riqueza y la uniformidad de especies. Mayor importancia para la uniformidad.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Caos1</td>
+<td style="text-align: left;">Abundancia basada en especies representadas por un solo individuo (singletons) y dos individuos (doubletons).</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Shannon (H):</li>
+</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Variable</th>
+<th style="text-align: center;">Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">H= −∑Syo = 1pagienpagiH=−∑i=1Spagien⁡pagi</td>
+<td style="text-align: center;">Definición</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">SS</td>
+<td style="text-align: center;">Número de OTU</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">pagipagi</td>
+<td style="text-align: center;">La proporción de la comunidad representada por OTU i</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Simpson (D)</li>
+</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Variable</th>
+<th style="text-align: center;">Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">D =1∑Syo = 1pag2iD=1∑i=1Spagi2</td>
+<td style="text-align: center;">Definición</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">SS</td>
+<td style="text-align: center;">Número total de especies en la comunidad</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">pagipagi</td>
+<td style="text-align: center;">Proporción de la comunidad representada por OTU i</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Caos1</li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Variable</th>
+<th style="text-align: center;">Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Sc h a o 1=SObs​​+F1× (F1− 1 )2 × (F2+ 1 )Sdohao1=SOhbs+F1×(F1−1)2×(F2+1)</td>
+<td style="text-align: center;">Recuento de singletons y doubletons respectivamente</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">F1,F2F1,F2</td>
+<td style="text-align: center;">Recuento de singletons y doubletons respectivamente</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Sc h a o 1=SObs​​Sdohao1=SOhbs</td>
+<td style="text-align: center;">El número de especies observadas</td>
+</tr>
+</tbody>
+</table>
+<section id="diversidad-β" class="level3" data-number="17.2.1">
+<h3 data-number="17.2.1" class="anchored" data-anchor-id="diversidad-β"><span class="header-section-number">17.2.1</span> <strong>diversidad β</strong></h3>
+<p>La diversidad β mide qué tan diferentes son dos o más comunidades, ya sea en su composición (riqueza) o en la abundancia de los organismos que la componen (abundancia).</p>
+<ul>
+<li><p>Disimilitud de Bray-Curtis: Diferencia en riqueza y abundancia entre entornos (muestras). Ponderación de la abundancia. Mide las diferencias de 0 (comunidades iguales) a 1 (comunidades diferentes).</p></li>
+<li><p>Distancia de Jaccard: Se basa en la presencia o ausencia de especies (diversidad). Va de 0 (misma especie en la comunidad) a 1 (ninguna especie en común).</p></li>
+<li><p>UniFrac: Mide la distancia filogenética; la similitud entre los árboles de cada comunidad. Existen dos tipos: sin ponderaciones (diversidad) y con ponderaciones (diversidad y abundancia).</p></li>
+</ul>
+</section>
+</section>
+<section id="ejercicio-1-medida-simple-de-diversidades-alfa-y-beta." class="level2" data-number="17.3">
+<h2 data-number="17.3" class="anchored" data-anchor-id="ejercicio-1-medida-simple-de-diversidades-alfa-y-beta."><span class="header-section-number">17.3</span> <strong>Ejercicio 1: Medida simple de diversidades alfa y beta.</strong></h2>
+<p>En la siguiente imagen se muestran dos lagos con diferentes especies de peces: <em>Figura 3.</em><a href="https://carpentries-lab.github.io/metagenomics-analysis/fig/03-08-03.png"><img src="https://carpentries-lab.github.io/metagenomics-analysis/fig/03-08-03.png" class="img-fluid" alt="En el lago A, tenemos cuatro especies diferentes, dos de las cuales tienen tres ejemplares cada una. Este lago también tiene dos ejemplares de una tercera especie y solo uno de una cuarta. En total, encontramos nueve peces. El lago B tiene solo tres especies diferentes; la especie más abundante también está presente en el lago A y tiene cinco ejemplares, y solo tenemos un ejemplar de cada una de las otras dos especies. En total, encontramos siete especies en el lago B."></a></p>
+<p>¿Cuál de las siguientes opciones es verdadera para la diversidad alfa en los lagos A y B, y la diversidad beta entre los lagos A y B, respectivamente?</p>
 <ol type="1">
-<li>La primera línea siempre comienza con ‘@’ seguido de la información del read/lectura.</li>
-<li>La segunda línea es la propia secuencia de DNA.</li>
-<li>La tercera línea siempre comienza con el signo ‘+’ y algunas veces contiene la misma información de reads que la primera línea.</li>
-<li>La cuarta línea es una cadena de caracteres que representa los valores de calidad y estrictamente debe tener el mismo número de caracteres que la línea 2.</li>
+<li><p>4, 3, 1</p></li>
+<li><p>4, 3, 5</p></li>
+<li><p>9, 7, 16</p></li>
 </ol>
-<div class="sourceCode" id="cb1" data-eval="FALSE"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd ~/dc_workshop/data/untrimmed_fastq/</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> gunzip JP4D_R1.fastq.gz</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> head <span class="at">-n</span> 4 JP4D_R1.fastq</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Each quality score represents the probability that the corresponding nucleotide call is incorrect. These probability values are the results of the base calling algorithm and depend on how much signal was captured for the base incorporation. This quality score is logarithmically based, so a quality score of 10 reflects a base call accuracy of 90%, but a quality score of 20 reflects a base call accuracy of 99%. In this&nbsp;<a href="https://drive5.com/usearch/manual/quality_score.html">link</a>&nbsp;you can find more information about quality scores.</p>
-<p>In real life, you won’t be assessing the quality of your reads by visually inspecting your FASTQ files. Instead, you’ll use a software program to assess read quality and filter out poor reads. We’ll first use a program called <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/">FastQC</a> to visualize the quality of our reads. Later in our workflow, we’ll use another program to filter out poor-quality reads.</p>
-<p>First, let’s make available our metagenomics software:</p>
+<p>Por favor, pegue su resultado en el documento colaborativo proporcionado por los instructores. <em>¡</em> Aquí <em>hay leones</em> !</p>
 </section>
-<section id="activando-ambiente-metagenómico" class="level3" data-number="17.0.3">
-<h3 data-number="17.0.3" class="anchored" data-anchor-id="activando-ambiente-metagenómico"><span class="header-section-number">17.0.3</span> Activando ambiente Metagenómico</h3>
-<p>Environments are part of a bioinformatic tendency to do reproducible research; they are a way to share and maintain our programs in their needed versions used for a pipeline with our colleagues and our future self. FastQC has not been activated in the (base) environment, but this AWS instance came with an environment called metagenomics. We need to activate it in order to start using FastQC.</p>
-<p>We will use <a href="https://docs.conda.io/en/latest/">Conda</a> as our environment manager. Conda is an open-source package and environment management system that runs on Windows, macOS and Linux. Conda environments are activated with the <code>conda activate</code> direction:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> conda activate metagenomics</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># (metagenomics) $</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Now, if we call <a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/">FastQC</a>, a long help page will be displayed on our screen.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fastqc</span> <span class="at">-h</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#FastQC - A high throughput sequence QC analysis tool</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SYNOPSIS</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#        fastqc seqfile1 seqfile2 .. seqfileN</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#    fastqc [-o output dir] [--(no)extract] [-f fastq|bam|sam]</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">#           [-c contaminant file] seqfile1 .. seqfileN</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">#DESCRIPTION</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">#    FastQC reads a set of sequence files and produces from each one a quality</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">#    control report consisting of many different modules, each one of</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">#    which will help to identify a different potential type of problem in your</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">#    data.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="solución" class="level2" data-number="17.4">
+<h2 data-number="17.4" class="anchored" data-anchor-id="solución"><span class="header-section-number">17.4</span> <strong>Solución</strong></h2>
+<p>Respuesta: 2. 4, 3, 5. <strong>La diversidad alfa</strong> , en este caso, es la suma de las especies. El lago <strong>A</strong> tiene <strong>4</strong> especies y el lago <strong>B 3. La diversidad beta</strong> se refiere a la diferencia entre el lago A y el lago B. Si usamos la fórmula de <em>la Figura 2,</em> vemos que para calcular la diversidad beta, debemos detectar el número de especies y el número de especies compartidas en ambos lagos. Solo hay una especie compartida, así que debemos restar el número de especies compartidas al total de especies y sumar el resultado. En este caso, en el lago A, tenemos 4 especies y una especie compartida, siendo el lago B (4-1)=3, y en el lago B tenemos tres especies y una especie compartida, siendo el lago A (3-1)=2. Si sumamos 3+2, el resultado es 5.</p>
 </section>
-<section id="control-de-calidad-con-fastqc" class="level3" data-number="17.0.4">
-<h3 data-number="17.0.4" class="anchored" data-anchor-id="control-de-calidad-con-fastqc"><span class="header-section-number">17.0.4</span> Control de calidad con FastQC</h3>
-<p>FastQC has several features that can give you a quick impression of any problems your data may have, so you can consider these issues before moving forward with your analyses. Rather than looking at quality scores for each read, FastQC looks at quality collectively across all reads within a sample. The image below shows one FastQC-generated plot that indicates a very high-quality sample:</p>
+<section id="diversidad-alfa-de-la-gráfica" class="level2" data-number="17.5">
+<h2 data-number="17.5" class="anchored" data-anchor-id="diversidad-alfa-de-la-gráfica"><span class="header-section-number">17.5</span> <strong>Diversidad alfa de la gráfica</strong></h2>
+<p>Queremos conocer la diversidad bacteriana, así que eliminaremos todos los organismos no bacterianos de nuestro <code>merged_metagenomes</code>objeto Phyloseq. Para ello, crearemos un subconjunto de todos los grupos bacterianos y lo guardaremos.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> merged_metagenomes <span class="ot">&lt;-</span> <span class="fu">subset_taxa</span>(merged_metagenomes, Kingdom <span class="sc">==</span> <span class="st">"Bacteria"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Ahora veamos algunas estadísticas de nuestros metagenomas. La salida del <code>sample_sums()</code>comando muestra cuántas lecturas hay en la biblioteca. La biblioteca JC1A es la más pequeña, con 18412 lecturas, mientras que la biblioteca JP4D es la más grande, con 149590 lecturas.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> merged_metagenomes </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>phyloseq<span class="sc">-</span>class experiment<span class="sc">-</span>level object <span class="fu">otu_table</span>()   OTU Table<span class="sc">:</span>         [ <span class="dv">4024</span> taxa and <span class="dv">3</span> samples ] <span class="fu">tax_table</span>()   Taxonomy Table<span class="sc">:</span>    [ <span class="dv">4024</span> taxa by <span class="dv">7</span> taxonomic ranks ] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">sample_sums</span>(merged_metagenomes) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>  JC1A   JP4D   JP41   <span class="dv">18412</span> <span class="dv">149590</span>  <span class="dv">76589</span>  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Además, los valores máximo, mínimo y medio de la salida <code>summary()</code>nos dan una idea de la uniformidad. Por ejemplo, la OTU que aparece más veces en la muestra JC1A aparece 399 veces, y en promedio, en la muestra JP4D, una OTU aparece en 37,17 lecturas.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">summary</span>(merged_metagenomes<span class="sc">@</span>otu_table<span class="sc">@</span>.Data) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>      JC1A              JP4D              JP41          Min.   <span class="sc">:</span>  <span class="fl">0.000</span>   Min.   <span class="sc">:</span>   <span class="fl">0.00</span>   Min.   <span class="sc">:</span>   <span class="fl">0.00</span>    <span class="dv">1</span>st Qu.<span class="sc">:</span>  <span class="fl">0.000</span>   <span class="dv">1</span>st Qu.<span class="sc">:</span>   <span class="fl">3.00</span>   <span class="dv">1</span>st Qu.<span class="sc">:</span>   <span class="fl">1.00</span>    Median <span class="sc">:</span>  <span class="fl">0.000</span>   Median <span class="sc">:</span>   <span class="fl">7.00</span>   Median <span class="sc">:</span>   <span class="fl">5.00</span>    Mean   <span class="sc">:</span>  <span class="fl">4.575</span>   Mean   <span class="sc">:</span>  <span class="fl">37.17</span>   Mean   <span class="sc">:</span>  <span class="fl">19.03</span>    <span class="dv">3</span>rd Qu.<span class="sc">:</span>  <span class="fl">2.000</span>   <span class="dv">3</span>rd Qu.<span class="sc">:</span>  <span class="fl">21.00</span>   <span class="dv">3</span>rd Qu.<span class="sc">:</span>  <span class="fl">14.00</span>    Max.   <span class="sc">:</span><span class="fl">399.000</span>   Max.   <span class="sc">:</span><span class="fl">6551.00</span>   Max.   <span class="sc">:</span><span class="fl">1994.00</span>   </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Para tener una representación más visual de la diversidad dentro de las muestras (es decir, diversidad α), ahora podemos mirar un gráfico creado usando Phyloseq:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">plot_richness</span>(<span class="at">physeq =</span> merged_metagenomes,                <span class="at">measures =</span> <span class="fu">c</span>(<span class="st">"Observed"</span>,<span class="st">"Chao1"</span>,<span class="st">"Shannon"</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/03-02-03.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="figures/diversidad3.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
+<p>Cada una de estas métricas puede ofrecer una perspectiva de la distribución de las OTU en nuestras muestras. Por ejemplo, el índice de diversidad Chao1 otorga mayor peso a los singletons y doubletons observados en nuestras muestras, mientras que Shannon es un índice de entropía que señala la imposibilidad de extraer dos lecturas del metagenoma y que estas pertenecerán a la misma OTU.</p>
+<p>Una precaución al comparar muestras es que las diferencias en algunos índices alfa pueden deberse a la diferencia en el número total de lecturas de las muestras. Una muestra con más lecturas tiene mayor probabilidad de tener más OTU diferentes, por lo que se requiere cierta normalización. En este caso, trabajaremos con abundancias relativas, pero otros enfoques podrían ayudar a reducir este sesgo.</p>
+</section>
+<section id="abundancias-absolutas-y-relativas" class="level2" data-number="17.6">
+<h2 data-number="17.6" class="anchored" data-anchor-id="abundancias-absolutas-y-relativas"><span class="header-section-number">17.6</span> <strong>Abundancias absolutas y relativas</strong></h2>
+<p>A partir de los recuentos de lecturas que acabamos de ver, es evidente que existe una gran diferencia en el número total de lecturas secuenciadas en cada muestra. Antes de continuar con el procesamiento de los datos, verifique si hay lecturas no identificadas. Marcadas como “en blanco” (es decir, ““) en los diferentes niveles taxonómicos:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">summary</span>(merged_metagenomes<span class="sc">@</span>tax_table<span class="sc">@</span>.Data<span class="sc">==</span> <span class="st">""</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>  Kingdom          Phylum          Class           Order           Family          Genus          Species         Mode <span class="sc">:</span>logical   Mode <span class="sc">:</span>logical   Mode <span class="sc">:</span>logical   Mode <span class="sc">:</span>logical   Mode <span class="sc">:</span>logical   Mode <span class="sc">:</span>logical   Mode <span class="sc">:</span>logical    <span class="cn">FALSE</span><span class="sc">:</span><span class="dv">4024</span>      <span class="cn">FALSE</span><span class="sc">:</span><span class="dv">4024</span>      <span class="cn">FALSE</span><span class="sc">:</span><span class="dv">3886</span>      <span class="cn">FALSE</span><span class="sc">:</span><span class="dv">4015</span>      <span class="cn">FALSE</span><span class="sc">:</span><span class="dv">3967</span>      <span class="cn">FALSE</span><span class="sc">:</span><span class="dv">3866</span>      <span class="cn">FALSE</span><span class="sc">:</span><span class="dv">3540</span>                                       <span class="cn">TRUE</span> <span class="sc">:</span><span class="dv">138</span>       <span class="cn">TRUE</span> <span class="sc">:</span><span class="dv">9</span>         <span class="cn">TRUE</span> <span class="sc">:</span><span class="dv">57</span>        <span class="cn">TRUE</span> <span class="sc">:</span><span class="dv">158</span>       <span class="cn">TRUE</span> <span class="sc">:</span><span class="dv">484</span>       </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Con el comando anterior, podemos ver espacios en blanco en diferentes niveles taxonómicos. Por ejemplo, tenemos 158 espacios en blanco a nivel de género. Aunque podríamos esperar ver algunos espacios en blanco a nivel de especie o incluso de género, eliminaremos los de género para continuar con el análisis.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> merged_metagenomes <span class="ot">&lt;-</span> <span class="fu">subset_taxa</span>(merged_metagenomes, Genus <span class="sc">!=</span> <span class="st">""</span>) <span class="co">#Only genus that are no blank &gt; summary(merged_metagenomes@tax_table@.Data== "") </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>  Kingdom          Phylum          Class           Order           Family          Genus          Species         Mode <span class="sc">:</span>logical   Mode <span class="sc">:</span>logical   Mode <span class="sc">:</span>logical   Mode <span class="sc">:</span>logical   Mode <span class="sc">:</span>logical   Mode <span class="sc">:</span>logical   Mode <span class="sc">:</span>logical    <span class="cn">FALSE</span><span class="sc">:</span><span class="dv">3866</span>      <span class="cn">FALSE</span><span class="sc">:</span><span class="dv">3866</span>      <span class="cn">FALSE</span><span class="sc">:</span><span class="dv">3739</span>      <span class="cn">FALSE</span><span class="sc">:</span><span class="dv">3860</span>      <span class="cn">FALSE</span><span class="sc">:</span><span class="dv">3858</span>      <span class="cn">FALSE</span><span class="sc">:</span><span class="dv">3866</span>      <span class="cn">FALSE</span><span class="sc">:</span><span class="dv">3527</span>                                       <span class="cn">TRUE</span> <span class="sc">:</span><span class="dv">127</span>       <span class="cn">TRUE</span> <span class="sc">:</span><span class="dv">6</span>         <span class="cn">TRUE</span> <span class="sc">:</span><span class="dv">8</span>                         <span class="cn">TRUE</span> <span class="sc">:</span><span class="dv">339</span>  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>A continuación, dado que nuestros metagenomas tienen diferentes tamaños, es imperativo convertir el número de lecturas asignadas (es decir, abundancia absoluta) en porcentajes (es decir, abundancias relativas) para compararlas.</p>
+<p>En este momento nuestra tabla OTU se ve así:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">head</span>(merged_metagenomes<span class="sc">@</span>otu_table<span class="sc">@</span>.Data) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>        JC1A JP4D JP41 <span class="dv">1060</span>      <span class="dv">32</span>  <span class="dv">420</span>   <span class="dv">84</span> <span class="dv">1063</span>     <span class="dv">316</span> <span class="dv">5733</span> <span class="dv">1212</span> <span class="dv">2033869</span>  <span class="dv">135</span> <span class="dv">1232</span>  <span class="dv">146</span> <span class="dv">1850250</span>  <span class="dv">114</span>  <span class="dv">846</span>  <span class="dv">538</span> <span class="dv">1061</span>      <span class="dv">42</span> <span class="dv">1004</span>  <span class="dv">355</span> <span class="dv">265</span>       <span class="dv">42</span>  <span class="dv">975</span>  <span class="dv">205</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Para realizar esta transformación a porcentajes, aprovecharemos una función de Phyloseq.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> percentages <span class="ot">&lt;-</span> <span class="fu">transform_sample_counts</span>(merged_metagenomes, <span class="cf">function</span>(x) x<span class="sc">*</span><span class="dv">100</span> <span class="sc">/</span> <span class="fu">sum</span>(x) ) <span class="sc">&gt;</span> <span class="fu">head</span>(percentages<span class="sc">@</span>otu_table<span class="sc">@</span>.Data) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>             JC1A      JP4D      JP41 <span class="dv">1060</span>    <span class="fl">0.1877383</span> <span class="fl">0.3065134</span> <span class="fl">0.1179709</span> <span class="dv">1063</span>    <span class="fl">1.8539161</span> <span class="fl">4.1839080</span> <span class="fl">1.7021516</span> <span class="dv">2033869</span> <span class="fl">0.7920211</span> <span class="fl">0.8991060</span> <span class="fl">0.2050447</span> <span class="dv">1850250</span> <span class="fl">0.6688178</span> <span class="fl">0.6174056</span> <span class="fl">0.7555755</span> <span class="dv">1061</span>    <span class="fl">0.2464066</span> <span class="fl">0.7327130</span> <span class="fl">0.4985675</span> <span class="dv">265</span>     <span class="fl">0.2464066</span> <span class="fl">0.7115490</span> <span class="fl">0.2879052</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Ahora, estamos listos para comparar las abundancias dadas por porcentajes de las muestras con índices de diversidad beta.</p>
+</section>
+<section id="diversidad-beta" class="level2" data-number="17.7">
+<h2 data-number="17.7" class="anchored" data-anchor-id="diversidad-beta"><span class="header-section-number">17.7</span> <strong>Diversidad beta</strong></h2>
+<p>Como mencionamos anteriormente, la diversidad beta mide la similitud o diferencia entre nuestras muestras (superposición entre conjuntos de especies o unidades taxonómicas operativas definidas discretamente). Para medir esto, necesitamos calcular un índice que se ajuste a los objetivos de nuestra investigación. Con el siguiente código, podemos mostrar todas las posibles métricas de distancia que Phyloseq puede utilizar:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> distanceMethodList </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span>UniFrac [<span class="dv">1</span>] <span class="st">"unifrac"</span>  <span class="st">"wunifrac"</span>  <span class="sc">$</span>DPCoA [<span class="dv">1</span>] <span class="st">"dpcoa"</span>  <span class="sc">$</span>JSD [<span class="dv">1</span>] <span class="st">"jsd"</span>  <span class="sc">$</span>vegdist  [<span class="dv">1</span>] <span class="st">"manhattan"</span>  <span class="st">"euclidean"</span>  <span class="st">"canberra"</span>   <span class="st">"bray"</span>       <span class="st">"kulczynski"</span> <span class="st">"jaccard"</span>    <span class="st">"gower"</span>       [<span class="dv">8</span>] <span class="st">"altGower"</span>   <span class="st">"morisita"</span>   <span class="st">"horn"</span>       <span class="st">"mountford"</span>  <span class="st">"raup"</span>       <span class="st">"binomial"</span>   <span class="st">"chao"</span>       [<span class="dv">15</span>] <span class="st">"cao"</span>         <span class="sc">$</span>betadiver  [<span class="dv">1</span>] <span class="st">"w"</span>   <span class="st">"-1"</span>  <span class="st">"c"</span>   <span class="st">"wb"</span>  <span class="st">"r"</span>   <span class="st">"I"</span>   <span class="st">"e"</span>   <span class="st">"t"</span>   <span class="st">"me"</span>  <span class="st">"j"</span>   <span class="st">"sor"</span> <span class="st">"m"</span>   <span class="st">"-2"</span>  <span class="st">"co"</span>  <span class="st">"cc"</span>  <span class="st">"g"</span>   [<span class="dv">17</span>] <span class="st">"-3"</span>  <span class="st">"l"</span>   <span class="st">"19"</span>  <span class="st">"hk"</span>  <span class="st">"rlb"</span> <span class="st">"sim"</span> <span class="st">"gl"</span>  <span class="st">"z"</span>    <span class="sc">$</span>dist [<span class="dv">1</span>] <span class="st">"maximum"</span>   <span class="st">"binary"</span>    <span class="st">"minkowski"</span>  <span class="sc">$</span>designdist [<span class="dv">1</span>] <span class="st">"ANY"</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Describir todas estas posibles métricas de distancia está más allá del alcance de esta lección, pero aquí mostramos cuáles son las que necesitan una relación filogenética entre las especies-OTU presentes en nuestras muestras:</p>
+<ul>
+<li><p>Unifrac</p></li>
+<li><p>Peso-Unifrac</p></li>
+<li><p>DPCoA</p></li>
+</ul>
+<p>No disponemos de un árbol filogenético ni de relaciones filogenéticas. Por lo tanto, no podemos usar ninguno de estos tres. Usaremos <a href="http://www.pelagicos.net/MARS6300/readings/Bray_&amp;_Curtis_1957.pdf">Bray-Curtis,</a> ya que es una de las métricas de distancia más robustas y utilizadas para calcular la diversidad beta.</p>
+<p><strong>¡Sigamos así!</strong> Ya tenemos todo lo necesario para comenzar el análisis de diversidad beta. Usaremos el comando Phyloseq <code>ordinate</code>para generar un nuevo objeto donde se asignarán las distancias entre nuestras muestras después de calcularlas. Para este comando, debemos especificar el método que usaremos para generar una matriz. En este ejemplo, usaremos el Escalamiento Multidimensional No Métrico o <a href="https://academic.oup.com/bioinformatics/article/21/6/730/199398">NMDS</a> . NMDS intenta representar la disimilitud entre objetos en un espacio de baja dimensión; en este caso, un gráfico bidimensional.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> meta_ord <span class="ot">&lt;-</span> <span class="fu">ordinate</span>(<span class="at">physeq =</span> percentages, <span class="at">method =</span> <span class="st">"NMDS"</span>,                       <span class="at">distance =</span> <span class="st">"bray"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Si recibe algún mensaje de advertencia después de ejecutar este script, no se preocupe. Esto se debe a que solo tenemos tres muestras. Con pocas muestras, el algoritmo advierte sobre la poca dificultad para generar la matriz de distancias.</p>
+<p>Por ahora, solo necesitamos el comando <code>plot_ordination()</code>para ver los resultados de nuestro análisis de diversidad beta:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">plot_ordination</span>(<span class="at">physeq =</span> percentages, <span class="at">ordination =</span> meta_ord)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/03-02-04.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="figures/diversidad4.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
+<p>En este gráfico NMDS, cada punto representa la abundancia combinada de todas sus OTU. Como se muestra, cada muestra ocupa espacio en el gráfico sin formar grupos. Este resultado se debe a que cada muestra es lo suficientemente diferente como para considerarse un punto independiente en el espacio NMDS.</p>
 </section>
-<section id="corre-fastqc" class="level3" data-number="17.0.5">
-<h3 data-number="17.0.5" class="anchored" data-anchor-id="corre-fastqc"><span class="header-section-number">17.0.5</span> Corre FastQC</h3>
-<p>We will now assess the quality of the reads that we downloaded. First, make sure you’re still in the&nbsp;<code>untrimmed_fastq</code>&nbsp;directory.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd ~/dc_workshop/data/untrimmed_fastq/ </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>FastQC acepta múltiples archivos como entrada, tanto archivos comprimidos como descomprimidos, por lo que podemos usar el&nbsp;comodín <code>\*.fastq*</code> para ejecutar FastQC en todos los archivos FASTQ en este directorio.</p>
-<pre><code>$ fastqc *.fastq* </code></pre>
-<p>Verás un mensaje de salida que se actualiza automáticamente, este indica el progreso del análisis. Comienza así:</p>
-<pre class="o"><code>Started analysis of JC1A_R1.fastq.gz                  Approx 5% complete for JC1A_R1.fastq.gz                Approx 10% complete for JC1A_R1.fastq.gz               Approx 15% complete for JC1A_R1.fastq.gz               Approx 20% complete for JC1A_R1.fastq.gz               Approx 25% complete for JC1A_R1.fastq.gz              Approx 30% complete for JC1A_R1.fastq.gz               Approx 35% complete for JC1A_R1.fastq.gz</code></pre>
-<p>FastQC tardará unos minutos en ejecutarse en nuestros cuatro archivos FASTQ. Al finalizar el análisis, volverá a aparecer el mensaje. Su pantalla se verá así:</p>
-<pre><code>Approx 80% complete for JP4D_R2.fastq.gz 
-Approx 85% complete for JP4D_R2.fastq.gz 
-Approx 90% complete for JP4D_R2.fastq.gz 
-Approx 95% complete for JP4D_R2.fastq.gz 
-Analysis complete for JP4D_R2.fastq.gz $</code></pre>
-<p>El programa FastQC ha creado varios archivos nuevos dentro de nuestro&nbsp;<code>data/untrimmed_fastq/</code>directorio.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<pre><code>JC1A_R1_fastqc.html  JC1A_R2_fastqc.html  
-JP4D_R1.fastq        JP4D_R2_fastqc.html   JC1A_R1_fastqc.zip   JC1A_R2_fastqc.zip   JP4D_R1_fastqc.html  JP4D_R2_fastqc.zip 
-JC1A_R1.fastq.gz     JC1A_R2.fastq.gz     JP4D_R1_fastqc.zip   JP4D_R2.fastq.gz
-TruSeq3-PE.fa</code></pre>
-<p>Para cada archivo FASTQ de entrada, FastQC creó un archivo en formato <code>.zip</code> y <code>.html</code> con el mismo nombre. El archivo&nbsp;<code>.html</code> es una página web que muestra el informe resumido de cada una de nuestras muestras.</p>
-<p>Queremos mantener nuestros archivos de datos y nuestros archivos de resultados separados, por lo que moveremos estos archivos de salida a un nuevo directorio dentro de nuestro&nbsp;<code>results/</code>directorio.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> mkdir <span class="at">-p</span> ~/dc_workshop/results/fastqc_untrimmed_reads $ mv <span class="pp">*</span>.zip ~/dc_workshop/results/fastqc_untrimmed_reads/  </span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> mv <span class="pp">*</span>.html ~/dc_workshop/results/fastqc_untrimmed_reads/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="ejercicio-3-agregar-metadatos-a-la-visualización-de-la-diversidad-beta" class="level2" data-number="17.8">
+<h2 data-number="17.8" class="anchored" data-anchor-id="ejercicio-3-agregar-metadatos-a-la-visualización-de-la-diversidad-beta"><span class="header-section-number">17.8</span> <strong>Ejercicio 3: Agregar metadatos a la visualización de la diversidad beta</strong></h2>
+<p>En la siguiente figura, el gráfico de diversidad beta que generamos anteriormente se ha enriquecido. Observe el código a continuación y responda:<br>
+1) ¿Qué instrucción coloreó las muestras según su tratamiento correspondiente?<br>
+2) ¿Qué hizo la instrucción <code>geom_text</code>?<br>
+3) ¿Qué otra diferencia observa con nuestro gráfico anterior?<br>
+4) ¿Observa alguna agrupación de las muestras según su tratamiento?</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/diversidad5.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>metadata_cuatroc <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Sample=</span><span class="fu">c</span>(<span class="st">"JC1A"</span>, <span class="st">"JP4D"</span>, <span class="st">"JP41"</span>), <span class="at">Treatment=</span><span class="fu">c</span>(<span class="st">"Control mesocosm"</span>, <span class="st">"Fertilized pond"</span>, <span class="st">"Unenriched pond"</span>)) <span class="co"># Making dataframe with metadata   rownames(metadata_cuatroc) &lt;- metadata_cuatroc$Sample # Using sample names as row names   percentages@sam_data &lt;- sample_data(metadata_cuatroc) # Adding metadata to sam_data table of phyloseq object percentages   meta_ord &lt;- ordinate(physeq = percentages, method = "NMDS", distance = "bray") # Calculating beta diversity     plot_ordination(physeq = percentages, ordination = meta_ord, color = "Treatment") + # Plotting beta diversity.       geom_text(mapping = aes(label = Sample), size = 3, vjust = 1.5)   </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="visualización-de-resultados-con-fastqc" class="level3" data-number="17.0.6">
-<h3 data-number="17.0.6" class="anchored" data-anchor-id="visualización-de-resultados-con-fastqc"><span class="header-section-number">17.0.6</span> Visualización de resultados con FastQC</h3>
-<p>Nos cambiamos a la carpeta donde movimos nuestros archivos.</p>
-<pre><code>$ cd ~/dc_workshop/results/fastqc_untrimmed_reads/</code></pre>
-<p>En equipos de 5, Ejercicio de analizar calidad de archvios. 2 minutos.</p>
-<p>Contestar ¿Qué muestras tienen la mejor calidad de secuencia de bases? ¿Qué muestras tienen la peor?</p>
+<section id="discusión-índices-de-diversidad" class="level2" data-number="17.9">
+<h2 data-number="17.9" class="anchored" data-anchor-id="discusión-índices-de-diversidad"><span class="header-section-number">17.9</span> <strong>Discusión: Índices de diversidad</strong></h2>
+<p>¿Por qué cree que necesitamos diferentes índices para evaluar la diversidad? ¿Qué índice utilizará para evaluar el impacto de los taxones raros y poco abundantes?</p>
+<blockquote class="blockquote">
+<h2 id="solución-1" data-number="17.10" class="anchored"><span class="header-section-number">17.10</span> <strong>Solución</strong></h2>
+<p>Será difícil (si no imposible) tomar dos comunidades y observar la misma distribución de todos los miembros. Este resultado se debe a que hay muchos <strong>factores</strong> que afectan a estos linajes. Algunos de los <strong>factores ambientales</strong> son la temperatura, el pH y la concentración de nutrientes. Además, las interacciones de estas poblaciones, como la competencia, la inhibición de otras poblaciones y la velocidad de crecimiento, son un importante impulsor de la variación ( <strong>factor biótico</strong> ). Una combinación de los <strong>factores mencionados anteriormente</strong> puede interactuar para mantener algunas poblaciones con baja abundancia ( <strong>taxones raros).</strong> Para tener formas de evaluar hipótesis sobre cuáles de estos procesos pueden estar afectando a la comunidad, utilizamos todos estos diferentes índices. Algunos enfatizan el número de especies y otros la uniformidad de las OTU. Para evaluar el impacto de los linajes de baja abundancia, un índice de diversidad alfa ampliamente utilizado es el índice Chao1.</p>
+</blockquote>
 </section>
-<section id="referencias" class="level2" data-number="17.1">
-<h2 data-number="17.1" class="anchored" data-anchor-id="referencias"><span class="header-section-number">17.1</span> Referencias</h2>
-<p>Aquí puedes encontrar mayor información sobre cada una de las secciones del resultado de <a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/">FastQC.</a></p>
+<section id="referencias" class="level2" data-number="17.11">
+<h2 data-number="17.11" class="anchored" data-anchor-id="referencias"><span class="header-section-number">17.11</span> Referencias</h2>
+<p><a href="https://ciespinosa.github.io/AlphaDiversidad/medidas-de-diversidad.html">Índices de diversidad</a></p>
+<p><a href="https://geographyfieldwork.com/Simpson'sDiversityIndex.htm">Índice de diversidad de Simpson</a></p>
+<p><a href="https://www.cd-genomics.com/microbioseq/the-use-and-types-of-alpha-diversity-metrics-in-microbial-ngs.html">Types of alpha diversity metrics in microbial NGS</a></p>
 
 
 </section>
@@ -1057,13 +1205,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./16Binningmetagenomico.html" class="pagination-link" aria-label="Control de calidad">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Control de calidad</span></span>
+      <a href="./16Binningmetagenomico.html" class="pagination-link" aria-label="Asignación taxonómica">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Asignación taxonómica</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./18Exploraciondetaxonomiaconr.html" class="pagination-link" aria-label="Control de calidad">
-        <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Control de calidad</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./18Exploraciondetaxonomiaconr.html" class="pagination-link" aria-label="Análisis de taxonomía con R">
+        <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Análisis de taxonomía con R</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

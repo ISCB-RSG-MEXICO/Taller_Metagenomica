@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -271,25 +305,25 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15Ensamblemetagenomico.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Binning metagenómico</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./16Binningmetagenomico.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Asignación taxonómica</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./17Asignaciontaxonomica.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Explorando la diversidad con librerías de R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./18Exploraciondetaxonomiaconr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Análisis de taxonomía con R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -322,7 +356,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#referencias" id="toc-referencias" class="nav-link active" data-scroll-target="#referencias"><span class="header-section-number">14.1</span> Referencias</a></li>
+  <li><a href="#limpieza-de-reads-o-lecturas" id="toc-limpieza-de-reads-o-lecturas" class="nav-link active" data-scroll-target="#limpieza-de-reads-o-lecturas"><span class="header-section-number">14.1</span> Limpieza de reads o lecturas</a></li>
+  <li><a href="#ejecución-de-trimmomatic" id="toc-ejecución-de-trimmomatic" class="nav-link" data-scroll-target="#ejecución-de-trimmomatic"><span class="header-section-number">14.2</span> Ejecución de trimmomatic</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">14.3</span> Referencias</a></li>
   </ul>
 </nav>
     </div>
@@ -348,8 +384,130 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="referencias" class="level2" data-number="14.1">
-<h2 data-number="14.1" class="anchored" data-anchor-id="referencias"><span class="header-section-number">14.1</span> Referencias</h2>
+<section id="limpieza-de-reads-o-lecturas" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="limpieza-de-reads-o-lecturas"><span class="header-section-number">14.1</span> Limpieza de reads o lecturas</h2>
+<p>Para lograr eliminar secuencias de baja calidad, utilizaremos un programa llamado&nbsp;<a href="http://www.usadellab.org/cms/?page=trimmomatic">Trimmomatic</a>&nbsp;. Esta útil herramienta filtra las lecturas de baja calidad y elimina las bases de baja calidad de las muestras especificadas. Trimmomatic cuenta con diversas opciones para realizar su tarea. Si ejecutamos el siguiente comando, podemos ver algunas de sus opciones:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> trimmomatic</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>Usage:         
+PE [-version] [-threads &lt;threads&gt;] [-phred33|-phred64] [-trimlog &lt;trimLogFile&gt;] [-summary &lt;statsSummaryFile&gt;] [-quiet] [-validatePairs] [-basein &lt;inputBase&gt; | &lt;inputFile1&gt; &lt;inputFile2&gt;] [-baseout &lt;outputBase&gt; | &lt;outputFile1P&gt; &lt;outputFile1U&gt; &lt;outputFile2P&gt; &lt;outputFile2U&gt;] &lt;trimmer1&gt;...    or:         SE [-version] [-threads &lt;threads&gt;] [-phred33|-phred64] [-trimlog &lt;trimLogFile&gt;] [-summary &lt;statsSummaryFile&gt;] [-quiet] &lt;inputFile&gt; &lt;outputFile&gt; &lt;trimmer1&gt;...    or:         -version</code></pre>
+<p>Es fundamental comprender los pasos que utiliza para limpiar sus datos. En nuestro análisis, solo utilizaremos algunas opciones y pasos de recorte. Para más información sobre los argumentos y opciones de Trimmomatic, consulte&nbsp;<a href="http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/TrimmomaticManual_V0.32.pdf">el manual de Trimmomatic</a>&nbsp;.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/03-03-01.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>Sin embargo, un comando completo para Trimmomatic se parecerá al siguiente. Este comando es un ejemplo y no funcionará, ya que no disponemos de los archivos a los que hace referencia:</p>
+<pre><code>$ trimmomatic PE -threads 4 SRR_1056_1.fastq SRR_1056_2.fastq \               SRR_1056_1.trimmed.fastq SRR_1056_1un.trimmed.fastq \               SRR_1056_2.trimmed.fastq SRR_1056_2un.trimmed.fastq \               ILLUMINACLIP:SRR_adapters.fa SLIDINGWINDOW:4:20 ILLUMINACLIP:TruSeq3-PE.fa:2:40:15</code></pre>
+<p>En este ejemplo, le hemos dicho a Trimmomatic:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">código</th>
+<th style="text-align: left;">significado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>PE</code></td>
+<td style="text-align: left;">que tomará un archivo de extremos emparejados como entrada</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>-threads 4</code></td>
+<td style="text-align: left;">utilizar cuatro subprocesos informáticos para ejecutar (esto acelerará nuestra ejecución)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>SRR_1056_1.fastq</code></td>
+<td style="text-align: left;">El primer nombre del archivo de entrada. Adelante</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>SRR_1056_2.fastq</code></td>
+<td style="text-align: left;">el segundo nombre del archivo de entrada. Invertir</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>SRR_1056_1.trimmed.fastq</code></td>
+<td style="text-align: left;">El archivo de salida para los pares supervivientes del <code>_1</code>archivo</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>SRR_1056_1un.trimmed.fastq</code></td>
+<td style="text-align: left;">El archivo de salida para lecturas huérfanas del <code>_1</code>archivo</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>SRR_1056_2.trimmed.fastq</code></td>
+<td style="text-align: left;">El archivo de salida para los pares supervivientes del <code>_2</code>archivo</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>SRR_1056_2un.trimmed.fastq</code></td>
+<td style="text-align: left;">El archivo de salida para lecturas huérfanas del <code>_2</code>archivo</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>ILLUMINACLIP:SRR_adapters.fa</code></td>
+<td style="text-align: left;">para recortar los adaptadores Illumina del archivo de entrada utilizando las secuencias de adaptadores enumeradas en<code>SRR_adapters.fa</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>SLIDINGWINDOW:4:20</code></td>
+<td style="text-align: left;">utilizar una ventana deslizante de tamaño 4 que eliminará las bases si su puntuación Phred es inferior a 20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>ILLUMINACLIP:TruSeq3-PE.fa:2:40:15</code></td>
+<td style="text-align: left;">buscar los adaptadores en las lecturas usando el archivo <code>TruSeq3-PE.fa</code>, permitiendo hasta 2 errores en el alineamiento inicial, y que solo recorte si el alineamiento tiene una puntuación mínima de 15, evaluada con una puntuación máxima de 40 para la coincidencia.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ejecución-de-trimmomatic" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="ejecución-de-trimmomatic"><span class="header-section-number">14.2</span> Ejecución de trimmomatic</h2>
+<p>Ahora, ejecutaremos Trimmomatic en nuestros datos. Ve a la carpeta <code>untrimmed_fastq</code> y verifica que te encuentras en esa carpeta:</p>
+<pre><code>$ cd ~/dc_workshop/data/untrimmed_fastq 
+$ pwd </code></pre>
+<pre><code>$ /home/dcuser/dc_workshop/data/untrimmed_fastq </code></pre>
+<p>Debería tener solo cuatro archivos en este directorio. Estos archivos corresponden a las lecturas <strong>forward</strong> y <strong>reverse</strong> de las muestras JC1A y JP4D.</p>
+<pre><code>$ ls </code></pre>
+<pre><code>$ JC1A_R1.fastq.gz  JC1A_R2.fastq.gz  JP4D_R1.fastq  JP4D_R2.fastq.gz  TruSeq3-PE.fa </code></pre>
+<p>Para poder correr Trimmomatic los archivos deben estar comprimidos usando <code>gzip</code></p>
+<pre><code>$ trimmomatic PE JP4D_R1.fastq.gz JP4D_R2.fastq.gz \ JP4D_R1.trim.fastq.gz  JP4D_R1un.trim.fastq.gz \ JP4D_R2.trim.fastq.gz  JP4D_R2un.trim.fastq.gz \ SLIDINGWINDOW:4:20 MINLEN:35 ILLUMINACLIP:TruSeq3-PE.fa:2:40:15 </code></pre>
+<p>En la pantalla podemos ver un resumen del resultado, centrándonos en el porcentaje de lecturas descartadas (Dropped) y lecturas que se mantuvieron para ambas forward y reverse (Both surviving).</p>
+<pre><code>TrimmomaticPE: Started with arguments:  JP4D_R1.fastq.gz JP4D_R2.fastq.gz JP4D_R1.trim.fastq.gz JP4D_R1un.trim.fastq.gz JP4D_R2.trim.fastq.gz JP4D_R2un.trim.fastq.gz SLIDINGWINDOW:4:20 MINLEN:35 ILLUMINACLIP:TruSeq3-PE.fa:2:40:15 Multiple cores found: Using 2 threads Using PrefixPair: 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT' and 'GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT' ILLUMINACLIP: Using 1 prefix pairs, 0 forward/reverse sequences, 0 forward only sequences, 0 reverse only sequences Quality encoding detected as phred33 Input Read Pairs: 1123987 Both Surviving: 751427 (66.85%) Forward Only Surviving: 341434 (30.38%) Reverse Only Surviving: 11303 (1.01%) Dropped: 19823 (1.76%) TrimmomaticPE: Completed successfully</code></pre>
+<p>Los archivos de salida también son archivos FASTQ. Deberían ser más pequeños que el archivo de entrada, ya que hemos eliminado las lecturas. Podemos confirmarlo con este comando:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls JP4D<span class="pp">*</span> <span class="at">-l</span> <span class="at">-h</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>-rw-r--r-- 1 dcuser dcuser 179M Nov 26 12:44 JP4D_R1.fastq.gz -rw-rw-r-- 1 dcuser dcuser 107M Mar 11 23:05 JP4D_R1.trim.fastq.gz 
+-rw-rw-r-- 1 dcuser dcuser  43M Mar 11 23:05 JP4D_R1un.trim.fastq.gz 
+-rw-r--r-- 1 dcuser dcuser 203M Nov 26 12:51 JP4D_R2.fastq.gz -rw-rw-r-- 1 dcuser dcuser 109M Mar 11 23:05 JP4D_R2.trim.fastq.gz 
+-rw-rw-r-- 1 dcuser dcuser 1.3M Mar 11 23:05 JP4D_R2un.trim.fastq.gz</code></pre>
+<p>Acabamos de ejecutar Trimmomatic con éxito en uno de nuestros archivos FASTQ. Sin embargo, tenemos malas noticias. Trimmomatic solo puede operar con una muestra a la vez, y tenemos más de una. La buena noticia es que podemos usar un&nbsp;<code>for</code>bucle para iterar rápidamente entre nuestros archivos de muestra.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> for infile in <span class="pp">*</span>_R1.fastq.gz </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span> </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="va">base</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span> <span class="va">${infile}</span> _R1.fastq.gz<span class="va">)</span> </span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="ex">trimmomatic</span> PE <span class="va">${infile}</span> <span class="va">${base}</span>_R2.fastq.gz <span class="dt">\ </span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="va">${base}</span><span class="ex">_R1.trim.fastq.gz</span> <span class="va">${base}</span>_R1un.trim.fastq.gz <span class="dt">\ </span><span class="va">${base}</span>_R2.trim.fastq.gz <span class="va">${base}</span>_R2un.trim.fastq.gz <span class="dt">\ </span>SLIDINGWINDOW:4:20 MINLEN:35 ILLUMINACLIP:TruSeq3-PE.fa:2:40:15 done </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Observa que, aunque ejecutamos Trimmomatic en el archivo&nbsp;<code>JP4D</code>antes de ejecutar el bucle for, solo hay un conjunto de archivos para él. Como coincidimos con la terminación&nbsp;<code>_R1.fastq.gz</code>, volvimos a ejecutar Trimmomatic en este archivo, sobrescribiendo nuestros primeros resultados. Esto está bien, pero es bueno tener en cuenta que ocurrió.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">ls</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>JC1A_R1.fastq.gz                     JP4D_R1.fastq.gz         JC1A_R1.trim.fastq.gz                JP4D_R1.trim.fastq.gz    JC1A_R1un.trim.fastq.gz              JP4D_R1un.trim.fastq.gz  JC1A_R2.fastq.gz                     JP4D_R2.fastq.gz         JC1A_R2.trim.fastq.gz                JP4D_R2.trim.fastq.gz    JC1A_R2un.trim.fastq.gz              JP4D_R2un.trim.fastq.gz  TruSeq3-PE.fa  </code></pre>
+<p>¡Hemos completado los pasos de recorte y filtrado de nuestro proceso de control de calidad! Antes de continuar, transfiramos nuestros archivos FASTQ recortados a un nuevo subdirectorio dentro de nuestro directorio <code>data/</code>.</p>
+<pre><code>$ cd ~/dc_workshop/data/untrimmed_fastq 
+$ mkdir ../trimmed_fastq 
+$ mv *.trim* ../trimmed_fastq $ cd ../trimmed_fastq $ ls </code></pre>
+<pre><code>JC1A_R1.trim.fastq.gz    JP4D_R1.trim.fastq.gz                 JC1A_R1un.trim.fastq.gz  JP4D_R1un.trim.fastq.gz               JC1A_R2.trim.fastq.gz    JP4D_R2.trim.fastq.gz                 JC1A_R2un.trim.fastq.gz  JP4D_R2un.trim.fastq.gz  </code></pre>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip de double check! Prueba de calidad después del filtrado
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Puedes reanalizar los archivos que acabas de filtrar, deberían tener un mejor desempeño en las pruebas realizadas por FASTQC</p>
+</div>
+</div>
+</section>
+<section id="referencias" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="referencias"><span class="header-section-number">14.3</span> Referencias</h2>
+<p><a href="http://www.usadellab.org/cms/?page=trimmomatic">Trimmomatic</a></p>
 
 
 </section>
@@ -923,8 +1081,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./15Ensamblemetagenomico.html" class="pagination-link" aria-label="Control de calidad">
-        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Control de calidad</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./15Ensamblemetagenomico.html" class="pagination-link" aria-label="Binning metagenómico">
+        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Binning metagenómico</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

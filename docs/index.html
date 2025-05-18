@@ -272,25 +272,25 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15Ensamblemetagenomico.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Binning metagenómico</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./16Binningmetagenomico.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Asignación taxonómica</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./17Asignaciontaxonomica.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Explorando la diversidad con librerías de R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./18Exploraciondetaxonomiaconr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Análisis de taxonomía con R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -388,11 +388,12 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><strong>Aaron Espinosa Jaime -</strong> UGA, Cinvestav Irapuato.</li>
 <li><strong>José Yahir Cabrera González</strong> - Instituto de Biociencias, UNACH Tapachula.</li>
+<li><strong>Tania Vanessa Arellano Fernández</strong> - UGA, Cinvestav Irapuato</li>
 </ul>
 <p>Ayudantes:</p>
 <ul>
-<li><p><strong>Mariana Devon -</strong> Estudiante de maestría, UAM.</p></li>
-<li><p><strong>Andrés Arredondo</strong> - Ciencias Agrogenómicas, CCM-UNAM.</p></li>
+<li><strong>Mariana Devon -</strong> Estudiante de maestría, UAM.</li>
+<li><strong>Andrés Arredondo</strong> - Ciencias Agrogenómicas, CCM-UNAM.</li>
 </ul>
 <h4 id="resumen" class="anchored"><strong>Resumen:</strong></h4>
 <p>Este taller tiene como objetivo principal <strong>abordar los conceptos básicos, habilidades y herramientas para trabajar con datos metagenómicos.</strong> Este taller comprende varias lecciones que incluyen desde la <strong>organización y buenas prácticas, introducción a la línea de comandos y su aplicación para análisis de calidad y por último el uso de R studio para comparar diversidad entre las muestras de estudio.</strong></p>
@@ -433,62 +434,172 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td>🔷 <strong>Sección</strong> <strong>1 - (11:30 - 13:30 h) (7 marzo)</strong></td>
+<td>🔷 <strong>Día 1 - 22 Mayo</strong></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="even">
-<td><ul>
-<li>Creación de una cuenta en GitHub</li>
-</ul></td>
-<td style="text-align: center;">5 min</td>
+<td>🔷 <strong>Organización de proyectos</strong></td>
+<td style="text-align: center;">9:00-10:30</td>
 </tr>
 <tr class="odd">
 <td><ul>
-<li>Introducción a Git / GitHub</li>
+<li>Organización de datos</li>
+</ul></td>
+<td style="text-align: center;">20 min</td>
+</tr>
+<tr class="even">
+<td><ul>
+<li>Planeación de proyectos NGS</li>
+</ul></td>
+<td style="text-align: center;">20 min</td>
+</tr>
+<tr class="odd">
+<td><ul>
+<li>Examinación de datos (NCBI SRA)</li>
+</ul></td>
+<td style="text-align: center;">15 min</td>
+</tr>
+<tr class="even">
+<td colspan="2">🔷&nbsp; <strong>Introducción a línea de comandos</strong> |10:00-12:40</td>
+</tr>
+<tr class="odd">
+<td><ul>
+<li>Introduccion a Shell</li>
+</ul></td>
+<td style="text-align: center;">30 min</td>
+</tr>
+<tr class="even">
+<td colspan="2">☕ <em>Coffee break (10:30-11:00) ☕</em> | 30 min |</td>
+</tr>
+<tr class="odd">
+<td><ul>
+<li>Operaciones en archivos y carpetas</li>
+</ul></td>
+<td style="text-align: center;">20 min</td>
+</tr>
+<tr class="even">
+<td>-&nbsp; Redirección</td>
+<td style="text-align: center;">30 min</td>
+</tr>
+<tr class="odd">
+<td><ul>
+<li>Bucles y edición de archivos</li>
+</ul></td>
+<td style="text-align: center;">30 min</td>
+</tr>
+<tr class="even">
+<td><ul>
+<li>Organización de datos en terminal</li>
+</ul></td>
+<td style="text-align: center;">20 min</td>
+</tr>
+<tr class="odd">
+<td colspan="2">🔷 <strong>Introducción a R</strong> |12:40-14:30</td>
+</tr>
+<tr class="even">
+<td><ul>
+<li>Primeros pasos en R</li>
+</ul></td>
+<td style="text-align: center;">20 min</td>
+</tr>
+<tr class="odd">
+<td colspan="2">☕ <em>Comida (13:00-14:00) ☕</em> |<strong>60 min</strong>|</td>
+</tr>
+<tr class="even">
+<td><ul>
+<li>Tipos de datos en R</li>
+</ul></td>
+<td style="text-align: center;">15 min</td>
+</tr>
+<tr class="odd">
+<td><ul>
+<li>Creando gráficos con ggplot2</li>
 </ul></td>
 <td style="text-align: center;">15 min</td>
 </tr>
 <tr class="even">
 <td><ul>
-<li><strong>Actividad 1</strong>: Sincronización y llaves</li>
+<li>Tipos de datos en R</li>
 </ul></td>
 <td style="text-align: center;">15 min</td>
 </tr>
 <tr class="odd">
-<td>☕ <em>Coffee break (10 min) - (12:00-12:10) ☕</em></td>
-<td style="text-align: center;">10 min</td>
-</tr>
-<tr class="even">
-<td>🔷&nbsp; <strong>Sección</strong> <strong>2 - (12:10-13:00 h)</strong></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td><ul>
-<li>Comandos usados en Github y RStudio</li>
-</ul></td>
-<td style="text-align: center;">25 min</td>
+<td>🔷<strong>Procesamiento de datos metagenómicos</strong></td>
+<td style="text-align: center;">15 min</td>
 </tr>
 <tr class="even">
 <td><ul>
-<li><strong>Actividad 2:</strong> Pagina de inicio en GitHub</li>
+<li>Comenzando mi proyecto metagenómico</li>
 </ul></td>
 <td style="text-align: center;">15 min</td>
 </tr>
 <tr class="odd">
-<td>🔷&nbsp; <strong>Sección 3 - (11:30 - 13:30 h) (14 marzo)</strong></td>
+<td>🔷 <strong>Día 2 - 23 Mayo</strong></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="even">
+<td>🔷<strong>Procesamiento de datos metagenómicos</strong></td>
+<td style="text-align: center;">9:00-10:30</td>
+</tr>
+<tr class="odd">
 <td><ul>
-<li>Buenas practicas en R</li>
+<li>Control de calidad</li>
+</ul></td>
+<td style="text-align: center;">35 min</td>
+</tr>
+<tr class="even">
+<td><ul>
+<li>Corte y filtrado de secuencias</li>
+</ul></td>
+<td style="text-align: center;">20 min</td>
+</tr>
+<tr class="odd">
+<td colspan="2">☕ <em>Coffee break (10:30-11:00) ☕</em> | 30 min |</td>
+</tr>
+<tr class="even">
+<td><ul>
+<li>Ensamblaje metagenómico</li>
+</ul></td>
+<td style="text-align: center;">40 min</td>
+</tr>
+<tr class="odd">
+<td><ul>
+<li>Binning metagenómico</li>
+</ul></td>
+<td style="text-align: center;">40 min</td>
+</tr>
+<tr class="even">
+<td><ul>
+<li>Asignación de taxonomía</li>
 </ul></td>
 <td style="text-align: center;">30 min</td>
 </tr>
 <tr class="odd">
 <td><ul>
-<li><strong>Actividad 3:</strong> Pagina web en GitHub</li>
+<li>Exploración de asignación taxonómica</li>
 </ul></td>
-<td style="text-align: center;">1:30 min</td>
+<td style="text-align: center;">25 min</td>
+</tr>
+<tr class="even">
+<td colspan="2">☕ <em>Comida (13:00-14:00) ☕</em> | 60 min |</td>
+</tr>
+<tr class="odd">
+<td><ul>
+<li>Uso de R para análisis de diversidad</li>
+</ul></td>
+<td style="text-align: center;">30 min</td>
+</tr>
+<tr class="even">
+<td><ul>
+<li>Análisis de taxonomía con R</li>
+</ul></td>
+<td style="text-align: center;">30 min</td>
+</tr>
+<tr class="odd">
+<td><ul>
+<li>Recursos extra</li>
+</ul></td>
+<td style="text-align: center;">15 min</td>
 </tr>
 </tbody>
 </table>
