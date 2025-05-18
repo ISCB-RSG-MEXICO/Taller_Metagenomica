@@ -10,6 +10,8 @@ No importa cuán complejo sea nuestro análisis, todos los datos en R pertenecer
 
 Este concepto nos ayudará a aprender una de las herramientas más poderosas de R; la manipulación de diversos tipos de datos en conjunto en lo que se denomina un **data-frame.**
 
+![](figures/r1.png){fig-align="center"}
+
 Además de los tipos de datos, existen diferentes maneras de organizar los datos en R, denominadas estructuras de datos. La estructura de datos más simple es un vector, una secuencia de datos del mismo tipo. Un vector se puede crear con la función `c()` .
 
 ``` r
@@ -24,19 +26,13 @@ char_factor<-as.factor(char_vector)
 char_factor
 ```
 
-levels: a b c
+`levels: a b c`
 
-Ejercicio en etherpad:
+::: callout-note
+## Nota!
 
-¿Qué tipo de datos están presentes en cada uno de los siguientes vectores?
-
-`vec1<-c("34","127", "26-7i")`
-
-`vec2<-c(4L,12L,152L)`
-
-`vec3<-c(34,147,26+7i)`
-
-Nota: Si usamos "" para definir un objeto, R lo leerá como un caracter, independientemente de que estemos escribiendo números. La mayúscula después de un número indica que R lo guardará como entero.
+Si usamos "" para definir un objeto, R lo leerá como un caracter, independientemente de que estemos escribiendo números. La mayúscula después de un número indica que R lo guardará como entero.
+:::
 
 # Manipulación de data frames
 
@@ -68,9 +64,7 @@ class(musician)
 "data.frame"
 ```
 
-Un dataframe es una colección de vectores (una lista), cuyos componentes deben ser del mismo tipo de datos dentro de cada vector.
-
-INSERTAR FIGURA3. estructura de marco de datos creado.
+Un dataframe es una colección de vectores (una lista), cuyos componentes deben ser del mismo tipo de datos dentro de cada vector.![](images/clipboard-2373541360.png)
 
 Podemos explorar nuestro objeto extrayendo columnas con el operador `$`.
 
@@ -80,8 +74,12 @@ musician$people
 
 Podemos también extraer información de un lugar específico en nuestros datos utilizando la nomenclatura de matriz `[-,-]` donde el primer número dentro de los corchetes especifica el número de fila y el segundo el número de columna:
 
-INSERTAR FIGURA 4.
+![](figures/r2.png){fig-align="center"}
 
 ``` r
 musician[3,2]
+```
+
+``` r
+> musician[1,"pieces"] 
 ```

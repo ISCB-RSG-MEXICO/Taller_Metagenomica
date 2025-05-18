@@ -37,7 +37,7 @@ En este ejemplo, le hemos dicho a Trimmomatic:
 | `SRR_1056_2un.trimmed.fastq` | El archivo de salida para lecturas huérfanas del `_2`archivo |
 | `ILLUMINACLIP:SRR_adapters.fa` | para recortar los adaptadores Illumina del archivo de entrada utilizando las secuencias de adaptadores enumeradas en`SRR_adapters.fa` |
 | `SLIDINGWINDOW:4:20` | utilizar una ventana deslizante de tamaño 4 que eliminará las bases si su puntuación Phred es inferior a 20 |
-| `ILLUMINACLIP:TruSeq3-PE.fa:2:40:15` |  buscar los adaptadores en las lecturas usando el archivo `TruSeq3-PE.fa`, permitiendo hasta 2 errores en el alineamiento inicial, y que solo recorte si el alineamiento tiene una puntuación mínima de 15, evaluada con una puntuación máxima de 40 para la coincidencia. |
+| `ILLUMINACLIP:TruSeq3-PE.fa:2:40:15` | buscar los adaptadores en las lecturas usando el archivo `TruSeq3-PE.fa`, permitiendo hasta 2 errores en el alineamiento inicial, y que solo recorte si el alineamiento tiene una puntuación mínima de 15, evaluada con una puntuación máxima de 40 para la coincidencia. |
 
 ## Ejecución de trimmomatic
 

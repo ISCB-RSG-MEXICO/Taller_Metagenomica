@@ -19,7 +19,7 @@ Por su parte, **RStudio** es el programa (en forma de interfaz gráfica) más po
 Tómate un momento para explorar la interfaz de RStudio.
 :::
 
-![](Welcome_Rscript.png)
+![](figures/Welcome_Rscript.png){fig-align="center"}
 
 Al abrir R Studio por primera vez, verás tres paneles en la pantalla. Para ver los cuatro paneles de la imagen, deberás crear un nuevo script. Ve a la pestaña: **Archivo/File** \> **New File/Nuevo Archivo** \> **R Script.**
 

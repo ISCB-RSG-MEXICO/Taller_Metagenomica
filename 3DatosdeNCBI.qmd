@@ -8,11 +8,11 @@ Normalmente cuando publicas un artículo, las revistas requieren que almacenes t
 
 Hay una gran variedad de bases de datos públicas. Algunos organismos modelo cuentan con sus propias bases de datos. Las dos más grandes son la National Center for Biotechnology Information (NCBI) y la European Nucleotide Archive (EMBL-EBI). El Sequence Read Archive (SRA) pertenece al NCBI.
 
-![](paper-okie.png){fig-align="center"}
+![](figures/paper-okie.png)
 
 La siguiente imagen muestra los archivos adicionales/suplementarios del artículo y que contienen información de la localización de los datos de secuenciación. Siempre puedes buscar en **Disponibilidad de datos** dentro de las secciones de los artículos.
 
-![](additional-files-okie.png){fig-align="center"}
+![](figures/additional-files-okie.png){fig-align="center"}
 
 Sigue los siguientes pasos para accesar al SRA usando la infomación de arriba.
 
@@ -26,7 +26,7 @@ Sigue los siguientes pasos para accesar al SRA usando la infomación de arriba.
 
 5.  En la sección Select podemos ver el número de Runs, Bytes y Bases que contiene la muestra. Si das clic en metadata se descargará el archivo de metadatos de la muestra.
 
-![](SRA1.png)
+![](figures/SRA1.png){fig-align="center"}
 
 ### Acerca de la Sequence Read Archive:
 

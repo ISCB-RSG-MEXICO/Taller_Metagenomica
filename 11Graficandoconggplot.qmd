@@ -30,7 +30,9 @@ ggplot2 se creó con la idea de que cualquier gráfico puede expresarse con tres
 
 Estas **geoms** pueden considerarse capas superpuestas, por lo que es necesario tener especial cuidado al mostrar capas de información útiles que transmitan un mensaje.
 
-![](gglayers.png)
+![](figures/gglayers.png){fig-align="center"}
+
+Figura de [QCBS R Workshop](http://r.qcbs.ca/workshop03/workshop03-en/workshop03-en.html)
 
 ``` r
 musician
@@ -43,7 +45,7 @@ ggplot(data= musician,
        mapping = aes(x = people, y = pieces))
 ```
 
-![](ggplot1.png){fig-align="center"}
+![](figures/ggplot1.png){fig-align="center"}
 
 Describiendo el código anterior. Primero llamamos a la función ggplot. Esto le dirá a R que queremos crear una gráfica y los parámetros indicados dentro de esta función se aplicarán a todas las capas del gráfico. Dimos dos argumentos al código:
 
@@ -59,7 +61,7 @@ ggplot(data= musician,
   geom_col()
 ```
 
-![](ggplot2.png)
+![](figures/ggplot2.png){fig-align="center"}
 
 Algunos elementos del gráfico pueden ser informativos o meramente decorativos. si queremos que sean informativos deben estar dentro de la aes() e indicar qué información mostrarán. si queremos que sean decorativos, deben estar fuera de aes(). Veamos como funciona.
 
@@ -69,7 +71,7 @@ ggplot(data= musician,
   geom_col(color = "blue")
 ```
 
-![](ggplot3.png)
+![](figures/ggplot3.png){fig-align="center"}
 
 ``` r
 ggplot(data= musician,
@@ -77,7 +79,7 @@ ggplot(data= musician,
   geom_col(aes(color= likes))
 ```
 
-![](ggplot4.png)
+![](figures/ggplot4.png){fig-align="center"}
 
 ### Pidiendo ayuda
 
@@ -89,6 +91,6 @@ Existen muchas otras geoms por explorar. Claro que necesitamos un data frame muc
 
 ### Referencias
 
-INSERTAR REFERENCIAS
+[Workshop3: Introduction to ggplot2](https://r.qcbs.ca/workshop03/workshop03-en/workshop03-en.html#1)
 
 [**Reproducibilidad genómica en R**](https://swcarpentry.github.io/r-novice-gapminder/)

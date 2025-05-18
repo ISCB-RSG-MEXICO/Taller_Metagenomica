@@ -56,7 +56,7 @@ $ less JC1A_R2.fastq
 
 Algunos comandos de navegación en `less` :
 
-![Cuando estés dentro de `less` y quieras buscar un texto, haz esto:](images/clipboard-2423031106.png){alt="Cuando estés dentro de less y quieras buscar un texto, haz esto:"}
+![Cuando estés dentro de less y quieras buscar un texto, haz esto:](images/clipboard-2423031106.png)
 
 -   **Buscar hacia adelante**
 

@@ -81,7 +81,7 @@ Las reglas más importantes para utilizar programas de hojas de cálculo para da
 -   Los nombres de las columnas deben ser **explicativos pero sin espacios**. Use '-', '\_' o [mayúsculas y minúsculas](https://en.wikipedia.org/wiki/Camel_case) en lugar de espacios. Por ejemplo, "library-prep-method" es mejor que "library Preparation Method" o "prep", ya que los ordenadores interpretan los espacios de forma específica.
 -   Exporte los datos limpios a un formato de texto como `.csv` (valores separados por comas). Este formato garantiza que cualquier persona pueda usar los datos que requieren la mayoría de los repositorios.
 
-![](01_tidiness_datasheet_example_messy.png){fig-align="center" width="1086"}
+![](figures/01_tidiness_datasheet_example_messy.png){fig-align="center"}
 
 ## Discusión 3. Organización de hoja de cálculo en Excel
 
