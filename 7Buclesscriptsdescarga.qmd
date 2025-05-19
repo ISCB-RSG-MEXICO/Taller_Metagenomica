@@ -46,3 +46,217 @@ EJERCICIO3: QUIZZ en etherpad.
 
 -   Haydee tutorial: [Temas Selectos de Análisis Numérico y Computación Científica: Computo científico para el análisis de datos](https://haydeeperuyero.github.io/Computo_Cientifico/)
 -   Alejandra Medina tutorial: [Control de versiones con GitHub y RStudio](https://comunidadbioinfo.github.io/cdsb2023/control-de-versiones-con-github-y-rstudio.html)
+
+# **Escritura de scripts y trabajo con datos (yahir)**
+
+# Escribir y editar archivos con Nano
+
+A veces necesitamos crear o modificar archivos de texto directamente en la terminal. Para ello usaremos **Nano**, un editor de texto sencillo.
+
+------------------------------------------------------------------------
+
+## 1️⃣ Crear o abrir un archivo
+
+```         
+$ cd ~/dc_workshop/data/untrimmed_fastq
+$ nano README.txt
+```
+
+![](https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-01.png)
+
+-   **Escribe** tu texto normalmente.
+
+-   Para **guardar** pulsa `Ctrl + O` (WriteOut), luego `Enter` para aceptar el nombre.
+
+-   Para **salir** pulsa `Ctrl + X`.
+
+## **Escritura de** scripts
+
+Una característica realmente poderosa de la línea de comandos es la posibilidad de escribir scripts. Los scripts permiten guardar comandos para ejecutarlos y también combinar varios comandos. Si bien escribir scripts puede requerir una inversión de tiempo adicional al principio, esto puede ahorrarle tiempo al ejecutarlos repetidamente. Los scripts también pueden abordar el desafío de la reproducibilidad: si necesita repetir el análisis, conserva un registro del historial de comandos dentro del script.
+
+Algo que solemos hacer con los resultados de secuenciación es extraer las lecturas incorrectas y guardarlas en un archivo para ver si podemos averiguar qué sucede. Buscaremos lecturas con secuencias largas de N como hicimos antes, pero ahora escribiremos un script para ejecutarlo cada vez que obtengamos nuevas secuencias, en lugar de escribir el código manualmente cada vez.
+
+``` bash
+grep -B1 -A2 NNNNNNNNNN *.fastq > scripted_bad_reads.txt
+```
+
+puedes guardar esa línea en un script (`bad-reads-script.sh`) y luego ejecutarlo siempre con:
+
+``` bash
+$ bash bad-reads-script.sh
+```
+
+De ese modo sólo escribes una vez el comando y obtienes, en cada ejecución, un archivo `scripted_bad_reads.txt` con todas las lecturas problemáticas, sin tener que volver a escribirlo a mano.
+
+## Convertir el script en un programa y comprimir datos
+
+Hemos escrito un script (`bad-reads-script.sh`) que extrae las lecturas con diez `N` consecutivas de todos los archivos FASTQ. Cada vez que lo ejecutábamos con `bash bad-reads-script.sh`, funcionaba, pero aún teníamos que invocar explícitamente Bash.
+
+Para simplificarlo, vamos a:
+
+1.  **Hacer que el script sea ejecutable**\
+2.  **Ejecutarlo directamente**
+
+------------------------------------------------------------------------
+
+### 1. Ver permisos actuales
+
+Primero comprobamos los permisos del script:
+
+> ``` bash
+>  $ ls -l bad-reads-script.sh # -rw-rw-r-- 1 dcuser dcuser 42 Oct 25 21:46 bad-reads-script.sh
+> ```
+
+Aquí vemos `-rw-rw-r--`, lo que significa que **podemos leer y escribir** el archivo, pero **no** ejecutarlo.
+
+### 2. Añadir permiso de ejecución
+
+Usamos `chmod +x` para que el sistema sepa que nuestro script es un programa:
+
+``` bash
+$ chmod +x bad-reads-script.sh
+$ ls -l bad-reads-script.sh
+# -rwxrwxr-x 1 dcuser dcuser   42 Oct 25 21:46 bad-reads-script.sh
+```
+
+Ahora aparece `x` en los permisos (`-rwxrwxr-x`), indicando que podemos **ejecutarlo**.
+
+### 3. Ejecutar el script como programa
+
+Ya no necesitamos escribir `bash` cada vez. Simplemente:
+
+``` bash
+$ ./bad-reads-script.sh
+```
+
+El script corre de la misma forma, generando el archivo `scripted_bad_reads.txt` con todas las lecturas “malas”.
+
+### 4. Comprimir los archivos FASTQ
+
+Cuando terminemos de analizarlos, es buena práctica comprimirlos para liberar espacio:
+
+``` bash
+$ gzip ~/dc_workshop/data/untrimmed_fastq/*.fastq
+```
+
+Confirmamos que ahora solo hay archivos `.fastq.gz` y su tamaño reducido:
+
+``` bash
+$ ls -lh ~/dc_workshop/data/untrimmed_fastq/*.fastq.gz
+# total 428M
+# -rw-r--r-- 1 dcuser dcuser  24M Nov 26 12:36 JC1A_R1.fastq.gz
+# -rw-r--r-- 1 dcuser dcuser  24M Nov 26 12:37 JC1A_R2.fastq.gz
+# -rw-r--r-- 1 dcuser dcuser 179M Nov 26 12:44 JP4D_R1.fastq.gz
+# -rw-r--r-- 1 dcuser dcuser 203M Nov 26 12:51 JP4D_R2.fastq.gz
+```
+
+-   Tenemos un **programa propio** (`bad-reads-script.sh`) que ejecutamos con `./bad-reads-script.sh`.
+
+-   Mantenemos nuestro directorio de datos limpio y ligero, dejando los FASTQ comprimidos cuando no los usamos.
+
+    ## Mover y descargar datos en la línea de comandos
+
+En lugar de trabajar solo con datos preinstalados en el servidor, normalmente tendrás que traer nuevos archivos desde Internet o desde tu máquina local.
+
+------------------------------------------------------------------------
+
+### 1️⃣ ¿Tienes `wget` o `curl`?
+
+Para descargar desde la web, usas **wget** o **curl**. Comprueba cuál está disponible:
+
+``` bash
+$ which wget # si está instalado, muestra su ruta 
+$ which curl # idem para curl
+```
+
+-   Si ves una ruta bajo `/usr/bin/…`, ese programa está instalado.
+
+-   Si no retorna nada, no lo tienes y debes usar el otro.
+
+### 2️⃣ Descargar con `wget`
+
+`wget` descarga por defecto al archivo con el mismo nombre:
+
+```         
+$ cd ~
+wget ftp://ftp.ensemblgenomes.org/pub/release-37/bacteria/species_EnsemblBacteria.txt
+```
+
+Sin flags adicionales, guarda `species_EnsemblBacteria.txt` en tu directorio actual.
+
+### 3️⃣ Descargar con `curl`
+
+Para `curl` necesitas la opción `-O` para grabar en disco:
+
+```         
+$ cd ~
+curl -O ftp://ftp.ensemblgenomes.org/pub/release-37/bacteria/species_EnsemblBacteria.txt
+```
+
+-   `-O` (“remote **O**utput”) descarga y usa el mismo nombre de archivo que en el servidor.
+
+-   Es importante tener en cuenta que tanto `curl` como `wget`se descargan en el equipo al que pertenece la línea de comandos. Por lo tanto, si inicia sesión en AWS desde la línea de comandos y ejecuta el `curl`comando anterior en la terminal de AWS, el archivo se descargará en su equipo de AWS, no en el local.
+
+### **Mover archivos entre su computadora portátil y su instancia**
+
+¿Qué sucede si los datos que necesita están en su computadora local, pero necesita transferirlos *a* la nube? Hay varias maneras de hacerlo. Al seguir esta lección, puede que esté usando la interfaz de RStudio con una terminal, otra terminal o su propia computadora local. Dependiendo de su configuración, existen varias alternativas para transferir los archivos. Aquí describimos cómo usar la interfaz de RStudio para transferir archivos.
+
+> ### **Escenarios de transferencia de archivos**
+>
+> 1.  Si trabajas en tu ordenador **local** , no necesitas transferir archivos, ya que los tienes localmente.\
+>     En ese caso, solo necesitas saber el directorio en el que trabajas.
+>
+> 2.  Si trabaja en una máquina remota, como una instancia de AWS, puede usar el `scp`comando. En ese caso, *siempre* es más fácil iniciar la transferencia localmente. **Si escribe en una terminal, esta no debería estar conectada a su instancia. Debería mostrar su computadora local. Si usa un programa de transferencia, debe instalarlo en su máquina local, no en su instancia.**
+>
+> 3.  Si está utilizando el **servidor RStudio** desde la instancia de AWS, puede transferir archivos entre su máquina local y su máquina remota utilizando la interfaz gráfica de RStudio.
+
+### **Descargar archivos en RStudio**
+
+Seguiremos los siguientes cinco pasos para descargar archivos con la interfaz RStudio.
+
+1.  Primero seleccionamos el archivo a descargar desde el panel inferior derecho.\
+    [![Panel inferior derecho donde se muestra el menú de archivos. Se selecciona el archivo a descargar.](https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-03.png){alt="Panel inferior derecho donde se muestra el menú de archivos. Se selecciona el archivo a descargar."}](https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-03.png)
+
+2.  Luego, elegimos “Más” para mostrar más acciones para el archivo seleccionado.\
+    [\
+    ![More button highlighted.](https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-04.png){alt="More button highlighted."}](https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-04.png)
+
+3.  Within the “More” menu, the “export” button should become available.\
+    [![Export button highlighted.](https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-05.png){alt="Export button highlighted."}](https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-05.png)
+
+4.  An emergent window should be displayed on your screen where you can select the “Download” option.\
+    [![emergent window where you write the name of the file and click download.](https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-06.png){alt="emergent window where you write the name of the file and click download."}](https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-06.png)
+
+5.  Your file should now be downloaded to your local computer.
+
+### **Upload files to AWS in RStudio**
+
+Now that we learned how to download files from the RStudio interface, we will learn the opposite action, uploading files from your local computer to your remote AWS machine.
+
+1.  Choose the option ‘Upload’ in your RStudio interface.[![The Upload button is highlighted.](https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-08.png){alt="The Upload button is highlighted."}](https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-08.png)
+
+2.  After an emergent window is displayed on your screen, select “Select file”.[![Select filed button highlighted in the emergent window](https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-09.png){alt="Select filed button highlighted in the emergent window"}](https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-09.png)
+
+3.  A new screen is displayed on your computer where you should choose the file to upload. Choose the file and click “open”.[![file to upload and open button are highlighted in the window of the local filesystem](https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-10.png){alt="file to upload and open button are highlighted in the window of the local filesystem"}](https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-10.png)
+
+4.  Finally, if the file is correct, click “ok,” and the uploading will start.
+
+5.  Now, you can view a new file in your RStudio interface.[![The uploaded file is shown in the R studio interface](https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-12.png){alt="The uploaded file is shown in the R studio interface"}](https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-12.png)
+
+### 
+
+## Transferir archivos entre tu máquina local y la instancia remota con `scp`
+
+`scp` (“secure copy protocol”) te permite copiar archivos de forma segura entre dos ordenadores (local ↔ remoto).
+
+### Sintaxis básica
+
+``` bash
+$ scp origen destino
+```
+
+**origen** y **destino** pueden ser rutas locales o remotas.
+
+Para especificar una máquina remota usas el formato `usuario@host:/ruta/al/archivo`.
+
+### 
