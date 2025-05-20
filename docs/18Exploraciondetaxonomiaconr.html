@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -301,13 +335,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./20Analisistaxonomico.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Análisis taxonómico con RStudio</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./21Otrosrecursos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Otros recursos</span></span></a>
   </div>
 </li>
       </ul>
@@ -322,7 +356,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#referencias" id="toc-referencias" class="nav-link active" data-scroll-target="#referencias"><span class="header-section-number">18.1</span> Referencias</a></li>
+  <li><a href="#creación-de-tablas-de-linajes-y-asignación" id="toc-creación-de-tablas-de-linajes-y-asignación" class="nav-link active" data-scroll-target="#creación-de-tablas-de-linajes-y-asignación"><span class="header-section-number">18.1</span> <strong>Creación de tablas de linajes y asignación</strong></a></li>
+  <li><a href="#biom-de-kraken" id="toc-biom-de-kraken" class="nav-link" data-scroll-target="#biom-de-kraken"><span class="header-section-number">18.2</span> Biom de Kraken</a></li>
+  <li><a href="#creación-y-manipulación-de-objetos-phyloseq" id="toc-creación-y-manipulación-de-objetos-phyloseq" class="nav-link" data-scroll-target="#creación-y-manipulación-de-objetos-phyloseq"><span class="header-section-number">18.3</span> <strong>Creación y manipulación de objetos Phyloseq</strong></a>
+  <ul>
+  <li><a href="#cargar-los-paquetes-requeridos" id="toc-cargar-los-paquetes-requeridos" class="nav-link" data-scroll-target="#cargar-los-paquetes-requeridos"><span class="header-section-number">18.3.1</span> <strong>Cargar los paquetes requeridos</strong></a></li>
+  <li><a href="#creando-el-objeto-phyloseq" id="toc-creando-el-objeto-phyloseq" class="nav-link" data-scroll-target="#creando-el-objeto-phyloseq"><span class="header-section-number">18.3.2</span> <strong>Creando el objeto phyloseq</strong></a></li>
+  <li><a href="#explorando-las-etiquetas-taxonómicas" id="toc-explorando-las-etiquetas-taxonómicas" class="nav-link" data-scroll-target="#explorando-las-etiquetas-taxonómicas"><span class="header-section-number">18.3.3</span> <strong>Explorando las etiquetas taxonómicas</strong></a></li>
+  <li><a href="#explorando-la-tabla-de-abundancia" id="toc-explorando-la-tabla-de-abundancia" class="nav-link" data-scroll-target="#explorando-la-tabla-de-abundancia"><span class="header-section-number">18.3.4</span> <strong>Explorando la tabla de abundancia</strong></a></li>
+  </ul></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">18.4</span> Referencias</a></li>
   </ul>
 </nav>
     </div>
@@ -348,8 +391,97 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="referencias" class="level2" data-number="18.1">
-<h2 data-number="18.1" class="anchored" data-anchor-id="referencias"><span class="header-section-number">18.1</span> Referencias</h2>
+<section id="creación-de-tablas-de-linajes-y-asignación" class="level2" data-number="18.1">
+<h2 data-number="18.1" class="anchored" data-anchor-id="creación-de-tablas-de-linajes-y-asignación"><span class="header-section-number">18.1</span> <strong>Creación de tablas de linajes y asignación</strong></h2>
+<p>Paquetes como Qiime2, MEGAN, Vegan o Phyloseq en R nos permiten analizar la diversidad y la abundancia mediante la manipulación de datos de asignación taxonómica. En esta lección, usaremos Phyloseq. Para ello, necesitamos generar una matriz de abundancia a partir de los archivos de salida de Kraken. Un programa muy utilizado para este propósito es <code>kraken-biom</code>.</p>
+<p>Para ello, podríamos usar nuestra ya conocida terminal Bash, pero RStudio tiene una terminal integrada que usa el mismo lenguaje que aprendimos en las lecciones de línea de comandos, así que aprovechémosla. Abramos RStudio y vayamos a la pestaña Terminal en el panel inferior izquierdo.</p>
+</section>
+<section id="biom-de-kraken" class="level2" data-number="18.2">
+<h2 data-number="18.2" class="anchored" data-anchor-id="biom-de-kraken"><span class="header-section-number">18.2</span> Biom de Kraken</h2>
+<p><a href="https://github.com/smdabdoub/kraken-biom">Kraken-biom</a> es un programa que crea tablas BIOM a partir de la salida de Kraken.</p>
+<p>Para ejecutar Kraken-biom, debemos movernos a la carpeta donde se encuentran nuestros archivos de datos taxonómicos:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd ~/dc_workshop/taxonomy </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Primero, visualizaremos el contenido de nuestro directorio mediante el <code>ls</code>comando.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>JC1A.kraken  JC1A.report  JP41.report  JP4D.kraken  JP4D.report  mags_taxonomy </code></pre>
+<p>La herramienta <code>kraken-biom</code> está instalada dentro de nuestro ambiente <code>metagenomics</code>, actívalo.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> conda activate metagenomics  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Echemos un vistazo a las diferentes banderas que <code>kraken-biom</code>tiene:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> kraken-biom <span class="at">-h</span>                   </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>usage: kraken-biom [-h] [--max {D,P,C,O,F,G,S}] [--min {D,P,C,O,F,G,S}]                    [-o OUTPUT_FP] [--otu_fp OTU_FP] [--fmt {hdf5,json,tsv}]                    [--gzip] [--version] [-v]                    kraken_reports [kraken_reports ...]  Create BIOM-format tables (http://biom-format.org) from Kraken output (http://ccb.jhu.edu/software/kraken/). . . . </code></pre>
+<p>Al observar detenidamente las primeras líneas de salida, se nota que necesitamos una salida específica de Kraken: el archivo <code>.reports</code>.</p>
+<p>Con el siguiente comando, crearemos una tabla en formato <a href="https://biom-format.org/">Biom</a> llamada <code>cuatroc.biom</code> . Incluiremos las muestras con las que hemos estado trabajando ( <code>JC1A</code>y <code>JP4D</code>) y agregaremos un par de muestras más ( <code>JP41</code>) para poder realizar análisis específicos posteriormente.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> kraken-biom JC1A.report JP4D.report JP41.report <span class="at">--fmt</span> json <span class="at">-o</span> cuatroc.biom </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Si inspeccionamos nuestra carpeta, veremos que el <code>cuatroc.biom</code>archivo se ha creado. Este <strong>objeto</strong> <code>biom</code>contiene la abundancia como el ID (un número) de cada OTU.<br>
+Con este resultado, estamos listos para volver a la consola de RStudio y empezar a manipular nuestros datos taxonómicos.</p>
+</section>
+<section id="creación-y-manipulación-de-objetos-phyloseq" class="level2" data-number="18.3">
+<h2 data-number="18.3" class="anchored" data-anchor-id="creación-y-manipulación-de-objetos-phyloseq"><span class="header-section-number">18.3</span> <strong>Creación y manipulación de objetos Phyloseq</strong></h2>
+<section id="cargar-los-paquetes-requeridos" class="level3" data-number="18.3.1">
+<h3 data-number="18.3.1" class="anchored" data-anchor-id="cargar-los-paquetes-requeridos"><span class="header-section-number">18.3.1</span> <strong>Cargar los paquetes requeridos</strong></h3>
+<p>Phyloseq es una biblioteca con herramientas para analizar y representar gráficamente la información de asignación taxonómica y abundancia de sus muestras metagenómicas. Instalemos <a href="https://joey711.github.io/phyloseq/">Phyloseq</a> (esta instrucción podría no funcionar en ciertas versiones de R) y otras bibliotecas necesarias para su ejecución:</p>
+<pre><code>&gt; if (!requireNamespace("BiocManager", quietly = TRUE))     install.packages("BiocManager")  
+&gt; BiocManager::install("phyloseq") # Install phyloseq  
+&gt; install.packages(c("RColorBrewer", "patchwork")) #install patchwork to chart publication-quality plots and readr to read rectangular datasets. </code></pre>
+<p>Una vez instaladas las bibliotecas debemos cargarlas o llamarlas (este proceso es necesario cada vez que iniciamos una nueva sesión de trabajo en R):</p>
+<pre><code>&gt; library("phyloseq") 
+&gt; library("ggplot2") 
+&gt; library("RColorBrewer") 
+&gt; library("patchwork") </code></pre>
+</section>
+<section id="creando-el-objeto-phyloseq" class="level3" data-number="18.3.2">
+<h3 data-number="18.3.2" class="anchored" data-anchor-id="creando-el-objeto-phyloseq"><span class="header-section-number">18.3.2</span> <strong>Creando el objeto phyloseq</strong></h3>
+<p>Le pedimos a R qué nos situe en el directorio <code>taxonomy</code>.</p>
+<pre><code>&gt; setwd("~/dc_workshop/taxonomy/") </code></pre>
+<p>Ahora debemos crear el objeto phyloseq con el comando <code>import_biom</code>:</p>
+<pre><code>&gt; merged_metagenomes &lt;- import_biom("cuatroc.biom") </code></pre>
+<p>Inspeccionamos el objeto:</p>
+<pre><code>&gt; class(merged_metagenomes) </code></pre>
+<pre><code>[1] "phyloseq" attr("package") [1] "phyloseq" </code></pre>
+<p>El comando “class” indica que ya tenemos nuestro objeto phyloseq.</p>
+</section>
+<section id="explorando-las-etiquetas-taxonómicas" class="level3" data-number="18.3.3">
+<h3 data-number="18.3.3" class="anchored" data-anchor-id="explorando-las-etiquetas-taxonómicas"><span class="header-section-number">18.3.3</span> <strong>Explorando las etiquetas taxonómicas</strong></h3>
+<p>Accedamos a los datos almacenados en el objeto <code>merged_metagenomes</code>. Dado que un objeto phyloseq es un objeto especial en R, necesitamos usar el operador <code>@</code>para explorar las subsecciones de datos dentro de <code>merged_metagenomes</code>. Si escribimos <code>merged_metagenomes@</code>, se muestran cinco opciones; <code>tax_table</code>y <code>otu_table</code>son las que usaremos. Después de escribir <code>merged_metagenomes@otu_table</code>o <code>merged_metagenomes@tax_table</code>, la opción de <code>.Data</code> será la elegida en ambos casos. Veamos qué hay dentro de nuestro <code>tax_table</code>:</p>
+<pre><code>&gt; View(merged_metagenomes@tax_table@.Data)</code></pre>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/taxonomy1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>Los números en la columna de la izquiera (en negritas) identifican cada uno de los OTUs.</p>
+<p>A continuación, eliminemos algunos de los caracteres innecesarios en el id de las OTU y pongamos nombres a los rangos taxonómicos usando la función <code>substring()</code>. Esta función es muy flexible, especialmente seleccionando caracteres de diferentes longitudes, como en este caso.</p>
+<p>Cada carácter en&nbsp;<code>.Data</code>está precedido por tres espacios ocupados por una letra y dos guiones bajos, por ejemplo:&nbsp;<code>o__Rhodobacterales</code>. En este caso, “Rodobacterales” comienza en la posición 4 con una R. Por lo tanto, para eliminar los caracteres innecesarios, usaremos el siguiente código:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> merged_metagenomes<span class="sc">@</span>tax_table<span class="sc">@</span>.Data <span class="ot">&lt;-</span> <span class="fu">substring</span>(merged_metagenomes<span class="sc">@</span>tax_table<span class="sc">@</span>.Data, <span class="dv">4</span>) </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">colnames</span>(merged_metagenomes<span class="sc">@</span>tax_table<span class="sc">@</span>.Data)<span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Kingdom"</span>, <span class="st">"Phylum"</span>, <span class="st">"Class"</span>, <span class="st">"Order"</span>, <span class="st">"Family"</span>, <span class="st">"Genus"</span>, <span class="st">"Species"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/taxonomy2.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>Usaremos un comando llamado <code>unique()</code>para explorar cuántos phylum tenemos. Veamos el resultado del siguiente código:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">unique</span>(merged_metagenomes<span class="sc">@</span>tax_table<span class="sc">@</span>.Data[,<span class="st">"Phylum"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Conocer los filos es útil, pero lo que necesitamos saber es cuántas de nuestras OTU se han asignado al filo Firmicutes. Usemos el comando <code>sum()</code>para preguntarle a R:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">sum</span>(merged_metagenomes<span class="sc">@</span>tax_table<span class="sc">@</span>.Data[,<span class="st">"Phylum"</span>] <span class="sc">==</span> <span class="st">"Firmicutes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Ahora, para saber para ese filo en particular qué taxones hay en un determinado rango, también podemos preguntarle por phyloseq.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">unique</span>(merged_metagenomes<span class="sc">@</span>tax_table<span class="sc">@</span>.Data[merged_metagenomes<span class="sc">@</span>tax_table<span class="sc">@</span>.Data[,<span class="st">"Phylum"</span>] <span class="sc">==</span> <span class="st">"Firmicutes"</span>, <span class="st">"Class"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="explorando-la-tabla-de-abundancia" class="level3" data-number="18.3.4">
+<h3 data-number="18.3.4" class="anchored" data-anchor-id="explorando-la-tabla-de-abundancia"><span class="header-section-number">18.3.4</span> <strong>Explorando la tabla de abundancia</strong></h3>
+<p>Hasta ahora, hemos analizado la parte del objeto phyloseq que almacena la información sobre la taxonomía (en todos los niveles posibles) de cada OTU presente en nuestras muestras. Sin embargo, también hay una parte del objeto phyloseq que almacena la información sobre cuántas lecturas secuenciadas correspondientes a una OTU específica hay en cada muestra. Esta tabla es la <code>otu_table</code>.</p>
+<pre><code>&gt; View(merged_metagenomes@otu_table@.Data)</code></pre>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/taxonomy3.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>merged_metagenomes<span class="sc">@</span>otu_table<span class="sc">@</span>.Data[<span class="st">"1077935"</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>JC1A JP4D JP41    
+42  782  257 </code></pre>
+</section>
+</section>
+<section id="referencias" class="level2" data-number="18.4">
+<h2 data-number="18.4" class="anchored" data-anchor-id="referencias"><span class="header-section-number">18.4</span> Referencias</h2>
 
 
 </section>

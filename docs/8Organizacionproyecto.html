@@ -265,31 +265,31 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./14Filtraciondedatosdesecuenciacion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Filtración de datos de secuenciación</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15Ensamblemetagenomico.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Binning metagenómico</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./16Binningmetagenomico.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Asignación taxonómica</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./17Asignaciontaxonomica.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Explorando la diversidad con librerías de R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./18Exploraciondetaxonomiaconr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Análisis de taxonomía con R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -301,13 +301,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./20Analisistaxonomico.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Análisis taxonómico con RStudio</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./21Otrosrecursos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Otros recursos</span></span></a>
   </div>
 </li>
       </ul>
@@ -323,6 +323,10 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#referencias" id="toc-referencias" class="nav-link active" data-scroll-target="#referencias"><span class="header-section-number">8.1</span> Referencias</a></li>
+  <li><a href="#poniendo-en-marcha-tu-proyecto-yahir" id="toc-poniendo-en-marcha-tu-proyecto-yahir" class="nav-link" data-scroll-target="#poniendo-en-marcha-tu-proyecto-yahir"><span class="header-section-number">8.2</span> Poniendo en marcha tu proyecto (yahir)</a>
+  <ul>
+  <li><a href="#ejercicio-crear-tu-estructura-de-carpetas" id="toc-ejercicio-crear-tu-estructura-de-carpetas" class="nav-link" data-scroll-target="#ejercicio-crear-tu-estructura-de-carpetas"><span class="header-section-number">8.2.1</span> Ejercicio: crear tu estructura de carpetas</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -362,8 +366,40 @@ ul.task-list li input[type="checkbox"] {
 <li>Evelia Coss - tutorial <a href="https://github.com/EveliaCoss/Buenaspracticas_R_Mayo2024">Buenas practicas en R</a></li>
 <li>Evelia Coss - <a href="https://github.com/EveliaCoss/Make_yourCV">Make your CV tutorial</a></li>
 </ul>
+</section>
+<section id="poniendo-en-marcha-tu-proyecto-yahir" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="poniendo-en-marcha-tu-proyecto-yahir"><span class="header-section-number">8.2</span> Poniendo en marcha tu proyecto (yahir)</h2>
+<p>Organizar tu espacio de trabajo de forma clara es tan importante como diseñar el experimento. Una buena estructura y documentación te evitarán confusiones (¿dónde dejé mis mejores alineamientos? ¿qué parámetros usé?) y facilitarán la colaboración y la redacción de métodos.</p>
+<p>Piensa en tu “yo futuro” como un colaborador: cuanta más claridad dejes, mejor.</p>
+<hr>
+<section id="ejercicio-crear-tu-estructura-de-carpetas" class="level3" data-number="8.2.1">
+<h3 data-number="8.2.1" class="anchored" data-anchor-id="ejercicio-crear-tu-estructura-de-carpetas"><span class="header-section-number">8.2.1</span> Ejercicio: crear tu estructura de carpetas</h3>
+<ol type="1">
+<li><p><strong>Ve a tu carpeta de inicio</strong><br>
+<code>cd ~</code></p>
+<p><code>pwd</code> # debe mostrar <code>/home/dcuser</code></p>
+<ol start="2" type="1">
+<li><p><strong>Crea los directorios</strong></p>
+<pre><code>mkdir workshop
+mkdir workshop/docs
+mkdir workshop/data
+mkdir workshop/results</code></pre>
+<p><strong>Verifica recursivamente</strong></p>
+<pre><code>$ ls -R workshop
+# workshop/:
+#   data  docs  results
+#
+# workshop/data/:
+#
+# workshop/docs/:
+#
+# workshop/results/:</code></pre>
+<p>Con esta estructura tendrás un lugar claro para tu <strong>documentación</strong> (<code>docs</code>), tus <strong>datos crudos</strong> (<code>data</code>) y tus <strong>resultados</strong> (<code>results</code>). Tu “yo futuro” te lo agradecerá.</p></li>
+</ol></li>
+</ol>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

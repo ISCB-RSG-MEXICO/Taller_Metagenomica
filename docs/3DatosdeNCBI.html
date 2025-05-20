@@ -265,31 +265,31 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./14Filtraciondedatosdesecuenciacion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Filtración de datos de secuenciación</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15Ensamblemetagenomico.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Binning metagenómico</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./16Binningmetagenomico.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Asignación taxonómica</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./17Asignaciontaxonomica.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Explorando la diversidad con librerías de R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./18Exploraciondetaxonomiaconr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Análisis de taxonomía con R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -301,13 +301,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./20Analisistaxonomico.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Análisis taxonómico con RStudio</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./21Otrosrecursos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Otros recursos</span></span></a>
   </div>
 </li>
       </ul>
@@ -357,15 +357,11 @@ ul.task-list li input[type="checkbox"] {
 <p>En la mayoría de los experimentos normalmente pensamos en generar datos de secuenciación. Sin embargo, <strong>casi todos los análisis utilizan datos de referencia para comparar o anotar ciertos datos</strong>. <strong>Incluso podrías realizar un proyecto solamente de datos que ya están almacenados en bases de datos.</strong> Esta data es un recurso esencial para el análisis de datos genómicos.</p>
 <p>Normalmente cuando publicas un artículo, las revistas requieren que almacenes tus datos en un repositorio público. <strong>Compartir tus datos hace que puedan ser incluídos en otros trabajos y tener citas.</strong></p>
 <p>Hay una gran variedad de bases de datos públicas. Algunos organismos modelo cuentan con sus propias bases de datos. Las dos más grandes son la National Center for Biotechnology Information (NCBI) y la European Nucleotide Archive (EMBL-EBI). El Sequence Read Archive (SRA) pertenece al NCBI.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="paper-okie.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
+<p><img src="figures/paper-okie.png" class="img-fluid"></p>
 <p>La siguiente imagen muestra los archivos adicionales/suplementarios del artículo y que contienen información de la localización de los datos de secuenciación. Siempre puedes buscar en <strong>Disponibilidad de datos</strong> dentro de las secciones de los artículos.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="additional-files-okie.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="figures/additional-files-okie.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 <p>Sigue los siguientes pasos para accesar al SRA usando la infomación de arriba.</p>
@@ -376,7 +372,11 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Este link te guiará a todas (40) las muestras de este BioProject. Selecciona la muestra número 40. En la parte superior de la pestaña encontrarás el enlace “<em>Send results to Run Selector/Enviar los resultados a Run Selector</em>”. Este enlace te redireccionará al SRA Run Selector. En esta página encontrarás los datos de secuenciación así como los metadatos del experimento para la muestra #40.</p></li>
 <li><p>En la sección Select podemos ver el número de Runs, Bytes y Bases que contiene la muestra. Si das clic en metadata se descargará el archivo de metadatos de la muestra.</p></li>
 </ol>
-<p><img src="SRA1.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/SRA1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
 <section id="acerca-de-la-sequence-read-archive" class="level3" data-number="3.1.1">
 <h3 data-number="3.1.1" class="anchored" data-anchor-id="acerca-de-la-sequence-read-archive"><span class="header-section-number">3.1.1</span> Acerca de la Sequence Read Archive:</h3>
 <ul>

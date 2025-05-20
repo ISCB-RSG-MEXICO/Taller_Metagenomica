@@ -299,31 +299,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./14Filtraciondedatosdesecuenciacion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Filtración de datos de secuenciación</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15Ensamblemetagenomico.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Binning metagenómico</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./16Binningmetagenomico.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Asignación taxonómica</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./17Asignaciontaxonomica.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Explorando la diversidad con librerías de R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./18Exploraciondetaxonomiaconr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Análisis de taxonomía con R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -335,13 +335,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./20Analisistaxonomico.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Análisis taxonómico con RStudio</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./21Otrosrecursos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Otros recursos</span></span></a>
   </div>
 </li>
       </ul>
@@ -391,19 +391,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>caracter</li>
 </ul>
 <p>Este concepto nos ayudará a aprender una de las herramientas más poderosas de R; la manipulación de diversos tipos de datos en conjunto en lo que se denomina un <strong>data-frame.</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/r1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
 <p>Además de los tipos de datos, existen diferentes maneras de organizar los datos en R, denominadas estructuras de datos. La estructura de datos más simple es un vector, una secuencia de datos del mismo tipo. Un vector se puede crear con la función <code>c()</code> .</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> char_vector<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"a"</span>,<span class="st">"b"</span>,<span class="st">"c"</span>,<span class="st">"c"</span>,<span class="st">"d"</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">typeof</span>(char_vector)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Una estructura de datos más compleja es el factor, que contiene nombres de las categorías (llamados niveles) y una secuencia de ocurrencias de dichas categorías.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>char_factor<span class="ot">&lt;-</span><span class="fu">as.factor</span>(char_vector)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>char_factor</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>levels: a b c</p>
-<p>Ejercicio en etherpad:</p>
-<p>¿Qué tipo de datos están presentes en cada uno de los siguientes vectores?</p>
-<p><code>vec1&lt;-c("34","127", "26-7i")</code></p>
-<p><code>vec2&lt;-c(4L,12L,152L)</code></p>
-<p><code>vec3&lt;-c(34,147,26+7i)</code></p>
-<p>Nota: Si usamos “” para definir un objeto, R lo leerá como un caracter, independientemente de que estemos escribiendo números. La mayúscula después de un número indica que R lo guardará como entero.</p>
+<p><code>levels: a b c</code></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Si usamos “” para definir un objeto, R lo leerá como un caracter, independientemente de que estemos escribiendo números. La mayúscula después de un número indica que R lo guardará como entero.</p>
+</div>
+</div>
 <section id="manipulación-de-data-frames" class="level1" data-number="11">
 <h1 data-number="11"><span class="header-section-number">11</span> Manipulación de data frames</h1>
 <p>Los data frames son estructuras de datos potentes en R. Podemos comenzar a crear un conjunto de datos simulado:</p>
@@ -419,13 +431,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Para comprobar que nuestro objeto es un data frame podemos usar <code>class()</code>.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(musician)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code>"data.frame"</code></pre>
-<p>Un dataframe es una colección de vectores (una lista), cuyos componentes deben ser del mismo tipo de datos dentro de cada vector.</p>
-<p>INSERTAR FIGURA3. estructura de marco de datos creado.</p>
+<p>Un dataframe es una colección de vectores (una lista), cuyos componentes deben ser del mismo tipo de datos dentro de cada vector.<img src="images/clipboard-2373541360.png" class="img-fluid"></p>
 <p>Podemos explorar nuestro objeto extrayendo columnas con el operador <code>$</code>.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>musician<span class="sc">$</span>people</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Podemos también extraer información de un lugar específico en nuestros datos utilizando la nomenclatura de matriz <code>[-,-]</code> donde el primer número dentro de los corchetes especifica el número de fila y el segundo el número de columna:</p>
-<p>INSERTAR FIGURA 4.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/r2.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>musician[<span class="dv">3</span>,<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> musician[<span class="dv">1</span>,<span class="st">"pieces"</span>] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
