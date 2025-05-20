@@ -31,7 +31,7 @@ Repaso de comandos
 ## **Comandos básicos**
 
 | Comandos | Información | Argumentos |
-|----|----|----|
+|------------------------|------------------------|------------------------|
 | `ssh` | Conexión a servidores | ssh usuario\@servidor.mx |
 | `ls` | Observar el contenido de los archivos en una carpeta | ls directorio/ |
 | `cd` | Moverse de directorios | cd /home/usuario/data/ |
@@ -104,17 +104,15 @@ Si estás en `/home/dcuser` y quieres entrar a un subdirectorio:
 
 ------------------------------------------------------------------------
 
-### 📌 4 Volver al directorio principal:
-
-`cd ~`
-
-### 📌 5 Subir un nivel en la estructura de carpetas:
+### 📌 4  Subir un nivel en la estructura de carpetas:
 
 `cd ..`
 
-### 📌 6 Atajos útiles:
+### 📌 5  Volver al directorio principal:
 
--   `cd` sin argumentos te lleva al directorio principal (home).
+`cd ~`
+
+### 📌 6 Atajos útiles:
 
 -   `cd -` te lleva al último directorio en el que estuviste.
 
@@ -145,7 +143,7 @@ ls -l youfoundit.txt
 -rw-rw-r-- 1 usuario grupo 0 May 27 23:16 youfoundit.txt
 ```
 
-\[imagen\]
+![](images/clipboard-1576158875.png){width="519"}
 
 **Quitar permiso de escritura** al dueño con `chmod`:
 
