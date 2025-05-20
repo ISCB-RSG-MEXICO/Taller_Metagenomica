@@ -17,3 +17,43 @@ Ejercicio 2: Crea un registro de los comandos que has utilizado el día de hoy.
 -   Wilson, et al. 2014. [Best Practices for Scientific Computing](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745). PLOS Biology
 -   Evelia Coss - tutorial [Buenas practicas en R](https://github.com/EveliaCoss/Buenaspracticas_R_Mayo2024)
 -   Evelia Coss - [Make your CV tutorial](https://github.com/EveliaCoss/Make_yourCV)
+
+## Poniendo en marcha tu proyecto (yahir)
+
+Organizar tu espacio de trabajo de forma clara es tan importante como diseñar el experimento. Una buena estructura y documentación te evitarán confusiones (¿dónde dejé mis mejores alineamientos? ¿qué parámetros usé?) y facilitarán la colaboración y la redacción de métodos.
+
+Piensa en tu “yo futuro” como un colaborador: cuanta más claridad dejes, mejor.
+
+------------------------------------------------------------------------
+
+### Ejercicio: crear tu estructura de carpetas
+
+1.  **Ve a tu carpeta de inicio**\
+    `cd ~`
+
+    `pwd` \# debe mostrar `/home/dcuser`
+
+    2.  **Crea los directorios**
+
+        ```         
+        mkdir workshop
+        mkdir workshop/docs
+        mkdir workshop/data
+        mkdir workshop/results
+        ```
+
+        **Verifica recursivamente**
+
+        ```         
+        $ ls -R workshop
+        # workshop/:
+        #   data  docs  results
+        #
+        # workshop/data/:
+        #
+        # workshop/docs/:
+        #
+        # workshop/results/:
+        ```
+
+        Con esta estructura tendrás un lugar claro para tu **documentación** (`docs`), tus **datos crudos** (`data`) y tus **resultados** (`results`). Tu “yo futuro” te lo agradecerá.
