@@ -1,0 +1,268 @@
+---
+title: "Untitled"
+author: "Yahir c"
+date: "2025-05-16"
+output: html_document
+---
+
+# **Trabajar con archivos y directorios**
+
+Realizamos un experimento de secuenciación y tenemos cuatro archivos de resultados, que se almacenan en nuestro directorio `untrimmed_fastq`.
+
+Navegue hasta su directorio `untrimmed_fastq`.
+
+``` bash
+$ cd ~/dc_workshop/data/untrimmed_fastq
+```
+
+``` bash
+$ cat JC1A_R2.fastq
+```
+
+`cat` como acabas de ver al ejecutar el comando, cuando el archivo es muy grande (como los que tenemos), puede resultar molesto. Siempre puedes usar Ctrl+C para detener el comando.
+
+El programa `less`es útil en este caso. `less`Abre el archivo como de solo lectura y permite navegar por él.
+
+```         
+$ less JC1A_R2.fastq
+```
+
+Algunos comandos de navegación en `less` :
+
+![Cuando estés dentro de `less` y quieras buscar un texto, haz esto:](images/clipboard-2423031106.png)
+
+-   **Buscar hacia adelante**
+
+1.- Pulsa `/` (la barra)
+
+2.- Escribe la palabra o frase que buscas
+
+3.- Pulsa `Enter`
+
+`less` saltará a la **primera** vez que aparezca después de donde estás.
+
+-   **Repetir la misma búsqueda hacia adelante**
+
+1.- Sin escribir nada nuevo,
+
+2.- pulsa `/` `Enter`
+
+`less` saltará a la **siguiente** aparición en el archivo.
+
+-   **Buscar hacia atrás**
+
+1.- Pulsa `?` (el signo de interrogación) 2.- Escribe la palabra que buscas
+
+3.- Pulsa `Enter`
+
+`less` saltará a la **última** aparición antes de donde estás.
+
+### Ver solo el principio o el final
+
+A veces solo quieres echar un vistazo rápido al inicio o al cierre de un archivo muy largo. Para ello:
+
+-   **Primeras líneas** con `head`\
+    ``` head``archivo.txt ``` muestra las primeras 10 líneas por defecto `head -n 5 archivo.txt`muestra solo las primeras 5 líneas
+
+-   **Ultimas líneas** con `tail`
+
+    `tail archivo.txt` muestra las últimas 10 líneas por defecto `tail -n 5 archivo.txt`muestra solo las últimas 5 líneas
+
+## 🛠️ **Crear, mover, copiar y eliminar**
+
+| Comando            | Qué hace                                   |
+|--------------------|--------------------------------------------|
+| `cp origen dest`   | Copia un archivo                           |
+| `mkdir nombre`     | Crea un directorio                         |
+| `mv origen dest`   | Mueve o renombra (si `dest` es un archivo) |
+| `rm archivo`       | Elimina un archivo                         |
+| `rm -r directorio` | Elimina un directorio y su contenido       |
+
+Cuando trabajas con muchos archivos (o en un servidor remoto), usar la línea de comandos es más rápido y seguro.
+
+------------------------------------------------------------------------
+
+### Copiar archivos (`cp`)
+
+``` bash
+cd ~/dc_workshop/data/untrimmed_fastq
+cp JC1A_R2.fastq JC1A_R2-copy.fastq
+```
+
+### Crear directorios (`mkdir`)
+
+``` bash
+mkdir backup
+```
+
+### Mover y renombrar (`mv`)
+
+**Mover a carpeta:**
+
+``` bash
+mv JC1A_R2-copy.fastq backup/
+ls backup
+# JC1A_R2-copy.fastq
+```
+
+**Renombrar:**
+
+```         
+cd backup
+mv JC1A_R2-copy.fastq JC1A_R2-backup.fastq
+ls
+# JC1A_R2-backup.fastq
+```
+
+### Eliminar archivos y directorios (`rm`)
+
+**Eliminar archivo:**
+
+> ``` bash
+> rm archivo.txt
+> ```
+
+**Eliminar carpeta recursivamente:**
+
+``` bash
+rm -r backup
+```
+
+# Redirección de Entrada y Salida
+
+## Objetivos
+
+-   Buscar patrones en archivos (`grep`).\
+
+-   Guardar o añadir resultados a archivos (`>`, `>>`).\
+
+-   Contar líneas (`wc -l`).\
+
+-   Encadenar comandos con tuberías (`|`).\
+
+-   Automatizar con bucles `for`.
+
+    ### Buscar patrones en archivos (`grep`).
+
+`grep`es una utilidad de línea de comandos para buscar en archivos de texto plano líneas que coincidan con un conjunto específico de caracteres (a veces llamado cadena) o un patrón particular (que se puede especificar mediante expresiones regulares).
+
+En esta lección, buscaremos manualmente cadenas de `N`"s" en los resultados de nuestra secuencia para ilustrar algunos principios de la búsqueda en archivos. Este tipo de búsqueda puede ser muy útil para evaluar la calidad de los resultados de la secuenciación; sin embargo, en su investigación, probablemente utilizará una herramienta bioinformática con un programa integrado para filtrar lecturas de baja calidad. Aprenderá a usar esta herramienta en [una lección posterior](https://carpentries-lab.github.io/metagenomics-analysis/02-assessing-read-quality/index.html) .
+
+Busquemos la cadena NNNNNNNNNN en el archivo JC1A_R2.fastq.
+
+```         
+$ grep NNNNNNNNNN JC1A_R2.fastq
+```
+
+Este comando imprime en la terminal **todas** las líneas del archivo `JC1A_R2.fastq` que contienen al menos 10 `N` consecutivas, sin importar lo largo o corto que sea el archivo.
+
+Quizá nos interese no solo la propia secuencia que contiene estas `N`, sino también el **identificador** de la lectura (la línea que precede inmediatamente a la secuencia en un archivo FASTQ) y sus **puntuaciones de calidad** (las dos líneas que siguen a la secuencia). Para obtener toda esta información de cada lectura, podemos usar:
+
+-   `-B1` ⇒ devuelve 1 línea **antes** de cada coincidencia (el identificador que empieza con `@`)
+
+-   `-A2` ⇒ devuelve 2 líneas **después** de cada coincidencia (la línea `+` y la cadena de calidad)
+
+> ``` bash
+> $ grep -B1 -A2 NNNNNNNNNN JC1A_R2.fastq
+> ```
+
+Uno de los bloques de líneas que devuelve este comando es:
+
+```{=html}
+@MISEQ-LAB244-W7:91:000000000-A5C7L:1:2111:5300:24013 2:N:0:TCGAAG
+NNNNNNNNNNNCNANNANNNNNCGCCGGTGTTCTNCTGGGGNACGGANACCGAGTAGATCGGAACAGCGTCGTGGAGNGAAAGAGTGTAGATCCCGGTGGGCGGCGTATCATTAAAAAAAAAACCTGCTGGTCCTTGTCTC
++
+AAA11BB3333BGG1GGEC1E?0E0B0BFDGFHD2FBH110A1BEE?A/BAFBDGH///>FEGGG><@/#//?#?/#//????########################################################################################################################################################################
+```
+
+De esta forma obtenemos, para cada lectura que contiene las 10 `N` consecutivas, su **encabezado**, la **secuencia** completa y la **línea de calidad**, todo en un solo paso.
+
+## Redirigir salida a un archivo
+
+Cuando usamos `grep` para extraer lecturas de un FASTQ con un patrón (p. ej. `NNNNNNNNNN`), toda la salida se imprime en pantalla. Para procesar esos resultados más adelante, es mejor **redirigirlos a un archivo** en lugar de dejarlos volar por la terminal.
+
+------------------------------------------------------------------------
+
+### 1️⃣ Redirección con `>`
+
+-   El operador `>` toma la salida estándar de un comando y la escribe en un fichero (sobrescribiéndolo si ya existe).\
+
+-   **Ejemplo:** copiar todas las lecturas (identificador, secuencia y calidad) con 10 `N`s consecutivas a `bad_reads.txt`:
+
+    ``` bash
+    $ grep -B1 -A2 'NNNNNNNNNN' JC1A_R2.fastq > bad_reads.txt
+    $ ls -l bad_reads.txt
+    ```
+
+    ### Contar líneas, palabras y caracteres con `wc`
+
+`wc` por sí solo muestra tres valores:
+
+1.  Número de líneas
+
+2.  Número de palabras
+
+3.  Número de caracteres
+
+    ``` bash
+    $ wc bad_reads.txt
+    # Por ejemplo: " 402  489 50076 bad_reads.txt"
+    ```
+
+Si solo quieres el número de líneas (por ejemplo, para saber cuántas lecturas capturaste), usa `-l`:
+
+``` bash
+$ wc -l bad_reads.txt
+# Por ejemplo: "402 bad_reads.txt"
+```
+
+## Evitar sobrescritura y usar tuberías
+
+### 1️⃣ Overwrite (`>`) vs Append (`>>`)
+
+**`>`** crea o sobrescribe el archivo de salida.\
+Solo contiene resultados de JC1A_R1.fastq:
+
+``` bash
+$ grep -B1 -A2 'NNNNNNNNNN' JC1A_R1.fastq > bad_reads.txt 
+```
+
+``` bash
+$ wc -l bad_reads.txt # → 24 líneas
+```
+
+**`>>`** añade al final del archivo sin borrar lo que ya había.
+
+Copiamos primero de `JC1A_R2.fastq`
+
+``` bash
+$ grep -B1 -A2 'NNNNNNNNNN' JC1A_R2.fastq > bad_reads.txt  
+$ wc -l bad_reads.txt  # → 402
+```
+
+Ahora añadimos de `JC1A_R1.fastq` sin borrar:
+
+``` bash
+$ grep -B1 -A2 'NNNNNNNNNN' JC1A_R1.fastq >> bad_reads.txt  
+$ wc -l bad_reads.txt  # → 426 (402 + 24)
+```
+
+### Sin archivos intermedios: tuberías (`|`)
+
+Si solo te interesa **ver** la salida o contar coincidencias, no necesitas crear `bad_reads.txt`. Usar **pipes**:
+
+**Ver con paginación**:
+
+```         
+$ grep -B1 -A2 'NNNNNNNNNN' JC1A_R2.fastq | less
+```
+
+Navega con flechas o `Space`/`b`, sale con `q`.
+
+**Contar directamente**:
+
+```         
+$ grep -B1 -A2 'NNNNNNNNNN' *.fastq | wc -l
+```
+
+Esto te da el total de líneas encontradas (divide entre 4 si quieres el número de lecturas).

@@ -40,7 +40,7 @@ Combinacion de grep -b1 -a2 flags, redireccion
 
 `grep`es una utilidad de línea de comandos para buscar en archivos de texto plano líneas que coincidan con un conjunto específico de caracteres (a veces llamado cadena) o un patrón particular (que se puede especificar mediante expresiones regulares).
 
-En esta lección, buscaremos manualmente cadenas de `N`"s" en los resultados de nuestra secuencia para ilustrar algunos principios de la búsqueda en archivos. Este tipo de búsqueda puede ser muy útil para evaluar la calidad de los resultados de la secuenciación; sin embargo, en su investigación, probablemente utilizará una herramienta bioinformática con un programa integrado para filtrar lecturas de baja calidad. Aprenderá a usar esta herramienta en [una lección posterior](https://carpentries-lab.github.io/metagenomics-analysis/02-assessing-read-quality/index.html) .
+En esta lección, buscaremos manualmente cadenas de `N` en los resultados de nuestra secuencia para ilustrar algunos principios de la búsqueda en archivos. Este tipo de búsqueda puede ser muy útil para evaluar la calidad de los resultados de la secuenciación; sin embargo, en su investigación, probablemente utilizará una herramienta bioinformática con un programa integrado para filtrar lecturas de baja calidad. Aprenderá a usar esta herramienta en [una lección posterior](https://carpentries-lab.github.io/metagenomics-analysis/02-assessing-read-quality/index.html) .
 
 Busquemos la cadena NNNNNNNNNN en el archivo JC1A_R2.fastq.
 
@@ -81,11 +81,11 @@ Cuando usamos `grep` para extraer lecturas de un FASTQ con un patrón (p. ej. `N
 
 -   El operador `>` toma la salida estándar de un comando y la escribe en un fichero (sobrescribiéndolo si ya existe).
 
--   **Ejemplo:** copiar todas las lecturas (identificador, secuencia y calidad) con 10 `N`s consecutivas a `bad_reads.txt`:
+-   **Ejemplo:** copiar todas las lecturas (identificador, secuencia y calidad) con 10 `N` consecutivas a `bad_reads.txt`:
 
     ``` bash
     $ grep -B1 -A2 'NNNNNNNNNN' JC1A_R2.fastq > bad_reads.txt
-    $ ls -l bad_reads.txt
+    $ ls  bad_reads.txt
     ```
 
     ### Contar líneas, palabras y caracteres con `wc`
@@ -126,13 +126,6 @@ $ wc -l bad_reads.txt # → 24 líneas
 ```
 
 **`>>`** añade al final del archivo sin borrar lo que ya había.
-
-Copiamos primero de `JC1A_R2.fastq`
-
-``` bash
-$ grep -B1 -A2 'NNNNNNNNNN' JC1A_R2.fastq > bad_reads.txt  
-$ wc -l bad_reads.txt  # → 402
-```
 
 Ahora añadimos de `JC1A_R1.fastq` sin borrar:
 
@@ -180,8 +173,7 @@ done
 
 Guardemos las dos primeras líneas de cada archivo FASTQ en `seq_info.txt`:
 
-nos dirigimos a esta dirección
-`$ cd ~/dc_workshop/data/untrimmed_fastq`
+nos dirigimos a esta dirección `$ cd ~/dc_workshop/data/untrimmed_fastq`
 
 ``` bash
 
@@ -189,7 +181,10 @@ $ for filename in *.fastq
 > do
 > head -n 2 ${filename} >> seq_info.txt
 > done
+```
 
+``` bash
+for filename in *.fastq; do head -n 2 "${filename}" >> seq_info.txt; done
 ```
 
 Para ver el contenido del pequeño archivo que acabamos de crear es útil utilizar el `cat`comando.
@@ -277,6 +272,10 @@ for filename in *.fastq; do
   echo "$name"
 done
 ```
+
+> ``` bash
+> for filename in *.fastq; do name=$(basename "$filename" .fastq); echo "$name"; done
+> ```
 
 `for filename in *.fastq; do`
 
