@@ -34,12 +34,29 @@ Copiar ejercicio 1, Make backup folder with write-protected permissions
 
 # **Trabajar con archivos y directorios (yahir)**
 
+## Detalles sobre el formato FASTQ
+
+Un archivo FASTQ almacena lecturas de secuenciación junto con sus puntuaciones de calidad. Cada lectura ocupa **4 líneas** con esta estructura:
+
+| Línea | Contenido                                                       |
+|-------|-----------------------------------------------------------------|
+| 1     | Comienza con `@`, seguida del identificador de la lectura       |
+| 2     | Secuencia de ADN (A, T, G, C, o N si hay ambigüedad)            |
+| 3     | Comienza con `+` (a veces repite el identificador)              |
+| 4     | Cadena de caracteres que representa la **calidad de cada base** |
+
 Realizamos un experimento de secuenciación y tenemos cuatro archivos de resultados, que se almacenan en nuestro directorio `untrimmed_fastq`.
 
 Navegue hasta su directorio `untrimmed_fastq`.
 
 ``` bash
 $ cd ~/dc_workshop/data/untrimmed_fastq
+```
+
+si tus archivos están comprimidos con extensión `.gz` (como los archivos `.fastq.gz`), puedes descomprimirlos usando el comando:
+
+``` bash
+$ gunzip *.gz
 ```
 
 ``` bash
