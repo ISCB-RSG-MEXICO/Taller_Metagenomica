@@ -31,7 +31,7 @@ Repaso de comandos
 ## **Comandos básicos**
 
 | Comandos | Información | Argumentos |
-|------------------------|------------------------|------------------------|
+|----|----|----|
 | `ssh` | Conexión a servidores | ssh usuario\@servidor.mx |
 | `ls` | Observar el contenido de los archivos en una carpeta | ls directorio/ |
 | `cd` | Moverse de directorios | cd /home/usuario/data/ |
@@ -104,11 +104,11 @@ Si estás en `/home/dcuser` y quieres entrar a un subdirectorio:
 
 ------------------------------------------------------------------------
 
-### 📌 4  Subir un nivel en la estructura de carpetas:
+### 📌 4 Subir un nivel en la estructura de carpetas:
 
 `cd ..`
 
-### 📌 5  Volver al directorio principal:
+### 📌 5 Volver al directorio principal:
 
 `cd ~`
 
