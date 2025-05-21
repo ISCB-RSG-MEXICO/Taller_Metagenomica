@@ -77,7 +77,7 @@ Una característica realmente poderosa de la línea de comandos es la posibilida
 Algo que solemos hacer con los resultados de secuenciación es extraer las lecturas incorrectas y guardarlas en un archivo para ver si podemos averiguar qué sucede. Buscaremos lecturas con secuencias largas de N como hicimos antes, pero ahora escribiremos un script para ejecutarlo cada vez que obtengamos nuevas secuencias, en lugar de escribir el código manualmente cada vez.
 
 ``` bash
-grep -B1 -A2 NNNNNNNNNN *.fastq > scripted_bad_reads.txt
+$ grep -B1 -A2 NNNNNNNNNN *.fastq > scripted_bad_reads.txt
 ```
 
 puedes guardar esa línea en un script (`bad-reads-script.sh`) y luego ejecutarlo siempre con:
@@ -224,24 +224,32 @@ Seguiremos los siguientes cinco pasos para descargar archivos con la interfaz RS
 3.  Within the “More” menu, the “export” button should become available.\
     [![Export button highlighted.](https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-05.png){alt="Export button highlighted."}](https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-05.png)
 
-4.  An emergent window should be displayed on your screen where you can select the “Download” option.\
+4.  Una ventana emergente debería aparecer en tu pantalla donde podrás seleccionar la opción “Descargar”. \
     [![emergent window where you write the name of the file and click download.](https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-06.png){alt="emergent window where you write the name of the file and click download."}](https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-06.png)
 
-5.  Your file should now be downloaded to your local computer.
+5.  Tu archivo ahora debería estar descargado en tu computadora local.
 
-### **Upload files to AWS in RStudio**
+### **Subir archivos a AWS desde RStudio**
 
-Now that we learned how to download files from the RStudio interface, we will learn the opposite action, uploading files from your local computer to your remote AWS machine.
+Ahora que aprendimos cómo descargar archivos desde la interfaz de RStudio, aprenderemos la acción opuesta: **subir archivos desde tu computadora local a tu máquina remota en AWS**.
 
-1.  Choose the option ‘Upload’ in your RStudio interface.[![The Upload button is highlighted.](https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-08.png){alt="The Upload button is highlighted."}](https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-08.png)
+1.  Selecciona la opción **"Upload" (Subir)** en la interfaz de RStudio.
 
-2.  After an emergent window is displayed on your screen, select “Select file”.[![Select filed button highlighted in the emergent window](https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-09.png){alt="Select filed button highlighted in the emergent window"}](https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-09.png)
+<!-- -->
 
-3.  A new screen is displayed on your computer where you should choose the file to upload. Choose the file and click “open”.[![file to upload and open button are highlighted in the window of the local filesystem](https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-10.png){alt="file to upload and open button are highlighted in the window of the local filesystem"}](https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-10.png)
+1.  [![The Upload button is highlighted.](https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-08.png){alt="The Upload button is highlighted."}](https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-08.png)
 
-4.  Finally, if the file is correct, click “ok,” and the uploading will start.
+2.  Después de que aparezca una ventana emergente en tu pantalla, selecciona la opción **“Select file” (Seleccionar archivo)**.
 
-5.  Now, you can view a new file in your RStudio interface.[![The uploaded file is shown in the R studio interface](https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-12.png){alt="The uploaded file is shown in the R studio interface"}](https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-12.png)
+    ![Select filed button highlighted in the emergent window](https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-09.png){alt="Select filed button highlighted in the emergent window" width="1199"}
+
+3.  Aparecerá una nueva ventana en tu computadora donde deberás elegir el archivo que deseas subir. Selecciona el archivo y haz clic en **“Abrir”**.
+
+    [![file to upload and open button are highlighted in the window of the local filesystem](https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-10.png){alt="file to upload and open button are highlighted in the window of the local filesystem"}](https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-10.png)
+
+4.  Finalmente, si el archivo es correcto, haz clic en **“Aceptar”** y comenzará la carga.
+
+    Ahora podrás ver el nuevo archivo en tu interfaz de RStudio.[![The uploaded file is shown in the R studio interface](https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-12.png){alt="The uploaded file is shown in the R studio interface"}](https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-12.png)
 
 ### 
 
