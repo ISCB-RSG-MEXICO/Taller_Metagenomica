@@ -1,38 +1,4 @@
-# Operaciones en archivos y carpetas
-
-**Iremos haciendo las operaciones en los archivos fastq**
-
-uso de wildcards en combinación con comandos básicos.
-
-ejemplo:
-
-```         
-cd ~/dc_workshop/data/untrimmed_fastq
-```
-
-```         
- $ ls *.fastq
-```
-
-out JC1A_R1.fastq JP4D_R1.fastq
-
-Otros shortcuts como crtl + D, history o clear (ctrl + L)
-
-En history !260 para repetir la línea 260 (Para comandos muy elaborados, tener un ejemplo antes de ver este short cut)
-
-lectura de archivos cat, less (funciones de las teclas espacio, b, g, G y q), manual, checar sus diferencias.
-
-HEAD vs TAIL. (comienza uso de las flags, por ejemplo -n 10 que lee 10 líneas en el archivo)
-
-NO PONER Detalles del formato FASTQ, EN ULTIMA LECCION SE VE A PROFUNDIDAD
-
-copiar archivos, crear directorios, mover y renombrar archivos. Enfasis en tener cuidado con sobreescribir archivos.
-
-BORRAR
-
-Copiar ejercicio 1, Make backup folder with write-protected permissions
-
-# **Trabajar con archivos y directorios (yahir)**
+# **Trabajar con archivos y directorios** 
 
 ## Detalles sobre el formato FASTQ
 

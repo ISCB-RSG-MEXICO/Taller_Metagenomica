@@ -1,28 +1,4 @@
-# Redirección
-
-buscando en archivos (uso de less y grep).
-
-Abreviaciones de los nucleótidos y N.
-
-```         
-cd ~/dc_workshop/data/untrimmed_fastq
-```
-
-Determinación de la calidad. Con grep? NNNNNNNNNNNN en JC1A_R2.fastq
-
-flags del -B1 y -A2
-
-Copiar ejercicio 1: Using grep (10 minutos) en
-
-Redirección de datos con "\>" bad_reads.txt
-
-wc bad_reads.txt
-
-Ejercicio 2: uso de wc
-
-Combinacion de grep -b1 -a2 flags, redireccion
-
-# Redirección de Entrada y Salida (yahir)
+# Redirección de Entrada y Salida
 
 ## Objetivos
 
@@ -112,7 +88,7 @@ $ wc -l bad_reads.txt
 
 ## Evitar sobrescritura y usar tuberías
 
-### 1️⃣ Overwrite (`>`) vs Append (`>>`)
+### 1️⃣ Sobreescribir (`>`) vs Redirigir (`>>`)
 
 **`>`** crea o sobrescribe el archivo de salida.\
 Solo contiene resultados de JC1A_R1.fastq:
@@ -261,42 +237,3 @@ Si el sufijo no coincide (p. ej. `.fasta`), devuelve el nombre completo:
 ``` bash
 $ basename JC1A_R2.fastq .fasta # → JC1A_R2.fastq
 ```
-
-**Integración en un bucle `for`**\
-
-Supongamos que estamos en `~/dc_workshop/data/untrimmed_fastq` y queremos procesar todos los `.fastq`, pero usar como nombre base solo el prefijo (sin `.fastq`):
-
-``` bash
-for filename in *.fastq; do
-  name=$(basename "$filename" .fastq)
-  echo "$name"
-done
-```
-
-> ``` bash
-> for filename in *.fastq; do name=$(basename "$filename" .fastq); echo "$name"; done
-> ```
-
-`for filename in *.fastq; do`
-
--   Empieza el bucle `for`.
-
--   La variable `filename` tomará, sucesivamente, cada nombre que matchee con `*.fastq` (por ejemplo `JC1A_R1.fastq`, `JC1A_R2.fastq`, …).
-
-`name=$(basename "$filename" .fastq)`
-
--   Ejecuta `basename` sobre el valor de `filename`.
-
-`basename "$filename" .fastq` devuelve el nombre del archivo **sin** la parte `.fastq`.
-
--   Ese resultado se asigna a la variable `name`.
-
-`echo "$name"`
-
--   Imprime en pantalla el contenido de `name` (p. ej. `JC1A_R1`, `JC1A_R2`, …).
-
-`done`
-
--   Marca el fin del bloque de comandos del `for`.
-
--   Vuelve al `for` para la siguiente iteración, o termina si ya no quedan archivos.

@@ -2,53 +2,6 @@
 
 Un Shell es un programa de computador que presenta una interfaz en línea de comando que permite ejecutar funciones en el computador utilizando comandos especiales en vez de tener un control a través de una interfaz gráfica que combina el uso de un ratón o *mouse* y un teclado de computador.
 
-INSERTAR FOTO
-
-COMENZAR CON CONEXIÓN AL SERVIDOR (10 minutos)
-
-Path relativo y absoluto
-
-Algunos comandos cd, mkdir, pwd
-
-ejercicio (5 minutos) en equipos de encontrar el archivo.txt y poner el path absoluto de la ubicación del archivo.
-
-Repaso de comandos
-
-## Preparación del directorio de trabajo
-
--   Ruta / Camino absoluto
-
-    ``` {.bash code-copy="true" eval="false"}
-    cd /home/usuario/data/
-    ```
-
--   Ruta / Camino relativo
-
-    ``` {.bash code-copy="true" eval="false"}
-    cd ../ # Ir a la carpeta anterior
-    ```
-
-## **Comandos básicos**
-
-| Comandos | Información | Argumentos |
-|------------------------|------------------------|------------------------|
-| `ssh` | Conexión a servidores | ssh usuario\@servidor.mx |
-| `ls` | Observar el contenido de los archivos en una carpeta | ls directorio/ |
-| `cd` | Moverse de directorios | cd /home/usuario/data/ |
-| `mkdir` | Crear un nuevo directorio | mkdir data |
-| `rmdir` | Eliminar el directorio | rmkdir -rf data |
-| `nano`/`vim` | Editores de texto plano | nano Archivo.txt / vim Archivo.txt |
-| `cp` | Copiar archivos | cp Archivo1.txt /home/usuario/data/ |
-| `mv` | Mover un archivo o carpeta |  |
-| `echo` | Para llamar y/o declarar variables | echo "Hello world" |
-| `chmod` | Cambiar permisos del usuario | chmod 777 data/ |
-| `rsync` | Descargar o subir archivos |  |
-| `scp` | Descargar o subir archivos |  |
-
-------------------------------------------------------------------------
-
-# Servidor Bettertab en RStudio
-
 El **servidor Betterlab** es una instancia de **RStudio Server** montada en la nube para el taller.
 
 **¿Para qué sirve?** Te permite usar RStudio desde el navegador, conectándote a un entorno Linux ya configurado con todas las herramientas y datos necesarios.
@@ -181,7 +134,7 @@ Uso:
 
     2.  Cierra la pestaña del navegador para garantizar que tu sesión quede cerrada.
 
-# Introducción al Shell (yahir versión)
+# Introducción al Shell
 
 ### 🔹 ¿Qué es un Shell?
 
