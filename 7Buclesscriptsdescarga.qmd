@@ -1,6 +1,6 @@
 # Escritura de scripts y trabajo con datos
 
-# Escribir y editar archivos con Nano
+# Escribir y editar archivos con Nan
 
 A veces necesitamos crear o modificar archivos de texto directamente en la terminal. Para ello usaremos **Nano**, un editor de texto sencillo.
 
