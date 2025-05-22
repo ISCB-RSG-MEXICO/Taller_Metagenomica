@@ -1,4 +1,4 @@
-# **Trabajar con archivos y directorios** 
+# Trabajar con archivos y directorios
 
 ## Detalles sobre el formato FASTQ
 

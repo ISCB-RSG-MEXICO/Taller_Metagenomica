@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7&nbsp; Bucles – Workshop</title>
+<title>7&nbsp; Escritura de scripts y trabajo con datos – Workshop</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -118,7 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./4IntroduccionnavigationShell.html"><strong>Sección 2</strong> - Introducción a línea de comandos</a></li><li class="breadcrumb-item"><a href="./7Buclesscriptsdescarga.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bucles</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./4IntroduccionnavigationShell.html"><strong>Sección 2</strong> - Introducción a línea de comandos</a></li><li class="breadcrumb-item"><a href="./7Buclesscriptsdescarga.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><strong>Escritura de scripts y trabajo con datos</strong></span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -223,19 +223,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./5Operacionesyexploraciondefastq.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Operaciones en archivos y carpetas</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>Trabajar con archivos y directorios</strong></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./6Redireccion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Redirección</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Redirección de Entrada y Salida</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./7Buclesscriptsdescarga.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bucles</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><strong>Escritura de scripts y trabajo con datos</strong></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -356,34 +356,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#nano-and-vim-for-writting-loops" id="toc-nano-and-vim-for-writting-loops" class="nav-link active" data-scroll-target="#nano-and-vim-for-writting-loops"><span class="header-section-number">8</span> <strong>NANO and VIM for writting loops</strong></a></li>
-  <li><a href="#writing-loops" id="toc-writing-loops" class="nav-link" data-scroll-target="#writing-loops"><span class="header-section-number">9</span> Writing loops</a>
+  <li><a href="#escribir-y-editar-archivos-con-nano" id="toc-escribir-y-editar-archivos-con-nano" class="nav-link active" data-scroll-target="#escribir-y-editar-archivos-con-nano"><span class="header-section-number">8</span> Escribir y editar archivos con Nano</a>
   <ul>
-  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">9.1</span> Referencias</a></li>
-  </ul></li>
-  <li><a href="#escritura-de-scripts-y-trabajo-con-datos-yahir" id="toc-escritura-de-scripts-y-trabajo-con-datos-yahir" class="nav-link" data-scroll-target="#escritura-de-scripts-y-trabajo-con-datos-yahir"><span class="header-section-number">10</span> <strong>Escritura de scripts y trabajo con datos (yahir)</strong></a></li>
-  <li><a href="#escribir-y-editar-archivos-con-nano" id="toc-escribir-y-editar-archivos-con-nano" class="nav-link" data-scroll-target="#escribir-y-editar-archivos-con-nano"><span class="header-section-number">11</span> Escribir y editar archivos con Nano</a>
-  <ul>
-  <li><a href="#crear-o-abrir-un-archivo" id="toc-crear-o-abrir-un-archivo" class="nav-link" data-scroll-target="#crear-o-abrir-un-archivo"><span class="header-section-number">11.1</span> 1️⃣ Crear o abrir un archivo</a></li>
-  <li><a href="#escritura-de-scripts" id="toc-escritura-de-scripts" class="nav-link" data-scroll-target="#escritura-de-scripts"><span class="header-section-number">11.2</span> <strong>Escritura de</strong> scripts</a></li>
-  <li><a href="#convertir-el-script-en-un-programa-y-comprimir-datos" id="toc-convertir-el-script-en-un-programa-y-comprimir-datos" class="nav-link" data-scroll-target="#convertir-el-script-en-un-programa-y-comprimir-datos"><span class="header-section-number">11.3</span> Convertir el script en un programa y comprimir datos</a>
+  <li><a href="#crear-o-abrir-un-archivo" id="toc-crear-o-abrir-un-archivo" class="nav-link" data-scroll-target="#crear-o-abrir-un-archivo"><span class="header-section-number">8.1</span> 1️⃣ Crear o abrir un archivo</a></li>
+  <li><a href="#escritura-de-scripts" id="toc-escritura-de-scripts" class="nav-link" data-scroll-target="#escritura-de-scripts"><span class="header-section-number">8.2</span> <strong>Escritura de</strong> scripts</a></li>
+  <li><a href="#convertir-el-script-en-un-programa-y-comprimir-datos" id="toc-convertir-el-script-en-un-programa-y-comprimir-datos" class="nav-link" data-scroll-target="#convertir-el-script-en-un-programa-y-comprimir-datos"><span class="header-section-number">8.3</span> Convertir el script en un programa y comprimir datos</a>
   <ul class="collapse">
-  <li><a href="#ver-permisos-actuales" id="toc-ver-permisos-actuales" class="nav-link" data-scroll-target="#ver-permisos-actuales"><span class="header-section-number">11.3.1</span> 1. Ver permisos actuales</a></li>
-  <li><a href="#añadir-permiso-de-ejecución" id="toc-añadir-permiso-de-ejecución" class="nav-link" data-scroll-target="#añadir-permiso-de-ejecución"><span class="header-section-number">11.3.2</span> 2. Añadir permiso de ejecución</a></li>
-  <li><a href="#ejecutar-el-script-como-programa" id="toc-ejecutar-el-script-como-programa" class="nav-link" data-scroll-target="#ejecutar-el-script-como-programa"><span class="header-section-number">11.3.3</span> 3. Ejecutar el script como programa</a></li>
-  <li><a href="#comprimir-los-archivos-fastq" id="toc-comprimir-los-archivos-fastq" class="nav-link" data-scroll-target="#comprimir-los-archivos-fastq"><span class="header-section-number">11.3.4</span> 4. Comprimir los archivos FASTQ</a></li>
-  <li><a href="#tienes-wget-o-curl" id="toc-tienes-wget-o-curl" class="nav-link" data-scroll-target="#tienes-wget-o-curl"><span class="header-section-number">11.4.1</span> 1️⃣ ¿Tienes <code>wget</code> o <code>curl</code>?</a></li>
-  <li><a href="#descargar-con-wget" id="toc-descargar-con-wget" class="nav-link" data-scroll-target="#descargar-con-wget"><span class="header-section-number">11.4.2</span> 2️⃣ Descargar con <code>wget</code></a></li>
-  <li><a href="#descargar-con-curl" id="toc-descargar-con-curl" class="nav-link" data-scroll-target="#descargar-con-curl"><span class="header-section-number">11.4.3</span> 3️⃣ Descargar con <code>curl</code></a></li>
-  <li><a href="#mover-archivos-entre-su-computadora-portátil-y-su-instancia" id="toc-mover-archivos-entre-su-computadora-portátil-y-su-instancia" class="nav-link" data-scroll-target="#mover-archivos-entre-su-computadora-portátil-y-su-instancia"><span class="header-section-number">11.4.4</span> <strong>Mover archivos entre su computadora portátil y su instancia</strong></a></li>
-  <li><a href="#descargar-archivos-en-rstudio" id="toc-descargar-archivos-en-rstudio" class="nav-link" data-scroll-target="#descargar-archivos-en-rstudio"><span class="header-section-number">11.4.6</span> <strong>Descargar archivos en RStudio</strong></a></li>
-  <li><a href="#upload-files-to-aws-in-rstudio" id="toc-upload-files-to-aws-in-rstudio" class="nav-link" data-scroll-target="#upload-files-to-aws-in-rstudio"><span class="header-section-number">11.4.7</span> <strong>Upload files to AWS in RStudio</strong></a></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="header-section-number">11.4.8</span> </a></li>
-  </ul></li>
-  <li><a href="#transferir-archivos-entre-tu-máquina-local-y-la-instancia-remota-con-scp" id="toc-transferir-archivos-entre-tu-máquina-local-y-la-instancia-remota-con-scp" class="nav-link" data-scroll-target="#transferir-archivos-entre-tu-máquina-local-y-la-instancia-remota-con-scp"><span class="header-section-number">11.5</span> Transferir archivos entre tu máquina local y la instancia remota con <code>scp</code></a>
-  <ul class="collapse">
-  <li><a href="#sintaxis-básica" id="toc-sintaxis-básica" class="nav-link" data-scroll-target="#sintaxis-básica"><span class="header-section-number">11.5.1</span> Sintaxis básica</a></li>
-  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1"><span class="header-section-number">11.5.2</span> </a></li>
+  <li><a href="#ver-permisos-actuales" id="toc-ver-permisos-actuales" class="nav-link" data-scroll-target="#ver-permisos-actuales"><span class="header-section-number">8.3.1</span> 1. Ver permisos actuales</a></li>
+  <li><a href="#añadir-permiso-de-ejecución" id="toc-añadir-permiso-de-ejecución" class="nav-link" data-scroll-target="#añadir-permiso-de-ejecución"><span class="header-section-number">8.3.2</span> 2. Añadir permiso de ejecución</a></li>
+  <li><a href="#ejecutar-el-script-como-programa" id="toc-ejecutar-el-script-como-programa" class="nav-link" data-scroll-target="#ejecutar-el-script-como-programa"><span class="header-section-number">8.3.3</span> 3. Ejecutar el script como programa</a></li>
+  <li><a href="#comprimir-los-archivos-fastq" id="toc-comprimir-los-archivos-fastq" class="nav-link" data-scroll-target="#comprimir-los-archivos-fastq"><span class="header-section-number">8.3.4</span> 4. Comprimir los archivos FASTQ</a></li>
+  <li><a href="#tienes-wget-o-curl" id="toc-tienes-wget-o-curl" class="nav-link" data-scroll-target="#tienes-wget-o-curl"><span class="header-section-number">8.4.1</span> 1️⃣ ¿Tienes <code>wget</code> o <code>curl</code>?</a></li>
+  <li><a href="#descargar-con-wget" id="toc-descargar-con-wget" class="nav-link" data-scroll-target="#descargar-con-wget"><span class="header-section-number">8.4.2</span> 2️⃣ Descargar con <code>wget</code></a></li>
+  <li><a href="#descargar-con-curl" id="toc-descargar-con-curl" class="nav-link" data-scroll-target="#descargar-con-curl"><span class="header-section-number">8.4.3</span> 3️⃣ Descargar con <code>curl</code></a></li>
+  <li><a href="#mover-archivos-entre-su-computadora-portátil-y-su-instancia" id="toc-mover-archivos-entre-su-computadora-portátil-y-su-instancia" class="nav-link" data-scroll-target="#mover-archivos-entre-su-computadora-portátil-y-su-instancia"><span class="header-section-number">8.4.4</span> <strong>Mover archivos entre su computadora portátil y su instancia</strong></a></li>
+  <li><a href="#descargar-archivos-en-rstudio" id="toc-descargar-archivos-en-rstudio" class="nav-link" data-scroll-target="#descargar-archivos-en-rstudio"><span class="header-section-number">8.4.6</span> <strong>Descargar archivos en RStudio</strong></a></li>
+  <li><a href="#subir-archivos-a-aws-desde-rstudio" id="toc-subir-archivos-a-aws-desde-rstudio" class="nav-link" data-scroll-target="#subir-archivos-a-aws-desde-rstudio"><span class="header-section-number">8.4.7</span> <strong>Subir archivos a AWS desde RStudio</strong></a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -392,9 +380,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./4IntroduccionnavigationShell.html"><strong>Sección 2</strong> - Introducción a línea de comandos</a></li><li class="breadcrumb-item"><a href="./7Buclesscriptsdescarga.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bucles</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./4IntroduccionnavigationShell.html"><strong>Sección 2</strong> - Introducción a línea de comandos</a></li><li class="breadcrumb-item"><a href="./7Buclesscriptsdescarga.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><strong>Escritura de scripts y trabajo con datos</strong></span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bucles</span></h1>
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><strong>Escritura de scripts y trabajo con datos</strong></span></h1>
 </div>
 
 
@@ -411,46 +399,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Introduccion a Bucles</p>
-<pre><code>$ for filename in *.fastq 
-&gt; do 
-&gt; head -n 2 ${filename} 
-&gt;&gt; seq_info.txt 
-&gt; done </code></pre>
-<pre><code>$ for filename in *.fastq ; do ; head -n 2 ${filename} &gt;&gt; seq_info.txt &gt; done </code></pre>
-<section id="nano-and-vim-for-writting-loops" class="level1" data-number="8">
-<h1 data-number="8"><span class="header-section-number">8</span> <strong>NANO and VIM for writting loops</strong></h1>
-<p>Introducción a Nano e introducción a VIM (meme fighting).</p>
-<p>Instrucciones básicas para ambos. copiar las de nano e incluir las vim.</p>
-<p>Ejercicio 1 editar con nano y editar con vim. (10 minutos) equipos de 5</p>
-</section>
-<section id="writing-loops" class="level1" data-number="9">
-<h1 data-number="9"><span class="header-section-number">9</span> Writing loops</h1>
-<pre><code>grep -B1 -A2 NNNNNNNNNN *.fastq &gt; scripted_bad_reads.txt</code></pre>
-<p>permisos chmod que significan</p>
-<p>correr script.</p>
-<p>Editar script con echo “El análisis ha terminado!”. Guardar y correr de nuevo el script.</p>
-<p>wget y curl</p>
-<p>Descarga a local desde R studio y y subida a R studio desde local. <strong>Figura.</strong></p>
-<p>Descarga o subida por scp. figura.</p>
-<p>EJERCICIO3: QUIZZ en etherpad.</p>
-<section id="referencias" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="referencias"><span class="header-section-number">9.1</span> Referencias</h2>
-<ul>
-<li>Haydee tutorial: <a href="https://haydeeperuyero.github.io/Computo_Cientifico/">Temas Selectos de Análisis Numérico y Computación Científica: Computo científico para el análisis de datos</a></li>
-<li>Alejandra Medina tutorial: <a href="https://comunidadbioinfo.github.io/cdsb2023/control-de-versiones-con-github-y-rstudio.html">Control de versiones con GitHub y RStudio</a></li>
-</ul>
-</section>
-</section>
-<section id="escritura-de-scripts-y-trabajo-con-datos-yahir" class="level1" data-number="10">
-<h1 data-number="10"><span class="header-section-number">10</span> <strong>Escritura de scripts y trabajo con datos (yahir)</strong></h1>
-</section>
-<section id="escribir-y-editar-archivos-con-nano" class="level1" data-number="11">
-<h1 data-number="11"><span class="header-section-number">11</span> Escribir y editar archivos con Nano</h1>
+<section id="escribir-y-editar-archivos-con-nano" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Escribir y editar archivos con Nano</h1>
 <p>A veces necesitamos crear o modificar archivos de texto directamente en la terminal. Para ello usaremos <strong>Nano</strong>, un editor de texto sencillo.</p>
 <hr>
-<section id="crear-o-abrir-un-archivo" class="level2" data-number="11.1">
-<h2 data-number="11.1" class="anchored" data-anchor-id="crear-o-abrir-un-archivo"><span class="header-section-number">11.1</span> 1️⃣ Crear o abrir un archivo</h2>
+<section id="crear-o-abrir-un-archivo" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="crear-o-abrir-un-archivo"><span class="header-section-number">8.1</span> 1️⃣ Crear o abrir un archivo</h2>
 <pre><code>$ cd ~/dc_workshop/data/untrimmed_fastq
 $ nano README.txt</code></pre>
 <p><img src="https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-01.png" class="img-fluid"></p>
@@ -460,17 +414,17 @@ $ nano README.txt</code></pre>
 <li><p>Para <strong>salir</strong> pulsa <code>Ctrl + X</code>.</p></li>
 </ul>
 </section>
-<section id="escritura-de-scripts" class="level2" data-number="11.2">
-<h2 data-number="11.2" class="anchored" data-anchor-id="escritura-de-scripts"><span class="header-section-number">11.2</span> <strong>Escritura de</strong> scripts</h2>
+<section id="escritura-de-scripts" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="escritura-de-scripts"><span class="header-section-number">8.2</span> <strong>Escritura de</strong> scripts</h2>
 <p>Una característica realmente poderosa de la línea de comandos es la posibilidad de escribir scripts. Los scripts permiten guardar comandos para ejecutarlos y también combinar varios comandos. Si bien escribir scripts puede requerir una inversión de tiempo adicional al principio, esto puede ahorrarle tiempo al ejecutarlos repetidamente. Los scripts también pueden abordar el desafío de la reproducibilidad: si necesita repetir el análisis, conserva un registro del historial de comandos dentro del script.</p>
 <p>Algo que solemos hacer con los resultados de secuenciación es extraer las lecturas incorrectas y guardarlas en un archivo para ver si podemos averiguar qué sucede. Buscaremos lecturas con secuencias largas de N como hicimos antes, pero ahora escribiremos un script para ejecutarlo cada vez que obtengamos nuevas secuencias, en lugar de escribir el código manualmente cada vez.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-B1</span> <span class="at">-A2</span> NNNNNNNNNN <span class="pp">*</span>.fastq <span class="op">&gt;</span> scripted_bad_reads.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> grep <span class="at">-B1</span> <span class="at">-A2</span> NNNNNNNNNN <span class="pp">*</span>.fastq <span class="op">&gt;</span> scripted_bad_reads.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>puedes guardar esa línea en un script (<code>bad-reads-script.sh</code>) y luego ejecutarlo siempre con:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> bash bad-reads-script.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> bash bad-reads-script.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>De ese modo sólo escribes una vez el comando y obtienes, en cada ejecución, un archivo <code>scripted_bad_reads.txt</code> con todas las lecturas problemáticas, sin tener que volver a escribirlo a mano.</p>
 </section>
-<section id="convertir-el-script-en-un-programa-y-comprimir-datos" class="level2" data-number="11.3">
-<h2 data-number="11.3" class="anchored" data-anchor-id="convertir-el-script-en-un-programa-y-comprimir-datos"><span class="header-section-number">11.3</span> Convertir el script en un programa y comprimir datos</h2>
+<section id="convertir-el-script-en-un-programa-y-comprimir-datos" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="convertir-el-script-en-un-programa-y-comprimir-datos"><span class="header-section-number">8.3</span> Convertir el script en un programa y comprimir datos</h2>
 <p>Hemos escrito un script (<code>bad-reads-script.sh</code>) que extrae las lecturas con diez <code>N</code> consecutivas de todos los archivos FASTQ. Cada vez que lo ejecutábamos con <code>bash bad-reads-script.sh</code>, funcionaba, pero aún teníamos que invocar explícitamente Bash.</p>
 <p>Para simplificarlo, vamos a:</p>
 <ol type="1">
@@ -479,66 +433,66 @@ $ nano README.txt</code></pre>
 <li><strong>Ejecutarlo directamente</strong></li>
 </ol>
 <hr>
-<section id="ver-permisos-actuales" class="level3" data-number="11.3.1">
-<h3 data-number="11.3.1" class="anchored" data-anchor-id="ver-permisos-actuales"><span class="header-section-number">11.3.1</span> 1. Ver permisos actuales</h3>
+<section id="ver-permisos-actuales" class="level3" data-number="8.3.1">
+<h3 data-number="8.3.1" class="anchored" data-anchor-id="ver-permisos-actuales"><span class="header-section-number">8.3.1</span> 1. Ver permisos actuales</h3>
 <p>Primero comprobamos los permisos del script:</p>
 <blockquote class="blockquote">
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a> <span class="ex">$</span> ls <span class="at">-l</span> bad-reads-script.sh <span class="co"># -rw-rw-r-- 1 dcuser dcuser 42 Oct 25 21:46 bad-reads-script.sh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a> <span class="ex">$</span> ls <span class="at">-l</span> bad-reads-script.sh <span class="co"># -rw-rw-r-- 1 dcuser dcuser 42 Oct 25 21:46 bad-reads-script.sh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </blockquote>
 <p>Aquí vemos <code>-rw-rw-r--</code>, lo que significa que <strong>podemos leer y escribir</strong> el archivo, pero <strong>no</strong> ejecutarlo.</p>
 </section>
-<section id="añadir-permiso-de-ejecución" class="level3" data-number="11.3.2">
-<h3 data-number="11.3.2" class="anchored" data-anchor-id="añadir-permiso-de-ejecución"><span class="header-section-number">11.3.2</span> 2. Añadir permiso de ejecución</h3>
+<section id="añadir-permiso-de-ejecución" class="level3" data-number="8.3.2">
+<h3 data-number="8.3.2" class="anchored" data-anchor-id="añadir-permiso-de-ejecución"><span class="header-section-number">8.3.2</span> 2. Añadir permiso de ejecución</h3>
 <p>Usamos <code>chmod +x</code> para que el sistema sepa que nuestro script es un programa:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> chmod +x bad-reads-script.sh</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls <span class="at">-l</span> bad-reads-script.sh</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># -rwxrwxr-x 1 dcuser dcuser   42 Oct 25 21:46 bad-reads-script.sh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> chmod +x bad-reads-script.sh</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls <span class="at">-l</span> bad-reads-script.sh</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># -rwxrwxr-x 1 dcuser dcuser   42 Oct 25 21:46 bad-reads-script.sh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Ahora aparece <code>x</code> en los permisos (<code>-rwxrwxr-x</code>), indicando que podemos <strong>ejecutarlo</strong>.</p>
 </section>
-<section id="ejecutar-el-script-como-programa" class="level3" data-number="11.3.3">
-<h3 data-number="11.3.3" class="anchored" data-anchor-id="ejecutar-el-script-como-programa"><span class="header-section-number">11.3.3</span> 3. Ejecutar el script como programa</h3>
+<section id="ejecutar-el-script-como-programa" class="level3" data-number="8.3.3">
+<h3 data-number="8.3.3" class="anchored" data-anchor-id="ejecutar-el-script-como-programa"><span class="header-section-number">8.3.3</span> 3. Ejecutar el script como programa</h3>
 <p>Ya no necesitamos escribir <code>bash</code> cada vez. Simplemente:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ./bad-reads-script.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ./bad-reads-script.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>El script corre de la misma forma, generando el archivo <code>scripted_bad_reads.txt</code> con todas las lecturas “malas”.</p>
 </section>
-<section id="comprimir-los-archivos-fastq" class="level3" data-number="11.3.4">
-<h3 data-number="11.3.4" class="anchored"><span class="header-section-number">11.3.4</span> 4. Comprimir los archivos FASTQ</h3>
+<section id="comprimir-los-archivos-fastq" class="level3" data-number="8.3.4">
+<h3 data-number="8.3.4" class="anchored"><span class="header-section-number">8.3.4</span> 4. Comprimir los archivos FASTQ</h3>
 <p>Cuando terminemos de analizarlos, es buena práctica comprimirlos para liberar espacio:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> gzip ~/dc_workshop/data/untrimmed_fastq/<span class="pp">*</span>.fastq</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> gzip ~/dc_workshop/data/untrimmed_fastq/<span class="pp">*</span>.fastq</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Confirmamos que ahora solo hay archivos <code>.fastq.gz</code> y su tamaño reducido:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls <span class="at">-lh</span> ~/dc_workshop/data/untrimmed_fastq/<span class="pp">*</span>.fastq.gz</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># total 428M</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r-- 1 dcuser dcuser  24M Nov 26 12:36 JC1A_R1.fastq.gz</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r-- 1 dcuser dcuser  24M Nov 26 12:37 JC1A_R2.fastq.gz</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r-- 1 dcuser dcuser 179M Nov 26 12:44 JP4D_R1.fastq.gz</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r-- 1 dcuser dcuser 203M Nov 26 12:51 JP4D_R2.fastq.gz</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls <span class="at">-lh</span> ~/dc_workshop/data/untrimmed_fastq/<span class="pp">*</span>.fastq.gz</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># total 428M</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r-- 1 dcuser dcuser  24M Nov 26 12:36 JC1A_R1.fastq.gz</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r-- 1 dcuser dcuser  24M Nov 26 12:37 JC1A_R2.fastq.gz</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r-- 1 dcuser dcuser 179M Nov 26 12:44 JP4D_R1.fastq.gz</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r-- 1 dcuser dcuser 203M Nov 26 12:51 JP4D_R2.fastq.gz</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li><p>Tenemos un <strong>programa propio</strong> (<code>bad-reads-script.sh</code>) que ejecutamos con <code>./bad-reads-script.sh</code>.</p></li>
 <li><p>Mantenemos nuestro directorio de datos limpio y ligero, dejando los FASTQ comprimidos cuando no los usamos.</p>
-<h2 id="mover-y-descargar-datos-en-la-línea-de-comandos" data-number="11.4" class="anchored" data-anchor-id="comprimir-los-archivos-fastq"><span class="header-section-number">11.4</span> Mover y descargar datos en la línea de comandos</h2></li>
+<h2 id="mover-y-descargar-datos-en-la-línea-de-comandos" data-number="8.4" class="anchored" data-anchor-id="comprimir-los-archivos-fastq"><span class="header-section-number">8.4</span> Mover y descargar datos en la línea de comandos</h2></li>
 </ul>
 <p>En lugar de trabajar solo con datos preinstalados en el servidor, normalmente tendrás que traer nuevos archivos desde Internet o desde tu máquina local.</p>
 <hr>
 </section>
-<section id="tienes-wget-o-curl" class="level3" data-number="11.4.1">
-<h3 data-number="11.4.1" class="anchored" data-anchor-id="tienes-wget-o-curl"><span class="header-section-number">11.4.1</span> 1️⃣ ¿Tienes <code>wget</code> o <code>curl</code>?</h3>
+<section id="tienes-wget-o-curl" class="level3" data-number="8.4.1">
+<h3 data-number="8.4.1" class="anchored" data-anchor-id="tienes-wget-o-curl"><span class="header-section-number">8.4.1</span> 1️⃣ ¿Tienes <code>wget</code> o <code>curl</code>?</h3>
 <p>Para descargar desde la web, usas <strong>wget</strong> o <strong>curl</strong>. Comprueba cuál está disponible:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> which wget <span class="co"># si está instalado, muestra su ruta </span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> which curl <span class="co"># idem para curl</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> which wget <span class="co"># si está instalado, muestra su ruta </span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> which curl <span class="co"># idem para curl</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li><p>Si ves una ruta bajo <code>/usr/bin/…</code>, ese programa está instalado.</p></li>
 <li><p>Si no retorna nada, no lo tienes y debes usar el otro.</p></li>
 </ul>
 </section>
-<section id="descargar-con-wget" class="level3" data-number="11.4.2">
-<h3 data-number="11.4.2" class="anchored" data-anchor-id="descargar-con-wget"><span class="header-section-number">11.4.2</span> 2️⃣ Descargar con <code>wget</code></h3>
+<section id="descargar-con-wget" class="level3" data-number="8.4.2">
+<h3 data-number="8.4.2" class="anchored" data-anchor-id="descargar-con-wget"><span class="header-section-number">8.4.2</span> 2️⃣ Descargar con <code>wget</code></h3>
 <p><code>wget</code> descarga por defecto al archivo con el mismo nombre:</p>
 <pre><code>$ cd ~
 wget ftp://ftp.ensemblgenomes.org/pub/release-37/bacteria/species_EnsemblBacteria.txt</code></pre>
 <p>Sin flags adicionales, guarda <code>species_EnsemblBacteria.txt</code> en tu directorio actual.</p>
 </section>
-<section id="descargar-con-curl" class="level3" data-number="11.4.3">
-<h3 data-number="11.4.3" class="anchored" data-anchor-id="descargar-con-curl"><span class="header-section-number">11.4.3</span> 3️⃣ Descargar con <code>curl</code></h3>
+<section id="descargar-con-curl" class="level3" data-number="8.4.3">
+<h3 data-number="8.4.3" class="anchored" data-anchor-id="descargar-con-curl"><span class="header-section-number">8.4.3</span> 3️⃣ Descargar con <code>curl</code></h3>
 <p>Para <code>curl</code> necesitas la opción <code>-O</code> para grabar en disco:</p>
 <pre><code>$ cd ~
 curl -O ftp://ftp.ensemblgenomes.org/pub/release-37/bacteria/species_EnsemblBacteria.txt</code></pre>
@@ -547,11 +501,11 @@ curl -O ftp://ftp.ensemblgenomes.org/pub/release-37/bacteria/species_EnsemblBact
 <li><p>Es importante tener en cuenta que tanto <code>curl</code> como <code>wget</code>se descargan en el equipo al que pertenece la línea de comandos. Por lo tanto, si inicia sesión en AWS desde la línea de comandos y ejecuta el <code>curl</code>comando anterior en la terminal de AWS, el archivo se descargará en su equipo de AWS, no en el local.</p></li>
 </ul>
 </section>
-<section id="mover-archivos-entre-su-computadora-portátil-y-su-instancia" class="level3" data-number="11.4.4">
-<h3 data-number="11.4.4" class="anchored" data-anchor-id="mover-archivos-entre-su-computadora-portátil-y-su-instancia"><span class="header-section-number">11.4.4</span> <strong>Mover archivos entre su computadora portátil y su instancia</strong></h3>
+<section id="mover-archivos-entre-su-computadora-portátil-y-su-instancia" class="level3" data-number="8.4.4">
+<h3 data-number="8.4.4" class="anchored" data-anchor-id="mover-archivos-entre-su-computadora-portátil-y-su-instancia"><span class="header-section-number">8.4.4</span> <strong>Mover archivos entre su computadora portátil y su instancia</strong></h3>
 <p>¿Qué sucede si los datos que necesita están en su computadora local, pero necesita transferirlos <em>a</em> la nube? Hay varias maneras de hacerlo. Al seguir esta lección, puede que esté usando la interfaz de RStudio con una terminal, otra terminal o su propia computadora local. Dependiendo de su configuración, existen varias alternativas para transferir los archivos. Aquí describimos cómo usar la interfaz de RStudio para transferir archivos.</p>
 <blockquote class="blockquote">
-<h3 id="escenarios-de-transferencia-de-archivos" data-number="11.4.5" class="anchored"><span class="header-section-number">11.4.5</span> <strong>Escenarios de transferencia de archivos</strong></h3>
+<h3 id="escenarios-de-transferencia-de-archivos" data-number="8.4.5" class="anchored"><span class="header-section-number">8.4.5</span> <strong>Escenarios de transferencia de archivos</strong></h3>
 <ol type="1">
 <li><p>Si trabajas en tu ordenador <strong>local</strong> , no necesitas transferir archivos, ya que los tienes localmente.<br>
 En ese caso, solo necesitas saber el directorio en el que trabajas.</p></li>
@@ -560,8 +514,8 @@ En ese caso, solo necesitas saber el directorio en el que trabajas.</p></li>
 </ol>
 </blockquote>
 </section>
-<section id="descargar-archivos-en-rstudio" class="level3" data-number="11.4.6">
-<h3 data-number="11.4.6" class="anchored" data-anchor-id="descargar-archivos-en-rstudio"><span class="header-section-number">11.4.6</span> <strong>Descargar archivos en RStudio</strong></h3>
+<section id="descargar-archivos-en-rstudio" class="level3" data-number="8.4.6">
+<h3 data-number="8.4.6" class="anchored" data-anchor-id="descargar-archivos-en-rstudio"><span class="header-section-number">8.4.6</span> <strong>Descargar archivos en RStudio</strong></h3>
 <p>Seguiremos los siguientes cinco pasos para descargar archivos con la interfaz RStudio.</p>
 <ol type="1">
 <li><p>Primero seleccionamos el archivo a descargar desde el panel inferior derecho.<br>
@@ -571,37 +525,42 @@ En ese caso, solo necesitas saber el directorio en el que trabajas.</p></li>
 <img src="https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-04.png" class="img-fluid" alt="More button highlighted."></a></p></li>
 <li><p>Within the “More” menu, the “export” button should become available.<br>
 <a href="https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-05.png"><img src="https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-05.png" class="img-fluid" alt="Export button highlighted."></a></p></li>
-<li><p>An emergent window should be displayed on your screen where you can select the “Download” option.<br>
+<li><p>Una ventana emergente debería aparecer en tu pantalla donde podrás seleccionar la opción “Descargar”.<br>
 <a href="https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-06.png"><img src="https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-06.png" class="img-fluid" alt="emergent window where you write the name of the file and click download."></a></p></li>
-<li><p>Your file should now be downloaded to your local computer.</p></li>
+<li><p>Tu archivo ahora debería estar descargado en tu computadora local.</p></li>
 </ol>
 </section>
-<section id="upload-files-to-aws-in-rstudio" class="level3" data-number="11.4.7">
-<h3 data-number="11.4.7" class="anchored" data-anchor-id="upload-files-to-aws-in-rstudio"><span class="header-section-number">11.4.7</span> <strong>Upload files to AWS in RStudio</strong></h3>
-<p>Now that we learned how to download files from the RStudio interface, we will learn the opposite action, uploading files from your local computer to your remote AWS machine.</p>
+<section id="subir-archivos-a-aws-desde-rstudio" class="level3" data-number="8.4.7">
+<h3 data-number="8.4.7" class="anchored" data-anchor-id="subir-archivos-a-aws-desde-rstudio"><span class="header-section-number">8.4.7</span> <strong>Subir archivos a AWS desde RStudio</strong></h3>
+<p>Ahora que aprendimos cómo descargar archivos desde la interfaz de RStudio, aprenderemos la acción opuesta: <strong>subir archivos desde tu computadora local a tu máquina remota en AWS</strong>.</p>
 <ol type="1">
-<li><p>Choose the option ‘Upload’ in your RStudio interface.<a href="https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-08.png"><img src="https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-08.png" class="img-fluid" alt="The Upload button is highlighted."></a></p></li>
-<li><p>After an emergent window is displayed on your screen, select “Select file”.<a href="https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-09.png"><img src="https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-09.png" class="img-fluid" alt="Select filed button highlighted in the emergent window"></a></p></li>
-<li><p>A new screen is displayed on your computer where you should choose the file to upload. Choose the file and click “open”.<a href="https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-10.png"><img src="https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-10.png" class="img-fluid" alt="file to upload and open button are highlighted in the window of the local filesystem"></a></p></li>
-<li><p>Finally, if the file is correct, click “ok,” and the uploading will start.</p></li>
-<li><p>Now, you can view a new file in your RStudio interface.<a href="https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-12.png"><img src="https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-12.png" class="img-fluid" alt="The uploaded file is shown in the R studio interface"></a></p></li>
+<li>Selecciona la opción <strong>“Upload” (Subir)</strong> en la interfaz de RStudio.</li>
 </ol>
-</section>
-<section id="section" class="level3" data-number="11.4.8">
-<h3 data-number="11.4.8" class="anchored" data-anchor-id="section"><span class="header-section-number">11.4.8</span> </h3>
-</section>
-</section>
-<section id="transferir-archivos-entre-tu-máquina-local-y-la-instancia-remota-con-scp" class="level2" data-number="11.5">
-<h2 data-number="11.5" class="anchored" data-anchor-id="transferir-archivos-entre-tu-máquina-local-y-la-instancia-remota-con-scp"><span class="header-section-number">11.5</span> Transferir archivos entre tu máquina local y la instancia remota con <code>scp</code></h2>
-<p><code>scp</code> (“secure copy protocol”) te permite copiar archivos de forma segura entre dos ordenadores (local ↔︎ remoto).</p>
-<section id="sintaxis-básica" class="level3" data-number="11.5.1">
-<h3 data-number="11.5.1" class="anchored" data-anchor-id="sintaxis-básica"><span class="header-section-number">11.5.1</span> Sintaxis básica</h3>
-<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> scp origen destino</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>origen</strong> y <strong>destino</strong> pueden ser rutas locales o remotas.</p>
-<p>Para especificar una máquina remota usas el formato <code>usuario@host:/ruta/al/archivo</code>.</p>
-</section>
-<section id="section-1" class="level3" data-number="11.5.2">
-<h3 data-number="11.5.2" class="anchored" data-anchor-id="section-1"><span class="header-section-number">11.5.2</span> </h3>
+<!-- -->
+<ol type="1">
+<li><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-08.png"><img src="https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-08.png" class="img-fluid figure-img" alt="The Upload button is highlighted."></a></p>
+<figcaption>The Upload button is highlighted.</figcaption>
+</figure>
+</div></li>
+<li><p>Después de que aparezca una ventana emergente en tu pantalla, selecciona la opción <strong>“Select file” (Seleccionar archivo)</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-09.png" class="img-fluid figure-img" width="1199"></p>
+<figcaption>Select filed button highlighted in the emergent window</figcaption>
+</figure>
+</div></li>
+<li><p>Aparecerá una nueva ventana en tu computadora donde deberás elegir el archivo que deseas subir. Selecciona el archivo y haz clic en <strong>“Abrir”</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-10.png"><img src="https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-10.png" class="img-fluid figure-img" alt="file to upload and open button are highlighted in the window of the local filesystem"></a></p>
+<figcaption>file to upload and open button are highlighted in the window of the local filesystem</figcaption>
+</figure>
+</div></li>
+<li><p>Finalmente, si el archivo es correcto, haz clic en <strong>“Aceptar”</strong> y comenzará la carga.</p>
+<p>Ahora podrás ver el nuevo archivo en tu interfaz de RStudio.<a href="https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-12.png"><img src="https://carpentries-lab.github.io/metagenomics-shell/fig/02-05-12.png" class="img-fluid" alt="The uploaded file is shown in the R studio interface"></a></p></li>
+</ol>
 
 
 </section>
@@ -1172,8 +1131,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./6Redireccion.html" class="pagination-link" aria-label="Redirección">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Redirección</span></span>
+      <a href="./6Redireccion.html" class="pagination-link" aria-label="Redirección de Entrada y Salida">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Redirección de Entrada y Salida</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

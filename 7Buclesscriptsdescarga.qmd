@@ -1,4 +1,4 @@
-# **Escritura de scripts y trabajo con datos** 
+# Escritura de scripts y trabajo con datos
 
 # Escribir y editar archivos con Nano
 

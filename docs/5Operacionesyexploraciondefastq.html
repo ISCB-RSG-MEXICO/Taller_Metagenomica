@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Operaciones en archivos y carpetas – Workshop</title>
+<title>5&nbsp; Trabajar con archivos y directorios – Workshop</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -118,7 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./4IntroduccionnavigationShell.html"><strong>Sección 2</strong> - Introducción a línea de comandos</a></li><li class="breadcrumb-item"><a href="./5Operacionesyexploraciondefastq.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Operaciones en archivos y carpetas</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./4IntroduccionnavigationShell.html"><strong>Sección 2</strong> - Introducción a línea de comandos</a></li><li class="breadcrumb-item"><a href="./5Operacionesyexploraciondefastq.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>Trabajar con archivos y directorios</strong></span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -223,19 +223,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./5Operacionesyexploraciondefastq.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Operaciones en archivos y carpetas</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>Trabajar con archivos y directorios</strong></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./6Redireccion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Redirección</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Redirección de Entrada y Salida</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./7Buclesscriptsdescarga.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bucles</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><strong>Escritura de scripts y trabajo con datos</strong></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -356,16 +356,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#trabajar-con-archivos-y-directorios-yahir" id="toc-trabajar-con-archivos-y-directorios-yahir" class="nav-link active" data-scroll-target="#trabajar-con-archivos-y-directorios-yahir"><span class="header-section-number">6</span> <strong>Trabajar con archivos y directorios (yahir)</strong></a>
+  <li><a href="#detalles-sobre-el-formato-fastq" id="toc-detalles-sobre-el-formato-fastq" class="nav-link active" data-scroll-target="#detalles-sobre-el-formato-fastq"><span class="header-section-number">5.1</span> Detalles sobre el formato FASTQ</a>
   <ul>
-  <li><a href="#ver-solo-el-principio-o-el-final" id="toc-ver-solo-el-principio-o-el-final" class="nav-link" data-scroll-target="#ver-solo-el-principio-o-el-final"><span class="header-section-number">6.0.1</span> Ver solo el principio o el final</a></li>
-  <li><a href="#crear-mover-copiar-y-eliminar" id="toc-crear-mover-copiar-y-eliminar" class="nav-link" data-scroll-target="#crear-mover-copiar-y-eliminar"><span class="header-section-number">6.1</span> 🛠️ <strong>Crear, mover, copiar y eliminar</strong></a>
-  <ul class="collapse">
-  <li><a href="#copiar-archivos-cp" id="toc-copiar-archivos-cp" class="nav-link" data-scroll-target="#copiar-archivos-cp"><span class="header-section-number">6.1.1</span> Copiar archivos (<code>cp</code>)</a></li>
-  <li><a href="#crear-directorios-mkdir" id="toc-crear-directorios-mkdir" class="nav-link" data-scroll-target="#crear-directorios-mkdir"><span class="header-section-number">6.1.2</span> Crear directorios (<code>mkdir</code>)</a></li>
-  <li><a href="#mover-y-renombrar-mv" id="toc-mover-y-renombrar-mv" class="nav-link" data-scroll-target="#mover-y-renombrar-mv"><span class="header-section-number">6.1.3</span> Mover y renombrar (<code>mv</code>)</a></li>
-  <li><a href="#eliminar-archivos-y-directorios-rm" id="toc-eliminar-archivos-y-directorios-rm" class="nav-link" data-scroll-target="#eliminar-archivos-y-directorios-rm"><span class="header-section-number">6.1.4</span> Eliminar archivos y directorios (<code>rm</code>)</a></li>
+  <li><a href="#ver-solo-el-principio-o-el-final" id="toc-ver-solo-el-principio-o-el-final" class="nav-link" data-scroll-target="#ver-solo-el-principio-o-el-final"><span class="header-section-number">5.1.1</span> Ver solo el principio o el final</a></li>
   </ul></li>
+  <li><a href="#crear-mover-copiar-y-eliminar" id="toc-crear-mover-copiar-y-eliminar" class="nav-link" data-scroll-target="#crear-mover-copiar-y-eliminar"><span class="header-section-number">5.2</span> 🛠️ <strong>Crear, mover, copiar y eliminar</strong></a>
+  <ul>
+  <li><a href="#copiar-archivos-cp" id="toc-copiar-archivos-cp" class="nav-link" data-scroll-target="#copiar-archivos-cp"><span class="header-section-number">5.2.1</span> Copiar archivos (<code>cp</code>)</a></li>
+  <li><a href="#crear-directorios-mkdir" id="toc-crear-directorios-mkdir" class="nav-link" data-scroll-target="#crear-directorios-mkdir"><span class="header-section-number">5.2.2</span> Crear directorios (<code>mkdir</code>)</a></li>
+  <li><a href="#mover-y-renombrar-mv" id="toc-mover-y-renombrar-mv" class="nav-link" data-scroll-target="#mover-y-renombrar-mv"><span class="header-section-number">5.2.3</span> Mover y renombrar (<code>mv</code>)</a></li>
+  <li><a href="#eliminar-archivos-y-directorios-rm" id="toc-eliminar-archivos-y-directorios-rm" class="nav-link" data-scroll-target="#eliminar-archivos-y-directorios-rm"><span class="header-section-number">5.2.4</span> Eliminar archivos y directorios (<code>rm</code>)</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -373,9 +373,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./4IntroduccionnavigationShell.html"><strong>Sección 2</strong> - Introducción a línea de comandos</a></li><li class="breadcrumb-item"><a href="./5Operacionesyexploraciondefastq.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Operaciones en archivos y carpetas</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./4IntroduccionnavigationShell.html"><strong>Sección 2</strong> - Introducción a línea de comandos</a></li><li class="breadcrumb-item"><a href="./5Operacionesyexploraciondefastq.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>Trabajar con archivos y directorios</strong></span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Operaciones en archivos y carpetas</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>Trabajar con archivos y directorios</strong></span></h1>
 </div>
 
 
@@ -392,36 +392,50 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><strong>Iremos haciendo las operaciones en los archivos fastq</strong></p>
-<p>uso de wildcards en combinación con comandos básicos.</p>
-<p>ejemplo:</p>
-<pre><code>cd ~/dc_workshop/data/untrimmed_fastq</code></pre>
-<pre><code> $ ls *.fastq</code></pre>
-<p>out JC1A_R1.fastq JP4D_R1.fastq</p>
-<p>Otros shortcuts como crtl + D, history o clear (ctrl + L)</p>
-<p>En history !260 para repetir la línea 260 (Para comandos muy elaborados, tener un ejemplo antes de ver este short cut)</p>
-<p>lectura de archivos cat, less (funciones de las teclas espacio, b, g, G y q), manual, checar sus diferencias.</p>
-<p>HEAD vs TAIL. (comienza uso de las flags, por ejemplo -n 10 que lee 10 líneas en el archivo)</p>
-<p>NO PONER Detalles del formato FASTQ, EN ULTIMA LECCION SE VE A PROFUNDIDAD</p>
-<p>copiar archivos, crear directorios, mover y renombrar archivos. Enfasis en tener cuidado con sobreescribir archivos.</p>
-<p>BORRAR</p>
-<p>Copiar ejercicio 1, Make backup folder with write-protected permissions</p>
-<section id="trabajar-con-archivos-y-directorios-yahir" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> <strong>Trabajar con archivos y directorios (yahir)</strong></h1>
+<section id="detalles-sobre-el-formato-fastq" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="detalles-sobre-el-formato-fastq"><span class="header-section-number">5.1</span> Detalles sobre el formato FASTQ</h2>
+<p>Un archivo FASTQ almacena lecturas de secuenciación junto con sus puntuaciones de calidad. Cada lectura ocupa <strong>4 líneas</strong> con esta estructura:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 90%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Línea</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Comienza con <code>@</code>, seguida del identificador de la lectura</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Secuencia de ADN (A, T, G, C, o N si hay ambigüedad)</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Comienza con <code>+</code> (a veces repite el identificador)</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Cadena de caracteres que representa la <strong>calidad de cada base</strong></td>
+</tr>
+</tbody>
+</table>
 <p>Realizamos un experimento de secuenciación y tenemos cuatro archivos de resultados, que se almacenan en nuestro directorio <code>untrimmed_fastq</code>.</p>
 <p>Navegue hasta su directorio <code>untrimmed_fastq</code>.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd ~/dc_workshop/data/untrimmed_fastq</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cat JC1A_R2.fastq</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd ~/dc_workshop/data/untrimmed_fastq</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>si tus archivos están comprimidos con extensión <code>.gz</code> (como los archivos <code>.fastq.gz</code>), puedes descomprimirlos usando el comando:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> gunzip <span class="pp">*</span>.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cat JC1A_R2.fastq</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><code>cat</code> como acabas de ver al ejecutar el comando, cuando el archivo es muy grande (como los que tenemos), puede resultar molesto. Siempre puedes usar Ctrl+C para detener el comando.</p>
 <p>El programa <code>less</code>es útil en este caso. <code>less</code>Abre el archivo como de solo lectura y permite navegar por él.</p>
 <pre><code>$ less JC1A_R2.fastq</code></pre>
 <p>Algunos comandos de navegación en <code>less</code> :</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/clipboard-2423031106.png" class="img-fluid figure-img"></p>
-<figcaption>Cuando estés dentro de less y quieras buscar un texto, haz esto:</figcaption>
-</figure>
-</div>
+<p><img src="images/clipboard-1422608726.png" class="img-fluid"></p>
 <ul>
 <li><strong>Buscar hacia adelante</strong></li>
 </ul>
@@ -441,8 +455,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>1.- Pulsa <code>?</code> (el signo de interrogación) 2.- Escribe la palabra que buscas</p>
 <p>3.- Pulsa <code>Enter</code></p>
 <p><code>less</code> saltará a la <strong>última</strong> aparición antes de donde estás.</p>
-<section id="ver-solo-el-principio-o-el-final" class="level3" data-number="6.0.1">
-<h3 data-number="6.0.1" class="anchored" data-anchor-id="ver-solo-el-principio-o-el-final"><span class="header-section-number">6.0.1</span> Ver solo el principio o el final</h3>
+<section id="ver-solo-el-principio-o-el-final" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="ver-solo-el-principio-o-el-final"><span class="header-section-number">5.1.1</span> Ver solo el principio o el final</h3>
 <p>A veces solo quieres echar un vistazo rápido al inicio o al cierre de un archivo muy largo. Para ello:</p>
 <ul>
 <li><p><strong>Primeras líneas</strong> con <code>head</code><br>
@@ -451,8 +465,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><code>tail archivo.txt</code> muestra las últimas 10 líneas por defecto <code>tail -n 5 archivo.txt</code>muestra solo las últimas 5 líneas</p></li>
 </ul>
 </section>
-<section id="crear-mover-copiar-y-eliminar" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="crear-mover-copiar-y-eliminar"><span class="header-section-number">6.1</span> 🛠️ <strong>Crear, mover, copiar y eliminar</strong></h2>
+</section>
+<section id="crear-mover-copiar-y-eliminar" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="crear-mover-copiar-y-eliminar"><span class="header-section-number">5.2</span> 🛠️ <strong>Crear, mover, copiar y eliminar</strong></h2>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -485,38 +500,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 <p>Cuando trabajas con muchos archivos (o en un servidor remoto), usar la línea de comandos es más rápido y seguro.</p>
 <hr>
-<section id="copiar-archivos-cp" class="level3" data-number="6.1.1">
-<h3 data-number="6.1.1" class="anchored" data-anchor-id="copiar-archivos-cp"><span class="header-section-number">6.1.1</span> Copiar archivos (<code>cp</code>)</h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/dc_workshop/data/untrimmed_fastq</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> JC1A_R2.fastq JC1A_R2-copy.fastq</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="copiar-archivos-cp" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="copiar-archivos-cp"><span class="header-section-number">5.2.1</span> Copiar archivos (<code>cp</code>)</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd ~/dc_workshop/data/untrimmed_fastq</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cp JC1A_R2.fastq JC1A_R2-copy.fastq</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="crear-directorios-mkdir" class="level3" data-number="6.1.2">
-<h3 data-number="6.1.2" class="anchored" data-anchor-id="crear-directorios-mkdir"><span class="header-section-number">6.1.2</span> Crear directorios (<code>mkdir</code>)</h3>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> backup</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="crear-directorios-mkdir" class="level3" data-number="5.2.2">
+<h3 data-number="5.2.2" class="anchored" data-anchor-id="crear-directorios-mkdir"><span class="header-section-number">5.2.2</span> Crear directorios (<code>mkdir</code>)</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> mkdir backup</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="mover-y-renombrar-mv" class="level3" data-number="6.1.3">
-<h3 data-number="6.1.3" class="anchored" data-anchor-id="mover-y-renombrar-mv"><span class="header-section-number">6.1.3</span> Mover y renombrar (<code>mv</code>)</h3>
+<section id="mover-y-renombrar-mv" class="level3" data-number="5.2.3">
+<h3 data-number="5.2.3" class="anchored" data-anchor-id="mover-y-renombrar-mv"><span class="header-section-number">5.2.3</span> Mover y renombrar (<code>mv</code>)</h3>
 <p><strong>Mover a carpeta:</strong></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> JC1A_R2-copy.fastq backup/</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> backup</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># JC1A_R2-copy.fastq</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> mv JC1A_R2-copy.fastq backup/</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls backup</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># JC1A_R2-copy.fastq</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Renombrar:</strong></p>
-<pre><code>cd backup
-mv JC1A_R2-copy.fastq JC1A_R2-backup.fastq
-ls
-# JC1A_R2-backup.fastq</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd backup</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> mv JC1A_R2-copy.fastq JC1A_R2-backup.fastq</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># JC1A_R2-backup.fastq</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="eliminar-archivos-y-directorios-rm" class="level3" data-number="6.1.4">
-<h3 data-number="6.1.4" class="anchored" data-anchor-id="eliminar-archivos-y-directorios-rm"><span class="header-section-number">6.1.4</span> Eliminar archivos y directorios (<code>rm</code>)</h3>
+<section id="eliminar-archivos-y-directorios-rm" class="level3" data-number="5.2.4">
+<h3 data-number="5.2.4" class="anchored" data-anchor-id="eliminar-archivos-y-directorios-rm"><span class="header-section-number">5.2.4</span> Eliminar archivos y directorios (<code>rm</code>)</h3>
 <p><strong>Eliminar archivo:</strong></p>
 <blockquote class="blockquote">
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> archivo.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> archivo.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </blockquote>
 <p><strong>Eliminar carpeta recursivamente:</strong></p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-r</span> backup</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-r</span> backup</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
-</section>
 </section>
 </section>
 
@@ -1089,8 +1103,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./6Redireccion.html" class="pagination-link" aria-label="Redirección">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Redirección</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./6Redireccion.html" class="pagination-link" aria-label="Redirección de Entrada y Salida">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Redirección de Entrada y Salida</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

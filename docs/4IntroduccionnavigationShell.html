@@ -223,19 +223,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./5Operacionesyexploraciondefastq.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Operaciones en archivos y carpetas</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>Trabajar con archivos y directorios</strong></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./6Redireccion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Redirección</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Redirección de Entrada y Salida</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./7Buclesscriptsdescarga.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bucles</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><strong>Escritura de scripts y trabajo con datos</strong></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -299,31 +299,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./14Filtraciondedatosdesecuenciacion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Filtración de datos de secuenciación</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15Ensamblemetagenomico.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Binning metagenómico</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./16Binningmetagenomico.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Asignación taxonómica</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./17Asignaciontaxonomica.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Explorando la diversidad con librerías de R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./18Exploraciondetaxonomiaconr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Análisis de taxonomía con R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -335,13 +335,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./20Analisistaxonomico.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Análisis taxonómico con RStudio</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./21Otrosrecursos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Control de calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Otros recursos</span></span></a>
   </div>
 </li>
       </ul>
@@ -356,25 +356,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preparación-del-directorio-de-trabajo" id="toc-preparación-del-directorio-de-trabajo" class="nav-link active" data-scroll-target="#preparación-del-directorio-de-trabajo"><span class="header-section-number">4.1</span> Preparación del directorio de trabajo</a></li>
-  <li><a href="#comandos-básicos" id="toc-comandos-básicos" class="nav-link" data-scroll-target="#comandos-básicos"><span class="header-section-number">4.2</span> <strong>Comandos básicos</strong></a></li>
-  <li><a href="#introducción-al-shell-yahir-versión" id="toc-introducción-al-shell-yahir-versión" class="nav-link" data-scroll-target="#introducción-al-shell-yahir-versión"><span class="header-section-number">5</span> Introducción al Shell (yahir versión)</a>
+  <li><a href="#head" id="toc-head" class="nav-link active" data-scroll-target="#head"><span class="header-section-number">5</span> &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</a>
   <ul>
-  <li><a href="#qué-es-un-shell" id="toc-qué-es-un-shell" class="nav-link" data-scroll-target="#qué-es-un-shell"><span class="header-section-number">5.0.1</span> 🔹 ¿Qué es un Shell?</a></li>
-  <li><a href="#por-qué-usar-un-shell" id="toc-por-qué-usar-un-shell" class="nav-link" data-scroll-target="#por-qué-usar-un-shell"><span class="header-section-number">5.0.2</span> 🎯 ¿Por qué usar un Shell?</a></li>
-  <li><a href="#navegación-en-el-sistema-de-archivos" id="toc-navegación-en-el-sistema-de-archivos" class="nav-link" data-scroll-target="#navegación-en-el-sistema-de-archivos"><span class="header-section-number">5.0.3</span> 🔹 Navegación en el sistema de archivos:</a></li>
-  <li><a href="#ver-el-directorio-en-el-que-te-encuentras" id="toc-ver-el-directorio-en-el-que-te-encuentras" class="nav-link" data-scroll-target="#ver-el-directorio-en-el-que-te-encuentras"><span class="header-section-number">5.0.4</span> 📌 1️ Ver el directorio en el que te encuentras:</a></li>
-  <li><a href="#listar-los-archivos-y-carpetas-en-el-directorio-actual" id="toc-listar-los-archivos-y-carpetas-en-el-directorio-actual" class="nav-link" data-scroll-target="#listar-los-archivos-y-carpetas-en-el-directorio-actual"><span class="header-section-number">5.0.5</span> 📌 2️ Listar los archivos y carpetas en el directorio actual:</a></li>
-  <li><a href="#cambiar-de-directorio" id="toc-cambiar-de-directorio" class="nav-link" data-scroll-target="#cambiar-de-directorio"><span class="header-section-number">5.0.6</span> 📌 3️ Cambiar de directorio:</a></li>
-  <li><a href="#ejemplo" id="toc-ejemplo" class="nav-link" data-scroll-target="#ejemplo"><span class="header-section-number">5.1</span> 👉 Ejemplo:</a>
-  <ul class="collapse">
-  <li><a href="#volver-al-directorio-principal" id="toc-volver-al-directorio-principal" class="nav-link" data-scroll-target="#volver-al-directorio-principal"><span class="header-section-number">5.1.1</span> 📌 4 Volver al directorio principal:</a></li>
-  <li><a href="#subir-un-nivel-en-la-estructura-de-carpetas" id="toc-subir-un-nivel-en-la-estructura-de-carpetas" class="nav-link" data-scroll-target="#subir-un-nivel-en-la-estructura-de-carpetas"><span class="header-section-number">5.1.2</span> 📌 5 Subir un nivel en la estructura de carpetas:</a></li>
-  <li><a href="#atajos-útiles" id="toc-atajos-útiles" class="nav-link" data-scroll-target="#atajos-útiles"><span class="header-section-number">5.1.3</span> 📌 6 Atajos útiles:</a></li>
-  <li><a href="#autocompletado-tab" id="toc-autocompletado-tab" class="nav-link" data-scroll-target="#autocompletado-tab"><span class="header-section-number">5.1.4</span> <strong>🔹 Autocompletado (Tab):</strong></a></li>
+  <li><a href="#preparación-del-directorio-de-trabajo" id="toc-preparación-del-directorio-de-trabajo" class="nav-link" data-scroll-target="#preparación-del-directorio-de-trabajo"><span class="header-section-number">5.1</span> Preparación del directorio de trabajo</a></li>
+  <li><a href="#comandos-básicos" id="toc-comandos-básicos" class="nav-link" data-scroll-target="#comandos-básicos"><span class="header-section-number">5.2</span> <strong>Comandos básicos</strong></a></li>
   </ul></li>
-  <li><a href="#permisos-de-archivos" id="toc-permisos-de-archivos" class="nav-link" data-scroll-target="#permisos-de-archivos"><span class="header-section-number">5.2</span> 🔐 2. Permisos de archivos</a></li>
-  <li><a href="#rutas-absolutas-vs.-relativas" id="toc-rutas-absolutas-vs.-relativas" class="nav-link" data-scroll-target="#rutas-absolutas-vs.-relativas"><span class="header-section-number">5.3</span> 3. Rutas absolutas vs.&nbsp;relativas</a></li>
+  <li><a href="#servidor-bettertab-en-rstudio" id="toc-servidor-bettertab-en-rstudio" class="nav-link" data-scroll-target="#servidor-bettertab-en-rstudio"><span class="header-section-number">6</span> Servidor Bettertab en RStudio</a>
+  <ul>
+  <li><a href="#ventajas" id="toc-ventajas" class="nav-link" data-scroll-target="#ventajas"><span class="header-section-number">6.0.1</span> <strong>Ventajas</strong></a></li>
+  <li><a href="#paso-1-verifica-los-requisitos-previos" id="toc-paso-1-verifica-los-requisitos-previos" class="nav-link" data-scroll-target="#paso-1-verifica-los-requisitos-previos"><span class="header-section-number">6.1</span> <strong>Paso 1: Verifica los requisitos previos</strong></a></li>
+  <li><a href="#paso-2-accede-al-enlace" id="toc-paso-2-accede-al-enlace" class="nav-link" data-scroll-target="#paso-2-accede-al-enlace"><span class="header-section-number">6.2</span> <strong>Paso 2: Accede al enlace</strong></a></li>
+  <li><a href="#paso-3-inicia-sesión" id="toc-paso-3-inicia-sesión" class="nav-link" data-scroll-target="#paso-3-inicia-sesión"><span class="header-section-number">6.3</span> <strong>Paso 3: Inicia sesión</strong></a></li>
+  <li><a href="#paso-4-explora-rstudio-en-bettertab" id="toc-paso-4-explora-rstudio-en-bettertab" class="nav-link" data-scroll-target="#paso-4-explora-rstudio-en-bettertab"><span class="header-section-number">6.4</span> <strong>Paso 4: Explora RStudio en Bettertab</strong></a>
+  <ul class="collapse">
+  <li><a href="#script-o-editor-de-código-ventana-superior-izquierda" id="toc-script-o-editor-de-código-ventana-superior-izquierda" class="nav-link" data-scroll-target="#script-o-editor-de-código-ventana-superior-izquierda"><span class="header-section-number">6.4.1</span> <strong>Script o Editor de Código (Ventana superior izquierda)</strong></a></li>
+  <li><a href="#consola-console-ventana-inferior-izquierda" id="toc-consola-console-ventana-inferior-izquierda" class="nav-link" data-scroll-target="#consola-console-ventana-inferior-izquierda"><span class="header-section-number">6.4.2</span> <strong>Consola (Console) (Ventana inferior izquierda)</strong></a></li>
+  <li><a href="#entorno-yo-historial-ventana-superior-derecha" id="toc-entorno-yo-historial-ventana-superior-derecha" class="nav-link" data-scroll-target="#entorno-yo-historial-ventana-superior-derecha"><span class="header-section-number">6.4.3</span> <strong>3.4.3 3. Entorno y/o Historial (Ventana superior derecha)</strong></a></li>
+  <li><a href="#archivos-gráficos-paquetes-y-ayuda-ventana-inferior-derecha" id="toc-archivos-gráficos-paquetes-y-ayuda-ventana-inferior-derecha" class="nav-link" data-scroll-target="#archivos-gráficos-paquetes-y-ayuda-ventana-inferior-derecha"><span class="header-section-number">6.4.4</span> <strong>Archivos, Gráficos, Paquetes, y Ayuda (Ventana inferior derecha)</strong></a></li>
+  <li><a href="#terminal-bash" id="toc-terminal-bash" class="nav-link" data-scroll-target="#terminal-bash"><span class="header-section-number">6.4.5</span> <strong>Terminal (Bash)</strong></a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#introducción-al-shell" id="toc-introducción-al-shell" class="nav-link" data-scroll-target="#introducción-al-shell"><span class="header-section-number">7</span> Introducción al Shell</a>
+  <ul>
+  <li><a href="#qué-es-un-shell" id="toc-qué-es-un-shell" class="nav-link" data-scroll-target="#qué-es-un-shell"><span class="header-section-number">7.0.1</span> 🔹 ¿Qué es un Shell?</a></li>
+  <li><a href="#por-qué-usar-un-shell" id="toc-por-qué-usar-un-shell" class="nav-link" data-scroll-target="#por-qué-usar-un-shell"><span class="header-section-number">7.0.2</span> 🎯 ¿Por qué usar un Shell?</a></li>
+  <li><a href="#navegación-en-el-sistema-de-archivos" id="toc-navegación-en-el-sistema-de-archivos" class="nav-link" data-scroll-target="#navegación-en-el-sistema-de-archivos"><span class="header-section-number">7.0.3</span> 🔹 Navegación en el sistema de archivos:</a></li>
+  <li><a href="#ver-el-directorio-en-el-que-te-encuentras" id="toc-ver-el-directorio-en-el-que-te-encuentras" class="nav-link" data-scroll-target="#ver-el-directorio-en-el-que-te-encuentras"><span class="header-section-number">7.0.4</span> 📌 1️ Ver el directorio en el que te encuentras:</a></li>
+  <li><a href="#listar-los-archivos-y-carpetas-en-el-directorio-actual" id="toc-listar-los-archivos-y-carpetas-en-el-directorio-actual" class="nav-link" data-scroll-target="#listar-los-archivos-y-carpetas-en-el-directorio-actual"><span class="header-section-number">7.0.5</span> 📌 2️ Listar los archivos y carpetas en el directorio actual:</a></li>
+  <li><a href="#cambiar-de-directorio" id="toc-cambiar-de-directorio" class="nav-link" data-scroll-target="#cambiar-de-directorio"><span class="header-section-number">7.0.6</span> 📌 3️ Cambiar de directorio:</a></li>
+  <li><a href="#ejemplo" id="toc-ejemplo" class="nav-link" data-scroll-target="#ejemplo"><span class="header-section-number">7.1</span> 👉 Ejemplo:</a>
+  <ul class="collapse">
+  <li><a href="#subir-un-nivel-en-la-estructura-de-carpetas" id="toc-subir-un-nivel-en-la-estructura-de-carpetas" class="nav-link" data-scroll-target="#subir-un-nivel-en-la-estructura-de-carpetas"><span class="header-section-number">7.1.1</span> 📌 4 Subir un nivel en la estructura de carpetas:</a></li>
+  <li><a href="#volver-al-directorio-principal" id="toc-volver-al-directorio-principal" class="nav-link" data-scroll-target="#volver-al-directorio-principal"><span class="header-section-number">7.1.2</span> 📌 5 Volver al directorio principal:</a></li>
+  <li><a href="#atajos-útiles" id="toc-atajos-útiles" class="nav-link" data-scroll-target="#atajos-útiles"><span class="header-section-number">7.1.3</span> 📌 6 Atajos útiles:</a></li>
+  <li><a href="#autocompletado-tab" id="toc-autocompletado-tab" class="nav-link" data-scroll-target="#autocompletado-tab"><span class="header-section-number">7.1.4</span> <strong>🔹 Autocompletado (Tab):</strong></a></li>
+  </ul></li>
+  <li><a href="#permisos-de-archivos" id="toc-permisos-de-archivos" class="nav-link" data-scroll-target="#permisos-de-archivos"><span class="header-section-number">7.2</span> 🔐 2. Permisos de archivos</a></li>
+  <li><a href="#rutas-absolutas-vs.-relativas" id="toc-rutas-absolutas-vs.-relativas" class="nav-link" data-scroll-target="#rutas-absolutas-vs.-relativas"><span class="header-section-number">7.3</span> 3. Rutas absolutas vs.&nbsp;relativas</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -402,14 +420,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>Un Shell es un programa de computador que presenta una interfaz en línea de comando que permite ejecutar funciones en el computador utilizando comandos especiales en vez de tener un control a través de una interfaz gráfica que combina el uso de un ratón o <em>mouse</em> y un teclado de computador.</p>
+<section id="head" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</h1>
 <p>INSERTAR FOTO</p>
 <p>COMENZAR CON CONEXIÓN AL SERVIDOR (10 minutos)</p>
 <p>Path relativo y absoluto</p>
 <p>Algunos comandos cd, mkdir, pwd</p>
 <p>ejercicio (5 minutos) en equipos de encontrar el archivo.txt y poner el path absoluto de la ubicación del archivo.</p>
 <p>Repaso de comandos</p>
-<section id="preparación-del-directorio-de-trabajo" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="preparación-del-directorio-de-trabajo"><span class="header-section-number">4.1</span> Preparación del directorio de trabajo</h2>
+<section id="preparación-del-directorio-de-trabajo" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="preparación-del-directorio-de-trabajo"><span class="header-section-number">5.1</span> Preparación del directorio de trabajo</h2>
 <ul>
 <li><p>Ruta / Camino absoluto</p>
 <div class="sourceCode" id="cb1" data-code-copy="true" data-eval="false"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /home/usuario/data/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
@@ -417,8 +437,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb2" data-code-copy="true" data-eval="false"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ../ <span class="co"># Ir a la carpeta anterior</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ul>
 </section>
-<section id="comandos-básicos" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="comandos-básicos"><span class="header-section-number">4.2</span> <strong>Comandos básicos</strong></h2>
+<section id="comandos-básicos" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="comandos-básicos"><span class="header-section-number">5.2</span> <strong>Comandos básicos</strong></h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -497,15 +517,147 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 <hr>
 </section>
-<section id="introducción-al-shell-yahir-versión" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Introducción al Shell (yahir versión)</h1>
-<section id="qué-es-un-shell" class="level3" data-number="5.0.1">
-<h3 data-number="5.0.1" class="anchored" data-anchor-id="qué-es-un-shell"><span class="header-section-number">5.0.1</span> 🔹 ¿Qué es un Shell?</h3>
+</section>
+<section id="servidor-bettertab-en-rstudio" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Servidor Bettertab en RStudio</h1>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>a62b0c9c7d0671ec3adc903c91b3afb705c2de25 El <strong>servidor Betterlab</strong> es una instancia de <strong>RStudio Server</strong> montada en la nube para el taller.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<p><strong>¿Para qué sirve?</strong> Te permite usar RStudio desde el navegador, conectándote a un entorno Linux ya configurado con todas las herramientas y datos necesarios.</p>
+<section id="ventajas" class="level3" data-number="6.0.1">
+<h3 data-number="6.0.1" class="anchored" data-anchor-id="ventajas"><span class="header-section-number">6.0.1</span> <strong>Ventajas</strong></h3>
+<ul>
+<li><p><strong>Preconfigurado</strong>: R, RStudio, paquetes y bioherramientas instalados de antemano.</p></li>
+<li><p><strong>Sin instalaciones locales</strong>: solo necesitas un navegador.</p></li>
+<li><p><strong>Multiusuario:</strong> cada quien con su cuenta, aislados y seguro.</p></li>
+</ul>
+</section>
+<section id="paso-1-verifica-los-requisitos-previos" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="paso-1-verifica-los-requisitos-previos"><span class="header-section-number">6.1</span> <strong>Paso 1: Verifica los requisitos previos</strong></h2>
+<p>Antes de comenzar, asegúrate de contar con lo siguiente:</p>
+<ul>
+<li><p><strong>Un navegador web actualizado</strong> (Chrome, Firefox o Edge).</p></li>
+<li><p><strong>Credenciales de acceso:</strong> nombre de usuario y contraseña, proporcionados por el administrador del servidor.</p></li>
+<li><p><strong>El enlace de acceso al servidor Betterlab</strong>: <a href="https://bioinformatica.matmor.unam.mx/rstudio/auth-sign-in?appUri=%2F"><code>https://bioinformatica.matmor.unam.mx/rstudio/auth-sign-in?appUri=%2F</code></a></p></li>
+</ul>
+<blockquote class="blockquote">
+<p>Los instructores te han proporcionado la lista de usuarios de Betterlab.Escribe tu nombre en alguno de los usuarios disponibles y toma nota de tu usuario y contraseña.</p>
+</blockquote>
+</section>
+<section id="paso-2-accede-al-enlace" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="paso-2-accede-al-enlace"><span class="header-section-number">6.2</span> <strong>Paso 2: Accede al enlace</strong></h2>
+<ol type="1">
+<li><p>Abre tu navegador web e ingresa el siguiente URL en la barra de direcciones (copia y pega o da clic al link): <a href="https://bioinformatica.matmor.unam.mx/rstudio/auth-sign-in?appUri=%2F"><code>https://bioinformatica.matmor.unam.mx/rstudio/auth-sign-in?appUri=%2F</code></a></p></li>
+<li><p>Presiona <strong>Enter</strong> para cargar la página.</p></li>
+</ol>
+<p><img src="https://iscb-rsg-mexico.github.io/Workshop_Bash2024/img/BetterLab1.png" class="img-fluid" width="319"></p>
+</section>
+<section id="paso-3-inicia-sesión" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="paso-3-inicia-sesión"><span class="header-section-number">6.3</span> <strong>Paso 3: Inicia sesión</strong></h2>
+<p>En la pantalla de inicio de sesión, introduce tus credenciales, por ejemplo:</p>
+<ul>
+<li><p><strong>Usuario:</strong> alumno10.</p></li>
+<li><p><strong>Contraseña:</strong> (Escribe la contraseña correspondiente de la hoja de usuarios)</p></li>
+<li><p>Haz clic en <strong>Iniciar sesión</strong> o presiona <strong>Enter</strong>.</p></li>
+</ul>
+</section>
+<section id="paso-4-explora-rstudio-en-bettertab" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="paso-4-explora-rstudio-en-bettertab"><span class="header-section-number">6.4</span> <strong>Paso 4: Explora RStudio en Bettertab</strong></h2>
+<p>Una vez que hayas iniciado sesión, se abrirá la interfaz de usuario de RStudio. Aquí puedes:</p>
+<ul>
+<li><p>Crear, cargar y ejecutar scripts en R.</p></li>
+<li><p>Gestionar tus proyectos.</p></li>
+<li><p>Acceder a datos y recursos alojados en el servidor Bettertab.</p></li>
+<li><p>Cuando entramos veremos cuatro ventanas:</p></li>
+</ul>
+<p><img src="https://iscb-rsg-mexico.github.io/Workshop_Bash2024/img/BetterLab2.jpg" class="img-fluid"></p>
+<section id="script-o-editor-de-código-ventana-superior-izquierda" class="level3" data-number="6.4.1">
+<h3 data-number="6.4.1" class="anchored" data-anchor-id="script-o-editor-de-código-ventana-superior-izquierda"><span class="header-section-number">6.4.1</span> <strong>Script o Editor de Código (Ventana superior izquierda)</strong></h3>
+<ul>
+<li>Uso: Aquí escribes, editas y guardas tus <strong>scripts</strong> de R.</li>
+</ul>
+<p><strong>Características principales:</strong></p>
+<ul>
+<li><p>Puedes abrir varios archivos a la vez en pestañas.</p></li>
+<li><p>Permite ejecutar líneas o bloques de código presionando Ctrl+Enter (o Cmd+Enter en Mac).</p></li>
+<li><p>Prueba: Haz el comando <strong><code>getwd()</code></strong> para saber cual es tu directorio de trabajo</p></li>
+</ul>
+<p><img src="https://iscb-rsg-mexico.github.io/Workshop_Bash2024/img/BetterLab3.png" class="img-fluid"></p>
+</section>
+<section id="consola-console-ventana-inferior-izquierda" class="level3" data-number="6.4.2">
+<h3 data-number="6.4.2" class="anchored" data-anchor-id="consola-console-ventana-inferior-izquierda"><span class="header-section-number">6.4.2</span> <strong>Consola (Console) (Ventana inferior izquierda)</strong></h3>
+<ul>
+<li><p>Uso: Aquí se ejecuta el código de manera directa.</p></li>
+<li><p>Muestra los resultados y mensajes de salida.</p></li>
+</ul>
+<p><strong>Características</strong>:</p>
+<ul>
+<li><p>Puedes escribir comandos directamente para probar ideas rápidas.</p></li>
+<li><p>Repite el mismo ejercicio anterior.</p></li>
+</ul>
+</section>
+<section id="entorno-yo-historial-ventana-superior-derecha" class="level3" data-number="6.4.3">
+<h3 data-number="6.4.3" class="anchored" data-anchor-id="entorno-yo-historial-ventana-superior-derecha"><span class="header-section-number">6.4.3</span> <strong>3.4.3 3. Entorno y/o Historial (Ventana superior derecha)</strong></h3>
+<ul>
+<li><p>Pestaña Entorno: Muestra los objetos que has creado (como variables, funciones, y datos cargados).</p></li>
+<li><p>Pestaña Historial: Muestra todos los comandos ejecutados en la sesión.</p></li>
+<li><p>Tip: Puedes hacer clic en los objetos para inspeccionarlos o eliminarlos (botón de escoba).</p></li>
+</ul>
+<p><img src="https://iscb-rsg-mexico.github.io/Workshop_Bash2024/img/BetterLab4.png" class="img-fluid"></p>
+</section>
+<section id="archivos-gráficos-paquetes-y-ayuda-ventana-inferior-derecha" class="level3" data-number="6.4.4">
+<h3 data-number="6.4.4" class="anchored" data-anchor-id="archivos-gráficos-paquetes-y-ayuda-ventana-inferior-derecha"><span class="header-section-number">6.4.4</span> <strong>Archivos, Gráficos, Paquetes, y Ayuda (Ventana inferior derecha)</strong></h3>
+<p>Uso:</p>
+<ul>
+<li><p>Archivos: Explora las carpetas y archivos en tu directorio de trabajo.</p></li>
+<li><p>Gráficos: Muestra los gráficos generados con tu código.</p></li>
+<li><p>Paquetes: Administra e instala paquetes de R.</p></li>
+<li><p>Ayuda: Busca documentación sobre funciones y comandos de R.</p></li>
+</ul>
+<p><img src="https://iscb-rsg-mexico.github.io/Workshop_Bash2024/img/BetterLab5.png" class="img-fluid"></p>
+</section>
+<section id="terminal-bash" class="level3" data-number="6.4.5">
+<h3 data-number="6.4.5" class="anchored" data-anchor-id="terminal-bash"><span class="header-section-number">6.4.5</span> <strong>Terminal (Bash)</strong></h3>
+<div>
+<p>Pestaña en la ventana inferior izquierda, junto a la Consola.</p>
+</div>
+<p>Uso:</p>
+<ul>
+<li><p>Es un terminal de línea de comandos para ejecutar comandos en Bash directamente desde RStudio.</p></li>
+<li><p>Útil para tareas del sistema, como mover archivos, instalar software o trabajar con Git.</p></li>
+<li><p>Ejemplo: Puedes usar <strong>ls</strong> para listar archivos.</p>
+<p><img src="https://iscb-rsg-mexico.github.io/Workshop_Bash2024/img/BetterLab6.png" class="img-fluid"></p>
+<p><strong>Paso 5: Cerrar sesión</strong></p>
+<p>Cuando termines de trabajar:</p>
+<ol type="1">
+<li><p>Haz clic en el botón <strong>Cerrar sesión</strong> ubicado en la esquina superior derecha.</p></li>
+<li><p>Cierra la pestaña del navegador para garantizar que tu sesión quede cerrada.</p></li>
+</ol></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="introducción-al-shell" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Introducción al Shell</h1>
+<section id="qué-es-un-shell" class="level3" data-number="7.0.1">
+<h3 data-number="7.0.1" class="anchored" data-anchor-id="qué-es-un-shell"><span class="header-section-number">7.0.1</span> 🔹 ¿Qué es un Shell?</h3>
 <p>Un Shell es un programa que permite interactuar con el sistema operativo</p>
 <p>utilizando comandos en lugar de una interfaz gráfica (GUI).</p>
 </section>
-<section id="por-qué-usar-un-shell" class="level3" data-number="5.0.2">
-<h3 data-number="5.0.2" class="anchored" data-anchor-id="por-qué-usar-un-shell"><span class="header-section-number">5.0.2</span> 🎯 ¿Por qué usar un Shell?</h3>
+<section id="por-qué-usar-un-shell" class="level3" data-number="7.0.2">
+<h3 data-number="7.0.2" class="anchored" data-anchor-id="por-qué-usar-un-shell"><span class="header-section-number">7.0.2</span> 🎯 ¿Por qué usar un Shell?</h3>
 <p>1️⃣ Muchas herramientas bioinformáticas solo se usan en Shell.</p>
 <p>2️⃣ Permite automatizar tareas repetitivas.</p>
 <p>3️⃣ Minimiza errores humanos.</p>
@@ -513,52 +665,51 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>5️⃣ Facilita el acceso a servidores remotos para análisis de datos grandes.</p>
 <p>================================</p>
 </section>
-<section id="navegación-en-el-sistema-de-archivos" class="level3" data-number="5.0.3">
-<h3 data-number="5.0.3" class="anchored" data-anchor-id="navegación-en-el-sistema-de-archivos"><span class="header-section-number">5.0.3</span> 🔹 Navegación en el sistema de archivos:</h3>
+<section id="navegación-en-el-sistema-de-archivos" class="level3" data-number="7.0.3">
+<h3 data-number="7.0.3" class="anchored" data-anchor-id="navegación-en-el-sistema-de-archivos"><span class="header-section-number">7.0.3</span> 🔹 Navegación en el sistema de archivos:</h3>
 <p>================================</p>
 </section>
-<section id="ver-el-directorio-en-el-que-te-encuentras" class="level3" data-number="5.0.4">
-<h3 data-number="5.0.4" class="anchored" data-anchor-id="ver-el-directorio-en-el-que-te-encuentras"><span class="header-section-number">5.0.4</span> 📌 1️ Ver el directorio en el que te encuentras:</h3>
+<section id="ver-el-directorio-en-el-que-te-encuentras" class="level3" data-number="7.0.4">
+<h3 data-number="7.0.4" class="anchored" data-anchor-id="ver-el-directorio-en-el-que-te-encuentras"><span class="header-section-number">7.0.4</span> 📌 1️ Ver el directorio en el que te encuentras:</h3>
 <hr>
 <p><code>pwd</code><br>
 👉 Este comando significa “Print Working Directory”. Nos dice en qué carpeta estamos parados.</p>
 <hr>
 </section>
-<section id="listar-los-archivos-y-carpetas-en-el-directorio-actual" class="level3" data-number="5.0.5">
-<h3 data-number="5.0.5" class="anchored" data-anchor-id="listar-los-archivos-y-carpetas-en-el-directorio-actual"><span class="header-section-number">5.0.5</span> 📌 2️ Listar los archivos y carpetas en el directorio actual:</h3>
+<section id="listar-los-archivos-y-carpetas-en-el-directorio-actual" class="level3" data-number="7.0.5">
+<h3 data-number="7.0.5" class="anchored" data-anchor-id="listar-los-archivos-y-carpetas-en-el-directorio-actual"><span class="header-section-number">7.0.5</span> 📌 2️ Listar los archivos y carpetas en el directorio actual:</h3>
 <p><code>ls</code><br>
 👉 Muestra los archivos y directorios que existen en esa ubicación.</p>
 <p><code>ls -a</code> Lista TODO, incluidos ocultos</p>
 <hr>
 </section>
-<section id="cambiar-de-directorio" class="level3" data-number="5.0.6">
-<h3 data-number="5.0.6" class="anchored" data-anchor-id="cambiar-de-directorio"><span class="header-section-number">5.0.6</span> 📌 3️ Cambiar de directorio:</h3>
+<section id="cambiar-de-directorio" class="level3" data-number="7.0.6">
+<h3 data-number="7.0.6" class="anchored" data-anchor-id="cambiar-de-directorio"><span class="header-section-number">7.0.6</span> 📌 3️ Cambiar de directorio:</h3>
 <p><code>cd nombre_del_directorio</code><br>
 👉 Esto te lleva al directorio especificado.</p>
 </section>
-<section id="ejemplo" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="ejemplo"><span class="header-section-number">5.1</span> 👉 Ejemplo:</h2>
+<section id="ejemplo" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="ejemplo"><span class="header-section-number">7.1</span> 👉 Ejemplo:</h2>
 <p>Si estás en <code>/home/dcuser</code> y quieres entrar a un subdirectorio:</p>
 <p><code>cd dc_workshop</code></p>
 <hr>
-<section id="volver-al-directorio-principal" class="level3" data-number="5.1.1">
-<h3 data-number="5.1.1" class="anchored" data-anchor-id="volver-al-directorio-principal"><span class="header-section-number">5.1.1</span> 📌 4 Volver al directorio principal:</h3>
-<p><code>cd ~</code></p>
-</section>
-<section id="subir-un-nivel-en-la-estructura-de-carpetas" class="level3" data-number="5.1.2">
-<h3 data-number="5.1.2" class="anchored" data-anchor-id="subir-un-nivel-en-la-estructura-de-carpetas"><span class="header-section-number">5.1.2</span> 📌 5 Subir un nivel en la estructura de carpetas:</h3>
+<section id="subir-un-nivel-en-la-estructura-de-carpetas" class="level3" data-number="7.1.1">
+<h3 data-number="7.1.1" class="anchored" data-anchor-id="subir-un-nivel-en-la-estructura-de-carpetas"><span class="header-section-number">7.1.1</span> 📌 4 Subir un nivel en la estructura de carpetas:</h3>
 <p><code>cd ..</code></p>
 </section>
-<section id="atajos-útiles" class="level3" data-number="5.1.3">
-<h3 data-number="5.1.3" class="anchored" data-anchor-id="atajos-útiles"><span class="header-section-number">5.1.3</span> 📌 6 Atajos útiles:</h3>
+<section id="volver-al-directorio-principal" class="level3" data-number="7.1.2">
+<h3 data-number="7.1.2" class="anchored" data-anchor-id="volver-al-directorio-principal"><span class="header-section-number">7.1.2</span> 📌 5 Volver al directorio principal:</h3>
+<p><code>cd ~</code></p>
+</section>
+<section id="atajos-útiles" class="level3" data-number="7.1.3">
+<h3 data-number="7.1.3" class="anchored" data-anchor-id="atajos-útiles"><span class="header-section-number">7.1.3</span> 📌 6 Atajos útiles:</h3>
 <ul>
-<li><p><code>cd</code> sin argumentos te lleva al directorio principal (home).</p></li>
-<li><p><code>cd -</code> te lleva al último directorio en el que estuviste.</p></li>
+<li><code>cd -</code> te lleva al último directorio en el que estuviste.</li>
 </ul>
 <p>================================</p>
 </section>
-<section id="autocompletado-tab" class="level3" data-number="5.1.4">
-<h3 data-number="5.1.4" class="anchored" data-anchor-id="autocompletado-tab"><span class="header-section-number">5.1.4</span> <strong>🔹 Autocompletado (Tab):</strong></h3>
+<section id="autocompletado-tab" class="level3" data-number="7.1.4">
+<h3 data-number="7.1.4" class="anchored" data-anchor-id="autocompletado-tab"><span class="header-section-number">7.1.4</span> <strong>🔹 Autocompletado (Tab):</strong></h3>
 <p>Es una función que te permite completar nombres de archivos o carpetas</p>
 <p>al presionar la tecla “<code>Tab</code>”.</p>
 <p>👉 Ejemplo:</p>
@@ -567,19 +718,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 # El Shell completará el nombre a <code>dc_workshop</code> si existe.</p>
 </section>
 </section>
-<section id="permisos-de-archivos" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="permisos-de-archivos"><span class="header-section-number">5.2</span> 🔐 2. Permisos de archivos</h2>
+<section id="permisos-de-archivos" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="permisos-de-archivos"><span class="header-section-number">7.2</span> 🔐 2. Permisos de archivos</h2>
 <p><strong>Ver permisos</strong> con <code>ls -l</code></p>
 <div class="sourceCode" id="code"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="code-1"><a href="#code-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-l</span> youfoundit.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="output"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="output-1"><a href="#output-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-rw-r--</span> 1 usuario grupo 0 May 27 23:16 youfoundit.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>[imagen]</p>
+<p><img src="images/clipboard-1576158875.png" class="img-fluid" width="519"></p>
 <p><strong>Quitar permiso de escritura</strong> al dueño con <code>chmod</code>:</p>
 <pre><code>chmod -w youfoundit.txt
 ls -l youfoundit.txt
 # -r--r--r-- 1 usuario grupo 0 May 27 23:16 youfoundit.txt</code></pre>
 </section>
-<section id="rutas-absolutas-vs.-relativas" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="rutas-absolutas-vs.-relativas"><span class="header-section-number">5.3</span> 3. Rutas absolutas vs.&nbsp;relativas</h2>
+<section id="rutas-absolutas-vs.-relativas" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="rutas-absolutas-vs.-relativas"><span class="header-section-number">7.3</span> 3. Rutas absolutas vs.&nbsp;relativas</h2>
 <ul>
 <li><p><strong>Ruta absoluta</strong>: parte de <code>/</code></p>
 <pre><code>cd /home/usuario/dc_workshop/.hidden</code></pre>
@@ -1160,8 +1311,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./5Operacionesyexploraciondefastq.html" class="pagination-link" aria-label="Operaciones en archivos y carpetas">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Operaciones en archivos y carpetas</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./5Operacionesyexploraciondefastq.html" class="pagination-link" aria-label="**Trabajar con archivos y directorios**">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>Trabajar con archivos y directorios</strong></span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
