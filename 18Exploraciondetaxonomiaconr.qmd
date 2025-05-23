@@ -152,7 +152,7 @@ Hasta ahora, hemos analizado la parte del objeto phyloseq que almacena la inform
 ![](figures/taxonomy3.png){fig-align="center"}
 
 ``` r
-merged_metagenomes@otu_table@.Data["1077935",]
+>merged_metagenomes@otu_table@.Data["1077935",]
 ```
 
 ```         
