@@ -19,9 +19,13 @@ Es fundamental comprender los pasos que utiliza para limpiar sus datos. En nuest
 
 Sin embargo, un comando completo para Trimmomatic se parecerá al siguiente. Este comando es un ejemplo y no funcionará, ya que no disponemos de los archivos a los que hace referencia:
 
-``` bash         
-$ trimmomatic PE -threads 4 SRR_1056_1.fastq SRR_1056_2.fastq \ SRR_1056_1.trimmed.fastq SRR_1056_1un.trimmed.fastq \ SRR_1056_2.trimmed.fastq SRR_1056_2un.trimmed.fastq \               ILLUMINACLIP:SRR_adapters.fa SLIDINGWINDOW:4:20 ILLUMINACLIP:TruSeq3-PE.fa:2:40:15
+```bash
+trimmomatic PE -threads 4 SRR_1056_1.fastq SRR_1056_2.fastq \
+SRR_1056_1.trimmed.fastq SRR_1056_1un.trimmed.fastq \
+SRR_1056_2.trimmed.fastq SRR_1056_2un.trimmed.fastq \
+ILLUMINACLIP:SRR_adapters.fa SLIDINGWINDOW:4:20 ILLUMINACLIP:TruSeq3-PE.fa:2:40:15
 ```
+
 
 En este ejemplo, le hemos dicho a Trimmomatic:
 
