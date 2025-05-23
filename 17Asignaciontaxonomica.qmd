@@ -71,7 +71,7 @@ U   MISEQ-LAB244-W7:156:000000000-A80CV:1:1101:19691:2037   0   250|251 0:216 |:
 Esta información podría necesitar aclaración. Consultemos nuestra hoja de referencia para comprender algunos de sus componentes:
 
 | Ejemplo de columna | Descripción |
-|:-----------------------------------|:-----------------------------------|
+|:---|:---|
 | C | Clasificado o no clasificado |
 | MISEQ-LAB244-W7:156:000000000-A80CV:1:1101:15697:2078 | Encabezado FASTA de la secuencia |
 | 2219696 | Identificación fiscal |
@@ -89,7 +89,7 @@ head ~/dc_workshop/taxonomy/JP4D.report
 ```
 
 | Ejemplo de columna | Descripción |
-|:-----------------------------------|:-----------------------------------|
+|:---|:---|
 | 78.13 | Porcentaje de lecturas cubiertas por el clado enraizado en este taxón |
 | 587119 | Número de lecturas cubiertas por el clado enraizado en este taxón |
 | 587119 | Número de lecturas asignadas directamente a este taxón |
