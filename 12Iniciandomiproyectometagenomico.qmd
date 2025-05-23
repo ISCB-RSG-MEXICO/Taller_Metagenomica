@@ -1,42 +1,36 @@
 # Iniciando mi proyecto metagenómico
 
-### Introducción
-
 Muchas de las herramientas para el análisis metagenómico se utilizan en línea de comando por las siguientes razones:
 
-1.  Comunmente se trabajará con cantidades muy grandes de datos y hacerlo mediante la línea de comandos en lugar de una interfaz gráfica facilita la automatización de tareas repetitivas.
-2.  Se necesitará gran poder computacional, el cual rara vez está disponible en computadoras personales. Al mismo tiempo conectarse e interactuar con computadoras remotas requiere una interfaz de línea de comandos.
-3.  Necesitarás personalizar tu análisis y las herramientas en línea de comando permiten dichos cambios en parámetros.
+1.  Comunmente se trabajará con **cantidades muy grandes de datos** y hacerlo mediante la línea de comandos en lugar de una interfaz gráfica facilita la automatización de tareas repetitivas.
 
-En esta sección aplicarás los conocimientos para implementar un workflow común en metagenómica: identificar Unidades Taxonómicas Operacionales (OTU) en muestras tomadas de metagenomas.
+2.  Se necesitará **gran poder computacional**, el cual rara vez está disponible en computadoras personales. Al mismo tiempo conectarse e interactuar con computadoras remotas requiere una interfaz de línea de comandos.
 
-Comenzaremos con un conjunto de lecturas/reads secuenciados en archivos con formato `.fastq`. Realizaremos algunos pasos de control de calidad, ensamblaremos los reads en contigs y finalizaremos identificando y visualizando los OTUs en estas muestras.
+3.  Necesitarás **personalizar tu análisis y las herramientas en línea de comando** permiten dichos cambios en parámetros.
 
-Toma en cuenta que a medida que avanzamos en esta sección, aunque no utilices el mismo flujo de trabajo, aprenderás a implementar herramientas bioinformáticas importantes en línea de comandos.
+🔍Toma en cuenta que a medida que avanzamos en esta sección, aunque no utilices el mismo flujo de trabajo, aprenderás a implementar herramientas bioinformáticas importantes en línea de comandos🔍
 
-## Comienza tu proyecto metagenómico
+### Metagenómica 
 
-### Metagenómica
+Los metagenómas son colecciones de secuencias genómicas de varios microorganismos que coexisten en un determinado espacio. Nos brindan información sobre la **composición taxonómica, metabolómica** e incluso **funcional** de las comunidades que estudiamos. Los metagenómas se emplean habitualmente para investigar la ecología de nichos, como por ejemplo el intestino humano o el fondo marino.
 
-Los metagenómas son colecciones de secuencias genómicas de varios microorganismos que coexisten en un determinado espacio. Nos brindan información sobre la composición taxonómica, metabolómica e incluso funcional de las comunidades que estudiamos. Los metagenómas se emplean habitualmente para investigar la ecología de nichos, como por ejemplo el intestino humano o el fondo marino.
+Dado que los metagenomas son mezclas de secuencias que pertenecen a diferentes especies, un flujo de trabajo metagenómico está diseñado para responder dos preguntas:
 
-Dado que los metagenomas son mezclas de secuencias que perteneven a diferentes especies, un flujo de trabajo metagenómico está diseñado para responder dos preguntas:
+1.  **¿Qué especies están representadas en la muestra?**
+2.  **¿Qué son capaces de hacer?**
 
-1.  ¿Qué especies están representadas en la muestra?
-2.  ¿Qué son capaces de hacer?
-
-Para determinar qué especies están presentes en un nicho, debemos realizar una asignación taxonómica de las secuencias obtenidas. Para determinar sus capacidades podemos examinar los genes codificados directamente en el metagenoma o encontrar genes asociados a las especies encontradas. Para determinar qué metodología usar es fundamental saber qué preguntas queremos responder.
+Para determinar qué especies están presentes en un nicho, debemos realizar una asignación taxonómica de las secuencias obtenidas. Para determinar sus capacidades podemos examinar los genes codificados directamente en el metagenoma o encontrar genes asociados a las especies encontradas. **Para determinar qué metodología usar es fundamental saber qué preguntas queremos responder**.
 
 ### Shotgun y amplicon
 
 Existen dos rutas para obtener información de una muestra:
 
-1.  Metagenómica por Shotgun
-2.  Metabarcoding
+1.  **Metagenómica por Shotgun** 🔫
+2.  **Metabarcoding** 🙌
 
-Con la **metagenómica por Shotgun**, secuenciamos partes aleatorias (idealmente todas las partes del genoma) de los genomas presentes en una muestra. Podemos buscar el origen de estas piezas (es decir, su taxonomía) y tratar de encontrar también a qué parte corresponden. Es posible obtener genomas individuales completos de un metagenoma shotgun (MAGs). Sin embargo, el ensamblaje de MAG requiere muchas secuencias genómicas de un organismo (gran profundidad de secuenciación), lo cual se vuelve un reto cuando nuestra especie de interés no es muy abundante en la muestra o ambiente. Finalmente la secuenciación es costosa y hacer réplicas técnicas y biológicas puede ser prohibitivamente costoso.
+Con la **metagenómica por Shotgun**, secuenciamos partes a**leatorias** (idealmente todas las partes del genoma) de los genomas presentes en una muestra. Es posible **obtener genomas individuales completos** de un metagenoma shotgun (MAGs). Sin embargo, el ensamblaje de MAG requiere muchas secuencias genómicas de un organismo (**gran profundidad de secuenciación**), lo cual se vuelve un reto cuando nuestra especie de interés no es muy abundante en la muestra o ambiente. Finalmente la **secuenciación es costosa** y hacer réplicas técnicas y biológicas puede ser prohibitivamente costoso.
 
-Por el contrario, el **metabarcoding** suele ser una técnica más económica. Este menor coste se debe a las especificaciones de la técnica, la cual consiste en la recopilación de pequeños fragmentos genómicos presentes en la comunidad y amplificados mediante PCR. La conservación de regiones genómicas entre especies es la razón por la que los amplicones más populares para bacterias utilizados en esta metodología con los 16S. Sin embargo, esta técnica se limita a ofrecernos la taxonomía del organismo. Interponiendo la posibilidad de proveer información metabólica.
+Por el contrario, el **metabarcoding** suele ser una técnica más **económica**. Este menor coste se debe a las especificaciones de la técnica, la cual consiste en la **recopilación de pequeños fragmentos genómicos** presentes en la comunidad y amplificados mediante PCR. La conservación de regiones genómicas entre especies es la razón por la que **los amplicones más populares para bacterias utilizados en esta metodología con los 16S**. Sin embargo, esta técnica se **limita a ofrecernos la taxonomía del organismo.** Interponiendo la posibilidad de proveer información metabólica.
 
 ![](figures/03-01-01.png){fig-align="center"}
 
@@ -47,10 +41,6 @@ En la mayoría de los casos, las diferencias observadas al comparar metagenomas 
 Los datos que vamos a utilizar son de un estudio sobre la respuesta de la comunidad bacteriana de Cuatro Ciénegas al enriquecimiento de nutrientes. La comparación entre comunidades bacterianas demostró que algunos rasgos genómicos como el tamaño medio del genoma, el contenido de GC, el número total de genes de ARNt y ARNr y el sesgo en el uso de codones, se modificaron significativamente cuando la comunidad bacteriana se sometió a los distintos tratamientos (entorno natural, oligotrófico, deficiente en fósforo y un tratamiento de fertilización).
 
 De acuerdo con los resultados de este estudio, ¿qué estrategia crees que utilizaron en este estudio?
-
-### En Etherpad:
-
-Según la importancia de los metadatos, ¿qué otra información puedes recomendar agregar a la tabla de metadatos?
 
 ::: callout-note
 **Nota**:

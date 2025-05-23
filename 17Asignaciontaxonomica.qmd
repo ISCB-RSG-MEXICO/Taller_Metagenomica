@@ -1,239 +1,205 @@
-# Explorando la diversidad con librerías de R
+# Asignación taxonómica
 
-## **Primera inmersión en la diversidad**
+### ¿Qué es la asignación taxonómica?
 
-La diversidad de especies, en su definición más simple, es el número de especies en un área determinada y su abundancia relativa (uniformidad). Una vez que conocemos la composición taxonómica de nuestros metagenomas, podemos realizar análisis de diversidad. Aquí analizaremos las dos métricas de diversidad más utilizadas: la diversidad α (dentro de un metagenoma) y la diversidad β (entre metagenomas).
+Una asignación taxonómica es un proceso que consiste en asignar una Unidad Taxonómica Operativa (OTU, es decir, grupos de individuos relacionados) a secuencias que pueden ser lecturas o contigs. Las secuencias se comparan con una base de datos construida a partir de genomas completos. Cuando una secuencia encuentra una coincidencia suficientemente buena en la base de datos, se asigna a la OTU correspondiente.
 
--   Diversidad α: Puede representarse únicamente como riqueza ( *es decir,* el número de especies diferentes en un entorno), o también puede medirse considerando la abundancia de las especies en el entorno ( *es decir,* el número de individuos de cada especie en el entorno). Para medir la diversidad α, utilizamos índices como el de Shannon, el de Simpson, el de Chao1, etc.
+### **Estrategias para la asignación taxonómica**
 
-![](figures/diversidad1.png){fig-align="center"}
+Existen muchos programas para realizar mapeo taxonómico, y casi todos ellos siguen una de las siguientes estrategias:
 
--   La diversidad β es la diferencia (medida como distancia) entre dos o más entornos. Puede medirse con métricas como la disimilitud de Bray-Curtis, la distancia de Jaccard o la distancia Unifrac, por nombrar algunas. Cada una de estas medidas se centra en una característica de la comunidad ( *p. ej.,* la distancia Unifrac mide la relación filogenética entre las especies de la comunidad).
+1.  BLAST: Utilizando [BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi) o [DIAMOND](https://github.com/bbuchfink/diamond), estos mapeadores buscan la coincidencia más probable para cada secuencia dentro de una base de datos de genomas. Esta estrategia es lenta.
 
-En el siguiente ejemplo, analizaremos los componentes α y β de la diversidad de un conjunto de datos de peces en tres lagos. La forma más sencilla de calcular la diversidad β es calcular las especies distintas entre dos lagos (sitios). Tomemos como ejemplo la diversidad entre el lago A y el lago B. El número de especies en el lago A es 3. A esta cantidad, restaremos el número de estas especies que se comparten con el lago B: 2. Por lo tanto, el número de especies únicas en el lago A en comparación con el lago B es (3-2) = 1. A este número, sumaremos el resultado de las mismas operaciones, pero ahora tomaremos el lago B como nuestro sitio de referencia. Al final, la diversidad β entre el lago A y el lago B es (3-2) + (3-2) = 2. Este proceso puede repetirse, tomando cada par de lagos como los sitios de enfoque.
+2.  Marcadores: Buscan marcadores de una base de datos realizada *a priori* en las secuencias a clasificar y les asignan la taxonomía en función de los hits obtenidos.
 
-![](figures/diversidad2.png){fig-align="center"}
+3.  K-meros: Una base de datos genómica se divide en fragmentos de longitud *k* para poder buscar fragmentos únicos por grupo taxonómico, desde el ancestro común más antiguo (LCA), pasando por el phyllum hasta la especie.
 
-## **diversidad α**
+### **Sesgo de abundancia**
 
-| Índices de diversidad | Descripción |
+Al realizar la asignación taxonómica de metagenomas, un resultado clave es la abundancia de cada taxón u OTU en la muestra. La abundancia absoluta de un taxón es el número de secuencias (lecturas o contigs, según el método) asignadas. Además, su abundancia relativa es la proporción de secuencias asignadas. Es fundamental tener en cuenta los numerosos sesgos que pueden distorsionar las abundancias a lo largo del proceso metagenómico, como se muestra en la figura, y que, debido a ellos, es posible que no obtengamos la abundancia real de los organismos en la muestra.
+
+## **Usando Kraken 2**
+
+[Kraken 2](https://ccb.jhu.edu/software/kraken2/) es la versión más nueva de Kraken, un sistema de clasificación taxonómica que utiliza coincidencias exactas de k-mer para lograr una alta precisión y velocidades de clasificación rápidas. `kraken2`ya está instalado en el **entorno de metagenómica** , echemos un vistazo a `kraken2`la ayuda.
+
+```         
+$ kraken2  --help 
+```
+
+```         
+Need to specify input filenames! Usage: kraken2 [options] <filename(s)>  Options:   --db NAME               Name for Kraken 2 DB                           (default: none)   --threads NUM           Number of threads (default: 1)   --quick                 Quick operation (use first hit or hits)   --unclassified-out FILENAME                           Print unclassified sequences to filename   --classified-out FILENAME                           Print classified sequences to filename   --output FILENAME       Print output to filename (default: stdout); "-" will                           suppress normal output   --confidence FLOAT      Confidence score threshold (default: 0.0); must be                           in [0, 1].   --minimum-base-quality NUM                           Minimum base quality used in classification (def: 0,                           only effective with FASTQ input).   --report FILENAME       Print a report with aggregate counts/clade to file   --use-mpa-style         With --report, format report output like Kraken 1's                           kraken-mpa-report   --report-zero-counts    With --report, report counts for ALL taxa, even if                           counts are zero   --report-minimizer-data With --report, report minimizer, and distinct minimizer                           count information in addition to normal Kraken report   --memory-mapping        Avoids loading database into RAM   --paired                The filenames provided have paired-end reads   --use-names             Print scientific names instead of just taxids   --gzip-compressed       Input files are compressed with gzip   --bzip2-compressed      Input files are compressed with bzip2   --minimum-hit-groups NUM                           Minimum number of hit groups (overlapping k-mers                           sharing the same minimizer) needed to make a call                           (default: 2)   --help                  Print this message   --version               Print version information  If none of the *-compressed flags are specified, and the filename provided is a regular file, automatic format detection is attempted.  
+```
+
+En la ayuda, vemos que, además de nuestros archivos de entrada, también necesitamos una base de datos para compararlos. La base de datos que utilice determinará el resultado que obtenga. Imagine que busca un linaje recientemente descubierto que no forma parte de las bases de datos disponibles. ¿Lo encontraría?
+
+Existen [varias bases de datos](http://ccb.jhu.edu/software/kraken2/downloads.shtml) compatibles para ser utilizadas con kraken2 en el proceso de asignación taxonómica.
+
+Desafortunadamente, incluso la base de datos más pequeña de Kraken, Minikraken, que requiere 8 GB de RAM libre, no es lo suficientemente pequeña para las máquinas que usamos, por lo que **no podremos ejecutarla`kraken2`** . Podemos comprobar nuestra RAM disponible con `free -h`para asegurarnos.
+
+```         
+$ free -h 
+```
+
+```         
+              total        used        free      shared  buff/cache   available Mem:           3.9G        272M        3.3G         48M        251M        3.3G Swap:            0B          0B          0B 
+```
+
+### **Asignación taxonómica de lecturas metagenómicas**
+
+Como hemos aprendido, las asignaciones taxonómicas pueden intentarse antes del ensamblaje. En este caso, usaríamos archivos FASTQ como entrada, que serían `JP4D_R1.trim.fastq.gz`y `JP4D_R2.trim.fastq.gz`. Y las salidas serían dos archivos: el informe `JP4D.report`y el archivo Kraken `JP4D.kraken`.
+
+Para ejecutar kraken2, usaríamos un comando como este:\
+**No es necesario ejecutar esto**
+
+```         
+$ mkdir TAXONOMY_READS $ kraken2 --db kraken-db --threads 8 --paired JP4D_R1.trim.fastq.gz JP4D_R2.trim.fastq.gz --output TAXONOMY_READS/JP4D.kraken --report TAXONOMY_READS/JP4D.report 
+```
+
+Como no podemos ejecutarlo `kraken2`aquí, precalculamos sus resultados en un servidor, es decir, en una máquina más potente. En el servidor, ejecutamos `kraken2`y obtuvimos \[ `JP4D-kraken.kraken`y\] `JP4D.report`.
+
+Veamos las salidas precalculadas `kraken2`para nuestras lecturas JP4D.
+
+```         
+head ~/dc_workshop/taxonomy/JP4D.kraken   
+```
+
+```         
+U   MISEQ-LAB244-W7:156:000000000-A80CV:1:1101:19691:2037   0   250|251 0:216 |:| 0:217 U   MISEQ-LAB244-W7:156:000000000-A80CV:1:1101:14127:2052   0   250|238 0:216 |:| 0:204 U   MISEQ-LAB244-W7:156:000000000-A80CV:1:1101:14766:2063   0   251|251 0:217 |:| 0:217 C   MISEQ-LAB244-W7:156:000000000-A80CV:1:1101:15697:2078   2219696 250|120 0:28 350054:5 1224:2 0:1 2:5 0:77 2219696:5 0:93 |:| 379:4 0:82 U   MISEQ-LAB244-W7:156:000000000-A80CV:1:1101:15529:2080   0   250|149 0:216 |:| 0:115 U   MISEQ-LAB244-W7:156:000000000-A80CV:1:1101:14172:2086   0   251|250 0:217 |:| 0:216 U   MISEQ-LAB244-W7:156:000000000-A80CV:1:1101:17552:2088   0   251|249 0:217 |:| 0:215 U   MISEQ-LAB244-W7:156:000000000-A80CV:1:1101:14217:2104   0   251|227 0:217 |:| 0:193 C   MISEQ-LAB244-W7:156:000000000-A80CV:1:1101:15110:2108   2109625 136|169 0:51 31989:5 2109625:7 0:39 |:| 0:5 74033:2 31989:5 1077935:1 31989:7 0:7 60890:2 0:105 2109625:1 C MISEQ-LAB244-W7:156:000000000-A80CV:1:1101:19558:2111   119045  251|133 0:18 1224:9 2:5 119045:4 0:181 |:| 0:99 
+```
+
+Esta información podría necesitar aclaración. Consultemos nuestra hoja de referencia para comprender algunos de sus componentes:
+
+| Ejemplo de columna | Descripción |
 |:---|:---|
-| Shannon (H) | Estimación de la riqueza y la uniformidad de especies. Mayor importancia para la riqueza. |
-| Simpson (D) | Estimación de la riqueza y la uniformidad de especies. Mayor importancia para la uniformidad. |
-| Caos1 | Abundancia basada en especies representadas por un solo individuo (singletons) y dos individuos (doubletons). |
+| do | Clasificado o no clasificado |
+| MISEQ-LAB244-W7:156:000000000-A80CV:1:1101:15697:2078 | Encabezado FASTA de la secuencia |
+| 2219696 | Identificación fiscal |
+| 250:120 | Longitud de lectura |
+| 0:28 350054:5 1224:2 0:1 2:5 0:77 2219696:5 0:93 379:4 0:82 | Los kmers coinciden con un ID taxonómico *, p. ej.,* el ID fiscal 350054 tiene cinco coincidencias, el ID fiscal 1224 tiene dos coincidencias, etc. |
 
--   Shannon (H):
+El archivo Kraken podría ser más legible. Analicemos el archivo del informe:
 
-| Variable | Definición |
-|:--:|:--:|
-| H= −∑Syo = 1pagienpagiH=−∑i=1Spagien⁡pagi | Definición |
-| SS | Número de OTU |
-| pagipagi | La proporción de la comunidad representada por OTU i |
-
--   Simpson (D)
-
-| Variable | Definición |
-|:--:|:--:|
-| D =1∑Syo = 1pag2iD=1∑i=1Spagi2 | Definición |
-| SS | Número total de especies en la comunidad |
-| pagipagi | Proporción de la comunidad representada por OTU i |
-
--   Caos1
-
-| Variable | Definición |
-|:--:|:--:|
-| Sc h a o 1=SObs​​+F1× (F1− 1 )2 × (F2+ 1 )Sdohao1=SOhbs+F1×(F1−1)2×(F2+1) | Recuento de singletons y doubletons respectivamente |
-| F1,F2F1,F2 | Recuento de singletons y doubletons respectivamente |
-| Sc h a o 1=SObs​​Sdohao1=SOhbs | El número de especies observadas |
-
-### **diversidad β**
-
-La diversidad β mide qué tan diferentes son dos o más comunidades, ya sea en su composición (riqueza) o en la abundancia de los organismos que la componen (abundancia).
-
--   Disimilitud de Bray-Curtis: Diferencia en riqueza y abundancia entre entornos (muestras). Ponderación de la abundancia. Mide las diferencias de 0 (comunidades iguales) a 1 (comunidades diferentes).
-
--   Distancia de Jaccard: Se basa en la presencia o ausencia de especies (diversidad). Va de 0 (misma especie en la comunidad) a 1 (ninguna especie en común).
-
--   UniFrac: Mide la distancia filogenética; la similitud entre los árboles de cada comunidad. Existen dos tipos: sin ponderaciones (diversidad) y con ponderaciones (diversidad y abundancia).
-
-## **Ejercicio 1: Medida simple de diversidades alfa y beta.**
-
-En la siguiente imagen se muestran dos lagos con diferentes especies de peces: *Figura 3.*[![En el lago A, tenemos cuatro especies diferentes, dos de las cuales tienen tres ejemplares cada una. Este lago también tiene dos ejemplares de una tercera especie y solo uno de una cuarta. En total, encontramos nueve peces. El lago B tiene solo tres especies diferentes; la especie más abundante también está presente en el lago A y tiene cinco ejemplares, y solo tenemos un ejemplar de cada una de las otras dos especies. En total, encontramos siete especies en el lago B.](https://carpentries-lab.github.io/metagenomics-analysis/fig/03-08-03.png){alt="En el lago A, tenemos cuatro especies diferentes, dos de las cuales tienen tres ejemplares cada una. Este lago también tiene dos ejemplares de una tercera especie y solo uno de una cuarta. En total, encontramos nueve peces. El lago B tiene solo tres especies diferentes; la especie más abundante también está presente en el lago A y tiene cinco ejemplares, y solo tenemos un ejemplar de cada una de las otras dos especies. En total, encontramos siete especies en el lago B."}](https://carpentries-lab.github.io/metagenomics-analysis/fig/03-08-03.png)
-
-¿Cuál de las siguientes opciones es verdadera para la diversidad alfa en los lagos A y B, y la diversidad beta entre los lagos A y B, respectivamente?
-
-1.  4, 3, 1
-
-2.  4, 3, 5
-
-3.  9, 7, 16
-
-Por favor, pegue su resultado en el documento colaborativo proporcionado por los instructores. *¡* Aquí *hay leones* !
-
-## **Solución**
-
-Respuesta: 2. 4, 3, 5. **La diversidad alfa** , en este caso, es la suma de las especies. El lago **A** tiene **4** especies y el lago **B 3. La diversidad beta** se refiere a la diferencia entre el lago A y el lago B. Si usamos la fórmula de *la Figura 2,* vemos que para calcular la diversidad beta, debemos detectar el número de especies y el número de especies compartidas en ambos lagos. Solo hay una especie compartida, así que debemos restar el número de especies compartidas al total de especies y sumar el resultado. En este caso, en el lago A, tenemos 4 especies y una especie compartida, siendo el lago B (4-1)=3, y en el lago B tenemos tres especies y una especie compartida, siendo el lago A (3-1)=2. Si sumamos 3+2, el resultado es 5.
-
-## **Diversidad alfa de la gráfica**
-
-Queremos conocer la diversidad bacteriana, así que eliminaremos todos los organismos no bacterianos de nuestro `merged_metagenomes`objeto Phyloseq. Para ello, crearemos un subconjunto de todos los grupos bacterianos y lo guardaremos.
-
-``` r
-> merged_metagenomes <- subset_taxa(merged_metagenomes, Kingdom == "Bacteria") 
+```         
+head ~/dc_workshop/taxonomy/JP4D.report 
 ```
 
-Ahora veamos algunas estadísticas de nuestros metagenomas. La salida del `sample_sums()`comando muestra cuántas lecturas hay en la biblioteca. La biblioteca JC1A es la más pequeña, con 18412 lecturas, mientras que la biblioteca JP4D es la más grande, con 149590 lecturas.
-
-``` r
-> merged_metagenomes 
+```         
+ 78.13  587119  587119  U   0   unclassified  21.87 164308  1166    R   1   root  21.64 162584  0   R1  131567    cellular organisms  21.64 162584  3225    D   2       Bacteria  18.21 136871  3411    P   1224          Proteobacteria  14.21 106746  3663    C   28211           Alphaproteobacteria   7.71  57950   21  O   204455            Rhodobacterales   7.66    57527   6551    F   31989               Rhodobacteraceae   1.23 9235    420 G   1060                  Rhodobacter   0.76    5733    4446    S   1063                    Rhodobacter sphaeroides 
 ```
 
-``` r
-phyloseq-class experiment-level object otu_table()   OTU Table:         [ 4024 taxa and 3 samples ] tax_table()   Taxonomy Table:    [ 4024 taxa by 7 taxonomic ranks ] 
+| Ejemplo de columna | Descripción |
+|:---|:---|
+| 78.13 | Porcentaje de lecturas cubiertas por el clado enraizado en este taxón |
+| 587119 | Número de lecturas cubiertas por el clado enraizado en este taxón |
+| 587119 | Número de lecturas asignadas directamente a este taxón |
+| Tú | Un código de rango que indica (Sin)clasificar, (Dominio), (Reino), (Filo), (Clase), (Orden), (Familia), (Género) o (Especie. Todos los demás rangos se indican simplemente con '-'. |
+| 0 | Identificación de taxonomía del NCBI |
+| sin clasificar | Nombre científico con sangría |
+
+### **Asignación taxonómica de los contigs de un MAG**
+
+Ahora tenemos la identidad taxonómica de las lecturas de todo el metagenoma, pero necesitamos saber a qué taxón corresponden nuestros MAG. Para ello, debemos realizar la asignación taxonómica con sus contigs en lugar de sus lecturas, ya que no disponemos de las lecturas correspondientes a un MAG separadas de las lecturas de toda la muestra.
+
+Para esto, `kraken2`es un poco diferente; aquí podemos ver el comando para el `JP4D.001.fasta`MAG:
+
+**No es necesario ejecutar esto**
+
+```         
+$ mkdir TAXONOMY_MAG $ kraken2 --db kraken-db --threads 12 -input JP4D.001.fasta --output TAXONOMY_MAG/JP4D.001.kraken --report TAXONOMY_MAG/JP4D.001.report 
 ```
 
-``` r
-> sample_sums(merged_metagenomes) 
+Los resultados de esto se calculan previamente en el `~/dc_workshop/taxonomy/mags_taxonomy/`directorio.
+
+```         
+$ cd ~/dc_workshop/taxonomy/mags_taxonomy $ ls 
 ```
 
-``` r
-  JC1A   JP4D   JP41   18412 149590  76589  
+```         
+JP4D.001.kraken JP4D.001.report 
 ```
 
-Además, los valores máximo, mínimo y medio de la salida `summary()`nos dan una idea de la uniformidad. Por ejemplo, la OTU que aparece más veces en la muestra JC1A aparece 399 veces, y en promedio, en la muestra JP4D, una OTU aparece en 37,17 lecturas.
-
-``` r
-> summary(merged_metagenomes@otu_table@.Data) 
+```         
+more ~/dc_workshop/taxonomy/mags_taxonomy/JP4D.001.report 
 ```
 
-``` r
-      JC1A              JP4D              JP41          Min.   :  0.000   Min.   :   0.00   Min.   :   0.00    1st Qu.:  0.000   1st Qu.:   3.00   1st Qu.:   1.00    Median :  0.000   Median :   7.00   Median :   5.00    Mean   :  4.575   Mean   :  37.17   Mean   :  19.03    3rd Qu.:  2.000   3rd Qu.:  21.00   3rd Qu.:  14.00    Max.   :399.000   Max.   :6551.00   Max.   :1994.00   
+```         
+ 50.96  955 955 U   0   unclassified  49.04 919 1   R   1   root  48.83 915 0   R1  131567    cellular organisms  48.83 915 16  D   2       Bacteria  44.40 832 52  P   1224          Proteobacteria  19.37 363 16  C   28216           Betaproteobacteria  16.22   304 17  O   80840             Burkholderiales   5.66    106 12  F   506             Alcaligenaceae   2.72   51  3   G   517               Bordetella   1.12 21  21  S   2163011                 Bordetella sp. HZ20   .   .   . 
 ```
 
-Para tener una representación más visual de la diversidad dentro de las muestras (es decir, diversidad α), ahora podemos mirar un gráfico creado usando Phyloseq:
+Al examinar el informe, observamos que la mitad de los contigs no están clasificados y que a una pequeña proporción se les ha asignado una OTU. Este resultado es extraño, ya que esperábamos encontrar solo un genoma en el bin.
 
-``` r
-> plot_richness(physeq = merged_metagenomes,                measures = c("Observed","Chao1","Shannon")) 
+Para ejemplificar cómo debería ser un informe de un MAG completo y no contaminado, veamos el informe de este MAG de otro estudio:
+
+```         
+100.00  108 0   R   1   root 100.00 108 0   R1  131567    cellular organisms 100.00 108 0   D   2       Bacteria 100.00 108 0   P   1224          Proteobacteria 100.00 108 0   C   28211           Alphaproteobacteria 100.00  108 0   O   356           Rhizobiales 100.00    108 0   F   41294               Bradyrhizobiaceae 100.00    108 0   G   374               Bradyrhizobium 100.00 108 108 S   2057741                 Bradyrhizobium sp. SK17 
 ```
 
-![](figures/diversidad3.png){fig-align="center"}
+## **Visualización de los resultados de la asignación taxonómica**
 
-Cada una de estas métricas puede ofrecer una perspectiva de la distribución de las OTU en nuestras muestras. Por ejemplo, el índice de diversidad Chao1 otorga mayor peso a los singletons y doubletons observados en nuestras muestras, mientras que Shannon es un índice de entropía que señala la imposibilidad de extraer dos lecturas del metagenoma y que estas pertenecerán a la misma OTU.
+Tras asignar la taxonomía, a continuación se presenta una visualización de nuestros resultados. [Krona](https://github.com/marbl/Krona/wiki) es un software de visualización de datos jerárquico. Krona permite explorar los datos con zoom y gráficos circulares multicapa, y es compatible con diversas herramientas bioinformáticas y formatos de datos sin procesar. Para usar Krona en nuestros resultados, primero accedamos a nuestro directorio de taxonomía, que contiene los resultados precalculados de Kraken.
 
-Una precaución al comparar muestras es que las diferencias en algunos índices alfa pueden deberse a la diferencia en el número total de lecturas de las muestras. Una muestra con más lecturas tiene mayor probabilidad de tener más OTU diferentes, por lo que se requiere cierta normalización. En este caso, trabajaremos con abundancias relativas, pero otros enfoques podrían ayudar a reducir este sesgo.
+### **Corona**
 
-## **Abundancias absolutas y relativas**
+Con Krona, exploraremos la taxonomía del JP4D.001 MAG.
 
-A partir de los recuentos de lecturas que acabamos de ver, es evidente que existe una gran diferencia en el número total de lecturas secuenciadas en cada muestra. Antes de continuar con el procesamiento de los datos, verifique si hay lecturas no identificadas. Marcadas como "en blanco" (es decir, "") en los diferentes niveles taxonómicos:
-
-``` r
-> summary(merged_metagenomes@tax_table@.Data== "") 
+```         
+$ cd ~/dc_workshop/taxonomy/mags_taxonomy 
 ```
 
-``` r
-  Kingdom          Phylum          Class           Order           Family          Genus          Species         Mode :logical   Mode :logical   Mode :logical   Mode :logical   Mode :logical   Mode :logical   Mode :logical    FALSE:4024      FALSE:4024      FALSE:3886      FALSE:4015      FALSE:3967      FALSE:3866      FALSE:3540                                       TRUE :138       TRUE :9         TRUE :57        TRUE :158       TRUE :484       
+Krona se llama con el `ktImportTaxonomy`comando que requiere un archivo de entrada y uno de salida.\
+En nuestro caso, crearemos el archivo de entrada con las columnas tres y cuatro del `JP4D.001.kraken`archivo.
+
+```         
+$ cut -f2,3 JP4D.001.kraken > JP4D.001.krona.input 
 ```
 
-Con el comando anterior, podemos ver espacios en blanco en diferentes niveles taxonómicos. Por ejemplo, tenemos 158 espacios en blanco a nivel de género. Aunque podríamos esperar ver algunos espacios en blanco a nivel de especie o incluso de género, eliminaremos los de género para continuar con el análisis.
+Ahora llamamos a Krona en nuestro `JP4D.001.krona.input`archivo y guardamos los resultados en formato `JP4D.001.krona.out.html`.
 
-``` r
-> merged_metagenomes <- subset_taxa(merged_metagenomes, Genus != "") #Only genus that are no blank > summary(merged_metagenomes@tax_table@.Data== "") 
+```         
+$ ktImportTaxonomy JP4D.001.krona.input -o JP4D.001.krona.out.html 
 ```
 
-``` r
-  Kingdom          Phylum          Class           Order           Family          Genus          Species         Mode :logical   Mode :logical   Mode :logical   Mode :logical   Mode :logical   Mode :logical   Mode :logical    FALSE:3866      FALSE:3866      FALSE:3739      FALSE:3860      FALSE:3858      FALSE:3866      FALSE:3527                                       TRUE :127       TRUE :6         TRUE :8                         TRUE :339  
+```         
+Loading taxonomy... Importing JP4D.001.krona.input...    [ WARNING ]  The following taxonomy IDs were not found in the local database and were set to root                 (if they were recently added to NCBI, use updateTaxonomy.sh to update the local                 database): 1804984 2109625 2259134 
 ```
 
-A continuación, dado que nuestros metagenomas tienen diferentes tamaños, es imperativo convertir el número de lecturas asignadas (es decir, abundancia absoluta) en porcentajes (es decir, abundancias relativas) para compararlas.
+Y finalmente, abra otra terminal en su computadora local, descargue la salida de Krona y ábrala en un navegador.
 
-En este momento nuestra tabla OTU se ve así:
-
-``` r
-> head(merged_metagenomes@otu_table@.Data) 
+```         
+$ scp dcuser@ec2-3-235-238-92.compute-1.amazonaws.com:~/dc_workshop/taxonomy/JP4D.001.krona.out.html .  
 ```
 
-``` r
-        JC1A JP4D JP41 1060      32  420   84 1063     316 5733 1212 2033869  135 1232  146 1850250  114  846  538 1061      42 1004  355 265       42  975  205 
+Verás una página como ésta:
+
+![](figures/03-06-03.png){fig-align="center"}
+
+### **Pavía**
+
+Pavian es otra herramienta de visualización que permite comparar múltiples muestras. Pavian debe instalarse localmente y requiere R y Shiny, pero podemos probar el [sitio web de demostración de Pavian](https://fbreitwieser.shinyapps.io/pavian/) para visualizar nuestros resultados.
+
+Primero, necesitamos descargar los archivos necesarios como entrada en Pavian; en esta ocasión, visualizaremos la asignación de las lecturas de ambas muestras: `JC1A.report`y `JP4D.report`.\
+Estos archivos corresponden a nuestros informes de Kraken. De nuevo en nuestra máquina local, usemos el `scp`comando.
+
+```         
+$ scp dcuser@ec2-3-235-238-92.compute-1.amazonaws.com:~/dc_workshop/taxonomy/*report .  
 ```
 
-Para realizar esta transformación a porcentajes, aprovecharemos una función de Phyloseq.
+Accedemos al [sitio web de demostración de Pavian](https://fbreitwieser.shinyapps.io/pavian/) , hacemos clic en "Explorar" y seleccionamos nuestros informes. Debe seleccionar ambos informes a la vez.
 
-``` r
-> percentages <- transform_sample_counts(merged_metagenomes, function(x) x*100 / sum(x) ) > head(percentages@otu_table@.Data) 
-```
+![](figures/asignaciontax1.png)
 
-``` r
-             JC1A      JP4D      JP41 1060    0.1877383 0.3065134 0.1179709 1063    1.8539161 4.1839080 1.7021516 2033869 0.7920211 0.8991060 0.2050447 1850250 0.6688178 0.6174056 0.7555755 1061    0.2464066 0.7327130 0.4985675 265     0.2464066 0.7115490 0.2879052 
-```
+![](figures/asignaciontax2.png)
 
-Ahora, estamos listos para comparar las abundancias dadas por porcentajes de las muestras con índices de diversidad beta.
+## ![](figures/asignaciontax3.png)
 
-## **Diversidad beta**
+## ![](figures/asignaciontax5.png)
 
-Como mencionamos anteriormente, la diversidad beta mide la similitud o diferencia entre nuestras muestras (superposición entre conjuntos de especies o unidades taxonómicas operativas definidas discretamente). Para medir esto, necesitamos calcular un índice que se ajuste a los objetivos de nuestra investigación. Con el siguiente código, podemos mostrar todas las posibles métricas de distancia que Phyloseq puede utilizar:
+### Lecturas no clasificadas
 
-``` r
-> distanceMethodList 
-```
+Como puede ver, un porcentaje de nuestros datos no pudo asignarse a una OTU específica.\
+¿Qué factores pueden afectar la asignación taxonómica para que una lectura no se clasifique?
 
-``` r
-$UniFrac [1] "unifrac"  "wunifrac"  $DPCoA [1] "dpcoa"  $JSD [1] "jsd"  $vegdist  [1] "manhattan"  "euclidean"  "canberra"   "bray"       "kulczynski" "jaccard"    "gower"       [8] "altGower"   "morisita"   "horn"       "mountford"  "raup"       "binomial"   "chao"       [15] "cao"         $betadiver  [1] "w"   "-1"  "c"   "wb"  "r"   "I"   "e"   "t"   "me"  "j"   "sor" "m"   "-2"  "co"  "cc"  "g"   [17] "-3"  "l"   "19"  "hk"  "rlb" "sim" "gl"  "z"    $dist [1] "maximum"   "binary"    "minkowski"  $designdist [1] "ANY" 
-```
-
-Describir todas estas posibles métricas de distancia está más allá del alcance de esta lección, pero aquí mostramos cuáles son las que necesitan una relación filogenética entre las especies-OTU presentes en nuestras muestras:
-
--   Unifrac
-
--   Peso-Unifrac
-
--   DPCoA
-
-No disponemos de un árbol filogenético ni de relaciones filogenéticas. Por lo tanto, no podemos usar ninguno de estos tres. Usaremos [Bray-Curtis,](http://www.pelagicos.net/MARS6300/readings/Bray_&_Curtis_1957.pdf) ya que es una de las métricas de distancia más robustas y utilizadas para calcular la diversidad beta.
-
-**¡Sigamos así!** Ya tenemos todo lo necesario para comenzar el análisis de diversidad beta. Usaremos el comando Phyloseq `ordinate`para generar un nuevo objeto donde se asignarán las distancias entre nuestras muestras después de calcularlas. Para este comando, debemos especificar el método que usaremos para generar una matriz. En este ejemplo, usaremos el Escalamiento Multidimensional No Métrico o [NMDS](https://academic.oup.com/bioinformatics/article/21/6/730/199398) . NMDS intenta representar la disimilitud entre objetos en un espacio de baja dimensión; en este caso, un gráfico bidimensional.
-
-``` r
-> meta_ord <- ordinate(physeq = percentages, method = "NMDS",                       distance = "bray") 
-```
-
-Si recibe algún mensaje de advertencia después de ejecutar este script, no se preocupe. Esto se debe a que solo tenemos tres muestras. Con pocas muestras, el algoritmo advierte sobre la poca dificultad para generar la matriz de distancias.
-
-Por ahora, solo necesitamos el comando `plot_ordination()`para ver los resultados de nuestro análisis de diversidad beta:
-
-``` r
-> plot_ordination(physeq = percentages, ordination = meta_ord)
-```
-
-![](figures/diversidad4.png){fig-align="center"}
-
-En este gráfico NMDS, cada punto representa la abundancia combinada de todas sus OTU. Como se muestra, cada muestra ocupa espacio en el gráfico sin formar grupos. Este resultado se debe a que cada muestra es lo suficientemente diferente como para considerarse un punto independiente en el espacio NMDS.
-
-## **Ejercicio 3: Agregar metadatos a la visualización de la diversidad beta**
-
-En la siguiente figura, el gráfico de diversidad beta que generamos anteriormente se ha enriquecido. Observe el código a continuación y responda:\
-1) ¿Qué instrucción coloreó las muestras según su tratamiento correspondiente?\
-2) ¿Qué hizo la instrucción `geom_text`?\
-3) ¿Qué otra diferencia observa con nuestro gráfico anterior?\
-4) ¿Observa alguna agrupación de las muestras según su tratamiento?
-
-![](figures/diversidad5.png){fig-align="center"}
-
-``` r
-metadata_cuatroc <- data.frame(Sample=c("JC1A", "JP4D", "JP41"), Treatment=c("Control mesocosm", "Fertilized pond", "Unenriched pond")) # Making dataframe with metadata   rownames(metadata_cuatroc) <- metadata_cuatroc$Sample # Using sample names as row names   percentages@sam_data <- sample_data(metadata_cuatroc) # Adding metadata to sam_data table of phyloseq object percentages   meta_ord <- ordinate(physeq = percentages, method = "NMDS", distance = "bray") # Calculating beta diversity     plot_ordination(physeq = percentages, ordination = meta_ord, color = "Treatment") + # Plotting beta diversity.       geom_text(mapping = aes(label = Sample), size = 3, vjust = 1.5)   
-```
-
-## **Discusión: Índices de diversidad**
-
-¿Por qué cree que necesitamos diferentes índices para evaluar la diversidad? ¿Qué índice utilizará para evaluar el impacto de los taxones raros y poco abundantes?
-
-> ## **Solución**
->
-> Será difícil (si no imposible) tomar dos comunidades y observar la misma distribución de todos los miembros. Este resultado se debe a que hay muchos **factores** que afectan a estos linajes. Algunos de los **factores ambientales** son la temperatura, el pH y la concentración de nutrientes. Además, las interacciones de estas poblaciones, como la competencia, la inhibición de otras poblaciones y la velocidad de crecimiento, son un importante impulsor de la variación ( **factor biótico** ). Una combinación de los **factores mencionados anteriormente** puede interactuar para mantener algunas poblaciones con baja abundancia ( **taxones raros).** Para tener formas de evaluar hipótesis sobre cuáles de estos procesos pueden estar afectando a la comunidad, utilizamos todos estos diferentes índices. Algunos enfatizan el número de especies y otros la uniformidad de las OTU. Para evaluar el impacto de los linajes de baja abundancia, un índice de diversidad alfa ampliamente utilizado es el índice Chao1.
+**Las lecturas no clasificadas** pueden ser el resultado de diferentes factores que pueden ir desde errores de secuenciación hasta problemas con el algoritmo que se utiliza para generar el resultado. Las plataformas de secuenciación de próxima generación (NGS) ampliamente utilizadas mostraron una [tasa de error promedio de 0,24 ± 0,06 % por base](https://www.nature.com/articles/s41598-018-29325-6) . Además del error de secuenciación, debemos considerar el estado de la base de datos que se utiliza para realizar la asignación taxonómica.\
+Todos los genomas caracterizados obtenidos por diferentes grupos de investigación se encuentran dispersos en diferentes repositorios, páginas y bancos en la nube. Algunos aún no se han publicado. Las bases de datos incompletas pueden afectar el rendimiento de la asignación taxonómica. Imagine que la OTU dominante en su muestra pertenece a un linaje que nunca se ha caracterizado y no tiene un genoma público disponible para ser utilizado como plantilla para la base de datos. Esta posibilidad hace que la asignación sea una tarea imposible y puede promover la generación de falsos positivos porque el algoritmo asignará una identidad diferente a todas esas lecturas.
 
 ## Referencias
-
-[Índices de diversidad](https://ciespinosa.github.io/AlphaDiversidad/medidas-de-diversidad.html)
-
-[Índice de diversidad de Simpson](https://geographyfieldwork.com/Simpson'sDiversityIndex.htm)
-
-[Types of alpha diversity metrics in microbial NGS](https://www.cd-genomics.com/microbioseq/the-use-and-types-of-alpha-diversity-metrics-in-microbial-ngs.html)

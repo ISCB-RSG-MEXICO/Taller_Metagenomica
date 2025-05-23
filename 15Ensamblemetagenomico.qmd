@@ -1,122 +1,87 @@
-# Binning metagenómico
+# Ensamble metagenómico
 
-### Binning o agrupamiento metagenómico
+**El proceso de ensamblaje agrupa las lecturas en contigs y estos en andamios para obtener (idealmente) la secuencia de un cromosoma completo.** Existen numerosos programas dedicados al ensamblaje [del genoma](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2874646/) y el metagenoma; algunas de las principales estrategias que utilizan son la extensión Greedy, el OLC y los diagramas de De Bruijn. A diferencia del metabarcoding, la metagenómica shotgun requiere un paso de ensamblaje.
 
-Los genomas originales de la muestra pueden separarse mediante un proceso denominado binning. Este proceso permite el análisis por separado de cada especie del metagenoma, con suficientes lecturas para reconstruir un genoma. Los genomas reconstruidos a partir de ensambles metagenómicos se denominan MAG (Genomas Ensamblados por Metagenoma). En este proceso, los contigs ensamblados del metagenoma se asignan a diferentes bins (archivos FASTA que contienen ciertos contigs). Idealmente, cada bin corresponde a un solo genoma original (un MAG).
-
-![](figures/03-05-01.png){fig-align="center"}
-
-Aunque una forma obvia de separar contigs que corresponden a especies diferentes es mediante su asignación taxonómica, existen métodos más confiables que realizan la clasificación utilizando características de los contigs, como su contenido de GC, el uso de tetranucleótidos (composición) o su cobertura (abundancia).
-
-[Maxbin](https://sourceforge.net/projects/maxbin/files/) es un algoritmo de binning que distingue entre contigs que pertenecen a diferentes bins según sus niveles de cobertura y las frecuencias de tetranucleótidos que tienen.
-
-Binemos o agrupemos la muestra que acabamos de ensamblar. El comando para ejecutar MaxBin es `run_MaxBin.pl`, y los argumentos que necesita son el archivo FASTA del ensamblado, el FASTQ con las lecturas forward y reverse, el directorio de salida y su nombre.
-
-``` bash
-$ cd ~/dc_workshop/results/assembly_JC1A $ mkdir MAXBIN $ run_MaxBin.pl -thread 8 -contig JC1A_contigs.fasta -reads ../../data/trimmed_fastq/JC1A_R1.trim.fastq.gz -reads2 ../../data/trimmed_fastq/JC1A_R2.trim.fastq.gz -out MAXBIN/JC1A
-```
-
-```         
-MaxBin 2.2.7 
-Thread: 12 
-Input contig: JC1A_contigs.fasta 
-Located reads file [../../data/trimmed_fastq/JC1A_R1.trim.fastq.gz] 
-Located reads file [../../data/trimmed_fastq/JC1A_R2.trim.fastq.gz] 
-out header: MAXBIN/JC1A Running Bowtie2 on reads file [../../data/trimmed_fastq/JC1A_R1.trim.fastq.gz]...this may take a while... 
-Reading SAM file to estimate abundance values... 
-Running Bowtie2 on reads file [../../data/trimmed_fastq/JC1A_R2.trim.fastq.gz]...this may take a while... 
-Reading SAM file to estimate abundance values... 
-Searching against 107 marker genes to find starting seed contigs for [JC1A_contigs.fasta]... 
-Running FragGeneScan.... 
-Running HMMER hmmsearch.... 
-Try harder to dig out marker genes from contigs. Marker gene search reveals that the dataset cannot be binned (the medium of marker gene number <= 1). Program stop.
-```
-
-Parece imposible clasificar nuestro ensamblaje porque el número de genes marcadores es menor que 1. Podríamos haber esperado esto ya que sabemos que es una muestra pequeña.
-
-Realizaremos el proceso de binning con la otra muestra del mismo estudio, que es más grande. El ensamblaje está precalculado en el `~/dc-workshop/mags/`directorio.
-
-``` bash
-$ cd ~/dc_workshop/mags/ $ mkdir MAXBIN $ run_MaxBin.pl -thread 8 -contig JP4D_contigs.fasta -reads ../data/trimmed_fastq/JP4D_R1.trim.fastq.gz -reads2 ../data/trimmed_fastq/JP4D_R2.trim.fastq.gz -out MAXBIN/JP4D
-```
-
-Tardará unos minutos en ejecutarse. Además, finalizará con un resultado como este:
-
-```         
-========== Job finished ========== 
-Yielded 4 bins for contig (scaffold) file JP4D_contigs.fasta  Here are the output files for this run. 
-Please refer to the README file for further details.  
-
-Summary file: MAXBIN/JP4D.summary 
-Genome abundance info file: MAXBIN/JP4D.abundance 
-Marker counts: MAXBIN/JP4D.marker 
-Marker genes for each bin: MAXBIN/JP4D.marker_of_each_gene.tar.gz 
-Bin files: MAXBIN/JP4D.001.fasta - MAXBIN/JP4D.004.fasta Unbinned sequences: MAXBIN/JP4D.noclass  
-
-Store abundance information of reads file [../data/trimmed_fastq/JP4D_R1.trim.fastq.gz] in [MAXBIN/JP4D.abund1]. Store abundance information of reads file [../data/trimmed_fastq/JP4D_R2.trim.fastq.gz] in [MAXBIN/JP4D.abund2].   
-========== Elapsed Time ========== 
-0 hours 6 minutes and 56 seconds.  
-```
-
-Con el `.summary`archivo, podemos ver rápidamente los contenedores que produjo MaxBin.
-
-```         
-$ cat MAXBIN/JP4D.summary
-```
-
-```         
-Bin name	Completeness	Genome size	GC content 
-JP4D.001.fasta	57.9%	3141556	55.5 
-JP4D.002.fasta	87.9%	6186438	67.3 
-JP4D.003.fasta	51.4%	3289972	48.1 
-JP4D.004.fasta	77.6%	5692657	38.9
-```
-
-::: callout-caution
-## Calidad de los MAGs
-
-¿Podemos confiar en la calidad de nuestros contenedores solo con la información proporcionada? ¿Qué más necesitamos saber sobre nuestros MAG para realizar análisis posteriores con seguridad?
-
-**La integridad** es fundamental para saber con qué datos se trabaja. Si el MAG está incompleto, se puede plantear la hipótesis de que si no se encontró algo, se debe a que no se tiene un genoma completo. **El tamaño del genoma** y **el contenido de GC** son como huellas genómicas de los taxones, por lo que se puede saber si se tienen los taxones que se buscan. Dado que trabajamos con genomas mixtos de una comunidad, al intentar separarlos mediante binning, queremos saber si se lograron separarlos correctamente. Por lo tanto, necesitamos medir **la contaminación** para saber si solo tenemos un genoma en nuestro bin.
-:::
-
-## **Control de calidad**
-
-La **calidad de un MAG** depende en gran medida del **tamaño del genoma de la especie**, su **abundancia en la comunidad** y la **profundidad de su secuenciación**. Dos aspectos importantes que se pueden medir para determinar su calidad son la integridad (¿es el MAG un genoma completo?) y si está contaminado (¿contiene el MAG solo un genoma?).
-
-[CheckM](https://github.com/Ecogenomics/CheckM) es una herramienta que evalua la calidad de nuestros MAGs. Mide la integridad y la contaminación mediante el recuento de genes marcadores en los MAG. El flujo de trabajo de CheckM coloca los bins en un árbol de referencia para determinar a qué linaje corresponde y utilizar los genes marcadores adecuados para estimar los parámetros de calidad. Desafortunadamente, el flujo de trabajo de linaje consume mucha memoria, por lo que no puede ejecutarse en nuestros equipos. Sin embargo, podemos indicarle a CheckM que utilice solo genes marcadores de bacterias para reducir el consumo de memoria. Este método es menos preciso, pero también puede ser ventajoso si desea analizar todos sus bins con los mismos marcadores.
-
-Ejecutaremos el flujo de trabajo de taxonomía especificando el uso de marcadores a nivel de dominio, específico para el rango Bacteria, especificaremos que nuestros bins están en formato FASTA, que están ubicados en el directorio `MAXBIN`y que queremos nuestra salida en el directorio `CHECKM/`.
-
-```         
-$ mkdir CHECKM 
-$ checkm taxonomy_wf domain Bacteria -x fasta MAXBIN/ CHECKM/ 
-```
-
-he run will end with our results printed in the console.
-
-```         
---------------------------------------------------------------------------------------------------------------------------------------------------------   Bin Id     Marker lineage   # genomes   # markers   # marker sets   0    1    2    3    4   5+   Completeness   Contamination   Strain heterogeneity   --------------------------------------------------------------------------------------------------------------------------------------------------------   
-JP4D.002      Bacteria         5449        104            58        3    34   40   21   5   1       94.83           76.99              11.19             
-JP4D.004      Bacteria         5449        104            58        12   40   46   6    0   0       87.30           51.64               3.12             
-JP4D.001      Bacteria         5449        104            58        24   65   11   3    1   0       70.48           13.09               0.00             
-JP4D.003      Bacteria         5449        104            58        44   49   11   0    0   0       64.44           10.27               0.00           --------------------------------------------------------------------------------------------------------------------------------------------------------
-```
-
-Podemos ejecutar el paso de calidad de CheckM `checkm qa` y hacer que imprima la salida en una `TSV`tabla en lugar de la consola. En este paso, podemos solicitar a CheckM que nos proporcione más parámetros, como el número y la longitud del contig.
-
-Idealmente, nos gustaría obtener solo un contig por bin, con una longitud similar al tamaño del genoma de los taxones correspondientes. Dado que este escenario es complejo de obtener, podemos usar parámetros que muestran la calidad de nuestro ensamblaje. Por ejemplo el N50, el cual es una métrica que se utiliza para describir la completitud del ensamble de un genoma. [¿Qué es N50?"](https://www.molecularecologist.com/2017/03/29/whats-n50/)
-
-Para obtener la tabla con estos parámetros extras, necesitamos especificar el archivo de los marcadores que CheckM utilizó en el paso anterior `Bacteria.ms`, el nombre del archivo de salida que queremos `quality_JP4D.tsv`, que queremos una tabla `--tab_table`, y la opción número 2 `-o 2`es solicitar los parámetros extras impresos en la tabla.
-
-```         
-$  checkm qa CHECKM/Bacteria.ms CHECKM/ --file CHECKM/quality_JP4D.tsv --tab_table -o 2 
-```
-
-La tabla que acabamos de crear se ve [así.](https://github.com/carpentries-lab/metagenomics-analysis/blob/gh-pages/files/quality_JP4D.tsv) Será muy útil cuando necesites documentar o comunicar tu trabajo.
-
-La cuestión de cuánta contaminación podemos tolerar y cuánta completitud necesitamos ciertamente depende de la cuestión científica que se esté abordando, pero en el artículo [de CheckM](https://genome.cshlp.org/content/25/7/1043) hay algunos parámetros que podemos seguir.
+![](figures/03-04-01.png){fig-align="center"}
 
 ## Referencias
 
-[Artículo de CheckM](https://genome.cshlp.org/content/25/7/1043)
+[MetaSPAdes](https://github.com/ablab/spades) es un ensamblador *de novo* para ensamblar datos metagenómicos grandes y complejos, y es uno de los más utilizados y recomendados. Forma parte del kit de herramientas SPAdes, que contiene varias secuencias de ensamblaje.
+
+Algunos de los problemas a los que se enfrenta el ensamblaje metagenómico son:
+
+-   Diferencias en la cobertura entre los genomas debido a las diferencias en abundancia en la muestra.
+
+-   El hecho de que diferentes especies a menudo comparten regiones conservadas.
+
+-   La presencia de varias cepas de una sola especie en la comunidad.
+
+SPAdes ya aborda el problema de cobertura no uniforme en su algoritmo, por lo que es útil para el ensamblaje de comunidades simples, pero el algoritmo [metaSPAdes](https://pubmed.ncbi.nlm.nih.gov/28298430/) también aborda los otros problemas, lo que le permite ensamblar metagenomas a partir de comunidades complejas.
+
+Veamos si nuestro programa está instalado correctamente:
+
+``` bash
+ $ metaspades.py 
+```
+
+```         
+SPAdes genome assembler v3.15.0 [metaSPAdes mode]  Usage: spades.py [options] -o <output_dir>  
+Basic options:   -o <output_dir>             directory to store all the resulting files (required)   --iontorrent                this flag is required for IonTorrent data   
+  --test                      runs SPAdes on a toy dataset   
+   -h, 
+   --help                  prints this usage message    -v, 
+   --version               prints version  
+
+Input data:   
+  --12 <filename>             file with interlaced forward and reverse paired-end reads   
+  -1 <filename>               file with forward paired-end reads   
+  -2 <filename>               file with reverse paired-end reads    
+```
+
+::: callout-tip
+## Activa tu entorno
+
+Si no tiene activado el entorno de metagenómica, el comando anterior debería haberle generado un error. Antes de continuar, active el entorno:
+:::
+
+``` bash
+conda activate metagenomics
+```
+
+## **MetaSPAdes es un ensamblador metagenómico**
+
+La ayuda que acabamos de ver nos indica cómo ejecutar `metaspades.py`. Usaremos las opciones más sencillas, especificando simplemente nuestras lecturas de extremo forward con `-1`y las lecturas reverse con `-2`, y el directorio de salida donde queremos que se almacenen los resultados.
+
+```         
+$ cd ~/dc_workshop/data/trimmed_fastq 
+$ metaspades.py -1 JC1A_R1.trim.fastq.gz -2 JC1A_R2.trim.fastq.gz -o ../../results/assembly_JC1A 
+```
+
+Al finalizar la ejecución se muestra este mensaje:
+
+```         
+======= SPAdes pipeline finished.  SPAdes log can be found here: /home/dcuser/dc_workshop/results/assembly_JC1A/spades.log  Thank you for using SPAdes!  
+```
+
+Ahora, vayamos a los archivos de salida:
+
+``` bash
+$ cd ../../results/assembly_JC1A 
+$ ls -F 
+```
+
+```         
+assembly_graph_after_simplification.gfa  corrected/              K55/             scaffolds.fasta assembly_graph.fastg                     dataset.info            misc/            scaffolds.paths assembly_graph_with_scaffolds.gfa        first_pe_contigs.fasta  params.txt       spades.log before_rr.fasta                          input_dataset.yaml      pipeline_state/  strain_graph.gfa contigs.fasta                            K21/                    run_spades.sh    tmp/ contigs.paths                            K33/                    run_spades.yaml   
+```
+
+Como podemos ver, MetaSPAdes nos proporcionó una gran cantidad de archivos. Los que contienen el ensamblaje son \[nombre del archivo\] `contigs.fasta`y \[nombre del archivo\] `scaffolds.fasta`.
+
+La carpeta `corrected`contiene las **lecturas corregidas con el algoritmo SPAdes.** Además, el archivo `assembly_graph_with_scaffolds.gfa`**contiene la información necesaria para visualizar nuestro ensamblaje mediante diferentes medios**, como programas como [Bandage](https://rrwick.github.io/Bandage/) .
+
+Podemos reconocer a qué muestra corresponden nuestras salidas de ensamblaje porque se encuentran dentro de la carpeta de resultados de ensamblaje: `assembly_JC1A/`. Sin embargo, los archivos que contiene no tienen el ID de la muestra.
+
+::: callout-note
+## Calidad del ensamblaje
+
+Puede utilizar diversas métricas para conocer la calidad de sus ensambles. [MetaQuast](https://quast.sourceforge.net/metaquast.html) es un programa que proporciona estas métricas para ensambles de metagenomas en un informe interactivo, archivos de texto y gráficos.
+:::

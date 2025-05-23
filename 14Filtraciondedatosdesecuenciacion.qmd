@@ -41,7 +41,7 @@ En este ejemplo, le hemos dicho a Trimmomatic:
 
 ## Ejecución de trimmomatic
 
-Ahora, ejecutaremos Trimmomatic en nuestros datos. Ve a la carpeta `untrimmed_fastq` y verifica que te encuentras en esa carpeta:
+Ahora, ejecutaremos Trimmomatic en **nuestros datos**. Ve a la carpeta `untrimmed_fastq` y verifica que te encuentras en esa carpeta:
 
 ```         
 $ cd ~/dc_workshop/data/untrimmed_fastq 
@@ -74,16 +74,18 @@ En la pantalla podemos ver un resumen del resultado, centrándonos en el porcent
 TrimmomaticPE: Started with arguments:  JP4D_R1.fastq.gz JP4D_R2.fastq.gz JP4D_R1.trim.fastq.gz JP4D_R1un.trim.fastq.gz JP4D_R2.trim.fastq.gz JP4D_R2un.trim.fastq.gz SLIDINGWINDOW:4:20 MINLEN:35 ILLUMINACLIP:TruSeq3-PE.fa:2:40:15 Multiple cores found: Using 2 threads Using PrefixPair: 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT' and 'GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT' ILLUMINACLIP: Using 1 prefix pairs, 0 forward/reverse sequences, 0 forward only sequences, 0 reverse only sequences Quality encoding detected as phred33 Input Read Pairs: 1123987 Both Surviving: 751427 (66.85%) Forward Only Surviving: 341434 (30.38%) Reverse Only Surviving: 11303 (1.01%) Dropped: 19823 (1.76%) TrimmomaticPE: Completed successfully
 ```
 
-Los archivos de salida también son archivos FASTQ. Deberían ser más pequeños que el archivo de entrada, ya que hemos eliminado las lecturas. Podemos confirmarlo con este comando:
+Los archivos de salida también son archivos **FASTQ**. Deberían ser más pequeños que el archivo de entrada, ya que hemos eliminado las lecturas. Podemos confirmarlo con este comando:
 
 ``` bash
 $ ls JP4D* -l -h 
 ```
 
 ```         
--rw-r--r-- 1 dcuser dcuser 179M Nov 26 12:44 JP4D_R1.fastq.gz -rw-rw-r-- 1 dcuser dcuser 107M Mar 11 23:05 JP4D_R1.trim.fastq.gz 
+-rw-r--r-- 1 dcuser dcuser 179M Nov 26 12:44 JP4D_R1.fastq.gz 
+-rw-rw-r-- 1 dcuser dcuser 107M Mar 11 23:05 JP4D_R1.trim.fastq.gz 
 -rw-rw-r-- 1 dcuser dcuser  43M Mar 11 23:05 JP4D_R1un.trim.fastq.gz 
--rw-r--r-- 1 dcuser dcuser 203M Nov 26 12:51 JP4D_R2.fastq.gz -rw-rw-r-- 1 dcuser dcuser 109M Mar 11 23:05 JP4D_R2.trim.fastq.gz 
+-rw-r--r-- 1 dcuser dcuser 203M Nov 26 12:51 JP4D_R2.fastq.gz 
+-rw-rw-r-- 1 dcuser dcuser 109M Mar 11 23:05 JP4D_R2.trim.fastq.gz 
 -rw-rw-r-- 1 dcuser dcuser 1.3M Mar 11 23:05 JP4D_R2un.trim.fastq.gz
 ```
 
@@ -107,7 +109,7 @@ Observa que, aunque ejecutamos Trimmomatic en el archivo `JP4D`antes de ejecuta
 JC1A_R1.fastq.gz                     JP4D_R1.fastq.gz         JC1A_R1.trim.fastq.gz                JP4D_R1.trim.fastq.gz    JC1A_R1un.trim.fastq.gz              JP4D_R1un.trim.fastq.gz  JC1A_R2.fastq.gz                     JP4D_R2.fastq.gz         JC1A_R2.trim.fastq.gz                JP4D_R2.trim.fastq.gz    JC1A_R2un.trim.fastq.gz              JP4D_R2un.trim.fastq.gz  TruSeq3-PE.fa  
 ```
 
-¡Hemos completado los pasos de recorte y filtrado de nuestro proceso de control de calidad! Antes de continuar, transfiramos nuestros archivos FASTQ recortados a un nuevo subdirectorio dentro de nuestro directorio `data/`.
+**¡Hemos completado los pasos de recorte y filtrado de nuestro proceso de control de calidad!** Antes de continuar, transfiramos nuestros archivos FASTQ recortados a un nuevo subdirectorio dentro de nuestro directorio `data/`.
 
 ```         
 $ cd ~/dc_workshop/data/untrimmed_fastq 

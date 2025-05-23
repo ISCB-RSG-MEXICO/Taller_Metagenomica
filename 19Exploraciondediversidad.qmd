@@ -1,4 +1,4 @@
-# Control de calidad
+# Exploración de diversidad con R
 
 ## **Primer acercamiento la diversidad**
 
@@ -21,7 +21,7 @@ Si quieres leer más sobre diversidad te recomendamos este [artículo](https://
 ## **diversidad α**
 
 | Índices de diversidad | Descripción |
-|:---|:---|
+|:-----------------------------------|:-----------------------------------|
 | Shannon (H) | Estimación de la riqueza y la uniformidad de especies. Mayor importancia para la riqueza. Sensible a especies raras. |
 | Simpson (D) | Estimación de la riqueza y la uniformidad de especies. Mayor importancia para la uniformidad. Sensible a especies dominantes. |
 | Caos1 | Abundancia basada en especies representadas por un solo individuo (singletons) y dos individuos (doubletons). |
