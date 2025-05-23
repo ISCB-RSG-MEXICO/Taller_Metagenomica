@@ -19,13 +19,12 @@ Es fundamental comprender los pasos que utiliza para limpiar sus datos. En nuest
 
 Sin embargo, un comando completo para Trimmomatic se parecerá al siguiente. Este comando es un ejemplo y no funcionará, ya que no disponemos de los archivos a los que hace referencia:
 
-```bash
-$ trimmomatic PE -threads 4 SRR_1056_1.fastq SRR_1056_2.fastq \
+``` bash
+trimmomatic PE -threads 4 SRR_1056_1.fastq SRR_1056_2.fastq \
 SRR_1056_1.trimmed.fastq SRR_1056_1un.trimmed.fastq \
 SRR_1056_2.trimmed.fastq SRR_1056_2un.trimmed.fastq \
 ILLUMINACLIP:SRR_adapters.fa SLIDINGWINDOW:4:20 ILLUMINACLIP:TruSeq3-PE.fa:2:40:15
 ```
-
 
 En este ejemplo, le hemos dicho a Trimmomatic:
 
@@ -49,8 +48,11 @@ Ahora, ejecutaremos Trimmomatic en **nuestros datos**. Ve a la carpeta `untrimme
 
 ``` bash    
 $ cd ~/dc_workshop/data/untrimmed_fastq 
+```
+``` bash
 $ pwd 
 ```
+
 
 ``` bash        
 $ /home/dcuser/dc_workshop/data/untrimmed_fastq 
@@ -62,7 +64,7 @@ Debería tener solo cuatro archivos en este directorio. Estos archivos correspon
 $ ls 
 ```
 
-```  bash       
+``` bash       
 $ JC1A_R1.fastq.gz  JC1A_R2.fastq.gz  JP4D_R1.fastq  JP4D_R2.fastq.gz  TruSeq3-PE.fa 
 ```
 
@@ -73,12 +75,15 @@ $ gzip *.fastq.gz
 ```
 
 ``` bash         
-$ trimmomatic PE JP4D_R1.fastq.gz JP4D_R2.fastq.gz \ JP4D_R1.trim.fastq.gz  JP4D_R1un.trim.fastq.gz \ JP4D_R2.trim.fastq.gz  JP4D_R2un.trim.fastq.gz \ SLIDINGWINDOW:4:20 MINLEN:35 ILLUMINACLIP:TruSeq3-PE.fa:2:40:15 
+$ trimmomatic PE JP4D_R1.fastq.gz JP4D_R2.fastq.gz \ 
+JP4D_R1.trim.fastq.gz  JP4D_R1un.trim.fastq.gz \ 
+JP4D_R2.trim.fastq.gz  JP4D_R2un.trim.fastq.gz \ 
+SLIDINGWINDOW:4:20 MINLEN:35 ILLUMINACLIP:TruSeq3-PE.fa:2:40:15 
 ```
 
 En la pantalla podemos ver un resumen del resultado, centrándonos en el porcentaje de lecturas descartadas (Dropped) y lecturas que se mantuvieron para ambas forward y reverse (Both surviving).
 
-```         
+``` bash        
 TrimmomaticPE: Started with arguments:  JP4D_R1.fastq.gz JP4D_R2.fastq.gz JP4D_R1.trim.fastq.gz JP4D_R1un.trim.fastq.gz JP4D_R2.trim.fastq.gz JP4D_R2un.trim.fastq.gz SLIDINGWINDOW:4:20 MINLEN:35 ILLUMINACLIP:TruSeq3-PE.fa:2:40:15 Multiple cores found: Using 2 threads Using PrefixPair: 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT' and 'GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT' ILLUMINACLIP: Using 1 prefix pairs, 0 forward/reverse sequences, 0 forward only sequences, 0 reverse only sequences Quality encoding detected as phred33 Input Read Pairs: 1123987 Both Surviving: 751427 (66.85%) Forward Only Surviving: 341434 (30.38%) Reverse Only Surviving: 11303 (1.01%) Dropped: 19823 (1.76%) TrimmomaticPE: Completed successfully
 ```
 
@@ -116,10 +121,7 @@ Observa que, aunque ejecutamos Trimmomatic en el archivo `JP4D`antes de ejecuta
  ls 
 ```
 
-``` bash        
-  JC1A_R1.fastq.gz \ JP4D_R1.fastq.gz \ JC1A_R1.trim.fastq.gz \ JP4D_R1.trim.fastq.gz \   JC1A_R1un.trim.fastq.gz \ JP4D_R1un.trim.fastq.gz \ JC1A_R2.fastq.gz \ JP4D_R2.fastq.gz  \       JC1A_R2.trim.fastq.gz \ JP4D_R2.trim.fastq.gz \ JC1A_R2un.trim.fastq.gz \ JP4D_R2un.trim.fastq.gz \ 
-TruSeq3-PE.fa  
-```
+<pre> ```bash JC1A_R1.fastq.gz JC1A_R2.fastq.gz JP4D_R1.fastq.gz JP4D_R2.fastq.gz JC1A_R1.trim.fastq.gz JC1A_R2.trim.fastq.gz JP4D_R1.trim.fastq.gz JP4D_R2.trim.fastq.gz JC1A_R1un.trim.fastq.gz JC1A_R2un.trim.fastq.gz JP4D_R1un.trim.fastq.gz JP4D_R2un.trim.fastq.gz TruSeq3-PE.fa ``` </pre>
 
 
 **¡Hemos completado los pasos de recorte y filtrado de nuestro proceso de control de calidad!** Antes de continuar, transfiramos nuestros archivos FASTQ recortados a un nuevo subdirectorio dentro de nuestro directorio `data/`.
